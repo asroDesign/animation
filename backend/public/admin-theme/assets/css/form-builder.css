@@ -1,0 +1,94 @@
+/* Container */
+.container {
+    max-width: 960px;
+}
+
+/* Card Styling */
+.card {
+    border: none;
+    border-radius: 8px;
+    transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Field Group */
+.field-group {
+    border-radius: 8px;
+    background: #f8f9fa;
+    transition: transform 0.3s ease;
+}
+
+.field-group:hover {
+    transform: translateY(-3px);
+}
+
+/* Form Elements */
+.form-label {
+    font-weight: 500;
+    color: #343a40;
+}
+
+.form-control, .form-select {
+    border-radius: 6px;
+    transition: border-color 0.3s ease;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* Input Group */
+.input-group-text {
+    background: #e9ecef;
+    border-radius: 6px 0 0 6px;
+}
+
+/* Buttons */
+.btn {
+    border-radius: 6px;
+    padding: 0.5rem 1.5rem;
+}
+
+.btn-primary {
+    background: #007bff;
+    border: none;
+}
+
+.btn-outline-secondary {
+    border-color: #6c757d;
+    color: #6c757d;
+}
+
+.btn-primary:hover, .btn-outline-secondary:hover {
+    transform: translateY(-2px);
+    transition: transform 0.2s ease;
+}
+
+/* Animation for New Fields */
+.animate__animated.animate__fadeIn {
+    animation-duration: 0.5s;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .field-group .row > div {
+        margin-bottom: 1rem;
+    }
+
+    .col-md-1 {
+        margin-bottom: 0 !important;
+    }
+
+    .btn {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+
+    .d-flex.gap-2 {
+        flex-direction: column;
+    }
+}
