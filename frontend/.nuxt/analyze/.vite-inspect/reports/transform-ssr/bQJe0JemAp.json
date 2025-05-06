@@ -1,0 +1,271 @@
+{
+  "resolvedId": "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/blog/index.vue?vue&type=style&index=0&scoped=82810c92&lang.css?inline&used",
+  "transforms": [
+    {
+      "name": "vite:vue",
+      "result": "\n.grid {\n  display: grid;\n  gap: 1.5rem;\n}\n\n@media (max-width: 640px) {\n  .grid-cols-2 {\n    grid-template-columns: 1fr;\n  }\n}\n\n.rounded-3xl {\n  border-radius: 1.5rem;\n}\n\n.outline {\n  outline: 1px solid rgba(255, 255, 255, 0.4);\n}\n",
+      "start": 1746483920951,
+      "end": 1746483920951,
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/blog/index.vue"
+        ],
+        "names": [],
+        "mappings": ";AA4GA,CAAC,CAAC,CAAC,CAAC,EAAE;EACJ,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC;EACb,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACb;;AAEA,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE;EACxB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE;IACX,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC;EAC5B;AACF;;AAEA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE;EACX,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACvB;;AAEA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE;EACP,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC;AAC7C",
+        "file": "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/blog/index.vue",
+        "sourceRoot": "",
+        "sourcesContent": [
+          "<script setup lang=\"ts\">\nimport { ref, watch, computed } from 'vue';\nimport LiveChat from '~/components/LiveChat.vue';\nimport SecondaryButton from '~/components/tools/SecondaryButton.vue';\n\n// مقدار اولیه برای جستجو\nconst q = ref<string>('');\n\n// فراخوانی API با useMyFetch\nconst { data, status, execute } = await useMyFetch('blogs', {\n  query: { search: q },\n  immediate: true, // اجرای خودکار در بارگذاری اولیه\n});\n\n// مدیریت پاسخ API\nconst blogs = computed(() => data.value?.data || []);\n\n// تابع جستجو با debounce\nconst handleSearch = (searchTerm: string) => {\n  q.value = searchTerm;\n};\n\n// واکنش به تغییرات q برای اجرای خودکار جستجو\nwatch(q, () => {\n  execute();\n});\n</script>\n\n<template>\n  <div class=\"relative\">\n    <nuxt-img\n        src=\"/system/blog_mask.png\"\n        class=\"w-full object-cover\"\n        sizes=\"sm:100vw md:100vw lg:100vw\"\n        format=\"webp\"\n        quality=\"80\"\n        loading=\"lazy\"\n        alt=\"Blog banner\"\n    />\n    <div\n        class=\"absolute inset-0 flex items-center justify-center top-[16rem] sm:top-0\"\n    >\n      <div class=\"container mx-auto px-4 sm:px-6 lg:px-8\">\n        <div class=\"max-w-6xl mx-auto text-start sm:text-center\">\n          <div\n              class=\"flex items-center justify-start sm:justify-center mb-4 gap-2\"\n          >\n            <div class=\"bg-secondary-shade h-1 w-9\"></div>\n            <span class=\"text-sm uppercase\">What You Need to Know</span>\n          </div>\n          <h2\n              class=\"text-2xl sm:text-3xl md:text-4xl font-bold mb-6 leading-tight\"\n          >\n            Get an Expert Team<br />for Video Animation\n          </h2>\n          <div\n              class=\"flex flex-col sm:flex-row items-center justify-start sm:justify-center gap-4\"\n          >\n            <LiveChat />\n            <LazyRequestQuote />\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n\n  <div class=\"container mx-auto px-4 sm:px-6 lg:px-8 py-8\">\n    <div class=\"grid grid-cols-1 lg:grid-cols-3 gap-6\">\n      <div class=\"col-span-1 lg:col-span-2\">\n        <div class=\"grid grid-cols-1 sm:grid-cols-2 gap-6\">\n          <nuxt-link\n              v-for=\"blog in blogs\"\n              :key=\"blog.slug\"\n              :to=\"`/blog/${blog.slug}`\"\n              class=\"block p-4 sm:p-5 bg-white/5 hover:shadow-xl transform hover:-translate-y-1 transition duration-300 rounded-3xl outline outline-1 outline-white/40\"\n          >\n            <nuxt-img\n                :src=\"blog.image || 'https://placehold.co/478x358'\"\n                class=\"w-full h-64 sm:h-80 object-cover rounded-3xl\"\n                format=\"webp\"\n                quality=\"80\"\n                loading=\"lazy\"\n                :alt=\"blog.heading\"\n            />\n            <div class=\"mt-4\">\n              <h3\n                  class=\"text-xl sm:text-2xl font-bold font-['Impact'] text-white\"\n              >\n                {{ blog.heading }}\n                </h3>\n                <p class=\"text-sm sm:text-base text-white font-['Shabnam'] mt-2\">\n                  {{ blog.sub_heading }}\n                </p>\n                <p class=\"text-sm text-light-shade font-['Shabnam'] mt-4\">\n                  {{ new Date(blog.created_at).toLocaleDateString() }}\n                </p>\n            </div>\n          </nuxt-link>\n        </div>\n      </div>\n      <div class=\"col-span-1\">\n        <ToolsBlogSidebar @search=\"handleSearch\" />\n      </div>\n    </div>\n  </div>\n</template>\n\n<style scoped>\n.grid {\n  display: grid;\n  gap: 1.5rem;\n}\n\n@media (max-width: 640px) {\n  .grid-cols-2 {\n    grid-template-columns: 1fr;\n  }\n}\n\n.rounded-3xl {\n  border-radius: 1.5rem;\n}\n\n.outline {\n  outline: 1px solid rgba(255, 255, 255, 0.4);\n}\n</style>"
+        ]
+      }
+    },
+    {
+      "name": "nuxt:components-loader-pre",
+      "start": 1746483920951,
+      "end": 1746483920951,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:components-loader-pre",
+      "start": 1746483920951,
+      "end": 1746483920951,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1746483920951,
+      "end": 1746483920951,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1746483920951,
+      "end": 1746483920951,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1746483920951,
+      "end": 1746483920951,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1746483920951,
+      "end": 1746483920951,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-only-component-transform",
+      "start": 1746483920951,
+      "end": 1746483920951,
+      "order": "pre"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1746483920954,
+      "end": 1746483920954,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1746483920954,
+      "end": 1746483920954,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": ".grid[data-v-82810c92]{display:grid;gap:1.5rem}@media (max-width:640px){.grid-cols-2[data-v-82810c92]{grid-template-columns:1fr}}.rounded-3xl[data-v-82810c92]{border-radius:1.5rem}.outline[data-v-82810c92]{outline:1px solid hsla(0,0%,100%,.4)}",
+      "start": 1746483920954,
+      "end": 1746483920954,
+      "order": "normal",
+      "sourcemaps": {
+        "file": "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/blog/index.vue",
+        "mappings": "AAAA,uBAAM,YAAY,CAAC,UAAU,CAAC,yBAAyB,8BAAa,yBAAyB,CAAC,CAAC,8BAAa,oBAAoB,CAAC,0BAAS,oCAAoC",
+        "names": [],
+        "sources": [
+          "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/blog/index.vue"
+        ],
+        "sourcesContent": [
+          null
+        ],
+        "version": 3
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1746483920954,
+      "end": 1746483920954,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483920954,
+      "end": 1746483920954,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483920954,
+      "end": 1746483920954,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1746483920954,
+      "end": 1746483920954,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1746483920954,
+      "end": 1746483920954,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:prehydrate-transform",
+      "start": 1746483920954,
+      "end": 1746483920954,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:prehydrate-transform",
+      "start": 1746483920954,
+      "end": 1746483920954,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483920954,
+      "end": 1746483920954,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1746483920954,
+      "end": 1746483920954,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1746483920954,
+      "end": 1746483920954,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1746483921420,
+      "end": 1746483921420,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1746483921420,
+      "end": 1746483921420,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1746483921420,
+      "end": 1746483921420,
+      "order": "normal-normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1746483921420,
+      "end": 1746483921420,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1746483921420,
+      "end": 1746483921420,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:head:unhead-imports",
+      "start": 1746483921420,
+      "end": 1746483921420,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:head:unhead-imports",
+      "start": 1746483921420,
+      "end": 1746483921420,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1746483921420,
+      "end": 1746483921420,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1746483921420,
+      "end": 1746483921420,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1746483921420,
+      "end": 1746483921420,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1746483921420,
+      "end": 1746483921420,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1746483921420,
+      "end": 1746483921420,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1746483921420,
+      "end": 1746483921420,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1746483921420,
+      "end": 1746483921420,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1746483921420,
+      "end": 1746483921420,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1746483921420,
+      "end": 1746483921421,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1746483921421,
+      "end": 1746483921421,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1746483921421,
+      "end": 1746483921421,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1746483921421,
+      "end": 1746483921421,
+      "order": "normal"
+    }
+  ]
+}

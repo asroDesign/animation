@@ -1,0 +1,266 @@
+{
+  "resolvedId": "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/dashboard/wallet.vue?vue&type=style&index=0&scoped=13b8c1f3&lang.css?inline&used",
+  "transforms": [
+    {
+      "name": "vite:vue",
+      "result": "\n/* Tailwind handles all styling */\n",
+      "start": 1746483920734,
+      "end": 1746483920734,
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/dashboard/wallet.vue"
+        ],
+        "names": [],
+        "mappings": ";AAgLA,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC",
+        "file": "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/dashboard/wallet.vue",
+        "sourceRoot": "",
+        "sourcesContent": [
+          "<template>\n  <div class=\"w-full rounded-3xl flex flex-col gap-7 overflow-hidden\">\n    <!-- Wallet Header (Unchanged) -->\n    <div class=\"flex flex-col sm:flex-row items-center gap-4 sm:gap-7 w-full\">\n      <nuxt-img\n          :src=\"walletImage\"\n          alt=\"Wallet Image\"\n          class=\"w-48 h-48 sm:w-72 sm:h-72 rounded-lg object-cover\"\n      />\n      <div class=\"flex flex-col gap-2 text-center sm:text-left\">\n        <span class=\"text-white text-sm font-bold font-['Shabnam']\">Wallet Balance</span>\n        <span class=\"text-white text-4xl sm:text-7xl font-normal font-['Impact']\">{{ balance||0 }} $</span>\n      </div>\n      <div class=\"flex-1\"></div>\n      <div class=\"flex flex-col gap-4 sm:gap-7 w-full sm:w-auto\">\n        <!-- Modals (Unchanged) -->\n        <DepositModal v-if=\"balance\"\n            :balance=\"balance\"\n            @close=\"showDepositModal = false\"\n            @update-balance=\"updateBalance\"\n        />\n        <WithdrawModal v-if=\"withdraw_amount\"\n            :balance=\"withdraw_amount\"\n            @close=\"showWithdrawModal = false\"\n            @update-balance=\"updateBalance\"\n        />\n      </div>\n    </div>\n\n    <!-- Recent Transactions -->\n    <div class=\"w-full\">\n      <h2 class=\"text-white text-2xl sm:text-3xl font-normal font-['Impact'] mb-4\">\n        Recent Transactions\n      </h2>\n\n      <!-- Desktop Table (Visible on sm and above) -->\n      <div class=\"hidden sm:block overflow-x-auto\">\n        <table class=\"w-full text-left\">\n          <thead>\n          <tr class=\"text-zinc-500 text-sm font-normal font-['Shabnam']\">\n            <th class=\"py-2 px-4\">Amount</th>\n            <th class=\"py-2 px-4\">Type</th>\n            <th class=\"py-2 px-4\">Date</th>\n            <th class=\"py-2 px-4\">Order ID</th>\n            <th class=\"py-2 px-4\">Status</th>\n          </tr>\n          </thead>\n          <tbody>\n          <tr v-for=\"transaction in transactions?.data.data\" :key=\"transaction.id\" class=\"border-t border-neutral-700/50\">\n            <td class=\"py-2 px-4 text-white text-sm font-bold font-['Shabnam']\">\n              {{ transaction.amount }} $\n            </td>\n            <td class=\"py-2 px-4 text-white text-sm font-bold font-['Shabnam']\">\n              {{ transaction.type }}\n            </td>\n            <td class=\"py-2 px-4 text-white text-sm font-bold font-['Shabnam']\">\n              {{ transaction.date }}\n            </td>\n            <td class=\"py-2 px-4 text-white text-sm font-bold font-['Shabnam']\">\n              {{ transaction.orderId || '-' }}\n            </td>\n            <td\n                class=\"py-2 px-4 text-sm font-bold font-['Shabnam']\"\n                :class=\"{\n                  'text-pink-700': transaction.status === 'Failed',\n                  'text-teal-300': transaction.status === 'Success',\n                  'text-amber-300': transaction.status === 'Pending',\n                }\"\n            >\n              {{ transaction.status }}\n            </td>\n          </tr>\n          </tbody>\n        </table>\n      </div>\n\n      <!-- Mobile Cards (Visible below sm) -->\n      <div class=\"block sm:hidden space-y-4\">\n        <div\n            v-for=\"transaction in transactions\"\n            :key=\"transaction.id\"\n            class=\"bg-[#14082A] rounded-lg p-4 flex flex-col gap-2 border border-neutral-700/50\"\n        >\n          <div class=\"flex justify-between\">\n            <span class=\"text-zinc-500 text-xs font-normal font-['Shabnam']\">Amount</span>\n            <span class=\"text-white text-sm font-bold font-['Shabnam']\">{{ transaction.amount }} $</span>\n          </div>\n          <div class=\"flex justify-between\">\n            <span class=\"text-zinc-500 text-xs font-normal font-['Shabnam']\">Type</span>\n            <span class=\"text-white text-sm font-bold font-['Shabnam']\">{{ transaction.type }}</span>\n          </div>\n          <div class=\"flex justify-between\">\n            <span class=\"text-zinc-500 text-xs font-normal font-['Shabnam']\">Date</span>\n            <span class=\"text-white text-sm font-bold font-['Shabnam']\">{{ transaction.date }}</span>\n          </div>\n          <div class=\"flex justify-between\">\n            <span class=\"text-zinc-500 text-xs font-normal font-['Shabnam']\">Order ID</span>\n            <span class=\"text-white text-sm font-bold font-['Shabnam']\">{{ transaction.orderId || '-' }}</span>\n          </div>\n          <div class=\"flex justify-between\">\n            <span class=\"text-zinc-500 text-xs font-normal font-['Shabnam']\">Status</span>\n            <span\n                class=\"text-sm font-bold font-['Shabnam']\"\n                :class=\"{\n                'text-pink-700': transaction.status === 'Failed',\n                'text-teal-300': transaction.status === 'Success',\n                'text-amber-300': transaction.status === 'Pending',\n              }\"\n            >\n              {{ transaction.status }}\n            </span>\n          </div>\n        </div>\n      </div>\n    </div>\n\n\n  </div>\n</template>\n\n<script setup>\nimport { ref } from 'vue';\nimport DepositModal from \"~/components/tools/DepositModal.vue\";\nimport WithdrawModal from \"~/components/tools/WithdrawModal.vue\";\n// import {useAuthStore} from \"~/stores/auth.js\";\n\n// const authStore = useAuthStore();\n\n// Wallet Data\nconst walletImage = ref('/system/wallet_mask.png');\nconst {data: { balance ,withdraw_amount, ...transactions}} = await useMyFetch('get-wallet',{\n  method:'get',\n\n})\n// const transactions = ref([\n//   {\n//     id: 1,\n//     amount: 20,\n//     type: 'Withdraw',\n//     date: '13/01/2022',\n//     orderId: null,\n//     status: 'Failed',\n//   },\n//   {\n//     id: 2,\n//     amount: 30,\n//     type: 'Order',\n//     date: '13/01/2022',\n//     orderId: 'AS9876352',\n//     status: 'Success',\n//   },\n//   {\n//     id: 3,\n//     amount: 74,\n//     type: 'Deposit',\n//     date: '13/01/2022',\n//     orderId: null,\n//     status: 'Pending',\n//   },\n// ]);\n\n// Modal Visibility\nconst showDepositModal = ref(false);\nconst showWithdrawModal = ref(false);\n\n// Update Balance\nconst updateBalance = (newBalance) => {\n  balance.value = newBalance;\n};\ndefinePageMeta({\n  layout:'dashboard',\n  middleware: 'auth',\n})\n</script>\n\n<style scoped>\n/* Tailwind handles all styling */\n</style>\n"
+        ]
+      }
+    },
+    {
+      "name": "nuxt:components-loader-pre",
+      "start": 1746483920734,
+      "end": 1746483920734,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:components-loader-pre",
+      "start": 1746483920734,
+      "end": 1746483920734,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1746483920734,
+      "end": 1746483920734,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1746483920734,
+      "end": 1746483920734,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1746483920734,
+      "end": 1746483920734,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1746483920734,
+      "end": 1746483920734,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-only-component-transform",
+      "start": 1746483920734,
+      "end": 1746483920734,
+      "order": "pre"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1746483920735,
+      "end": 1746483920735,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1746483920735,
+      "end": 1746483920735,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "",
+      "start": 1746483920735,
+      "end": 1746483920735,
+      "order": "normal",
+      "sourcemaps": {
+        "file": "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/dashboard/wallet.vue",
+        "mappings": "",
+        "names": [],
+        "sources": [],
+        "version": 3
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1746483920735,
+      "end": 1746483920735,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483920735,
+      "end": 1746483920735,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483920735,
+      "end": 1746483920735,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1746483920735,
+      "end": 1746483920735,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1746483920735,
+      "end": 1746483920735,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:prehydrate-transform",
+      "start": 1746483920735,
+      "end": 1746483920735,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:prehydrate-transform",
+      "start": 1746483920735,
+      "end": 1746483920735,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483920736,
+      "end": 1746483920736,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1746483920736,
+      "end": 1746483920736,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1746483920736,
+      "end": 1746483920736,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1746483920962,
+      "end": 1746483920962,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1746483920962,
+      "end": 1746483920962,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1746483920962,
+      "end": 1746483920962,
+      "order": "normal-normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1746483920962,
+      "end": 1746483920962,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1746483920962,
+      "end": 1746483920962,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:head:unhead-imports",
+      "start": 1746483920962,
+      "end": 1746483920962,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:head:unhead-imports",
+      "start": 1746483920962,
+      "end": 1746483920962,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1746483920963,
+      "end": 1746483920963,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1746483920963,
+      "end": 1746483920963,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1746483920963,
+      "end": 1746483920963,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1746483920963,
+      "end": 1746483920963,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1746483920963,
+      "end": 1746483920963,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1746483920963,
+      "end": 1746483920963,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1746483920963,
+      "end": 1746483920963,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1746483920963,
+      "end": 1746483920963,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1746483920963,
+      "end": 1746483920963,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1746483920963,
+      "end": 1746483920963,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1746483920963,
+      "end": 1746483920963,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1746483920963,
+      "end": 1746483920963,
+      "order": "normal"
+    }
+  ]
+}

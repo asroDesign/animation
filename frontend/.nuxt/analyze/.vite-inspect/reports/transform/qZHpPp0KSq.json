@@ -1,0 +1,203 @@
+{
+  "resolvedId": "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/components/tools/Testimonials.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "\n<template>\n  <div class=\"my-12\">\n    <div class=\"contact-title flex items-center justify-center gap-2 sm:gap-4 w-full\">\n      <div class=\"separator hidden sm:block flex-1 max-w-[100px] md:max-w-[200px] lg:max-w-[500px] h-1 bg-gray-300 rounded relative\">\n        <div class=\"absolute top-0 right-0 w-16 sm:w-24 h-1 bg-primary rounded\"></div>\n      </div>\n      <h2 class=\"sm:text-5xl text-2xl font-normal font-['Impact']\">\n        Our valuable success clients story\n      </h2>\n      <div class=\"separator hidden sm:block flex-1 max-w-[100px] md:max-w-[200px] lg:max-w-[500px] h-1 bg-gray-300 rounded relative\">\n        <div class=\"absolute top-0 left-0 w-16 sm:w-24 h-1 bg-primary rounded\"></div>\n      </div>\n    </div>\n    <div class=\"w-full p-4 overflow-hidden\">\n      <client-only>\n        <Swiper\n            :slides-per-view=\"1\"\n            :space-between=\"16\"\n            :breakpoints=\"{\n        640: { slidesPerView: 2.1, spaceBetween: 20 },\n        1024: { slidesPerView: 2.5, spaceBetween: 24 },\n        1280: { slidesPerView: 3.1, spaceBetween: 24 }\n      }\"\n            :pagination=\"{ clickable: true }\"\n            :navigation=\"true\"\n            :autoplay=\"true\"\n            class=\"w-full\"\n        >\n          <SwiperSlide v-for=\"(item, index) in testimonials\" :key=\"index\">\n            <div\n                class=\"w-full max-w-md h-auto px-5 py-4 hover:border-teal-400 hover:shadow-teal-400 hover:shadow-lg my-5 mx-2 bg-white/5 rounded-3xl border border-white/40 flex flex-col justify-start items-start gap-2\"\n            >\n              <!-- نام شرکت -->\n              <div class=\"w-full text-white text-3xl font-normal font-['Impact']\">\n                {{ item.company }}\n              </div>\n\n              <!-- امتیاز (ستاره‌ها) -->\n              <div class=\"flex items-center gap-1\">\n            <span v-for=\"n in 5\" :key=\"n\" class=\"text-yellow-500\">\n              <svg\n                  class=\"w-5 h-5\"\n                  :class=\"{ 'opacity-40': n > Math.round(item.rating) }\"\n                  fill=\"currentColor\"\n                  viewBox=\"0 0 20 20\"\n              >\n                <path\n                    d=\"M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.97a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.367 2.448a1 1 0 00-.364 1.118l1.287 3.97c.3.921-.755 1.688-1.54 1.118l-3.367-2.448a1 1 0 00-1.175 0l-3.367 2.448c-.784.57-1.838-.197-1.54-1.118l1.287-3.97a1 1 0 00-.364-1.118L2.81 9.397c-.784-.57-.382-1.81.588-1.81h4.162a1 1 0 00.95-.69l1.286-3.97z\"\n                />\n              </svg>\n            </span>\n              </div>\n\n              <!-- امتیاز متنی -->\n              <div class=\"text-light-shade text-sm font-bold font-['Shabnam']\">\n                {{ item.rating }} from 5\n              </div>\n\n              <!-- نظر -->\n              <div class=\"w-full text-white text-base font-normal font-['Shabnam']\">\n                {{ item.message }}\n              </div>\n\n              <!-- نام شخص -->\n              <div class=\"w-full text-light-shade text-2xl font-normal font-['Impact']\">\n                {{ item.name }}\n              </div>\n\n              <!-- عنوان شغلی -->\n              <div class=\"w-full text-light-shade text-base font-normal font-['Shabnam']\">\n                {{ item.title }}\n              </div>\n            </div>\n          </SwiperSlide>\n        </Swiper>\n      </client-only>\n    </div>\n  </div>\n</template>\n\n<script setup>\nimport { Swiper, SwiperSlide } from 'swiper/vue';\nimport 'swiper/css';\nimport 'swiper/css/pagination';\n\nimport {useMyFetch} from \"~/composables/apiFetch\";\n\nconst {data:testimonials} = await useMyFetch('testimonials')\n\n</script>\n\n<style scoped>\n/* استایل‌های Tailwind برای رنگ‌های سفارشی */\n.text-light-shade {\n  color: #d1d5db; /* جایگزین با رنگ دلخواه */\n}\n\n.bg-light-shade {\n  background-color: #d1d5db; /* جایگزین با رنگ دلخواه */\n}\n\n/* استایل‌های Swiper */\n:deep(.swiper-pagination-bullet) {\n  background: #ffffff;\n  opacity: 0.5;\n}\n\n:deep(.swiper-pagination-bullet-active) {\n  background: #ffffff;\n  opacity: 1;\n}\n\n:deep(.swiper-button-next),\n:deep(.swiper-button-prev) {\n  color: #ffffff;\n}\n</style>",
+      "start": 1746483914080,
+      "end": 1746483914132,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:components-loader-pre",
+      "start": 1746483914132,
+      "end": 1746483914132,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1746483914132,
+      "end": 1746483914132,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1746483914132,
+      "end": 1746483914132,
+      "order": "pre"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1746483914132,
+      "end": 1746483914132,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1746483914132,
+      "end": 1746483914132,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { withAsyncContext as _withAsyncContext } from 'vue'\nimport { createElementVNode as _createElementVNode, unref as _unref, renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createElementBlock as _createElementBlock, toDisplayString as _toDisplayString, normalizeClass as _normalizeClass, withCtx as _withCtx, createBlock as _createBlock, createVNode as _createVNode, resolveComponent as _resolveComponent, createStaticVNode as _createStaticVNode } from \"vue\"\n\nconst _hoisted_1 = { class: \"my-12\" }\nconst _hoisted_2 = { class: \"w-full p-4 overflow-hidden\" }\nconst _hoisted_3 = { class: \"w-full max-w-md h-auto px-5 py-4 hover:border-teal-400 hover:shadow-teal-400 hover:shadow-lg my-5 mx-2 bg-white/5 rounded-3xl border border-white/40 flex flex-col justify-start items-start gap-2\" }\nconst _hoisted_4 = { class: \"w-full text-white text-3xl font-normal font-['Impact']\" }\nconst _hoisted_5 = { class: \"flex items-center gap-1\" }\nconst _hoisted_6 = { class: \"text-light-shade text-sm font-bold font-['Shabnam']\" }\nconst _hoisted_7 = { class: \"w-full text-white text-base font-normal font-['Shabnam']\" }\nconst _hoisted_8 = { class: \"w-full text-light-shade text-2xl font-normal font-['Impact']\" }\nconst _hoisted_9 = { class: \"w-full text-light-shade text-base font-normal font-['Shabnam']\" }\n\nimport { Swiper, SwiperSlide } from 'swiper/vue';\nimport 'swiper/css';\nimport 'swiper/css/pagination';\n\nimport {useMyFetch} from \"~/composables/apiFetch\";\n\n\nconst _sfc_main = {\n  __name: 'Testimonials',\n  async setup(__props) {\n\nlet __temp, __restore\n\nconst {data:testimonials} = (\n  ([__temp,__restore] = _withAsyncContext(() => useMyFetch('testimonials'))),\n  __temp = await __temp,\n  __restore(),\n  __temp\n)\n\n\nreturn (_ctx, _cache) => {\n  const _component_client_only = _resolveComponent(\"client-only\")\n\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    _cache[1] || (_cache[1] = _createStaticVNode(\"<div class=\\\"contact-title flex items-center justify-center gap-2 sm:gap-4 w-full\\\" data-v-be3bf411><div class=\\\"separator hidden sm:block flex-1 max-w-[100px] md:max-w-[200px] lg:max-w-[500px] h-1 bg-gray-300 rounded relative\\\" data-v-be3bf411><div class=\\\"absolute top-0 right-0 w-16 sm:w-24 h-1 bg-primary rounded\\\" data-v-be3bf411></div></div><h2 class=\\\"sm:text-5xl text-2xl font-normal font-[&#39;Impact&#39;]\\\" data-v-be3bf411> Our valuable success clients story </h2><div class=\\\"separator hidden sm:block flex-1 max-w-[100px] md:max-w-[200px] lg:max-w-[500px] h-1 bg-gray-300 rounded relative\\\" data-v-be3bf411><div class=\\\"absolute top-0 left-0 w-16 sm:w-24 h-1 bg-primary rounded\\\" data-v-be3bf411></div></div></div>\", 1)),\n    _createElementVNode(\"div\", _hoisted_2, [\n      _createVNode(_component_client_only, null, {\n        default: _withCtx(() => [\n          _createVNode(_unref(Swiper), {\n            \"slides-per-view\": 1,\n            \"space-between\": 16,\n            breakpoints: {\n        640: { slidesPerView: 2.1, spaceBetween: 20 },\n        1024: { slidesPerView: 2.5, spaceBetween: 24 },\n        1280: { slidesPerView: 3.1, spaceBetween: 24 }\n      },\n            pagination: { clickable: true },\n            navigation: true,\n            autoplay: true,\n            class: \"w-full\"\n          }, {\n            default: _withCtx(() => [\n              (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(_unref(testimonials), (item, index) => {\n                return (_openBlock(), _createBlock(_unref(SwiperSlide), { key: index }, {\n                  default: _withCtx(() => [\n                    _createElementVNode(\"div\", _hoisted_3, [\n                      _createElementVNode(\"div\", _hoisted_4, _toDisplayString(item.company), 1),\n                      _createElementVNode(\"div\", _hoisted_5, [\n                        (_openBlock(), _createElementBlock(_Fragment, null, _renderList(5, (n) => {\n                          return _createElementVNode(\"span\", {\n                            key: n,\n                            class: \"text-yellow-500\"\n                          }, [\n                            (_openBlock(), _createElementBlock(\"svg\", {\n                              class: _normalizeClass([\"w-5 h-5\", { 'opacity-40': n > Math.round(item.rating) }]),\n                              fill: \"currentColor\",\n                              viewBox: \"0 0 20 20\"\n                            }, _cache[0] || (_cache[0] = [\n                              _createElementVNode(\"path\", { d: \"M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.97a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.367 2.448a1 1 0 00-.364 1.118l1.287 3.97c.3.921-.755 1.688-1.54 1.118l-3.367-2.448a1 1 0 00-1.175 0l-3.367 2.448c-.784.57-1.838-.197-1.54-1.118l1.287-3.97a1 1 0 00-.364-1.118L2.81 9.397c-.784-.57-.382-1.81.588-1.81h4.162a1 1 0 00.95-.69l1.286-3.97z\" }, null, -1)\n                            ]), 2))\n                          ])\n                        }), 64))\n                      ]),\n                      _createElementVNode(\"div\", _hoisted_6, _toDisplayString(item.rating) + \" from 5 \", 1),\n                      _createElementVNode(\"div\", _hoisted_7, _toDisplayString(item.message), 1),\n                      _createElementVNode(\"div\", _hoisted_8, _toDisplayString(item.name), 1),\n                      _createElementVNode(\"div\", _hoisted_9, _toDisplayString(item.title), 1)\n                    ])\n                  ]),\n                  _: 2\n                }, 1024))\n              }), 128))\n            ]),\n            _: 1\n          })\n        ]),\n        _: 1\n      })\n    ])\n  ]))\n}\n}\n\n}\n\n\nimport \"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/components/tools/Testimonials.vue?vue&type=style&index=0&scoped=be3bf411&lang.css\"\n\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['__scopeId',\"data-v-be3bf411\"]])",
+      "start": 1746483914132,
+      "end": 1746483914134,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1746483914134,
+      "end": 1746483914134,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483914134,
+      "end": 1746483914134,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1746483914134,
+      "end": 1746483914134,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:prehydrate-transform",
+      "start": 1746483914134,
+      "end": 1746483914134,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:module-preload-polyfill",
+      "start": 1746483914134,
+      "end": 1746483914134,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483914134,
+      "end": 1746483914134,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1746483914134,
+      "end": 1746483914134,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1746483914134,
+      "end": 1746483914134,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1746483914134,
+      "end": 1746483914134,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1746483914134,
+      "end": 1746483914135,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1746483914135,
+      "end": 1746483914135,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1746483914135,
+      "end": 1746483914135,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1746483914135,
+      "end": 1746483914135,
+      "order": "normal-normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1746483914135,
+      "end": 1746483914135,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:head:unhead-imports",
+      "start": 1746483914135,
+      "end": 1746483914135,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1746483914135,
+      "end": 1746483914135,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1746483914135,
+      "end": 1746483914135,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1746483914135,
+      "end": 1746483914135,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1746483914135,
+      "end": 1746483914135,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1746483914135,
+      "end": 1746483914136,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1746483914136,
+      "end": 1746483914136,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "result": "import { default as __nuxt_component_0 } from \"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/node_modules/nuxt/dist/app/components/client-only.js\";\nimport { withAsyncContext as _withAsyncContext } from 'vue'\nimport { createElementVNode as _createElementVNode, unref as _unref, renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createElementBlock as _createElementBlock, toDisplayString as _toDisplayString, normalizeClass as _normalizeClass, withCtx as _withCtx, createBlock as _createBlock, createVNode as _createVNode, resolveComponent as _resolveComponent, createStaticVNode as _createStaticVNode } from \"vue\"\n\nconst _hoisted_1 = { class: \"my-12\" }\nconst _hoisted_2 = { class: \"w-full p-4 overflow-hidden\" }\nconst _hoisted_3 = { class: \"w-full max-w-md h-auto px-5 py-4 hover:border-teal-400 hover:shadow-teal-400 hover:shadow-lg my-5 mx-2 bg-white/5 rounded-3xl border border-white/40 flex flex-col justify-start items-start gap-2\" }\nconst _hoisted_4 = { class: \"w-full text-white text-3xl font-normal font-['Impact']\" }\nconst _hoisted_5 = { class: \"flex items-center gap-1\" }\nconst _hoisted_6 = { class: \"text-light-shade text-sm font-bold font-['Shabnam']\" }\nconst _hoisted_7 = { class: \"w-full text-white text-base font-normal font-['Shabnam']\" }\nconst _hoisted_8 = { class: \"w-full text-light-shade text-2xl font-normal font-['Impact']\" }\nconst _hoisted_9 = { class: \"w-full text-light-shade text-base font-normal font-['Shabnam']\" }\n\nimport { Swiper, SwiperSlide } from 'swiper/vue';\nimport 'swiper/css';\nimport 'swiper/css/pagination';\n\nimport {useMyFetch} from \"~/composables/apiFetch\";\n\n\nconst _sfc_main = {\n  __name: 'Testimonials',\n  async setup(__props) {\n\nlet __temp, __restore\n\nconst {data:testimonials} = (\n  ([__temp,__restore] = _withAsyncContext(() => useMyFetch('testimonials'))),\n  __temp = await __temp,\n  __restore(),\n  __temp\n)\n\n\nreturn (_ctx, _cache) => {\n  const _component_client_only = __nuxt_component_0\n\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    _cache[1] || (_cache[1] = _createStaticVNode(\"<div class=\\\"contact-title flex items-center justify-center gap-2 sm:gap-4 w-full\\\" data-v-be3bf411><div class=\\\"separator hidden sm:block flex-1 max-w-[100px] md:max-w-[200px] lg:max-w-[500px] h-1 bg-gray-300 rounded relative\\\" data-v-be3bf411><div class=\\\"absolute top-0 right-0 w-16 sm:w-24 h-1 bg-primary rounded\\\" data-v-be3bf411></div></div><h2 class=\\\"sm:text-5xl text-2xl font-normal font-[&#39;Impact&#39;]\\\" data-v-be3bf411> Our valuable success clients story </h2><div class=\\\"separator hidden sm:block flex-1 max-w-[100px] md:max-w-[200px] lg:max-w-[500px] h-1 bg-gray-300 rounded relative\\\" data-v-be3bf411><div class=\\\"absolute top-0 left-0 w-16 sm:w-24 h-1 bg-primary rounded\\\" data-v-be3bf411></div></div></div>\", 1)),\n    _createElementVNode(\"div\", _hoisted_2, [\n      _createVNode(_component_client_only, null, {\n        default: _withCtx(() => [\n          _createVNode(_unref(Swiper), {\n            \"slides-per-view\": 1,\n            \"space-between\": 16,\n            breakpoints: {\n        640: { slidesPerView: 2.1, spaceBetween: 20 },\n        1024: { slidesPerView: 2.5, spaceBetween: 24 },\n        1280: { slidesPerView: 3.1, spaceBetween: 24 }\n      },\n            pagination: { clickable: true },\n            navigation: true,\n            autoplay: true,\n            class: \"w-full\"\n          }, {\n            default: _withCtx(() => [\n              (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(_unref(testimonials), (item, index) => {\n                return (_openBlock(), _createBlock(_unref(SwiperSlide), { key: index }, {\n                  default: _withCtx(() => [\n                    _createElementVNode(\"div\", _hoisted_3, [\n                      _createElementVNode(\"div\", _hoisted_4, _toDisplayString(item.company), 1),\n                      _createElementVNode(\"div\", _hoisted_5, [\n                        (_openBlock(), _createElementBlock(_Fragment, null, _renderList(5, (n) => {\n                          return _createElementVNode(\"span\", {\n                            key: n,\n                            class: \"text-yellow-500\"\n                          }, [\n                            (_openBlock(), _createElementBlock(\"svg\", {\n                              class: _normalizeClass([\"w-5 h-5\", { 'opacity-40': n > Math.round(item.rating) }]),\n                              fill: \"currentColor\",\n                              viewBox: \"0 0 20 20\"\n                            }, _cache[0] || (_cache[0] = [\n                              _createElementVNode(\"path\", { d: \"M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.97a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.367 2.448a1 1 0 00-.364 1.118l1.287 3.97c.3.921-.755 1.688-1.54 1.118l-3.367-2.448a1 1 0 00-1.175 0l-3.367 2.448c-.784.57-1.838-.197-1.54-1.118l1.287-3.97a1 1 0 00-.364-1.118L2.81 9.397c-.784-.57-.382-1.81.588-1.81h4.162a1 1 0 00.95-.69l1.286-3.97z\" }, null, -1)\n                            ]), 2))\n                          ])\n                        }), 64))\n                      ]),\n                      _createElementVNode(\"div\", _hoisted_6, _toDisplayString(item.rating) + \" from 5 \", 1),\n                      _createElementVNode(\"div\", _hoisted_7, _toDisplayString(item.message), 1),\n                      _createElementVNode(\"div\", _hoisted_8, _toDisplayString(item.name), 1),\n                      _createElementVNode(\"div\", _hoisted_9, _toDisplayString(item.title), 1)\n                    ])\n                  ]),\n                  _: 2\n                }, 1024))\n              }), 128))\n            ]),\n            _: 1\n          })\n        ]),\n        _: 1\n      })\n    ])\n  ]))\n}\n}\n\n}\n\n\nimport \"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/components/tools/Testimonials.vue?vue&type=style&index=0&scoped=be3bf411&lang.css\"\n\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['__scopeId',\"data-v-be3bf411\"]])",
+      "start": 1746483914136,
+      "end": 1746483914136,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1746483914136,
+      "end": 1746483914136,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1746483914136,
+      "end": 1746483914136,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1746483914136,
+      "end": 1746483914136,
+      "order": "normal"
+    }
+  ]
+}

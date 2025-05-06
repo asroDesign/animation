@@ -1,0 +1,266 @@
+{
+  "resolvedId": "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/components/RequestQuote.vue?vue&type=style&index=0&scoped=4f9c37fd&lang.css?inline&used",
+  "transforms": [
+    {
+      "name": "vite:vue",
+      "result": "\n/* Tailwind custom animations defined in tailwind.config.js */\n",
+      "start": 1746483922028,
+      "end": 1746483922028,
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/components/RequestQuote.vue"
+        ],
+        "names": [],
+        "mappings": ";AAkKA,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC",
+        "file": "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/components/RequestQuote.vue",
+        "sourceRoot": "",
+        "sourcesContent": [
+          "<template>\n  <ClientOnly>\n    <SecondaryButton class=\"flex items-center gap-2\" @click=\"openModal\">\n      Request a Quote\n      <nuxt-icon name=\"iconsax/linear/arrow-right\" class=\"text-xl\" />\n    </SecondaryButton>\n    <Teleport to=\"body\">\n      <div\n          v-if=\"isOpen\"\n          class=\"fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm animate-fade-in\"\n          @click.self=\"closeModal\"\n          role=\"dialog\"\n          aria-modal=\"true\"\n          aria-label=\"Contact Form\"\n      >\n        <div\n            class=\"relative w-full max-w-[567px] h-auto max-h-[90vh] bg-background rounded-[42px] overflow-hidden p-6 sm:p-8 animate-slide-up\"\n        >\n          <!-- Close Button -->\n          <button\n              class=\"absolute right-4 top-4 w-10 h-10 rounded-full bg-white/40 flex items-center justify-center\"\n              @click=\"closeModal\"\n              aria-label=\"Close modal\"\n          >\n            <svg\n                class=\"w-5 h-5 text-white\"\n                fill=\"none\"\n                stroke=\"currentColor\"\n                viewBox=\"0 0 24 24\"\n            >\n              <path\n                  stroke-linecap=\"round\"\n                  stroke-linejoin=\"round\"\n                  stroke-width=\"2\"\n                  d=\"M6 18L18 6M6 6l12 12\"\n              />\n            </svg>\n          </button>\n\n          <!-- Background Gradient -->\n          <div\n              class=\"absolute inset-0 bg-gradient-to-b from-pink-600/0 to-violet-700/30 rounded-full blur-[150px]\"\n          ></div>\n\n          <!-- Content -->\n          <div class=\"relative flex flex-col items-center gap-6\">\n            <!-- Logo -->\n            <nuxt-img :src=\"`${useRuntimeConfig().public.fileURL}/${useState('config')?.value?.my_logo}`\" class=\"w-[150px] h-auto\" />\n\n            <!-- Tagline -->\n            <p\n                class=\"text-white text-2xl sm:text-3xl font-normal font-['Impact']\"\n            >\n              We are here to help!\n            </p>\n\n            <!-- Form -->\n            <form\n                class=\"w-full max-w-[507px] bg-background-shade-1 rounded-[32px] p-6 sm:p-7 flex flex-col gap-5\"\n                @submit.prevent=\"handleSubmit\"\n            >\n              <div class=\"relative\">\n                <input\n                    v-model=\"form.name\"\n                    type=\"text\"\n                    class=\"w-full h-12 bg-background-shade-1 rounded-2xl border border-stroke pl-4 pr-4 text-light-shade text-base font-normal font-['Shabnam'] placeholder-light-shade\"\n                    placeholder=\"Full Name *\"\n                    required\n                />\n              </div>\n              <div class=\"relative\">\n                <input\n                    v-model=\"form.email\"\n                    type=\"email\"\n                    class=\"w-full h-12 bg-background-shade-1 rounded-2xl border border-stroke pl-4 pr-4 text-light-shade text-base font-normal font-['Shabnam'] placeholder-light-shade\"\n                    placeholder=\"Email Address *\"\n                    required\n                />\n              </div>\n              <div class=\"relative\">\n                <input\n                    v-model=\"form.phone\"\n                    type=\"tel\"\n                    class=\"w-full h-12 bg-background-shade-1 rounded-2xl border border-stroke pl-4 pr-4 text-light-shade text-base font-normal font-['Shabnam'] placeholder-light-shade\"\n                    placeholder=\"Phone Number *\"\n                    required\n                />\n              </div>\n              <div class=\"relative\">\n                <input\n                    v-model=\"form.company\"\n                    type=\"text\"\n                    class=\"w-full h-12 bg-background-shade-1 rounded-2xl border border-stroke pl-4 pr-4 text-light-shade text-base font-normal font-['Shabnam'] placeholder-light-shade\"\n                    placeholder=\"Company\"\n                />\n              </div>\n              <div class=\"relative\">\n                <textarea\n                    v-model=\"form.message\"\n                    class=\"w-full h-32 bg-background-shade-1 rounded-2xl border border-stroke p-4 text-light-shade text-base font-normal font-['Shabnam'] placeholder-light-shade\"\n                    placeholder=\"To help us understand better enter a brief description of your project.\"\n                ></textarea>\n              </div>\n              <button\n                  type=\"submit\"\n                  class=\"w-full h-12 bg-primary rounded-3xl shadow-[0px_0px_6px_0px_rgba(202,23,92,1)] border border-primary text-white text-base font-medium font-['Shabnam']\"\n              >\n                Submit Now\n              </button>\n            </form>\n          </div>\n        </div>\n      </div>\n    </Teleport>\n  </ClientOnly>\n</template>\n\n<script setup>\nimport { ref } from 'vue';\nimport { Teleport } from 'vue';\nimport SecondaryButton from \"~/components/tools/SecondaryButton.vue\"; // Explicitly import Teleport\nimport { useToast } from '~/composables/useToast';\n// import {useAuthStore} from \"~/stores/auth.js\";\n\n// const authStore = useAuthStore();\n\n// Initialize toast composable\nconst { addToast } = useToast();\n// Modal state (controlled via composable)\nconst { isOpen, closeModal,openModal } = useModal();\n\n// Form state\nconst form = ref({\n  name: '',//authStore.user?.full_name,\n  email: '',//authStore.user?.email,\n  phone: '',\n  company: '',\n  message: '',\n});\n\n// Form submission\nconst handleSubmit = async() => {\n  const {data , status} = await useMyFetch('request-quote',{\n    body:form.value,\n    method:'POST'\n  })\n  if (status.value=='success'){\n    addToast(data.value.msg,'success',5000)\n    form.value = {\n      name: '',\n      email: '',\n      phone: '',\n      company: '',\n      message: '',\n    };\n    // Close modal\n    closeModal();\n  }\n};\n</script>\n\n<style scoped>\n/* Tailwind custom animations defined in tailwind.config.js */\n</style>\n"
+        ]
+      }
+    },
+    {
+      "name": "nuxt:components-loader-pre",
+      "start": 1746483922028,
+      "end": 1746483922028,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:components-loader-pre",
+      "start": 1746483922028,
+      "end": 1746483922028,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1746483922028,
+      "end": 1746483922028,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1746483922028,
+      "end": 1746483922028,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1746483922028,
+      "end": 1746483922028,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1746483922028,
+      "end": 1746483922028,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-only-component-transform",
+      "start": 1746483922028,
+      "end": 1746483922028,
+      "order": "pre"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1746483922035,
+      "end": 1746483922035,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1746483922035,
+      "end": 1746483922035,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "",
+      "start": 1746483922044,
+      "end": 1746483922044,
+      "order": "normal",
+      "sourcemaps": {
+        "file": "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/components/RequestQuote.vue",
+        "mappings": "",
+        "names": [],
+        "sources": [],
+        "version": 3
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1746483922044,
+      "end": 1746483922044,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483922045,
+      "end": 1746483922045,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483922045,
+      "end": 1746483922045,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1746483922045,
+      "end": 1746483922045,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1746483922045,
+      "end": 1746483922045,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:prehydrate-transform",
+      "start": 1746483922046,
+      "end": 1746483922046,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:prehydrate-transform",
+      "start": 1746483922046,
+      "end": 1746483922046,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483922046,
+      "end": 1746483922046,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1746483922046,
+      "end": 1746483922046,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1746483922046,
+      "end": 1746483922046,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1746483922138,
+      "end": 1746483922138,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1746483922138,
+      "end": 1746483922138,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1746483922138,
+      "end": 1746483922138,
+      "order": "normal-normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1746483922138,
+      "end": 1746483922138,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1746483922138,
+      "end": 1746483922138,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:head:unhead-imports",
+      "start": 1746483922138,
+      "end": 1746483922139,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:head:unhead-imports",
+      "start": 1746483922138,
+      "end": 1746483922139,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1746483922139,
+      "end": 1746483922139,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1746483922139,
+      "end": 1746483922139,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1746483922139,
+      "end": 1746483922139,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1746483922139,
+      "end": 1746483922139,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1746483922139,
+      "end": 1746483922139,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1746483922139,
+      "end": 1746483922139,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1746483922139,
+      "end": 1746483922139,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1746483922139,
+      "end": 1746483922139,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1746483922140,
+      "end": 1746483922140,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1746483922140,
+      "end": 1746483922140,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1746483922140,
+      "end": 1746483922140,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1746483922140,
+      "end": 1746483922140,
+      "order": "normal"
+    }
+  ]
+}

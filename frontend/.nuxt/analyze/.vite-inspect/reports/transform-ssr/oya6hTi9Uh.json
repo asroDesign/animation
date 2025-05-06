@@ -1,0 +1,266 @@
+{
+  "resolvedId": "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/dashboard/orders/index.vue?vue&type=style&index=0&scoped=0a58ec7c&lang.css?inline&used",
+  "transforms": [
+    {
+      "name": "vite:vue",
+      "result": "\n/* Tailwind handles all styling */\n",
+      "start": 1746483920828,
+      "end": 1746483920828,
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/dashboard/orders/index.vue"
+        ],
+        "names": [],
+        "mappings": ";AAyGA,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC",
+        "file": "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/dashboard/orders/index.vue",
+        "sourceRoot": "",
+        "sourcesContent": [
+          "<template>\n  <div class=\"w-full flex flex-col gap-7 overflow-hidden\">\n    <!-- Header -->\n    <div class=\"w-full\">\n      <h2 class=\"text-white text-2xl sm:text-3xl font-normal font-['Impact']\">Recent Purchases</h2>\n    </div>\n\n    <!-- Desktop Table (Visible on sm and above) -->\n    <div class=\"hidden sm:block overflow-x-auto\">\n      <table class=\"w-full text-left\">\n        <thead>\n        <tr class=\"text-zinc-500 text-sm font-normal font-['Shabnam']\">\n          <th class=\"py-2 px-4\">Id</th>\n          <th class=\"py-2 px-4\">File Name</th>\n          <th class=\"py-2 px-4\">Date</th>\n          <th class=\"py-2 px-4\">Invoiced Amount</th>\n          <th class=\"py-2 px-4\">Status</th>\n        </tr>\n        </thead>\n        <tbody>\n        <tr v-for=\"purchase in purchases\" :key=\"purchase.id\" class=\"border-t border-neutral-700/50\">\n          <td class=\"py-2 px-4 text-white text-sm font-bold font-['Shabnam']\">\n            <nuxt-link :to=\"`/dashboard/orders/${purchase.id}`\">\n              {{ purchase.id }}\n            </nuxt-link>\n          </td>\n          <td class=\"py-2 px-4 text-white text-sm font-bold font-['Shabnam']\">\n            {{ purchase.fileName }}\n          </td>\n          <td class=\"py-2 px-4 text-white text-sm font-bold font-['Shabnam']\">\n            {{ purchase.date }}\n          </td>\n          <td class=\"py-2 px-4 text-white text-sm font-bold font-['Shabnam']\">\n            {{ purchase.invoicedAmount }}\n          </td>\n          <td\n              class=\"py-2 px-4 text-sm font-bold font-['Shabnam']\"\n              :class=\"{\n                'text-amber-300': purchase.status === 'Pending',\n                'text-teal-300': purchase.status === 'Delivered',\n                'text-pink-700': purchase.status === 'Failed',\n              }\"\n          >\n            {{ purchase.status }}\n          </td>\n        </tr>\n        </tbody>\n      </table>\n    </div>\n\n    <!-- Mobile Cards (Visible below sm) -->\n    <div class=\"block sm:hidden space-y-4\">\n      <div\n          v-for=\"purchase in purchases\"\n          :key=\"purchase.id\"\n          class=\"bg-[#14082A] rounded-lg p-4 flex flex-col gap-2 border border-neutral-700/50\"\n      >\n        <div class=\"flex justify-between\">\n          <span class=\"text-zinc-500 text-xs font-normal font-['Shabnam']\">Id</span>\n          <span class=\"text-white text-sm font-bold font-['Shabnam']\">{{ purchase.id }}</span>\n        </div>\n        <div class=\"flex justify-between\">\n          <span class=\"text-zinc-500 text-xs font-normal font-['Shabnam']\">File Name</span>\n          <span class=\"text-white text-sm font-bold font-['Shabnam']\">{{ purchase.fileName }}</span>\n        </div>\n        <div class=\"flex justify-between\">\n          <span class=\"text-zinc-500 text-xs font-normal font-['Shabnam']\">Date</span>\n          <span class=\"text-white text-sm font-bold font-['Shabnam']\">{{ purchase.date }}</span>\n        </div>\n        <div class=\"flex justify-between\">\n          <span class=\"text-zinc-500 text-xs font-normal font-['Shabnam']\">Invoiced Amount</span>\n          <span class=\"text-white text-sm font-bold font-['Shabnam']\">{{ purchase.invoicedAmount }}</span>\n        </div>\n        <div class=\"flex justify-between\">\n          <span class=\"text-zinc-500 text-xs font-normal font-['Shabnam']\">Status</span>\n          <span\n              class=\"text-sm font-bold font-['Shabnam']\"\n              :class=\"{\n              'text-amber-300': purchase.status === 'Pending',\n              'text-teal-300': purchase.status === 'Delivered',\n              'text-pink-700': purchase.status === 'Failed',\n            }\"\n          >\n            {{ purchase.status }}\n          </span>\n        </div>\n      </div>\n    </div>\n  </div>\n</template>\n\n<script setup>\nimport { ref } from 'vue';\n\n// Purchases Data\nconst  {data:purchases,status} = await useMyFetch('orders',{\n\n})\ndefinePageMeta({\n  layout:'dashboard',\n  middleware:'auth'\n})\n</script>\n\n<style scoped>\n/* Tailwind handles all styling */\n</style>"
+        ]
+      }
+    },
+    {
+      "name": "nuxt:components-loader-pre",
+      "start": 1746483920828,
+      "end": 1746483920828,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:components-loader-pre",
+      "start": 1746483920828,
+      "end": 1746483920828,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1746483920828,
+      "end": 1746483920828,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1746483920828,
+      "end": 1746483920828,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1746483920828,
+      "end": 1746483920828,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1746483920828,
+      "end": 1746483920828,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-only-component-transform",
+      "start": 1746483920828,
+      "end": 1746483920828,
+      "order": "pre"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1746483920829,
+      "end": 1746483920829,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1746483920830,
+      "end": 1746483920830,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "",
+      "start": 1746483920830,
+      "end": 1746483920830,
+      "order": "normal",
+      "sourcemaps": {
+        "file": "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/dashboard/orders/index.vue",
+        "mappings": "",
+        "names": [],
+        "sources": [],
+        "version": 3
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1746483920830,
+      "end": 1746483920830,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483920830,
+      "end": 1746483920830,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483920830,
+      "end": 1746483920830,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1746483920830,
+      "end": 1746483920830,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1746483920830,
+      "end": 1746483920830,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:prehydrate-transform",
+      "start": 1746483920830,
+      "end": 1746483920830,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:prehydrate-transform",
+      "start": 1746483920830,
+      "end": 1746483920830,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483920830,
+      "end": 1746483920830,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1746483920831,
+      "end": 1746483920831,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1746483920831,
+      "end": 1746483920831,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1746483920979,
+      "end": 1746483920979,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1746483920979,
+      "end": 1746483920979,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1746483920979,
+      "end": 1746483920979,
+      "order": "normal-normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1746483920979,
+      "end": 1746483920979,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1746483920979,
+      "end": 1746483920979,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:head:unhead-imports",
+      "start": 1746483920980,
+      "end": 1746483920980,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:head:unhead-imports",
+      "start": 1746483920980,
+      "end": 1746483920980,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1746483920980,
+      "end": 1746483920980,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1746483920980,
+      "end": 1746483920980,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1746483920980,
+      "end": 1746483920980,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1746483920980,
+      "end": 1746483920980,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1746483920980,
+      "end": 1746483920981,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1746483920980,
+      "end": 1746483920981,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1746483920981,
+      "end": 1746483920981,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1746483920981,
+      "end": 1746483920981,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1746483920981,
+      "end": 1746483920981,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1746483920981,
+      "end": 1746483920981,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1746483920981,
+      "end": 1746483920981,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1746483920981,
+      "end": 1746483920981,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,271 @@
+{
+  "resolvedId": "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/about-us.vue?vue&type=style&index=0&scoped=24260ebf&lang.css",
+  "transforms": [
+    {
+      "name": "vite:vue",
+      "result": "\n/* Scoped styles for accordion */\n.collapse.collapse-plus:not(.collapse-close) > input:is([type=\"checkbox\"], [type=\"radio\"]):checked ~ .collapse-title {\n  color: #9F1239;\n}\n",
+      "start": 1746483920955,
+      "end": 1746483920955,
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/about-us.vue"
+        ],
+        "names": [],
+        "mappings": ";AAkLA,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC;AAChC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE;EACnH,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAChB",
+        "file": "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/about-us.vue",
+        "sourceRoot": "",
+        "sourcesContent": [
+          "<script setup lang=\"ts\">\nimport { computed } from 'vue';\nimport PrimaryButton from '~/components/tools/PrimaryButton.vue';\nimport SecondaryButton from '~/components/tools/SecondaryButton.vue';\nimport LiveChat from '~/components/LiveChat.vue';\nimport { useMyFetch } from '~/composables/apiFetch';\n\n// Define interface for API response\ninterface AboutUsData {\n  heading?: string;\n  sub_heading?: string;\n  meta_title?: string;\n  meta_desc?: string;\n}\n\n// Fetch data from API\nconst { data, status, error } = await useMyFetch<AboutUsData>('aboutus');\n\n// Computed property for response to ensure reactivity\nconst response = computed(() => data?.value || {});\n\n// Set SEO meta tags safely\nuseSeoMeta({\n  title: () => response.value?.heading || 'About Us',\n  ogTitle: () => response.value?.meta_title || 'About Us',\n  description: () => response.value?.meta_desc || '',\n  ogDescription: () => response.value?.meta_desc || '',\n  ogType: 'article',\n  ogLocale: 'en',\n  ogUrl: useRoute().fullPath,\n});\n</script>\n\n<template>\n  <div>\n    <!-- Hero Section -->\n    <div class=\"relative\">\n      <NuxtImg\n          src=\"/system/Hero-Image.png\"\n          class=\"w-full object-cover\"\n          sizes=\"sm:100vw md:100vw lg:100vw\"\n          loading=\"lazy\"\n          alt=\"About Us Hero Image\"\n      />\n      <div class=\"absolute inset-0 flex items-center justify-center sm:top-0 top-[16rem]\">\n        <div class=\"container mx-auto px-4 sm:px-6 lg:px-8\">\n          <div class=\"max-w-6xl mx-auto text-start sm:text-center\">\n            <div class=\"flex items-center justify-start sm:justify-center mb-4\">\n              <div class=\"bg-secondary-shade h-1 w-9 mx-1\"></div>\n              <span class=\"text-sm uppercase\">Know More</span>\n            </div>\n            <h2 class=\"text-2xl sm:text-3xl md:text-4xl font-bold mb-6\">About Us</h2>\n            <p v-if=\"response.sub_heading\" class=\"text-base sm:text-lg mb-8 max-w-4xl mx-auto\">\n              {{ response.sub_heading }}\n            </p>\n            <div v-if=\"status === 'pending'\" class=\"text-center\">Loading...</div>\n            <div v-else-if=\"error\" class=\"text-center text-red-500\">Error: {{ error.message }}</div>\n            <div v-else class=\"flex flex-col sm:flex-row items-center justify-start sm:justify-center gap-4\">\n              <LiveChat />\n              <LazyRequestQuote />\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n\n    <!-- Description Sections -->\n    <div class=\"container mx-auto px-3\">\n      <!-- Section 1: How We Excel -->\n      <div class=\"mt-[14rem] lg:-mt-[12rem] sm:mt-[2rem]\">\n        <div class=\"flex items-center text-xs text-start justify-items-start\">\n          <div class=\"bg-secondary-shade h-1 w-9 mx-1\"></div>\n          How We Excel To\n        </div>\n        <div class=\"my-6\">\n          <h2 class=\"sm:text-4xl text-2xl font-bold\">\n            Keep Up with<br>the Revolution\n          </h2>\n        </div>\n        <div>\n          <div class=\"collapse collapse-plus\">\n            <input type=\"radio\" name=\"my-accordion-3\" checked=\"checked\" />\n            <div class=\"collapse-title font-semibold\">How do I create an account?</div>\n            <div class=\"collapse-content text-sm\">\n              Click the \"Sign Up\" button in the top right corner and follow the registration process.\n            </div>\n          </div>\n          <div class=\"collapse collapse-plus\">\n            <input type=\"radio\" name=\"my-accordion-3\" />\n            <div class=\"collapse-title font-semibold\">I forgot my password. What should I do?</div>\n            <div class=\"collapse-content text-sm\">\n              Click on \"Forgot Password\" on the login page and follow the instructions sent to your email.\n            </div>\n          </div>\n          <div class=\"collapse collapse-plus\">\n            <input type=\"radio\" name=\"my-accordion-3\" />\n            <div class=\"collapse-title font-semibold\">How do I update my profile information?</div>\n            <div class=\"collapse-content text-sm\">\n              Go to \"My Account\" settings and select \"Edit Profile\" to make changes.\n            </div>\n          </div>\n        </div>\n      </div>\n\n      <!-- Section 2: Our Promises -->\n      <div class=\"text-center justify-center grid space-y-4\">\n        <div class=\"contact-title flex items-center justify-center gap-2 sm:gap-4 sm:w-[100vw] w-full\">\n          <div class=\"separator hidden sm:block flex-1 max-w-[100px] md:max-w-[200px] lg:max-w-[500px] h-1 bg-gray-300 rounded relative\">\n            <div class=\"absolute top-0 right-0 w-16 sm:w-24 h-1 bg-primary rounded\"></div>\n          </div>\n          <h2 class=\"sm:text-4xl text-xl !leading-8\">Our Promises</h2>\n          <div class=\"separator hidden sm:block flex-1 max-w-[100px] md:max-w-[200px] lg:max-w-[500px] h-1 bg-gray-300 rounded relative\">\n            <div class=\"absolute top-0 left-0 w-16 sm:w-24 h-1 bg-primary rounded\"></div>\n          </div>\n        </div>\n        <p>\n          As a digital agency, we provide customized services to our prestigious clients to uplift their business efforts. We help<br>\n          businesses, irrespective of size, to expand their audience reach and convert them into long-term clients. Our services<br>\n          include digital marketing, logo design, mobile and game app development, website design and development.\n        </p>\n        <NuxtLink to=\"/our-service\">\n          <SecondaryButton class=\"!w-fit flex items-center\">\n            Explore our services\n            <NuxtIcon name=\"iconsax/linear/arrow-right\" class=\"text-xl\" />\n          </SecondaryButton>\n        </NuxtLink>\n      </div>\n\n      <!-- Section 3: Why Businesses Need Us -->\n      <div class=\"grid space-y-6 mt-9\">\n        <div class=\"flex items-center text-xs text-start justify-items-start\">\n          <div class=\"bg-secondary-shade h-1 w-9 mx-1\"></div>\n          The Real Question\n        </div>\n        <div class=\"my-6\">\n          <h2 class=\"sm:text-4xl text-2xl font-bold\">Why Businesses Need Us?</h2>\n        </div>\n        <div>\n          <p>\n            Digital marketing and technology are evolving at a rapid pace. For many business owners, conquering<br>\n            the online arena is an uphill battle, and they might not be well-equipped for it. That is where we come<br>\n            in. Our unparalleled team of professionals helps brands gain more visibility and credibility.\n          </p>\n        </div>\n        <NuxtLink to=\"/our-service\">\n          <SecondaryButton class=\"!w-fit flex items-center\">\n            Explore our services\n            <NuxtIcon name=\"iconsax/linear/arrow-right\" class=\"text-xl\" />\n          </SecondaryButton>\n        </NuxtLink>\n      </div>\n\n      <!-- Section 4: How Can We Help -->\n      <div class=\"text-center justify-center grid space-y-4\">\n        <div class=\"contact-title flex items-center justify-center gap-2 sm:gap-4 w-full sm:w-[90vw]\">\n          <div class=\"separator hidden sm:block flex-1 max-w-[100px] md:max-w-[200px] lg:max-w-[500px] h-1 bg-gray-300 rounded relative\">\n            <div class=\"absolute top-0 right-0 w-16 sm:w-24 h-1 bg-primary rounded\"></div>\n          </div>\n          <h2 class=\"sm:text-4xl text-2xl\">How can We Help?</h2>\n          <div class=\"separator hidden sm:block flex-1 max-w-[100px] md:max-w-[200px] lg:max-w-[500px] h-1 bg-gray-300 rounded relative\">\n            <div class=\"absolute top-0 left-0 w-16 sm:w-24 h-1 bg-primary rounded\"></div>\n          </div>\n        </div>\n        <p class=\"text-center\">\n          As a services consultancy, we promise novel and strategic solutions through our comprehensive technical expertise. Get<br>\n          in touch if you want to increase conversion rates, better web traffic, fan base, advertising efforts, and unlock better<br>\n          opportunities. We ensure our partners that we never settle for the average. We work to make great things more<br>\n          extraordinary. Get your brand built by true experts.\n        </p>\n        <div class=\"text-center\">\n          <LiveChat />\n        </div>\n      </div>\n    </div>\n  </div>\n</template>\n\n<style scoped>\n/* Scoped styles for accordion */\n.collapse.collapse-plus:not(.collapse-close) > input:is([type=\"checkbox\"], [type=\"radio\"]):checked ~ .collapse-title {\n  color: #9F1239;\n}\n</style>"
+        ]
+      }
+    },
+    {
+      "name": "nuxt:components-loader-pre",
+      "start": 1746483920955,
+      "end": 1746483920955,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:components-loader-pre",
+      "start": 1746483920955,
+      "end": 1746483920955,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1746483920955,
+      "end": 1746483920955,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1746483920955,
+      "end": 1746483920955,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1746483920955,
+      "end": 1746483920955,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1746483920955,
+      "end": 1746483920955,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-only-component-transform",
+      "start": 1746483920955,
+      "end": 1746483920955,
+      "order": "pre"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1746483920956,
+      "end": 1746483920956,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1746483920956,
+      "end": 1746483920956,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": ".collapse.collapse-plus:not(.collapse-close)>input:is([type=checkbox],[type=radio]):checked~.collapse-title[data-v-24260ebf]{color:#9f1239}",
+      "start": 1746483920956,
+      "end": 1746483920957,
+      "order": "normal",
+      "sourcemaps": {
+        "file": "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/about-us.vue",
+        "mappings": "AAAA,6HAA4G,aAAa",
+        "names": [],
+        "sources": [
+          "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/about-us.vue"
+        ],
+        "sourcesContent": [
+          null
+        ],
+        "version": 3
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1746483920957,
+      "end": 1746483920957,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483920957,
+      "end": 1746483920957,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483920957,
+      "end": 1746483920957,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1746483920957,
+      "end": 1746483920957,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1746483920957,
+      "end": 1746483920957,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:prehydrate-transform",
+      "start": 1746483920957,
+      "end": 1746483920957,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:prehydrate-transform",
+      "start": 1746483920957,
+      "end": 1746483920957,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483920957,
+      "end": 1746483920957,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1746483920957,
+      "end": 1746483920957,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1746483920957,
+      "end": 1746483920957,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1746483920957,
+      "end": 1746483920957,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1746483920957,
+      "end": 1746483920957,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1746483920957,
+      "end": 1746483920957,
+      "order": "normal-normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1746483920957,
+      "end": 1746483920957,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1746483920957,
+      "end": 1746483920957,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:head:unhead-imports",
+      "start": 1746483920957,
+      "end": 1746483920957,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:head:unhead-imports",
+      "start": 1746483920957,
+      "end": 1746483920957,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1746483920957,
+      "end": 1746483920959,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1746483920957,
+      "end": 1746483920959,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1746483920959,
+      "end": 1746483920959,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1746483920959,
+      "end": 1746483920959,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1746483920959,
+      "end": 1746483920959,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1746483920959,
+      "end": 1746483920959,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1746483920959,
+      "end": 1746483920959,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1746483920959,
+      "end": 1746483920959,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1746483920959,
+      "end": 1746483920959,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1746483920959,
+      "end": 1746483920959,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1746483920959,
+      "end": 1746483920959,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1746483920959,
+      "end": 1746483920959,
+      "order": "normal"
+    }
+  ]
+}

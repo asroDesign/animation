@@ -1,0 +1,4 @@
+const index_vue_vue_type_style_index_0_scoped_82810c92_lang = ".grid[data-v-82810c92]{display:grid;gap:1.5rem}@media (max-width:640px){.grid-cols-2[data-v-82810c92]{grid-template-columns:1fr}}.rounded-3xl[data-v-82810c92]{border-radius:1.5rem}.outline[data-v-82810c92]{outline:1px solid hsla(0,0%,100%,.4)}";
+
+export { index_vue_vue_type_style_index_0_scoped_82810c92_lang as i };
+//# sourceMappingURL=index-styles-1.mjs5.mjs.map

@@ -1,0 +1,218 @@
+{
+  "resolvedId": "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/our-service.vue?macro=true&vue&type=script&setup=true&lang.ts",
+  "transforms": [
+    {
+      "name": "vite:vue",
+      "result": "import { defineComponent as _defineComponent } from 'vue'\nimport { resolveComponent as _resolveComponent, createVNode as _createVNode, createElementVNode as _createElementVNode, createTextVNode as _createTextVNode, withCtx as _withCtx, createStaticVNode as _createStaticVNode, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\nconst _hoisted_1 = { class: \"relative text-white\" }\nconst _hoisted_2 = { class: \"relative\" }\nconst _hoisted_3 = { class: \"absolute inset-0 flex items-center justify-center top-[20rem]\" }\nconst _hoisted_4 = { class: \"container mx-auto px-4 sm:px-6 lg:px-8\" }\nconst _hoisted_5 = { class: \"max-w-6xl mx-auto text-start\" }\nconst _hoisted_6 = { class: \"flex flex-col sm:flex-row items-center justify-start gap-4\" }\nconst _hoisted_7 = { class: \"container mx-auto lg:-mt-[4rem] mt-[18rem] sm:mt-[2rem] px-3\" }\nconst _hoisted_8 = { class: \"flex flex-col lg:flex-row items-center gap-8 mb-12\" }\nconst _hoisted_9 = { class: \"flex-1\" }\nconst _hoisted_10 = { class: \"flex flex-col lg:flex-row-reverse items-center gap-8 mb-12\" }\nconst _hoisted_11 = { class: \"flex-1\" }\nconst _hoisted_12 = { class: \"flex flex-col lg:flex-row items-center gap-8 mb-12\" }\nconst _hoisted_13 = { class: \"flex-1\" }\nconst _hoisted_14 = { class: \"text-center py-12\" }\nconst _hoisted_15 = { class: \"flex flex-col sm:flex-row items-center justify-center gap-4\" }\n\nimport LiveChat from \"~/components/LiveChat.vue\";\nimport SecondaryButton from \"~/components/tools/SecondaryButton.vue\";\n\nexport default /*@__PURE__*/_defineComponent({\n  __name: 'our-service',\n  setup(__props) {\n\n\nreturn (_ctx: any,_cache: any) => {\n  const _component_nuxt_img = _resolveComponent(\"nuxt-img\")!\n  const _component_LazyRequestQuote = _resolveComponent(\"LazyRequestQuote\")!\n  const _component_nuxt_icon = _resolveComponent(\"nuxt-icon\")!\n\n  return (_openBlock(), _createElementBlock(\"section\", _hoisted_1, [\n    _createElementVNode(\"div\", _hoisted_2, [\n      _createVNode(_component_nuxt_img, {\n        src: \"/system/our_service_mask.png\",\n        class: \"w-full object-cover\",\n        sizes: \"sm:100vw md:100vw lg:100vw\",\n        loading: \"lazy\"\n      }),\n      _createElementVNode(\"div\", _hoisted_3, [\n        _createElementVNode(\"div\", _hoisted_4, [\n          _createElementVNode(\"div\", _hoisted_5, [\n            _cache[0] || (_cache[0] = _createStaticVNode(\"<div class=\\\"flex items-center justify-start mb-4\\\" data-v-a90ab97b><div class=\\\"bg-pink-500 h-1 w-12 mr-2\\\" data-v-a90ab97b></div><span class=\\\"text-sm uppercase\\\" data-v-a90ab97b>What We Offer</span></div><h2 class=\\\"text-2xl sm:text-3xl md:text-4xl font-bold mb-6\\\" data-v-a90ab97b>Our Services</h2><p class=\\\"text-base sm:text-lg mb-8 max-w-4xl mr-auto\\\" data-v-a90ab97b> Our prescribed, authenticated, and advanced technological solutions will scour new grounds for expansion. Animation Studio experts are aligned with innovative strategies to empower businesses to accomplish goals and achieve sustainable digital growth. </p>\", 3)),\n            _createElementVNode(\"div\", _hoisted_6, [\n              _createVNode(LiveChat),\n              _createVNode(_component_LazyRequestQuote)\n            ])\n          ])\n        ])\n      ])\n    ]),\n    _createElementVNode(\"div\", _hoisted_7, [\n      _createElementVNode(\"div\", _hoisted_8, [\n        _createElementVNode(\"div\", _hoisted_9, [\n          _cache[2] || (_cache[2] = _createElementVNode(\"h3\", { class: \"text-3xl sm:text-4xl md:text-5xl font-bold mb-4 font-['Impact']\" }, \"Logo Design\", -1)),\n          _cache[3] || (_cache[3] = _createElementVNode(\"p\", { class: \"text-base sm:text-lg mb-6 text-justify\" }, \" If your logo is more concealed than evident and more problematic than precise, you might lose your audience. Evoke a sense of connection between a brand and consumer with our creative logo design and symbolize the uniqueness of your brand. \", -1)),\n          _createVNode(SecondaryButton, { class: \"flex items-center\" }, {\n            default: _withCtx(() => [\n              _cache[1] || (_cache[1] = _createTextVNode(\" Explore Our Logo Service \")),\n              _createVNode(_component_nuxt_icon, {\n                name: \"iconsax/linear/arrow-right\",\n                class: \"text-xl\"\n              })\n            ]),\n            _: 1\n          })\n        ]),\n        _createVNode(_component_nuxt_img, {\n          class: \"w-full lg:w-1/3 h-64 object-cover rounded-lg\",\n          src: \"/system/our_service/logo_design.png\",\n          loading: \"lazy\"\n        })\n      ]),\n      _cache[12] || (_cache[12] = _createElementVNode(\"hr\", { class: \"border-gray-700 my-8\" }, null, -1)),\n      _createElementVNode(\"div\", _hoisted_10, [\n        _createElementVNode(\"div\", _hoisted_11, [\n          _cache[5] || (_cache[5] = _createElementVNode(\"h3\", { class: \"text-3xl sm:text-4xl md:text-5xl font-bold mb-4 font-['Impact'] text-right lg:text-right\" }, \"Mobile App Development\", -1)),\n          _cache[6] || (_cache[6] = _createElementVNode(\"p\", { class: \"text-base sm:text-lg mb-6 text-justify lg:text-right\" }, \" To keep up with growing industry demand, businesses are turning to technology through mobile application development. Our specialists will help you change the world with highly functional applications that increase brand visibility, generate ROI, and make you lead the industry. \", -1)),\n          _createVNode(SecondaryButton, { class: \"flex items-center\" }, {\n            default: _withCtx(() => [\n              _cache[4] || (_cache[4] = _createTextVNode(\" Explore Our Mobile App Service \")),\n              _createVNode(_component_nuxt_icon, {\n                name: \"iconsax/linear/arrow-right\",\n                class: \"text-xl\"\n              })\n            ]),\n            _: 1\n          })\n        ]),\n        _createVNode(_component_nuxt_img, {\n          class: \"w-full lg:w-1/3 h-64 object-cover rounded-lg\",\n          src: \"/system/our_service/mobile_app.png\",\n          loading: \"lazy\"\n        })\n      ]),\n      _cache[13] || (_cache[13] = _createElementVNode(\"hr\", { class: \"border-gray-700 my-8\" }, null, -1)),\n      _createElementVNode(\"div\", _hoisted_12, [\n        _createElementVNode(\"div\", _hoisted_13, [\n          _cache[8] || (_cache[8] = _createElementVNode(\"h3\", { class: \"text-3xl sm:text-4xl md:text-5xl font-bold mb-4 font-['Impact']\" }, \"Digital Marketing\", -1)),\n          _cache[9] || (_cache[9] = _createElementVNode(\"p\", { class: \"text-base sm:text-lg mb-6 text-justify\" }, \" Are ads not working anymore? Don’t panic; you could just be lacking the correct digital marketing strategy. We’ll help you build a reputable online presence by enabling you to form high-conversion marketing campaigns and ever-lasting relationships with your customers. \", -1)),\n          _createVNode(SecondaryButton, { class: \"flex items-center\" }, {\n            default: _withCtx(() => [\n              _cache[7] || (_cache[7] = _createTextVNode(\" Explore Our Services \")),\n              _createVNode(_component_nuxt_icon, {\n                name: \"iconsax/linear/arrow-right\",\n                class: \"text-xl\"\n              })\n            ]),\n            _: 1\n          })\n        ]),\n        _createVNode(_component_nuxt_img, {\n          class: \"w-full lg:w-1/3 h-64 object-cover rounded-lg\",\n          src: \"/system/our_service/digital_marketing.png\",\n          loading: \"lazy\"\n        })\n      ]),\n      _cache[14] || (_cache[14] = _createElementVNode(\"hr\", { class: \"border-gray-700 my-8\" }, null, -1)),\n      _createElementVNode(\"div\", _hoisted_14, [\n        _cache[10] || (_cache[10] = _createElementVNode(\"h3\", { class: \"text-3xl sm:text-4xl md:text-5xl font-bold mb-4 font-['Impact']\" }, \"How We Serve\", -1)),\n        _cache[11] || (_cache[11] = _createElementVNode(\"p\", { class: \"text-base sm:text-lg mb-8 max-w-3xl mx-auto\" }, \" Our digital agency provides innovative solutions that lead to productivity and success. We’re passionate about facilitating your business with our advanced technology solutions. You can focus on your business while we care for your website, applications, and everything else. \", -1)),\n        _createElementVNode(\"div\", _hoisted_15, [\n          _createVNode(LiveChat),\n          _createVNode(_component_LazyRequestQuote)\n        ])\n      ])\n    ])\n  ]))\n}\n}\n\n})",
+      "start": 1746483914078,
+      "end": 1746483914078
+    },
+    {
+      "name": "nuxt:components-loader-pre",
+      "start": 1746483914078,
+      "end": 1746483914078,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1746483914078,
+      "end": 1746483914078,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1746483914078,
+      "end": 1746483914078,
+      "order": "pre"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { defineComponent as _defineComponent } from \"vue\";\nimport { resolveComponent as _resolveComponent, createVNode as _createVNode, createElementVNode as _createElementVNode, createTextVNode as _createTextVNode, withCtx as _withCtx, createStaticVNode as _createStaticVNode, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\";\nconst _hoisted_1 = { class: \"relative text-white\" };\nconst _hoisted_2 = { class: \"relative\" };\nconst _hoisted_3 = { class: \"absolute inset-0 flex items-center justify-center top-[20rem]\" };\nconst _hoisted_4 = { class: \"container mx-auto px-4 sm:px-6 lg:px-8\" };\nconst _hoisted_5 = { class: \"max-w-6xl mx-auto text-start\" };\nconst _hoisted_6 = { class: \"flex flex-col sm:flex-row items-center justify-start gap-4\" };\nconst _hoisted_7 = { class: \"container mx-auto lg:-mt-[4rem] mt-[18rem] sm:mt-[2rem] px-3\" };\nconst _hoisted_8 = { class: \"flex flex-col lg:flex-row items-center gap-8 mb-12\" };\nconst _hoisted_9 = { class: \"flex-1\" };\nconst _hoisted_10 = { class: \"flex flex-col lg:flex-row-reverse items-center gap-8 mb-12\" };\nconst _hoisted_11 = { class: \"flex-1\" };\nconst _hoisted_12 = { class: \"flex flex-col lg:flex-row items-center gap-8 mb-12\" };\nconst _hoisted_13 = { class: \"flex-1\" };\nconst _hoisted_14 = { class: \"text-center py-12\" };\nconst _hoisted_15 = { class: \"flex flex-col sm:flex-row items-center justify-center gap-4\" };\nimport LiveChat from \"~/components/LiveChat.vue\";\nimport SecondaryButton from \"~/components/tools/SecondaryButton.vue\";\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"our-service\",\n  setup(__props) {\n    return (_ctx, _cache) => {\n      const _component_nuxt_img = _resolveComponent(\"nuxt-img\");\n      const _component_LazyRequestQuote = _resolveComponent(\"LazyRequestQuote\");\n      const _component_nuxt_icon = _resolveComponent(\"nuxt-icon\");\n      return _openBlock(), _createElementBlock(\"section\", _hoisted_1, [\n        _createElementVNode(\"div\", _hoisted_2, [\n          _createVNode(_component_nuxt_img, {\n            src: \"/system/our_service_mask.png\",\n            class: \"w-full object-cover\",\n            sizes: \"sm:100vw md:100vw lg:100vw\",\n            loading: \"lazy\"\n          }),\n          _createElementVNode(\"div\", _hoisted_3, [\n            _createElementVNode(\"div\", _hoisted_4, [\n              _createElementVNode(\"div\", _hoisted_5, [\n                _cache[0] || (_cache[0] = _createStaticVNode('<div class=\"flex items-center justify-start mb-4\" data-v-a90ab97b><div class=\"bg-pink-500 h-1 w-12 mr-2\" data-v-a90ab97b></div><span class=\"text-sm uppercase\" data-v-a90ab97b>What We Offer</span></div><h2 class=\"text-2xl sm:text-3xl md:text-4xl font-bold mb-6\" data-v-a90ab97b>Our Services</h2><p class=\"text-base sm:text-lg mb-8 max-w-4xl mr-auto\" data-v-a90ab97b> Our prescribed, authenticated, and advanced technological solutions will scour new grounds for expansion. Animation Studio experts are aligned with innovative strategies to empower businesses to accomplish goals and achieve sustainable digital growth. </p>', 3)),\n                _createElementVNode(\"div\", _hoisted_6, [\n                  _createVNode(LiveChat),\n                  _createVNode(_component_LazyRequestQuote)\n                ])\n              ])\n            ])\n          ])\n        ]),\n        _createElementVNode(\"div\", _hoisted_7, [\n          _createElementVNode(\"div\", _hoisted_8, [\n            _createElementVNode(\"div\", _hoisted_9, [\n              _cache[2] || (_cache[2] = _createElementVNode(\"h3\", { class: \"text-3xl sm:text-4xl md:text-5xl font-bold mb-4 font-['Impact']\" }, \"Logo Design\", -1)),\n              _cache[3] || (_cache[3] = _createElementVNode(\"p\", { class: \"text-base sm:text-lg mb-6 text-justify\" }, \" If your logo is more concealed than evident and more problematic than precise, you might lose your audience. Evoke a sense of connection between a brand and consumer with our creative logo design and symbolize the uniqueness of your brand. \", -1)),\n              _createVNode(SecondaryButton, { class: \"flex items-center\" }, {\n                default: _withCtx(() => [\n                  _cache[1] || (_cache[1] = _createTextVNode(\" Explore Our Logo Service \")),\n                  _createVNode(_component_nuxt_icon, {\n                    name: \"iconsax/linear/arrow-right\",\n                    class: \"text-xl\"\n                  })\n                ]),\n                _: 1\n              })\n            ]),\n            _createVNode(_component_nuxt_img, {\n              class: \"w-full lg:w-1/3 h-64 object-cover rounded-lg\",\n              src: \"/system/our_service/logo_design.png\",\n              loading: \"lazy\"\n            })\n          ]),\n          _cache[12] || (_cache[12] = _createElementVNode(\"hr\", { class: \"border-gray-700 my-8\" }, null, -1)),\n          _createElementVNode(\"div\", _hoisted_10, [\n            _createElementVNode(\"div\", _hoisted_11, [\n              _cache[5] || (_cache[5] = _createElementVNode(\"h3\", { class: \"text-3xl sm:text-4xl md:text-5xl font-bold mb-4 font-['Impact'] text-right lg:text-right\" }, \"Mobile App Development\", -1)),\n              _cache[6] || (_cache[6] = _createElementVNode(\"p\", { class: \"text-base sm:text-lg mb-6 text-justify lg:text-right\" }, \" To keep up with growing industry demand, businesses are turning to technology through mobile application development. Our specialists will help you change the world with highly functional applications that increase brand visibility, generate ROI, and make you lead the industry. \", -1)),\n              _createVNode(SecondaryButton, { class: \"flex items-center\" }, {\n                default: _withCtx(() => [\n                  _cache[4] || (_cache[4] = _createTextVNode(\" Explore Our Mobile App Service \")),\n                  _createVNode(_component_nuxt_icon, {\n                    name: \"iconsax/linear/arrow-right\",\n                    class: \"text-xl\"\n                  })\n                ]),\n                _: 1\n              })\n            ]),\n            _createVNode(_component_nuxt_img, {\n              class: \"w-full lg:w-1/3 h-64 object-cover rounded-lg\",\n              src: \"/system/our_service/mobile_app.png\",\n              loading: \"lazy\"\n            })\n          ]),\n          _cache[13] || (_cache[13] = _createElementVNode(\"hr\", { class: \"border-gray-700 my-8\" }, null, -1)),\n          _createElementVNode(\"div\", _hoisted_12, [\n            _createElementVNode(\"div\", _hoisted_13, [\n              _cache[8] || (_cache[8] = _createElementVNode(\"h3\", { class: \"text-3xl sm:text-4xl md:text-5xl font-bold mb-4 font-['Impact']\" }, \"Digital Marketing\", -1)),\n              _cache[9] || (_cache[9] = _createElementVNode(\"p\", { class: \"text-base sm:text-lg mb-6 text-justify\" }, \" Are ads not working anymore? Don’t panic; you could just be lacking the correct digital marketing strategy. We’ll help you build a reputable online presence by enabling you to form high-conversion marketing campaigns and ever-lasting relationships with your customers. \", -1)),\n              _createVNode(SecondaryButton, { class: \"flex items-center\" }, {\n                default: _withCtx(() => [\n                  _cache[7] || (_cache[7] = _createTextVNode(\" Explore Our Services \")),\n                  _createVNode(_component_nuxt_icon, {\n                    name: \"iconsax/linear/arrow-right\",\n                    class: \"text-xl\"\n                  })\n                ]),\n                _: 1\n              })\n            ]),\n            _createVNode(_component_nuxt_img, {\n              class: \"w-full lg:w-1/3 h-64 object-cover rounded-lg\",\n              src: \"/system/our_service/digital_marketing.png\",\n              loading: \"lazy\"\n            })\n          ]),\n          _cache[14] || (_cache[14] = _createElementVNode(\"hr\", { class: \"border-gray-700 my-8\" }, null, -1)),\n          _createElementVNode(\"div\", _hoisted_14, [\n            _cache[10] || (_cache[10] = _createElementVNode(\"h3\", { class: \"text-3xl sm:text-4xl md:text-5xl font-bold mb-4 font-['Impact']\" }, \"How We Serve\", -1)),\n            _cache[11] || (_cache[11] = _createElementVNode(\"p\", { class: \"text-base sm:text-lg mb-8 max-w-3xl mx-auto\" }, \" Our digital agency provides innovative solutions that lead to productivity and success. We’re passionate about facilitating your business with our advanced technology solutions. You can focus on your business while we care for your website, applications, and everything else. \", -1)),\n            _createElementVNode(\"div\", _hoisted_15, [\n              _createVNode(LiveChat),\n              _createVNode(_component_LazyRequestQuote)\n            ])\n          ])\n        ])\n      ]);\n    };\n  }\n});\n",
+      "start": 1746483914078,
+      "end": 1746483914794,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/our-service.vue?macro=true&vue&type=script&setup=true&lang.ts"
+        ],
+        "sourcesContent": [
+          "import { defineComponent as _defineComponent } from 'vue'\nimport { resolveComponent as _resolveComponent, createVNode as _createVNode, createElementVNode as _createElementVNode, createTextVNode as _createTextVNode, withCtx as _withCtx, createStaticVNode as _createStaticVNode, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\nconst _hoisted_1 = { class: \"relative text-white\" }\nconst _hoisted_2 = { class: \"relative\" }\nconst _hoisted_3 = { class: \"absolute inset-0 flex items-center justify-center top-[20rem]\" }\nconst _hoisted_4 = { class: \"container mx-auto px-4 sm:px-6 lg:px-8\" }\nconst _hoisted_5 = { class: \"max-w-6xl mx-auto text-start\" }\nconst _hoisted_6 = { class: \"flex flex-col sm:flex-row items-center justify-start gap-4\" }\nconst _hoisted_7 = { class: \"container mx-auto lg:-mt-[4rem] mt-[18rem] sm:mt-[2rem] px-3\" }\nconst _hoisted_8 = { class: \"flex flex-col lg:flex-row items-center gap-8 mb-12\" }\nconst _hoisted_9 = { class: \"flex-1\" }\nconst _hoisted_10 = { class: \"flex flex-col lg:flex-row-reverse items-center gap-8 mb-12\" }\nconst _hoisted_11 = { class: \"flex-1\" }\nconst _hoisted_12 = { class: \"flex flex-col lg:flex-row items-center gap-8 mb-12\" }\nconst _hoisted_13 = { class: \"flex-1\" }\nconst _hoisted_14 = { class: \"text-center py-12\" }\nconst _hoisted_15 = { class: \"flex flex-col sm:flex-row items-center justify-center gap-4\" }\n\nimport LiveChat from \"~/components/LiveChat.vue\";\nimport SecondaryButton from \"~/components/tools/SecondaryButton.vue\";\n\nexport default /*@__PURE__*/_defineComponent({\n  __name: 'our-service',\n  setup(__props) {\n\n\nreturn (_ctx: any,_cache: any) => {\n  const _component_nuxt_img = _resolveComponent(\"nuxt-img\")!\n  const _component_LazyRequestQuote = _resolveComponent(\"LazyRequestQuote\")!\n  const _component_nuxt_icon = _resolveComponent(\"nuxt-icon\")!\n\n  return (_openBlock(), _createElementBlock(\"section\", _hoisted_1, [\n    _createElementVNode(\"div\", _hoisted_2, [\n      _createVNode(_component_nuxt_img, {\n        src: \"/system/our_service_mask.png\",\n        class: \"w-full object-cover\",\n        sizes: \"sm:100vw md:100vw lg:100vw\",\n        loading: \"lazy\"\n      }),\n      _createElementVNode(\"div\", _hoisted_3, [\n        _createElementVNode(\"div\", _hoisted_4, [\n          _createElementVNode(\"div\", _hoisted_5, [\n            _cache[0] || (_cache[0] = _createStaticVNode(\"<div class=\\\"flex items-center justify-start mb-4\\\" data-v-a90ab97b><div class=\\\"bg-pink-500 h-1 w-12 mr-2\\\" data-v-a90ab97b></div><span class=\\\"text-sm uppercase\\\" data-v-a90ab97b>What We Offer</span></div><h2 class=\\\"text-2xl sm:text-3xl md:text-4xl font-bold mb-6\\\" data-v-a90ab97b>Our Services</h2><p class=\\\"text-base sm:text-lg mb-8 max-w-4xl mr-auto\\\" data-v-a90ab97b> Our prescribed, authenticated, and advanced technological solutions will scour new grounds for expansion. Animation Studio experts are aligned with innovative strategies to empower businesses to accomplish goals and achieve sustainable digital growth. </p>\", 3)),\n            _createElementVNode(\"div\", _hoisted_6, [\n              _createVNode(LiveChat),\n              _createVNode(_component_LazyRequestQuote)\n            ])\n          ])\n        ])\n      ])\n    ]),\n    _createElementVNode(\"div\", _hoisted_7, [\n      _createElementVNode(\"div\", _hoisted_8, [\n        _createElementVNode(\"div\", _hoisted_9, [\n          _cache[2] || (_cache[2] = _createElementVNode(\"h3\", { class: \"text-3xl sm:text-4xl md:text-5xl font-bold mb-4 font-['Impact']\" }, \"Logo Design\", -1)),\n          _cache[3] || (_cache[3] = _createElementVNode(\"p\", { class: \"text-base sm:text-lg mb-6 text-justify\" }, \" If your logo is more concealed than evident and more problematic than precise, you might lose your audience. Evoke a sense of connection between a brand and consumer with our creative logo design and symbolize the uniqueness of your brand. \", -1)),\n          _createVNode(SecondaryButton, { class: \"flex items-center\" }, {\n            default: _withCtx(() => [\n              _cache[1] || (_cache[1] = _createTextVNode(\" Explore Our Logo Service \")),\n              _createVNode(_component_nuxt_icon, {\n                name: \"iconsax/linear/arrow-right\",\n                class: \"text-xl\"\n              })\n            ]),\n            _: 1\n          })\n        ]),\n        _createVNode(_component_nuxt_img, {\n          class: \"w-full lg:w-1/3 h-64 object-cover rounded-lg\",\n          src: \"/system/our_service/logo_design.png\",\n          loading: \"lazy\"\n        })\n      ]),\n      _cache[12] || (_cache[12] = _createElementVNode(\"hr\", { class: \"border-gray-700 my-8\" }, null, -1)),\n      _createElementVNode(\"div\", _hoisted_10, [\n        _createElementVNode(\"div\", _hoisted_11, [\n          _cache[5] || (_cache[5] = _createElementVNode(\"h3\", { class: \"text-3xl sm:text-4xl md:text-5xl font-bold mb-4 font-['Impact'] text-right lg:text-right\" }, \"Mobile App Development\", -1)),\n          _cache[6] || (_cache[6] = _createElementVNode(\"p\", { class: \"text-base sm:text-lg mb-6 text-justify lg:text-right\" }, \" To keep up with growing industry demand, businesses are turning to technology through mobile application development. Our specialists will help you change the world with highly functional applications that increase brand visibility, generate ROI, and make you lead the industry. \", -1)),\n          _createVNode(SecondaryButton, { class: \"flex items-center\" }, {\n            default: _withCtx(() => [\n              _cache[4] || (_cache[4] = _createTextVNode(\" Explore Our Mobile App Service \")),\n              _createVNode(_component_nuxt_icon, {\n                name: \"iconsax/linear/arrow-right\",\n                class: \"text-xl\"\n              })\n            ]),\n            _: 1\n          })\n        ]),\n        _createVNode(_component_nuxt_img, {\n          class: \"w-full lg:w-1/3 h-64 object-cover rounded-lg\",\n          src: \"/system/our_service/mobile_app.png\",\n          loading: \"lazy\"\n        })\n      ]),\n      _cache[13] || (_cache[13] = _createElementVNode(\"hr\", { class: \"border-gray-700 my-8\" }, null, -1)),\n      _createElementVNode(\"div\", _hoisted_12, [\n        _createElementVNode(\"div\", _hoisted_13, [\n          _cache[8] || (_cache[8] = _createElementVNode(\"h3\", { class: \"text-3xl sm:text-4xl md:text-5xl font-bold mb-4 font-['Impact']\" }, \"Digital Marketing\", -1)),\n          _cache[9] || (_cache[9] = _createElementVNode(\"p\", { class: \"text-base sm:text-lg mb-6 text-justify\" }, \" Are ads not working anymore? Don’t panic; you could just be lacking the correct digital marketing strategy. We’ll help you build a reputable online presence by enabling you to form high-conversion marketing campaigns and ever-lasting relationships with your customers. \", -1)),\n          _createVNode(SecondaryButton, { class: \"flex items-center\" }, {\n            default: _withCtx(() => [\n              _cache[7] || (_cache[7] = _createTextVNode(\" Explore Our Services \")),\n              _createVNode(_component_nuxt_icon, {\n                name: \"iconsax/linear/arrow-right\",\n                class: \"text-xl\"\n              })\n            ]),\n            _: 1\n          })\n        ]),\n        _createVNode(_component_nuxt_img, {\n          class: \"w-full lg:w-1/3 h-64 object-cover rounded-lg\",\n          src: \"/system/our_service/digital_marketing.png\",\n          loading: \"lazy\"\n        })\n      ]),\n      _cache[14] || (_cache[14] = _createElementVNode(\"hr\", { class: \"border-gray-700 my-8\" }, null, -1)),\n      _createElementVNode(\"div\", _hoisted_14, [\n        _cache[10] || (_cache[10] = _createElementVNode(\"h3\", { class: \"text-3xl sm:text-4xl md:text-5xl font-bold mb-4 font-['Impact']\" }, \"How We Serve\", -1)),\n        _cache[11] || (_cache[11] = _createElementVNode(\"p\", { class: \"text-base sm:text-lg mb-8 max-w-3xl mx-auto\" }, \" Our digital agency provides innovative solutions that lead to productivity and success. We’re passionate about facilitating your business with our advanced technology solutions. You can focus on your business while we care for your website, applications, and everything else. \", -1)),\n        _createElementVNode(\"div\", _hoisted_15, [\n          _createVNode(LiveChat),\n          _createVNode(_component_LazyRequestQuote)\n        ])\n      ])\n    ])\n  ]))\n}\n}\n\n})"
+        ],
+        "mappings": "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",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:worker",
+      "start": 1746483914794,
+      "end": 1746483914794,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1746483914794,
+      "end": 1746483914794,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1746483914794,
+      "end": 1746483914794,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483914794,
+      "end": 1746483914794,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1746483914794,
+      "end": 1746483914794,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:prehydrate-transform",
+      "start": 1746483914794,
+      "end": 1746483914794,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:module-preload-polyfill",
+      "start": 1746483914794,
+      "end": 1746483914794,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483914794,
+      "end": 1746483914795,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1746483914795,
+      "end": 1746483914795,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1746483914795,
+      "end": 1746483914795,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1746483914795,
+      "end": 1746483914795,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1746483914795,
+      "end": 1746483914795,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1746483914795,
+      "end": 1746483914795,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1746483914795,
+      "end": 1746483914795,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1746483914795,
+      "end": 1746483914795,
+      "order": "normal-normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1746483914795,
+      "end": 1746483914795,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:head:unhead-imports",
+      "start": 1746483914795,
+      "end": 1746483914795,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1746483914795,
+      "end": 1746483914796,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1746483914796,
+      "end": 1746483914796,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "result": "\nconst __nuxt_page_meta = null\nexport default __nuxt_page_meta\n",
+      "start": 1746483914796,
+      "end": 1746483914796,
+      "order": "post",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": "AAAA;AAAA;AAAA;"
+      }
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1746483914796,
+      "end": 1746483914796,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1746483914796,
+      "end": 1746483914796,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1746483914796,
+      "end": 1746483914796,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1746483914796,
+      "end": 1746483914796,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1746483914796,
+      "end": 1746483914796,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1746483914796,
+      "end": 1746483914796,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1746483914796,
+      "end": 1746483914796,
+      "order": "normal"
+    }
+  ]
+}

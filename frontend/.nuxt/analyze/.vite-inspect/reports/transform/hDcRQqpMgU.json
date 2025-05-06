@@ -1,0 +1,218 @@
+{
+  "resolvedId": "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/contact-us.vue?macro=true&vue&type=script&setup=true&lang.ts",
+  "transforms": [
+    {
+      "name": "vite:vue",
+      "result": "import { defineComponent as _defineComponent } from 'vue'\nimport { resolveComponent as _resolveComponent, createVNode as _createVNode, createElementVNode as _createElementVNode, createTextVNode as _createTextVNode, withCtx as _withCtx, createStaticVNode as _createStaticVNode, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\nconst _hoisted_1 = { class: \"relative text-white\" }\nconst _hoisted_2 = { class: \"relative\" }\nconst _hoisted_3 = { class: \"absolute inset-0 flex items-center justify-center top-[16rem]\" }\nconst _hoisted_4 = { class: \"container mx-auto px-4 sm:px-6 lg:px-8\" }\nconst _hoisted_5 = { class: \"max-w-6xl mx-auto text-center sm:text-left\" }\nconst _hoisted_6 = { class: \"flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-4\" }\nconst _hoisted_7 = { class: \"container mx-auto lg:-mt-[2rem] mt-[14rem] sm:mt-[2rem] px-3\" }\nconst _hoisted_8 = { class: \"grid sm:grid-cols-2 gap-3\" }\nconst _hoisted_9 = { class: \"col-span-1\" }\n\nimport LiveChat from \"~/components/LiveChat.vue\";\nimport SecondaryButton from \"~/components/tools/SecondaryButton.vue\";\nimport ContactForm from \"~/components/tools/ContactForm.vue\";\nimport FaqSection from \"~/components/tools/FaqSection.vue\";\n\nexport default /*@__PURE__*/_defineComponent({\n  __name: 'contact-us',\n  setup(__props) {\n\n\n\nreturn (_ctx: any,_cache: any) => {\n  const _component_nuxt_img = _resolveComponent(\"nuxt-img\")!\n  const _component_LazyRequestQuote = _resolveComponent(\"LazyRequestQuote\")!\n\n  return (_openBlock(), _createElementBlock(\"section\", _hoisted_1, [\n    _createElementVNode(\"div\", _hoisted_2, [\n      _createVNode(_component_nuxt_img, {\n        src: \"/system/contact_us_mask.png\",\n        class: \"w-full object-cover\",\n        sizes: \"sm:100vw md:100vw lg:100vw\",\n        loading: \"lazy\"\n      }),\n      _createElementVNode(\"div\", _hoisted_3, [\n        _createElementVNode(\"div\", _hoisted_4, [\n          _createElementVNode(\"div\", _hoisted_5, [\n            _cache[0] || (_cache[0] = _createStaticVNode(\"<div class=\\\"flex items-center justify-center sm:justify-start mb-4\\\"><div class=\\\"bg-pink-500 h-1 w-12 mr-2\\\"></div><span class=\\\"text-sm uppercase\\\">Get In Touch Now</span></div><h2 class=\\\"text-2xl sm:text-4xl font-bold mb-6\\\">Contact Us</h2><p class=\\\"text-base sm:text-lg mb-8 max-w-4xl mr-auto\\\"> Whether you’re curious about features, pricing, or free trials, you can consult an advisor to create a customized marketing plan that guarantees results. Here’s how to reach out to us. </p>\", 3)),\n            _createElementVNode(\"div\", _hoisted_6, [\n              _createVNode(LiveChat),\n              _createVNode(_component_LazyRequestQuote)\n            ])\n          ])\n        ])\n      ])\n    ]),\n    _createElementVNode(\"div\", _hoisted_7, [\n      _cache[3] || (_cache[3] = _createElementVNode(\"div\", { class: \"text-center justify-center grid space-y-4\" }, [\n        _createElementVNode(\"div\", { class: \"divider\" }, [\n          _createElementVNode(\"h2\", { class: \"sm:text-4xl text-xl\" }, \" We’d Love to Hear from You! \")\n        ])\n      ], -1)),\n      _createElementVNode(\"div\", _hoisted_8, [\n        _cache[1] || (_cache[1] = _createStaticVNode(\"<div class=\\\"col-span-1\\\"><div class=\\\"sm:w-[617px] h-96 inline-flex flex-col justify-start items-start gap-5 overflow-hidden\\\"><div class=\\\"w-10 h-[5px] bg-Primary rounded-[3px]\\\"></div><div class=\\\"flex items-center justify-center sm:justify-start mb-4\\\"><div class=\\\"bg-pink-500 h-1 w-12 mr-2\\\"></div><span class=\\\"text-sm uppercase\\\">Get in touch with us</span></div><div class=\\\"self-stretch justify-start text-White text-7xl font-normal font-[&#39;Impact&#39;]\\\">Our Teams<br>Are Here To Help.</div><div class=\\\"self-stretch flex flex-col justify-start items-start\\\"><div class=\\\"self-stretch justify-start text-White text-3xl font-normal font-[&#39;Impact&#39;]\\\">Call +98 21 0000 0000 or drop us a line for further inquiries.</div><div class=\\\"self-stretch text-justify justify-start text-light-shade text-2xl font-normal font-[&#39;Shabnam&#39;]\\\">You’ve got tens of questions, and we’ve tons of answers, so let’s get this conversation started!</div></div></div></div>\", 1)),\n        _createElementVNode(\"div\", _hoisted_9, [\n          _createVNode(ContactForm)\n        ])\n      ]),\n      _createVNode(FaqSection, null, {\n        title: _withCtx(() => _cache[2] || (_cache[2] = [\n          _createElementVNode(\"div\", { class: \"contact-title flex items-center justify-center gap-2 sm:gap-4 w-full\" }, [\n            _createElementVNode(\"div\", { class: \"separator hidden sm:block flex-1 max-w-[100px] md:max-w-[200px] lg:max-w-[500px] h-1 bg-gray-300 rounded relative\" }, [\n              _createElementVNode(\"div\", { class: \"absolute top-0 right-0 w-16 sm:w-24 h-1 bg-primary rounded\" })\n            ]),\n            _createElementVNode(\"h2\", { class: \"title text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-center font-display whitespace-nowrap\" }, \" FAQs About Animation Studio \"),\n            _createElementVNode(\"div\", { class: \"separator hidden sm:block flex-1 max-w-[100px] md:max-w-[200px] lg:max-w-[500px] h-1 bg-gray-300 rounded relative\" }, [\n              _createElementVNode(\"div\", { class: \"absolute top-0 left-0 w-16 sm:w-24 h-1 bg-primary rounded\" })\n            ])\n          ], -1)\n        ])),\n        _: 1\n      })\n    ])\n  ]))\n}\n}\n\n})",
+      "start": 1746483914078,
+      "end": 1746483914078
+    },
+    {
+      "name": "nuxt:components-loader-pre",
+      "start": 1746483914078,
+      "end": 1746483914078,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1746483914078,
+      "end": 1746483914078,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1746483914078,
+      "end": 1746483914078,
+      "order": "pre"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { defineComponent as _defineComponent } from \"vue\";\nimport { resolveComponent as _resolveComponent, createVNode as _createVNode, createElementVNode as _createElementVNode, createTextVNode as _createTextVNode, withCtx as _withCtx, createStaticVNode as _createStaticVNode, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\";\nconst _hoisted_1 = { class: \"relative text-white\" };\nconst _hoisted_2 = { class: \"relative\" };\nconst _hoisted_3 = { class: \"absolute inset-0 flex items-center justify-center top-[16rem]\" };\nconst _hoisted_4 = { class: \"container mx-auto px-4 sm:px-6 lg:px-8\" };\nconst _hoisted_5 = { class: \"max-w-6xl mx-auto text-center sm:text-left\" };\nconst _hoisted_6 = { class: \"flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-4\" };\nconst _hoisted_7 = { class: \"container mx-auto lg:-mt-[2rem] mt-[14rem] sm:mt-[2rem] px-3\" };\nconst _hoisted_8 = { class: \"grid sm:grid-cols-2 gap-3\" };\nconst _hoisted_9 = { class: \"col-span-1\" };\nimport LiveChat from \"~/components/LiveChat.vue\";\nimport SecondaryButton from \"~/components/tools/SecondaryButton.vue\";\nimport ContactForm from \"~/components/tools/ContactForm.vue\";\nimport FaqSection from \"~/components/tools/FaqSection.vue\";\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"contact-us\",\n  setup(__props) {\n    return (_ctx, _cache) => {\n      const _component_nuxt_img = _resolveComponent(\"nuxt-img\");\n      const _component_LazyRequestQuote = _resolveComponent(\"LazyRequestQuote\");\n      return _openBlock(), _createElementBlock(\"section\", _hoisted_1, [\n        _createElementVNode(\"div\", _hoisted_2, [\n          _createVNode(_component_nuxt_img, {\n            src: \"/system/contact_us_mask.png\",\n            class: \"w-full object-cover\",\n            sizes: \"sm:100vw md:100vw lg:100vw\",\n            loading: \"lazy\"\n          }),\n          _createElementVNode(\"div\", _hoisted_3, [\n            _createElementVNode(\"div\", _hoisted_4, [\n              _createElementVNode(\"div\", _hoisted_5, [\n                _cache[0] || (_cache[0] = _createStaticVNode('<div class=\"flex items-center justify-center sm:justify-start mb-4\"><div class=\"bg-pink-500 h-1 w-12 mr-2\"></div><span class=\"text-sm uppercase\">Get In Touch Now</span></div><h2 class=\"text-2xl sm:text-4xl font-bold mb-6\">Contact Us</h2><p class=\"text-base sm:text-lg mb-8 max-w-4xl mr-auto\"> Whether you’re curious about features, pricing, or free trials, you can consult an advisor to create a customized marketing plan that guarantees results. Here’s how to reach out to us. </p>', 3)),\n                _createElementVNode(\"div\", _hoisted_6, [\n                  _createVNode(LiveChat),\n                  _createVNode(_component_LazyRequestQuote)\n                ])\n              ])\n            ])\n          ])\n        ]),\n        _createElementVNode(\"div\", _hoisted_7, [\n          _cache[3] || (_cache[3] = _createElementVNode(\"div\", { class: \"text-center justify-center grid space-y-4\" }, [\n            _createElementVNode(\"div\", { class: \"divider\" }, [\n              _createElementVNode(\"h2\", { class: \"sm:text-4xl text-xl\" }, \" We’d Love to Hear from You! \")\n            ])\n          ], -1)),\n          _createElementVNode(\"div\", _hoisted_8, [\n            _cache[1] || (_cache[1] = _createStaticVNode('<div class=\"col-span-1\"><div class=\"sm:w-[617px] h-96 inline-flex flex-col justify-start items-start gap-5 overflow-hidden\"><div class=\"w-10 h-[5px] bg-Primary rounded-[3px]\"></div><div class=\"flex items-center justify-center sm:justify-start mb-4\"><div class=\"bg-pink-500 h-1 w-12 mr-2\"></div><span class=\"text-sm uppercase\">Get in touch with us</span></div><div class=\"self-stretch justify-start text-White text-7xl font-normal font-[&#39;Impact&#39;]\">Our Teams<br>Are Here To Help.</div><div class=\"self-stretch flex flex-col justify-start items-start\"><div class=\"self-stretch justify-start text-White text-3xl font-normal font-[&#39;Impact&#39;]\">Call +98 21 0000 0000 or drop us a line for further inquiries.</div><div class=\"self-stretch text-justify justify-start text-light-shade text-2xl font-normal font-[&#39;Shabnam&#39;]\">You’ve got tens of questions, and we’ve tons of answers, so let’s get this conversation started!</div></div></div></div>', 1)),\n            _createElementVNode(\"div\", _hoisted_9, [\n              _createVNode(ContactForm)\n            ])\n          ]),\n          _createVNode(FaqSection, null, {\n            title: _withCtx(() => _cache[2] || (_cache[2] = [\n              _createElementVNode(\"div\", { class: \"contact-title flex items-center justify-center gap-2 sm:gap-4 w-full\" }, [\n                _createElementVNode(\"div\", { class: \"separator hidden sm:block flex-1 max-w-[100px] md:max-w-[200px] lg:max-w-[500px] h-1 bg-gray-300 rounded relative\" }, [\n                  _createElementVNode(\"div\", { class: \"absolute top-0 right-0 w-16 sm:w-24 h-1 bg-primary rounded\" })\n                ]),\n                _createElementVNode(\"h2\", { class: \"title text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-center font-display whitespace-nowrap\" }, \" FAQs About Animation Studio \"),\n                _createElementVNode(\"div\", { class: \"separator hidden sm:block flex-1 max-w-[100px] md:max-w-[200px] lg:max-w-[500px] h-1 bg-gray-300 rounded relative\" }, [\n                  _createElementVNode(\"div\", { class: \"absolute top-0 left-0 w-16 sm:w-24 h-1 bg-primary rounded\" })\n                ])\n              ], -1)\n            ])),\n            _: 1\n          })\n        ])\n      ]);\n    };\n  }\n});\n",
+      "start": 1746483914078,
+      "end": 1746483914724,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/contact-us.vue?macro=true&vue&type=script&setup=true&lang.ts"
+        ],
+        "sourcesContent": [
+          "import { defineComponent as _defineComponent } from 'vue'\nimport { resolveComponent as _resolveComponent, createVNode as _createVNode, createElementVNode as _createElementVNode, createTextVNode as _createTextVNode, withCtx as _withCtx, createStaticVNode as _createStaticVNode, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\nconst _hoisted_1 = { class: \"relative text-white\" }\nconst _hoisted_2 = { class: \"relative\" }\nconst _hoisted_3 = { class: \"absolute inset-0 flex items-center justify-center top-[16rem]\" }\nconst _hoisted_4 = { class: \"container mx-auto px-4 sm:px-6 lg:px-8\" }\nconst _hoisted_5 = { class: \"max-w-6xl mx-auto text-center sm:text-left\" }\nconst _hoisted_6 = { class: \"flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-4\" }\nconst _hoisted_7 = { class: \"container mx-auto lg:-mt-[2rem] mt-[14rem] sm:mt-[2rem] px-3\" }\nconst _hoisted_8 = { class: \"grid sm:grid-cols-2 gap-3\" }\nconst _hoisted_9 = { class: \"col-span-1\" }\n\nimport LiveChat from \"~/components/LiveChat.vue\";\nimport SecondaryButton from \"~/components/tools/SecondaryButton.vue\";\nimport ContactForm from \"~/components/tools/ContactForm.vue\";\nimport FaqSection from \"~/components/tools/FaqSection.vue\";\n\nexport default /*@__PURE__*/_defineComponent({\n  __name: 'contact-us',\n  setup(__props) {\n\n\n\nreturn (_ctx: any,_cache: any) => {\n  const _component_nuxt_img = _resolveComponent(\"nuxt-img\")!\n  const _component_LazyRequestQuote = _resolveComponent(\"LazyRequestQuote\")!\n\n  return (_openBlock(), _createElementBlock(\"section\", _hoisted_1, [\n    _createElementVNode(\"div\", _hoisted_2, [\n      _createVNode(_component_nuxt_img, {\n        src: \"/system/contact_us_mask.png\",\n        class: \"w-full object-cover\",\n        sizes: \"sm:100vw md:100vw lg:100vw\",\n        loading: \"lazy\"\n      }),\n      _createElementVNode(\"div\", _hoisted_3, [\n        _createElementVNode(\"div\", _hoisted_4, [\n          _createElementVNode(\"div\", _hoisted_5, [\n            _cache[0] || (_cache[0] = _createStaticVNode(\"<div class=\\\"flex items-center justify-center sm:justify-start mb-4\\\"><div class=\\\"bg-pink-500 h-1 w-12 mr-2\\\"></div><span class=\\\"text-sm uppercase\\\">Get In Touch Now</span></div><h2 class=\\\"text-2xl sm:text-4xl font-bold mb-6\\\">Contact Us</h2><p class=\\\"text-base sm:text-lg mb-8 max-w-4xl mr-auto\\\"> Whether you’re curious about features, pricing, or free trials, you can consult an advisor to create a customized marketing plan that guarantees results. Here’s how to reach out to us. </p>\", 3)),\n            _createElementVNode(\"div\", _hoisted_6, [\n              _createVNode(LiveChat),\n              _createVNode(_component_LazyRequestQuote)\n            ])\n          ])\n        ])\n      ])\n    ]),\n    _createElementVNode(\"div\", _hoisted_7, [\n      _cache[3] || (_cache[3] = _createElementVNode(\"div\", { class: \"text-center justify-center grid space-y-4\" }, [\n        _createElementVNode(\"div\", { class: \"divider\" }, [\n          _createElementVNode(\"h2\", { class: \"sm:text-4xl text-xl\" }, \" We’d Love to Hear from You! \")\n        ])\n      ], -1)),\n      _createElementVNode(\"div\", _hoisted_8, [\n        _cache[1] || (_cache[1] = _createStaticVNode(\"<div class=\\\"col-span-1\\\"><div class=\\\"sm:w-[617px] h-96 inline-flex flex-col justify-start items-start gap-5 overflow-hidden\\\"><div class=\\\"w-10 h-[5px] bg-Primary rounded-[3px]\\\"></div><div class=\\\"flex items-center justify-center sm:justify-start mb-4\\\"><div class=\\\"bg-pink-500 h-1 w-12 mr-2\\\"></div><span class=\\\"text-sm uppercase\\\">Get in touch with us</span></div><div class=\\\"self-stretch justify-start text-White text-7xl font-normal font-[&#39;Impact&#39;]\\\">Our Teams<br>Are Here To Help.</div><div class=\\\"self-stretch flex flex-col justify-start items-start\\\"><div class=\\\"self-stretch justify-start text-White text-3xl font-normal font-[&#39;Impact&#39;]\\\">Call +98 21 0000 0000 or drop us a line for further inquiries.</div><div class=\\\"self-stretch text-justify justify-start text-light-shade text-2xl font-normal font-[&#39;Shabnam&#39;]\\\">You’ve got tens of questions, and we’ve tons of answers, so let’s get this conversation started!</div></div></div></div>\", 1)),\n        _createElementVNode(\"div\", _hoisted_9, [\n          _createVNode(ContactForm)\n        ])\n      ]),\n      _createVNode(FaqSection, null, {\n        title: _withCtx(() => _cache[2] || (_cache[2] = [\n          _createElementVNode(\"div\", { class: \"contact-title flex items-center justify-center gap-2 sm:gap-4 w-full\" }, [\n            _createElementVNode(\"div\", { class: \"separator hidden sm:block flex-1 max-w-[100px] md:max-w-[200px] lg:max-w-[500px] h-1 bg-gray-300 rounded relative\" }, [\n              _createElementVNode(\"div\", { class: \"absolute top-0 right-0 w-16 sm:w-24 h-1 bg-primary rounded\" })\n            ]),\n            _createElementVNode(\"h2\", { class: \"title text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-center font-display whitespace-nowrap\" }, \" FAQs About Animation Studio \"),\n            _createElementVNode(\"div\", { class: \"separator hidden sm:block flex-1 max-w-[100px] md:max-w-[200px] lg:max-w-[500px] h-1 bg-gray-300 rounded relative\" }, [\n              _createElementVNode(\"div\", { class: \"absolute top-0 left-0 w-16 sm:w-24 h-1 bg-primary rounded\" })\n            ])\n          ], -1)\n        ])),\n        _: 1\n      })\n    ])\n  ]))\n}\n}\n\n})"
+        ],
+        "mappings": "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",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:worker",
+      "start": 1746483914724,
+      "end": 1746483914724,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1746483914724,
+      "end": 1746483914724,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1746483914724,
+      "end": 1746483914724,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483914724,
+      "end": 1746483914724,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1746483914724,
+      "end": 1746483914724,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:prehydrate-transform",
+      "start": 1746483914724,
+      "end": 1746483914724,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:module-preload-polyfill",
+      "start": 1746483914724,
+      "end": 1746483914724,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483914724,
+      "end": 1746483914724,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1746483914724,
+      "end": 1746483914724,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1746483914724,
+      "end": 1746483914725,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1746483914725,
+      "end": 1746483914725,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1746483914725,
+      "end": 1746483914725,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1746483914725,
+      "end": 1746483914725,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1746483914725,
+      "end": 1746483914725,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1746483914725,
+      "end": 1746483914725,
+      "order": "normal-normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1746483914725,
+      "end": 1746483914725,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:head:unhead-imports",
+      "start": 1746483914725,
+      "end": 1746483914725,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1746483914725,
+      "end": 1746483914725,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1746483914725,
+      "end": 1746483914725,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "result": "\nconst __nuxt_page_meta = null\nexport default __nuxt_page_meta\n",
+      "start": 1746483914725,
+      "end": 1746483914726,
+      "order": "post",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": "AAAA;AAAA;AAAA;"
+      }
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1746483914726,
+      "end": 1746483914726,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1746483914726,
+      "end": 1746483914726,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1746483914726,
+      "end": 1746483914726,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1746483914726,
+      "end": 1746483914726,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1746483914726,
+      "end": 1746483914726,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1746483914726,
+      "end": 1746483914726,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1746483914726,
+      "end": 1746483914726,
+      "order": "normal"
+    }
+  ]
+}

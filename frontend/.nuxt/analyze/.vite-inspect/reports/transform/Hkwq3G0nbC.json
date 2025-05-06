@@ -1,0 +1,200 @@
+{
+  "resolvedId": "virtual:nuxt:%2FUsers%2Fmohammadrassoulzadeh%2FDocuments%2Fproject%2Fmarktify%2Ffront%2F.nuxt%2Fmiddleware.mjs",
+  "transforms": [
+    {
+      "name": "nuxt:virtual",
+      "result": "import validate from \"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/node_modules/nuxt/dist/pages/runtime/validate.js\";\nimport manifest_45route_45rule from \"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/node_modules/nuxt/dist/app/middleware/manifest-route-rule.js\";\nexport const globalMiddleware = [\n  validate,\n  manifest_45route_45rule\n]\nexport const namedMiddleware = {\n  auth: () => import(\"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/middleware/auth.ts\")\n}",
+      "start": 1746483911624,
+      "end": 1746483911624,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:components-loader-pre",
+      "start": 1746483911624,
+      "end": 1746483911624,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1746483911624,
+      "end": 1746483911624,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1746483911624,
+      "end": 1746483911624,
+      "order": "pre"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1746483911624,
+      "end": 1746483911624,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1746483911624,
+      "end": 1746483911624,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1746483911624,
+      "end": 1746483911624,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1746483911624,
+      "end": 1746483911624,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483911624,
+      "end": 1746483911624,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1746483911624,
+      "end": 1746483911624,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:prehydrate-transform",
+      "start": 1746483911624,
+      "end": 1746483911624,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:module-preload-polyfill",
+      "start": 1746483911624,
+      "end": 1746483911624,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483911624,
+      "end": 1746483911624,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1746483911624,
+      "end": 1746483911624,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1746483911625,
+      "end": 1746483911625,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1746483911625,
+      "end": 1746483911625,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1746483911625,
+      "end": 1746483911625,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1746483911625,
+      "end": 1746483911625,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1746483911625,
+      "end": 1746483911625,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1746483911625,
+      "end": 1746483911625,
+      "order": "normal-normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1746483911625,
+      "end": 1746483911625,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:head:unhead-imports",
+      "start": 1746483911625,
+      "end": 1746483911625,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1746483911625,
+      "end": 1746483911625,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1746483911625,
+      "end": 1746483911625,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1746483911625,
+      "end": 1746483911625,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1746483911625,
+      "end": 1746483911625,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1746483911625,
+      "end": 1746483911625,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1746483911625,
+      "end": 1746483911625,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1746483911625,
+      "end": 1746483911625,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1746483911625,
+      "end": 1746483911625,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "result": "import { __vitePreload } from \"\u0000vite/preload-helper.js\";import validate from \"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/node_modules/nuxt/dist/pages/runtime/validate.js\";\nimport manifest_45route_45rule from \"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/node_modules/nuxt/dist/app/middleware/manifest-route-rule.js\";\nexport const globalMiddleware = [\n  validate,\n  manifest_45route_45rule\n]\nexport const namedMiddleware = {\n  auth: () => __vitePreload(() => import(\"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/middleware/auth.ts\"),__VITE_IS_MODERN__?__VITE_PRELOAD__:void 0,import.meta.url)\n}",
+      "start": 1746483911625,
+      "end": 1746483911626,
+      "order": "normal-normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1746483911626,
+      "end": 1746483911626,
+      "order": "normal"
+    }
+  ]
+}

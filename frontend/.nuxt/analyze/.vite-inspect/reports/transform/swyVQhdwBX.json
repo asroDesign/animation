@@ -1,0 +1,202 @@
+{
+  "resolvedId": "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/components/tools/SecondaryButton.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<script setup>\ndefineProps({\n    type: {\n        type: String,\n        default: 'button',\n    },\n});\n</script>\n\n<template>\n    <button :type=\"type\" class=\"inline-flex items-center px-4 py-2 text-white text-center justify-center border-secondary-shade border rounded-full  text-xs  uppercase tracking-widest shadow-sm hover:bg-secondary-shade hover:shadow  focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 disabled:opacity-25 transition ease-in-out duration-150\">\n        <slot />\n    </button>\n</template>\n",
+      "start": 1746483913828,
+      "end": 1746483913999,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:components-loader-pre",
+      "start": 1746483913999,
+      "end": 1746483913999,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1746483913999,
+      "end": 1746483913999,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1746483913999,
+      "end": 1746483913999,
+      "order": "pre"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1746483913999,
+      "end": 1746483913999,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1746483913999,
+      "end": 1746483913999,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { renderSlot as _renderSlot, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\nconst _hoisted_1 = [\"type\"]\n\n\nconst _sfc_main = {\n  __name: 'SecondaryButton',\n  props: {\n    type: {\n        type: String,\n        default: 'button',\n    },\n},\n  setup(__props) {\n\n\n\nreturn (_ctx, _cache) => {\n  return (_openBlock(), _createElementBlock(\"button\", {\n    type: __props.type,\n    class: \"inline-flex items-center px-4 py-2 text-white text-center justify-center border-secondary-shade border rounded-full text-xs uppercase tracking-widest shadow-sm hover:bg-secondary-shade hover:shadow focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 disabled:opacity-25 transition ease-in-out duration-150\"\n  }, [\n    _renderSlot(_ctx.$slots, \"default\")\n  ], 8, _hoisted_1))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1746483913999,
+      "end": 1746483913999,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1746483913999,
+      "end": 1746483913999,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483913999,
+      "end": 1746483913999,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1746483913999,
+      "end": 1746483913999,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:prehydrate-transform",
+      "start": 1746483913999,
+      "end": 1746483913999,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:module-preload-polyfill",
+      "start": 1746483913999,
+      "end": 1746483913999,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483913999,
+      "end": 1746483913999,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1746483913999,
+      "end": 1746483913999,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1746483913999,
+      "end": 1746483913999,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1746483913999,
+      "end": 1746483913999,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1746483913999,
+      "end": 1746483913999,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1746483913999,
+      "end": 1746483913999,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1746483913999,
+      "end": 1746483913999,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1746483913999,
+      "end": 1746483913999,
+      "order": "normal-normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1746483913999,
+      "end": 1746483913999,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:head:unhead-imports",
+      "start": 1746483913999,
+      "end": 1746483913999,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1746483913999,
+      "end": 1746483914000,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1746483914000,
+      "end": 1746483914000,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1746483914000,
+      "end": 1746483914000,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1746483914000,
+      "end": 1746483914000,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1746483914000,
+      "end": 1746483914000,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1746483914000,
+      "end": 1746483914000,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1746483914000,
+      "end": 1746483914000,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1746483914000,
+      "end": 1746483914000,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1746483914000,
+      "end": 1746483914000,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1746483914000,
+      "end": 1746483914000,
+      "order": "normal"
+    }
+  ]
+}

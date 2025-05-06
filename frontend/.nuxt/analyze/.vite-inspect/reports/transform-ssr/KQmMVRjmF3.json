@@ -1,0 +1,266 @@
+{
+  "resolvedId": "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/dashboard/orders/[id].vue?vue&type=style&index=0&scoped=b8f88b39&lang.css",
+  "transforms": [
+    {
+      "name": "vite:vue",
+      "result": "\n/* Tailwind handles all styling */\n",
+      "start": 1746483920852,
+      "end": 1746483920852,
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/dashboard/orders/[id].vue"
+        ],
+        "names": [],
+        "mappings": ";AAyMA,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC",
+        "file": "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/dashboard/orders/[id].vue",
+        "sourceRoot": "",
+        "sourcesContent": [
+          "<template>\n  <div class=\"w-full flex flex-col gap-7 overflow-hidden\">\n    <!-- Order Header -->\n    <div class=\"w-full flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4\">\n      <div class=\"flex items-center gap-2\">\n        <nuxt-link to=\"/dashboard/orders\" class=\"text-white text-base font-normal font-['Shabnam'] underline\" >Orders</nuxt-link>\n        <svg class=\"w-6 h-6 text-white\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\">\n          <path d=\"M9 5l7 7-7 7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" />\n        </svg>\n        <span class=\"text-white text-sm font-bold font-['Shabnam']\">{{ orderId }}</span>\n      </div>\n      <div class=\"flex-1\"></div>\n      <div class=\"flex items-center justify-between sm:justify-end gap-4\">\n        <h2 class=\"text-white text-2xl sm:text-3xl font-normal font-['Impact']\">Order Summary</h2>\n        <span class=\"text-teal-300 text-xl sm:text-2xl font-normal font-['Impact']\">Successful</span>\n      </div>\n    </div>\n\n    <!-- Order Summary Table -->\n    <div class=\"w-full\">\n      <!-- Desktop Table (Visible on sm and above) -->\n      <div class=\"hidden sm:block overflow-x-auto\">\n        <table class=\"w-full text-left\">\n          <thead>\n          <tr class=\"text-zinc-500 text-sm font-normal font-['Shabnam']\">\n            <th class=\"py-2 px-4\">Id</th>\n            <th class=\"py-2 px-4\">File Name</th>\n            <th class=\"py-2 px-4\">Duration</th>\n            <th class=\"py-2 px-4\">Price</th>\n          </tr>\n          </thead>\n          <tbody>\n          <tr v-for=\"item in orderItems\" :key=\"item.id\" class=\"border-t border-neutral-700/50\">\n            <td class=\"py-2 px-4 text-white text-sm font-bold font-['Shabnam']\">{{ item.id }}</td>\n            <td class=\"py-2 px-4 text-white text-sm font-bold font-['Shabnam']\">{{ item.fileName }}</td>\n            <td class=\"py-2 px-4 text-white text-sm font-bold font-['Shabnam']\">{{ item.duration }}</td>\n            <td class=\"py-2 px-4 text-white text-sm font-bold font-['Shabnam']\">{{ item.price }}</td>\n          </tr>\n          </tbody>\n        </table>\n      </div>\n\n      <!-- Mobile Cards (Visible below sm) -->\n      <div class=\"block sm:hidden space-y-4\">\n        <div\n            v-for=\"item in orderItems\"\n            :key=\"item.id\"\n            class=\"bg-[#14082A] rounded-lg p-4 flex flex-col gap-2 border border-neutral-700/50\"\n        >\n          <div class=\"flex justify-between\">\n            <span class=\"text-zinc-500 text-xs font-normal font-['Shabnam']\">Id</span>\n            <span class=\"text-white text-sm font-bold font-['Shabnam']\">{{ item.id }}</span>\n          </div>\n          <div class=\"flex justify-between\">\n            <span class=\"text-zinc-500 text-xs font-normal font-['Shabnam']\">File Name</span>\n            <span class=\"text-white text-sm font-bold font-['Shabnam']\">{{ item.fileName }}</span>\n          </div>\n          <div class=\"flex justify-between\">\n            <span class=\"text-zinc-500 text-xs font-normal font-['Shabnam']\">Duration</span>\n            <span class=\"text-white text-sm font-bold font-['Shabnam']\">{{ item.duration }}</span>\n          </div>\n          <div class=\"flex justify-between\">\n            <span class=\"text-zinc-500 text-xs font-normal font-['Shabnam']\">Price</span>\n            <span class=\"text-white text-sm font-bold font-['Shabnam']\">{{ item.price }}</span>\n          </div>\n        </div>\n      </div>\n    </div>\n\n    <!-- List of Items -->\n    <div class=\"w-full\">\n      <h2 class=\"text-white text-2xl sm:text-3xl font-normal font-['Impact'] mb-4\">List of Items</h2>\n      <div class=\"grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-7\">\n        <div\n            v-for=\"item in cartItems\"\n            :key=\"item.id\"\n            class=\"bg-[#1e1e2e] rounded-[20px] p-3.5 flex flex-col col-span-1 gap-2.5\"\n        >\n          <img\n              :src=\"item.image\"\n              alt=\"Cart Item\"\n              class=\"w-full h-40 sm:h-52 rounded-2xl object-cover\"\n          />\n          <h3 class=\"text-white text-xl sm:text-2xl font-normal font-['Impact']\">{{ item.name }}</h3>\n          <div class=\"flex flex-col gap-1 text-sm sm:text-base\">\n            <div class=\"flex justify-between\">\n              <span class=\"text-zinc-400 font-normal font-['Shabnam']\">Type:</span>\n              <span class=\"text-white font-medium font-['Shabnam']\">{{ item.type }}</span>\n            </div>\n            <div class=\"flex justify-between\">\n              <span class=\"text-zinc-400 font-normal font-['Shabnam']\">Duration:</span>\n              <span class=\"text-white font-medium font-['Shabnam']\">{{ item.duration }}</span>\n            </div>\n            <div class=\"flex justify-between\">\n              <span class=\"text-zinc-400 font-normal font-['Shabnam']\">Price:</span>\n              <span class=\"text-white font-medium font-['Shabnam']\">{{ item.price }}</span>\n            </div>\n          </div>\n          <div class=\"flex gap-2\">\n            <primary-button class=\"text-xs !px-3\"\n                @click=\"downloadItem(item.id)\"\n            >\n              Download Item\n            </primary-button>\n            <secondary-button class=\"text-xs !px-3\"\n                @click=\"removeItem(item.id)\"\n            >\n              Remove Item\n            </secondary-button>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</template>\n\n<script setup>\nimport { ref } from 'vue';\nimport SecondaryButton from \"~/components/tools/SecondaryButton.vue\";\nimport PrimaryButton from \"~/components/tools/PrimaryButton.vue\";\n\n// Order Data\nconst orderId = ref(useRoute().params.id);\nconst orderItems = ref([\n  {\n    id: 'AN2787',\n    fileName: 'Animation.mp4',\n    duration: '30s',\n    price: '$54,000',\n  },\n  {\n    id: 'RZ8308',\n    fileName: 'Animation.mp4',\n    duration: '13/01/2022', // Note: Original data has inconsistency; assuming date as placeholder\n    price: '$86,050',\n  },\n  {\n    id: 'RZ8765',\n    fileName: 'Animation.mp4',\n    duration: '13/01/2022', // Note: Original data has inconsistency\n    price: '$4,000',\n  },\n]);\n\n// Cart Items Data\nconst cartItems = ref([\n  {\n    id: 1,\n    name: 'Cart Item Name',\n    image: 'https://placehold.co/300x206',\n    type: 'Video (MP4)',\n    duration: '30s',\n    price: '$20',\n  },\n  {\n    id: 2,\n    name: 'Cart Item Name',\n    image: 'https://placehold.co/300x206',\n    type: 'Video (MP4)',\n    duration: '30s',\n    price: '$20',\n  },\n  {\n    id: 3,\n    name: 'Cart Item Name',\n    image: 'https://placehold.co/300x206',\n    type: 'Video (MP4)',\n    duration: '30s',\n    price: '$20',\n  },\n  {\n    id: 4,\n    name: 'Cart Item Name',\n    image: 'https://placehold.co/300x206',\n    type: 'Video (MP4)',\n    duration: '30s',\n    price: '$20',\n  },\n]);\n\n// Actions\nconst downloadItem = (id) => {\n  console.log(`Downloading item ${id}...`);\n  // Simulate API call\n  // Example: await fetch(`/api/items/${id}/download`);\n  alert(`Item ${id} download initiated!`);\n};\n\nconst removeItem = (id) => {\n  console.log(`Removing item ${id}...`);\n  // Simulate API call\n  // Example: await fetch(`/api/items/${id}`, { method: 'DELETE' });\n  cartItems.value = cartItems.value.filter((item) => item.id !== id);\n  alert(`Item ${id} removed!`);\n};\ndefinePageMeta({\n  layout:'dashboard'\n})\n</script>\n\n<style scoped>\n/* Tailwind handles all styling */\n</style>"
+        ]
+      }
+    },
+    {
+      "name": "nuxt:components-loader-pre",
+      "start": 1746483920852,
+      "end": 1746483920852,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:components-loader-pre",
+      "start": 1746483920852,
+      "end": 1746483920852,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1746483920852,
+      "end": 1746483920852,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1746483920852,
+      "end": 1746483920852,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1746483920852,
+      "end": 1746483920852,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1746483920852,
+      "end": 1746483920852,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-only-component-transform",
+      "start": 1746483920852,
+      "end": 1746483920852,
+      "order": "pre"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1746483920853,
+      "end": 1746483920853,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1746483920853,
+      "end": 1746483920853,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "",
+      "start": 1746483920853,
+      "end": 1746483920853,
+      "order": "normal",
+      "sourcemaps": {
+        "file": "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/dashboard/orders/[id].vue",
+        "mappings": "",
+        "names": [],
+        "sources": [],
+        "version": 3
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1746483920853,
+      "end": 1746483920853,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483920853,
+      "end": 1746483920853,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483920853,
+      "end": 1746483920853,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1746483920853,
+      "end": 1746483920853,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1746483920853,
+      "end": 1746483920853,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:prehydrate-transform",
+      "start": 1746483920853,
+      "end": 1746483920853,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:prehydrate-transform",
+      "start": 1746483920853,
+      "end": 1746483920853,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483920853,
+      "end": 1746483920853,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1746483920853,
+      "end": 1746483920853,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1746483920853,
+      "end": 1746483920853,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1746483920853,
+      "end": 1746483920853,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1746483920853,
+      "end": 1746483920853,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1746483920853,
+      "end": 1746483920853,
+      "order": "normal-normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1746483920853,
+      "end": 1746483920853,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1746483920853,
+      "end": 1746483920853,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:head:unhead-imports",
+      "start": 1746483920853,
+      "end": 1746483920853,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:head:unhead-imports",
+      "start": 1746483920853,
+      "end": 1746483920853,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1746483920853,
+      "end": 1746483920853,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1746483920853,
+      "end": 1746483920853,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1746483920853,
+      "end": 1746483920853,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1746483920853,
+      "end": 1746483920853,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1746483920853,
+      "end": 1746483920853,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1746483920853,
+      "end": 1746483920853,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1746483920853,
+      "end": 1746483920853,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1746483920853,
+      "end": 1746483920853,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1746483920853,
+      "end": 1746483920853,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1746483920853,
+      "end": 1746483920853,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1746483920853,
+      "end": 1746483920853,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1746483920853,
+      "end": 1746483920853,
+      "order": "normal"
+    }
+  ]
+}

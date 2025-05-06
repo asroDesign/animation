@@ -1,0 +1,1 @@
+.toast-enter-active[data-v-4fab7e28],.toast-leave-active[data-v-4fab7e28]{transition:all .3s ease}.toast-enter-from[data-v-4fab7e28],.toast-leave-to[data-v-4fab7e28]{opacity:0;transform:translateY(-20px)}body{color:#fff}.animate-fade-slide{animation-delay:calc(var(--index)*.1s)}@media (prefers-reduced-motion:reduce){.animate-fade-slide{animation:none;opacity:1;transform:none}}

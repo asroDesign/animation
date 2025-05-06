@@ -1,0 +1,268 @@
+{
+  "resolvedId": "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/blog/index.vue?macro=true",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<script setup lang=\"ts\">\nimport { ref, watch, computed } from 'vue';\nimport LiveChat from '~/components/LiveChat.vue';\nimport SecondaryButton from '~/components/tools/SecondaryButton.vue';\n\n// مقدار اولیه برای جستجو\nconst q = ref<string>('');\n\n// فراخوانی API با useMyFetch\nconst { data, status, execute } = await useMyFetch('blogs', {\n  query: { search: q },\n  immediate: true, // اجرای خودکار در بارگذاری اولیه\n});\n\n// مدیریت پاسخ API\nconst blogs = computed(() => data.value?.data || []);\n\n// تابع جستجو با debounce\nconst handleSearch = (searchTerm: string) => {\n  q.value = searchTerm;\n};\n\n// واکنش به تغییرات q برای اجرای خودکار جستجو\nwatch(q, () => {\n  execute();\n});\n</script>\n\n<template>\n  <div class=\"relative\">\n    <nuxt-img\n        src=\"/system/blog_mask.png\"\n        class=\"w-full object-cover\"\n        sizes=\"sm:100vw md:100vw lg:100vw\"\n        format=\"webp\"\n        quality=\"80\"\n        loading=\"lazy\"\n        alt=\"Blog banner\"\n    />\n    <div\n        class=\"absolute inset-0 flex items-center justify-center top-[16rem] sm:top-0\"\n    >\n      <div class=\"container mx-auto px-4 sm:px-6 lg:px-8\">\n        <div class=\"max-w-6xl mx-auto text-start sm:text-center\">\n          <div\n              class=\"flex items-center justify-start sm:justify-center mb-4 gap-2\"\n          >\n            <div class=\"bg-secondary-shade h-1 w-9\"></div>\n            <span class=\"text-sm uppercase\">What You Need to Know</span>\n          </div>\n          <h2\n              class=\"text-2xl sm:text-3xl md:text-4xl font-bold mb-6 leading-tight\"\n          >\n            Get an Expert Team<br />for Video Animation\n          </h2>\n          <div\n              class=\"flex flex-col sm:flex-row items-center justify-start sm:justify-center gap-4\"\n          >\n            <LiveChat />\n            <LazyRequestQuote />\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n\n  <div class=\"container mx-auto px-4 sm:px-6 lg:px-8 py-8\">\n    <div class=\"grid grid-cols-1 lg:grid-cols-3 gap-6\">\n      <div class=\"col-span-1 lg:col-span-2\">\n        <div class=\"grid grid-cols-1 sm:grid-cols-2 gap-6\">\n          <nuxt-link\n              v-for=\"blog in blogs\"\n              :key=\"blog.slug\"\n              :to=\"`/blog/${blog.slug}`\"\n              class=\"block p-4 sm:p-5 bg-white/5 hover:shadow-xl transform hover:-translate-y-1 transition duration-300 rounded-3xl outline outline-1 outline-white/40\"\n          >\n            <nuxt-img\n                :src=\"blog.image || 'https://placehold.co/478x358'\"\n                class=\"w-full h-64 sm:h-80 object-cover rounded-3xl\"\n                format=\"webp\"\n                quality=\"80\"\n                loading=\"lazy\"\n                :alt=\"blog.heading\"\n            />\n            <div class=\"mt-4\">\n              <h3\n                  class=\"text-xl sm:text-2xl font-bold font-['Impact'] text-white\"\n              >\n                {{ blog.heading }}\n                </h3>\n                <p class=\"text-sm sm:text-base text-white font-['Shabnam'] mt-2\">\n                  {{ blog.sub_heading }}\n                </p>\n                <p class=\"text-sm text-light-shade font-['Shabnam'] mt-4\">\n                  {{ new Date(blog.created_at).toLocaleDateString() }}\n                </p>\n            </div>\n          </nuxt-link>\n        </div>\n      </div>\n      <div class=\"col-span-1\">\n        <ToolsBlogSidebar @search=\"handleSearch\" />\n      </div>\n    </div>\n  </div>\n</template>\n\n<style scoped>\n.grid {\n  display: grid;\n  gap: 1.5rem;\n}\n\n@media (max-width: 640px) {\n  .grid-cols-2 {\n    grid-template-columns: 1fr;\n  }\n}\n\n.rounded-3xl {\n  border-radius: 1.5rem;\n}\n\n.outline {\n  outline: 1px solid rgba(255, 255, 255, 0.4);\n}\n</style>",
+      "start": 1746483920506,
+      "end": 1746483920545,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:components-loader-pre",
+      "start": 1746483920545,
+      "end": 1746483920545,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:components-loader-pre",
+      "start": 1746483920545,
+      "end": 1746483920545,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1746483920545,
+      "end": 1746483920545,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1746483920545,
+      "end": 1746483920545,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1746483920545,
+      "end": 1746483920545,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1746483920545,
+      "end": 1746483920545,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-only-component-transform",
+      "start": 1746483920545,
+      "end": 1746483920545,
+      "order": "pre"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1746483920545,
+      "end": 1746483920545,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1746483920545,
+      "end": 1746483920545,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import _sfc_main from \"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/blog/index.vue?vue&type=script&setup=true&lang.ts\";\nexport * from \"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/blog/index.vue?vue&type=script&setup=true&lang.ts\";\nimport \"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/blog/index.vue?vue&type=style&index=0&scoped=82810c92&lang.css\";\nimport { useSSRContext as __vite_useSSRContext } from \"vue\";\nconst _sfc_setup = _sfc_main.setup;\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext();\n  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add(\"pages/blog/index.vue\");\n  return _sfc_setup ? _sfc_setup(props, ctx) : void 0;\n};\nimport _export_sfc from \"\\0plugin-vue:export-helper\";\nexport default /* @__PURE__ */ _export_sfc(_sfc_main, [[\"__scopeId\", \"data-v-82810c92\"]]);\n",
+      "start": 1746483920545,
+      "end": 1746483920932,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1746483920932,
+      "end": 1746483920932,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483920932,
+      "end": 1746483920932,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483920932,
+      "end": 1746483920932,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1746483920932,
+      "end": 1746483920932,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1746483920932,
+      "end": 1746483920932,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:prehydrate-transform",
+      "start": 1746483920932,
+      "end": 1746483920932,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:prehydrate-transform",
+      "start": 1746483920932,
+      "end": 1746483920932,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483920932,
+      "end": 1746483920932,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1746483920932,
+      "end": 1746483920932,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1746483920932,
+      "end": 1746483920932,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1746483920932,
+      "end": 1746483920932,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1746483920932,
+      "end": 1746483920932,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1746483920932,
+      "end": 1746483920932,
+      "order": "normal-normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1746483920932,
+      "end": 1746483920932,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1746483920932,
+      "end": 1746483920932,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:head:unhead-imports",
+      "start": 1746483920932,
+      "end": 1746483920932,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:head:unhead-imports",
+      "start": 1746483920932,
+      "end": 1746483920932,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1746483920932,
+      "end": 1746483920932,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1746483920932,
+      "end": 1746483920932,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1746483920932,
+      "end": 1746483920932,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1746483920932,
+      "end": 1746483920932,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "result": "export { default } from \"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/blog/index.vue?macro=true&vue&type=script&setup=true&lang.ts\"",
+      "start": 1746483920933,
+      "end": 1746483920933,
+      "order": "post",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": "AAAA"
+      }
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "result": "export { default } from \"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/blog/index.vue?macro=true&vue&type=script&setup=true&lang.ts\"",
+      "start": 1746483920933,
+      "end": 1746483920933,
+      "order": "post",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": "AAAA"
+      }
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1746483920933,
+      "end": 1746483920933,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1746483920933,
+      "end": 1746483920933,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1746483920933,
+      "end": 1746483920933,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1746483920933,
+      "end": 1746483920933,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1746483920933,
+      "end": 1746483920933,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1746483920933,
+      "end": 1746483920933,
+      "order": "normal"
+    }
+  ]
+}

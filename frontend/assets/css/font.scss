@@ -1,0 +1,82 @@
+﻿// @font-face {
+// 	font-family: IRANSans-web;
+// 	font-style: normal;
+// 	font-weight: 900;
+// 	src: url('./fonts/Peyda/eot/PeydaWeb-Black.eot');
+// 	src: url('./fonts/Peyda/eot/PeydaWeb-Black.eot?#iefix') format('embedded-opentype'),  /* IE6-8 */
+// 		 url('./fonts/Peyda/woff2/PeydaWeb-Black.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+// 		 url('./fonts/Peyda/woff/PeydaWeb-Black.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+// 		 url('./fonts/Peyda/ttf/Peyda-Black.ttf') format('truetype');
+//     font-display: swap;
+// }
+// @font-face {
+// 	font-family: IRANSans-web;
+// 	font-style: normal;
+// 	font-weight: bold;
+// 	src: url('./fonts/Peyda/eot/PeydaWeb-Bold.eot');
+// 	src: url('./fonts/Peyda/eot/PeydaWeb-Bold.eot?#iefix') format('embedded-opentype'),  /* IE6-8 */
+// 		 url('./fonts/Peyda/woff2/PeydaWeb-Bold.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+// 		 url('./fonts/Peyda/woff/PeydaWeb-Bold.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+// 		 url('./fonts/Peyda/ttf/Peyda-Bold.ttf') format('truetype');
+//     font-display: swap;
+// }
+
+// @font-face {
+// 	font-family: IRANSans-web;
+// 	font-style: normal;
+// 	font-weight: normal;
+// 	src: url('./fonts/Peyda/eot/PeydaWeb-Medium.eot');
+// 	src: url('./fonts/Peyda/eot/PeydaWeb-Medium.eot?#iefix') format('embedded-opentype'),  /* IE6-8 */
+// 		 url('./fonts/Peyda/woff2/PeydaWeb-Medium.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+// 		 url('./fonts/Peyda/woff/PeydaWeb-Medium.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+// 		 url('./fonts/Peyda/ttf/Peyda-Medium.ttf') format('truetype');
+//     font-display: swap;
+// }
+/****bakh font**/
+
+@font-face {
+	font-family: bakh;
+	font-style: normal;
+	font-weight: 100; 
+	src: url('./fonts/bakh/woff2/100.woff2') format('woff2'); 
+	src: url('./fonts/bakh/woff/100.woff') format('woff');
+	src: url('./fonts/bakh/ttf/100.ttf') format('truetype');
+	font-display: swap;
+}
+// @font-face {
+// 	font-family: bakh;
+// 	font-style: normal;
+// 	font-weight: 300;
+// 	src: url('./fonts/bakh/woff2/300.woff2') format('woff2');
+// 	src: url('./fonts/bakh/woff/300.woff') format('woff');
+// 	src: url('./fonts/bakh/ttf/300.ttf') format('truetype');
+// 	font-display: swap;
+// }
+// @font-face {
+// 	font-family: bakh;
+// 	font-style: normal;
+// 	font-weight: 500;
+// 	src: url('./fonts/bakh/woff2/500.woff2') format('woff2');
+// 	src: url('./fonts/bakh/woff/500.woff') format('woff');
+// 	src: url('./fonts/bakh/ttf/500.ttf') format('truetype');
+// 	font-display: swap;
+// }
+// @font-face {
+// 	font-family: bakh;
+// 	font-style: normal;
+// 	font-weight: bold;
+// 	src: url('./fonts/bakh/woff2/bold.woff2') format('woff2');
+// 	src: url('./fonts/bakh/woff/bold.woff') format('woff');
+// 	src: url('./fonts/bakh/ttf/bold.ttf') format('truetype');
+// 	font-display: swap;
+// }
+@font-face {
+	font-family: bakh;
+	font-style: normal;
+	font-weight: normal;
+  src: url('./fonts/bakh/bakh-normal/eot/normal.eot?#iefix') format('embedded-opentype'),  /* IE6-8 */
+  url('./fonts/bakh/woff2/normal.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+  url('./fonts/bakh/woff/normal.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+  url('./fonts/bakh/ttf/normal.ttf') format('truetype');
+  font-display: swap;
+}

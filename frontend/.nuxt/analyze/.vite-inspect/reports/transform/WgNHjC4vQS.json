@@ -1,0 +1,205 @@
+{
+  "resolvedId": "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/layouts/default.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<script setup lang=\"ts\">\n\n</script>\n\n<template>\n  <Header />\n  <div class=\"min-h-screen\">\n    <slot />\n  </div>\n  <LazyFooter />\n</template>\n\n<style scoped>\n\n</style>",
+      "start": 1746483911698,
+      "end": 1746483912159,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:components-loader-pre",
+      "start": 1746483912159,
+      "end": 1746483912159,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1746483912159,
+      "end": 1746483912159,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1746483912159,
+      "end": 1746483912159,
+      "order": "pre"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1746483912159,
+      "end": 1746483912159,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1746483912159,
+      "end": 1746483912159,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "const _sfc_main = {  }\nimport { resolveComponent as _resolveComponent, createVNode as _createVNode, renderSlot as _renderSlot, createElementVNode as _createElementVNode, Fragment as _Fragment, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\nconst _hoisted_1 = { class: \"min-h-screen\" }\n\nfunction _sfc_render(_ctx, _cache) {\n  const _component_Header = _resolveComponent(\"Header\")\n  const _component_LazyFooter = _resolveComponent(\"LazyFooter\")\n\n  return (_openBlock(), _createElementBlock(_Fragment, null, [\n    _createVNode(_component_Header),\n    _createElementVNode(\"div\", _hoisted_1, [\n      _renderSlot(_ctx.$slots, \"default\")\n    ]),\n    _createVNode(_component_LazyFooter)\n  ], 64))\n}\n\n\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['render',_sfc_render]])",
+      "start": 1746483912159,
+      "end": 1746483912161,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1746483912161,
+      "end": 1746483912161,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483912161,
+      "end": 1746483912161,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1746483912161,
+      "end": 1746483912161,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:prehydrate-transform",
+      "start": 1746483912161,
+      "end": 1746483912161,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:module-preload-polyfill",
+      "start": 1746483912161,
+      "end": 1746483912161,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483912161,
+      "end": 1746483912161,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1746483912161,
+      "end": 1746483912161,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1746483912161,
+      "end": 1746483912161,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1746483912161,
+      "end": 1746483912161,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1746483912161,
+      "end": 1746483912161,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1746483912161,
+      "end": 1746483912161,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1746483912161,
+      "end": 1746483912161,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1746483912161,
+      "end": 1746483912161,
+      "order": "normal-normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1746483912161,
+      "end": 1746483912161,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:head:unhead-imports",
+      "start": 1746483912161,
+      "end": 1746483912161,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1746483912161,
+      "end": 1746483912162,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1746483912162,
+      "end": 1746483912162,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1746483912162,
+      "end": 1746483912162,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1746483912162,
+      "end": 1746483912162,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1746483912162,
+      "end": 1746483912162,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1746483912162,
+      "end": 1746483912162,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "result": "import { default as __nuxt_component_0 } from \"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/components/header.vue\";\nimport { defineAsyncComponent as __defineAsyncComponent } from \"vue\";\nconst __nuxt_component_1_lazy = __defineAsyncComponent(() => import(\"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/components/footer.vue\").then(c => c.default || c))\nconst _sfc_main = {  }\nimport { resolveComponent as _resolveComponent, createVNode as _createVNode, renderSlot as _renderSlot, createElementVNode as _createElementVNode, Fragment as _Fragment, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\nconst _hoisted_1 = { class: \"min-h-screen\" }\n\nfunction _sfc_render(_ctx, _cache) {\n  const _component_Header = __nuxt_component_0\n  const _component_LazyFooter = __nuxt_component_1_lazy\n\n  return (_openBlock(), _createElementBlock(_Fragment, null, [\n    _createVNode(_component_Header),\n    _createElementVNode(\"div\", _hoisted_1, [\n      _renderSlot(_ctx.$slots, \"default\")\n    ]),\n    _createVNode(_component_LazyFooter)\n  ], 64))\n}\n\n\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['render',_sfc_render]])",
+      "start": 1746483912162,
+      "end": 1746483912162,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1746483912162,
+      "end": 1746483912162,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "result": "import { __vitePreload } from \"\u0000vite/preload-helper.js\";import { default as __nuxt_component_0 } from \"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/components/header.vue\";\nimport { defineAsyncComponent as __defineAsyncComponent } from \"vue\";\nconst __nuxt_component_1_lazy = __defineAsyncComponent(() => __vitePreload(() => import(\"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/components/footer.vue\"),__VITE_IS_MODERN__?__VITE_PRELOAD__:void 0,import.meta.url).then(c => c.default || c))\nconst _sfc_main = {  }\nimport { resolveComponent as _resolveComponent, createVNode as _createVNode, renderSlot as _renderSlot, createElementVNode as _createElementVNode, Fragment as _Fragment, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\nconst _hoisted_1 = { class: \"min-h-screen\" }\n\nfunction _sfc_render(_ctx, _cache) {\n  const _component_Header = __nuxt_component_0\n  const _component_LazyFooter = __nuxt_component_1_lazy\n\n  return (_openBlock(), _createElementBlock(_Fragment, null, [\n    _createVNode(_component_Header),\n    _createElementVNode(\"div\", _hoisted_1, [\n      _renderSlot(_ctx.$slots, \"default\")\n    ]),\n    _createVNode(_component_LazyFooter)\n  ], 64))\n}\n\n\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['render',_sfc_render]])",
+      "start": 1746483912162,
+      "end": 1746483912163,
+      "order": "normal-normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1746483912163,
+      "end": 1746483912163,
+      "order": "normal"
+    }
+  ]
+}

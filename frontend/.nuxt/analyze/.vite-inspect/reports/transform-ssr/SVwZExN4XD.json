@@ -1,0 +1,248 @@
+{
+  "resolvedId": "virtual:nuxt:%2FUsers%2Fmohammadrassoulzadeh%2FDocuments%2Fproject%2Fmarktify%2Ffront%2F.nuxt%2Froutes.mjs",
+  "transforms": [
+    {
+      "name": "nuxt:virtual",
+      "result": "\nif (import.meta.hot) {\n  import.meta.hot.accept((mod) => {\n    const router = import.meta.hot.data.router\n    const generateRoutes = import.meta.hot.data.generateRoutes\n    if (!router || !generateRoutes) {\n      import.meta.hot.invalidate('[nuxt] Cannot replace routes because there is no active router. Reloading.')\n      return\n    }\n    router.clearRoutes()\n    const routes = generateRoutes(mod.default || mod)\n    function addRoutes (routes) {\n      for (const route of routes) {\n        router.addRoute(route)\n      }\n      router.replace(router.currentRoute.value.fullPath)\n    }\n    if (routes && 'then' in routes) {\n      routes.then(addRoutes)\n    } else {\n      addRoutes(routes)\n    }\n  })\n}\n\nexport function handleHotUpdate(_router, _generateRoutes) {\n  if (import.meta.hot) {\n    import.meta.hot.data ||= {}\n    import.meta.hot.data.router = _router\n    import.meta.hot.data.generateRoutes = _generateRoutes\n  }\n}\nimport { default as indexHx8uxkNBvoBhk1YYZBizRxvFfIZrB1Evb13srELwSMsMeta } from \"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/index.vue?macro=true\";\nimport { default as processytIHEWM_45hFBe_45AaBf0pLXYrnJjY6yOyQ7J2xiAnqTBoMeta } from \"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/process.vue?macro=true\";\nimport { default as about_45usg4LuVtE2NzHDA63HIIxgV9S5MSvFZCXiy_chzdkNMwkMeta } from \"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/about-us.vue?macro=true\";\nimport { default as our_45workGbkMT46a87U5LnQFfXTH7UkKV69yar7oSHivEO7u5scMeta } from \"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/our-work.vue?macro=true\";\nimport { default as loginrbunpRQRrN1xTZ3CL5LVjg38UPVQo3C1PeJoqZUngWEMeta } from \"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/auth/login.vue?macro=true\";\nimport { default as index1v94_s_TACWPRVefLZc1xiuxkJPkXCfh8CIVzZQ9xFkMeta } from \"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/blog/index.vue?macro=true\";\nimport { default as contact_45uswaCJU_ms109Y1DNtrTCQzK6hIdvqp_VwyGXFPyQ0JNkMeta } from \"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/contact-us.vue?macro=true\";\nimport { default as verifyFXyyDn0mdeY_454VwTTyyfyKmvV64kQlpnQWlnQUot4NAMeta } from \"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/auth/verify.vue?macro=true\";\nimport { default as _91slug_93gYTZqA3TMzA2evaNiEOG0T51prw3QTqiPvlw9hmE98gMeta } from \"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/blog/[slug].vue?macro=true\";\nimport { default as our_45service07EV4Rz_BFcoNrMqvQ58lhi0TpcLxJ2xYaID689Css8Meta } from \"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/our-service.vue?macro=true\";\nimport { default as registerPYPU41XBHJGuwLjowzVTOtetHxLOej7TNg_45fh17XZO4Meta } from \"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/auth/register.vue?macro=true\";\nimport { default as _91slug_93_45service2hvSJDNWVzus1T3xgYKh002Pjs1SgAoID3FQMX_NkIAMeta } from \"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/[slug]-service.vue?macro=true\";\nimport { default as indexTPSa9CQsnEMZfhAcPKHlnYcGXug8hwoDcegzTDDN_MMMeta } from \"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/dashboard/index.vue?macro=true\";\nimport { default as walletSsIuoj6wJOk6RJoy_45gtwENL_UyYCRFK6xiEOzpNklnYMeta } from \"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/dashboard/wallet.vue?macro=true\";\nimport { default as _91slug_93BXwfuKinPPLGsmNjnxqFjuPGFjIW3zS7RqmLQ3c_lWwMeta } from \"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/portfolio/[slug].vue?macro=true\";\nimport { default as profile2C5eCjqs259oEUBrlhFRblTxcGV4CifheBCk_45GngAB4Meta } from \"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/dashboard/profile.vue?macro=true\";\nimport { default as indexTT5LbS5oh2ffiLMnH5UxB_45Gygz_bL3ola_45ptIk08q4UMeta } from \"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/dashboard/cart/index.vue?macro=true\";\nimport { default as _91id_93fTCGAlmMDHPzcCoP5WgAZeYghgjfG_LwDHa2zSzosIYMeta } from \"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/dashboard/orders/[id].vue?macro=true\";\nimport { default as newgWL7eDsHVbF4pWRv9dFC8Th4eiQyWPuj_DlYg34z__EMeta } from \"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/dashboard/support/new.vue?macro=true\";\nimport { default as index0FLhDQvf_O0GAkgj91Wl9pmcQWazlHpYF0C8Cyz4y_gMeta } from \"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/dashboard/orders/index.vue?macro=true\";\nimport { default as _91id_93_45AEWV_zVMQ_45PJBzMBzniukwRn8Y6i1AzROOIUBrwtF4Meta } from \"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/dashboard/process/[id].vue?macro=true\";\nimport { default as _91id_93GhL_45dnG9fyYglUFP1qKe2x5DguJ15CWy_45DzlxGK_0HgMeta } from \"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/dashboard/support/[id].vue?macro=true\";\nimport { default as indexVW_45GYxrC3v84hGTbQjC3ZIV3MweciKJX1mE1_45G_zl9YMeta } from \"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/dashboard/process/index.vue?macro=true\";\nimport { default as index5WQXvbk7xEnPImnJoyTXJU88U7aDmdVqm5p9SzTp464Meta } from \"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/dashboard/support/index.vue?macro=true\";\nexport default [\n  {\n    name: \"index\",\n    path: \"/\",\n    component: () => import(\"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/index.vue\")\n  },\n  {\n    name: \"process\",\n    path: \"/process\",\n    component: () => import(\"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/process.vue\")\n  },\n  {\n    name: \"about-us\",\n    path: \"/about-us\",\n    component: () => import(\"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/about-us.vue\")\n  },\n  {\n    name: \"our-work\",\n    path: \"/our-work\",\n    component: () => import(\"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/our-work.vue\")\n  },\n  {\n    name: \"auth-login\",\n    path: \"/auth/login\",\n    component: () => import(\"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/auth/login.vue\")\n  },\n  {\n    name: \"blog\",\n    path: \"/blog\",\n    component: () => import(\"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/blog/index.vue\")\n  },\n  {\n    name: \"contact-us\",\n    path: \"/contact-us\",\n    component: () => import(\"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/contact-us.vue\")\n  },\n  {\n    name: \"auth-verify\",\n    path: \"/auth/verify\",\n    component: () => import(\"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/auth/verify.vue\")\n  },\n  {\n    name: \"blog-slug\",\n    path: \"/blog/:slug()\",\n    component: () => import(\"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/blog/[slug].vue\")\n  },\n  {\n    name: \"our-service\",\n    path: \"/our-service\",\n    component: () => import(\"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/our-service.vue\")\n  },\n  {\n    name: \"auth-register\",\n    path: \"/auth/register\",\n    component: () => import(\"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/auth/register.vue\")\n  },\n  {\n    name: \"slug-service\",\n    path: \"/:slug()-service\",\n    component: () => import(\"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/[slug]-service.vue\")\n  },\n  {\n    name: \"dashboard\",\n    path: \"/dashboard\",\n    meta: indexTPSa9CQsnEMZfhAcPKHlnYcGXug8hwoDcegzTDDN_MMMeta || {},\n    component: () => import(\"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/dashboard/index.vue\")\n  },\n  {\n    name: \"dashboard-wallet\",\n    path: \"/dashboard/wallet\",\n    meta: walletSsIuoj6wJOk6RJoy_45gtwENL_UyYCRFK6xiEOzpNklnYMeta || {},\n    component: () => import(\"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/dashboard/wallet.vue\")\n  },\n  {\n    name: \"portfolio-slug\",\n    path: \"/portfolio/:slug()\",\n    component: () => import(\"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/portfolio/[slug].vue\")\n  },\n  {\n    name: \"dashboard-profile\",\n    path: \"/dashboard/profile\",\n    meta: profile2C5eCjqs259oEUBrlhFRblTxcGV4CifheBCk_45GngAB4Meta || {},\n    component: () => import(\"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/dashboard/profile.vue\")\n  },\n  {\n    name: \"dashboard-cart\",\n    path: \"/dashboard/cart\",\n    meta: indexTT5LbS5oh2ffiLMnH5UxB_45Gygz_bL3ola_45ptIk08q4UMeta || {},\n    component: () => import(\"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/dashboard/cart/index.vue\")\n  },\n  {\n    name: \"dashboard-orders-id\",\n    path: \"/dashboard/orders/:id()\",\n    meta: _91id_93fTCGAlmMDHPzcCoP5WgAZeYghgjfG_LwDHa2zSzosIYMeta || {},\n    component: () => import(\"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/dashboard/orders/[id].vue\")\n  },\n  {\n    name: \"dashboard-support-new\",\n    path: \"/dashboard/support/new\",\n    meta: newgWL7eDsHVbF4pWRv9dFC8Th4eiQyWPuj_DlYg34z__EMeta || {},\n    component: () => import(\"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/dashboard/support/new.vue\")\n  },\n  {\n    name: \"dashboard-orders\",\n    path: \"/dashboard/orders\",\n    meta: index0FLhDQvf_O0GAkgj91Wl9pmcQWazlHpYF0C8Cyz4y_gMeta || {},\n    component: () => import(\"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/dashboard/orders/index.vue\")\n  },\n  {\n    name: \"dashboard-process-id\",\n    path: \"/dashboard/process/:id()\",\n    meta: _91id_93_45AEWV_zVMQ_45PJBzMBzniukwRn8Y6i1AzROOIUBrwtF4Meta || {},\n    component: () => import(\"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/dashboard/process/[id].vue\")\n  },\n  {\n    name: \"dashboard-support-id\",\n    path: \"/dashboard/support/:id()\",\n    meta: _91id_93GhL_45dnG9fyYglUFP1qKe2x5DguJ15CWy_45DzlxGK_0HgMeta || {},\n    component: () => import(\"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/dashboard/support/[id].vue\")\n  },\n  {\n    name: \"dashboard-process\",\n    path: \"/dashboard/process\",\n    meta: indexVW_45GYxrC3v84hGTbQjC3ZIV3MweciKJX1mE1_45G_zl9YMeta || {},\n    component: () => import(\"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/dashboard/process/index.vue\")\n  },\n  {\n    name: \"dashboard-support\",\n    path: \"/dashboard/support\",\n    meta: index5WQXvbk7xEnPImnJoyTXJU88U7aDmdVqm5p9SzTp464Meta || {},\n    component: () => import(\"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/dashboard/support/index.vue\")\n  }\n]",
+      "start": 1746483920459,
+      "end": 1746483920459,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:components-loader-pre",
+      "start": 1746483920459,
+      "end": 1746483920459,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:components-loader-pre",
+      "start": 1746483920459,
+      "end": 1746483920459,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1746483920459,
+      "end": 1746483920459,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1746483920459,
+      "end": 1746483920459,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1746483920459,
+      "end": 1746483920459,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1746483920459,
+      "end": 1746483920459,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-only-component-transform",
+      "start": 1746483920459,
+      "end": 1746483920459,
+      "order": "pre"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1746483920460,
+      "end": 1746483920460,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1746483920460,
+      "end": 1746483920460,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1746483920460,
+      "end": 1746483920460,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1746483920460,
+      "end": 1746483920460,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483920460,
+      "end": 1746483920460,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483920460,
+      "end": 1746483920460,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1746483920460,
+      "end": 1746483920460,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1746483920460,
+      "end": 1746483920460,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:prehydrate-transform",
+      "start": 1746483920460,
+      "end": 1746483920460,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:prehydrate-transform",
+      "start": 1746483920460,
+      "end": 1746483920460,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483920460,
+      "end": 1746483920460,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1746483920460,
+      "end": 1746483920460,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "result": "if (void 0) {\n  (void 0).accept((mod) => {\n    const router = (void 0).data.router;\n    const generateRoutes = (void 0).data.generateRoutes;\n    if (!router || !generateRoutes) {\n      (void 0).invalidate(\"[nuxt] Cannot replace routes because there is no active router. Reloading.\");\n      return;\n    }\n    router.clearRoutes();\n    const routes = generateRoutes(mod.default || mod);\n    function addRoutes(routes2) {\n      for (const route of routes2) {\n        router.addRoute(route);\n      }\n      router.replace(router.currentRoute.value.fullPath);\n    }\n    if (routes && \"then\" in routes) {\n      routes.then(addRoutes);\n    } else {\n      addRoutes(routes);\n    }\n  });\n}\nexport function handleHotUpdate(_router, _generateRoutes) {\n  if (void 0) {\n    (void 0).data ||= {};\n    (void 0).data.router = _router;\n    (void 0).data.generateRoutes = _generateRoutes;\n  }\n}\nimport { default as indexHx8uxkNBvoBhk1YYZBizRxvFfIZrB1Evb13srELwSMsMeta } from \"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/index.vue?macro=true\";\nimport { default as processytIHEWM_45hFBe_45AaBf0pLXYrnJjY6yOyQ7J2xiAnqTBoMeta } from \"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/process.vue?macro=true\";\nimport { default as about_45usg4LuVtE2NzHDA63HIIxgV9S5MSvFZCXiy_chzdkNMwkMeta } from \"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/about-us.vue?macro=true\";\nimport { default as our_45workGbkMT46a87U5LnQFfXTH7UkKV69yar7oSHivEO7u5scMeta } from \"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/our-work.vue?macro=true\";\nimport { default as loginrbunpRQRrN1xTZ3CL5LVjg38UPVQo3C1PeJoqZUngWEMeta } from \"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/auth/login.vue?macro=true\";\nimport { default as index1v94_s_TACWPRVefLZc1xiuxkJPkXCfh8CIVzZQ9xFkMeta } from \"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/blog/index.vue?macro=true\";\nimport { default as contact_45uswaCJU_ms109Y1DNtrTCQzK6hIdvqp_VwyGXFPyQ0JNkMeta } from \"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/contact-us.vue?macro=true\";\nimport { default as verifyFXyyDn0mdeY_454VwTTyyfyKmvV64kQlpnQWlnQUot4NAMeta } from \"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/auth/verify.vue?macro=true\";\nimport { default as _91slug_93gYTZqA3TMzA2evaNiEOG0T51prw3QTqiPvlw9hmE98gMeta } from \"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/blog/[slug].vue?macro=true\";\nimport { default as our_45service07EV4Rz_BFcoNrMqvQ58lhi0TpcLxJ2xYaID689Css8Meta } from \"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/our-service.vue?macro=true\";\nimport { default as registerPYPU41XBHJGuwLjowzVTOtetHxLOej7TNg_45fh17XZO4Meta } from \"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/auth/register.vue?macro=true\";\nimport { default as _91slug_93_45service2hvSJDNWVzus1T3xgYKh002Pjs1SgAoID3FQMX_NkIAMeta } from \"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/[slug]-service.vue?macro=true\";\nimport { default as indexTPSa9CQsnEMZfhAcPKHlnYcGXug8hwoDcegzTDDN_MMMeta } from \"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/dashboard/index.vue?macro=true\";\nimport { default as walletSsIuoj6wJOk6RJoy_45gtwENL_UyYCRFK6xiEOzpNklnYMeta } from \"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/dashboard/wallet.vue?macro=true\";\nimport { default as _91slug_93BXwfuKinPPLGsmNjnxqFjuPGFjIW3zS7RqmLQ3c_lWwMeta } from \"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/portfolio/[slug].vue?macro=true\";\nimport { default as profile2C5eCjqs259oEUBrlhFRblTxcGV4CifheBCk_45GngAB4Meta } from \"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/dashboard/profile.vue?macro=true\";\nimport { default as indexTT5LbS5oh2ffiLMnH5UxB_45Gygz_bL3ola_45ptIk08q4UMeta } from \"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/dashboard/cart/index.vue?macro=true\";\nimport { default as _91id_93fTCGAlmMDHPzcCoP5WgAZeYghgjfG_LwDHa2zSzosIYMeta } from \"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/dashboard/orders/[id].vue?macro=true\";\nimport { default as newgWL7eDsHVbF4pWRv9dFC8Th4eiQyWPuj_DlYg34z__EMeta } from \"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/dashboard/support/new.vue?macro=true\";\nimport { default as index0FLhDQvf_O0GAkgj91Wl9pmcQWazlHpYF0C8Cyz4y_gMeta } from \"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/dashboard/orders/index.vue?macro=true\";\nimport { default as _91id_93_45AEWV_zVMQ_45PJBzMBzniukwRn8Y6i1AzROOIUBrwtF4Meta } from \"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/dashboard/process/[id].vue?macro=true\";\nimport { default as _91id_93GhL_45dnG9fyYglUFP1qKe2x5DguJ15CWy_45DzlxGK_0HgMeta } from \"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/dashboard/support/[id].vue?macro=true\";\nimport { default as indexVW_45GYxrC3v84hGTbQjC3ZIV3MweciKJX1mE1_45G_zl9YMeta } from \"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/dashboard/process/index.vue?macro=true\";\nimport { default as index5WQXvbk7xEnPImnJoyTXJU88U7aDmdVqm5p9SzTp464Meta } from \"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/dashboard/support/index.vue?macro=true\";\nexport default [\n  {\n    name: \"index\",\n    path: \"/\",\n    component: () => import(\"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/index.vue\")\n  },\n  {\n    name: \"process\",\n    path: \"/process\",\n    component: () => import(\"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/process.vue\")\n  },\n  {\n    name: \"about-us\",\n    path: \"/about-us\",\n    component: () => import(\"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/about-us.vue\")\n  },\n  {\n    name: \"our-work\",\n    path: \"/our-work\",\n    component: () => import(\"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/our-work.vue\")\n  },\n  {\n    name: \"auth-login\",\n    path: \"/auth/login\",\n    component: () => import(\"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/auth/login.vue\")\n  },\n  {\n    name: \"blog\",\n    path: \"/blog\",\n    component: () => import(\"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/blog/index.vue\")\n  },\n  {\n    name: \"contact-us\",\n    path: \"/contact-us\",\n    component: () => import(\"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/contact-us.vue\")\n  },\n  {\n    name: \"auth-verify\",\n    path: \"/auth/verify\",\n    component: () => import(\"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/auth/verify.vue\")\n  },\n  {\n    name: \"blog-slug\",\n    path: \"/blog/:slug()\",\n    component: () => import(\"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/blog/[slug].vue\")\n  },\n  {\n    name: \"our-service\",\n    path: \"/our-service\",\n    component: () => import(\"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/our-service.vue\")\n  },\n  {\n    name: \"auth-register\",\n    path: \"/auth/register\",\n    component: () => import(\"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/auth/register.vue\")\n  },\n  {\n    name: \"slug-service\",\n    path: \"/:slug()-service\",\n    component: () => import(\"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/[slug]-service.vue\")\n  },\n  {\n    name: \"dashboard\",\n    path: \"/dashboard\",\n    meta: indexTPSa9CQsnEMZfhAcPKHlnYcGXug8hwoDcegzTDDN_MMMeta || {},\n    component: () => import(\"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/dashboard/index.vue\")\n  },\n  {\n    name: \"dashboard-wallet\",\n    path: \"/dashboard/wallet\",\n    meta: walletSsIuoj6wJOk6RJoy_45gtwENL_UyYCRFK6xiEOzpNklnYMeta || {},\n    component: () => import(\"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/dashboard/wallet.vue\")\n  },\n  {\n    name: \"portfolio-slug\",\n    path: \"/portfolio/:slug()\",\n    component: () => import(\"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/portfolio/[slug].vue\")\n  },\n  {\n    name: \"dashboard-profile\",\n    path: \"/dashboard/profile\",\n    meta: profile2C5eCjqs259oEUBrlhFRblTxcGV4CifheBCk_45GngAB4Meta || {},\n    component: () => import(\"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/dashboard/profile.vue\")\n  },\n  {\n    name: \"dashboard-cart\",\n    path: \"/dashboard/cart\",\n    meta: indexTT5LbS5oh2ffiLMnH5UxB_45Gygz_bL3ola_45ptIk08q4UMeta || {},\n    component: () => import(\"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/dashboard/cart/index.vue\")\n  },\n  {\n    name: \"dashboard-orders-id\",\n    path: \"/dashboard/orders/:id()\",\n    meta: _91id_93fTCGAlmMDHPzcCoP5WgAZeYghgjfG_LwDHa2zSzosIYMeta || {},\n    component: () => import(\"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/dashboard/orders/[id].vue\")\n  },\n  {\n    name: \"dashboard-support-new\",\n    path: \"/dashboard/support/new\",\n    meta: newgWL7eDsHVbF4pWRv9dFC8Th4eiQyWPuj_DlYg34z__EMeta || {},\n    component: () => import(\"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/dashboard/support/new.vue\")\n  },\n  {\n    name: \"dashboard-orders\",\n    path: \"/dashboard/orders\",\n    meta: index0FLhDQvf_O0GAkgj91Wl9pmcQWazlHpYF0C8Cyz4y_gMeta || {},\n    component: () => import(\"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/dashboard/orders/index.vue\")\n  },\n  {\n    name: \"dashboard-process-id\",\n    path: \"/dashboard/process/:id()\",\n    meta: _91id_93_45AEWV_zVMQ_45PJBzMBzniukwRn8Y6i1AzROOIUBrwtF4Meta || {},\n    component: () => import(\"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/dashboard/process/[id].vue\")\n  },\n  {\n    name: \"dashboard-support-id\",\n    path: \"/dashboard/support/:id()\",\n    meta: _91id_93GhL_45dnG9fyYglUFP1qKe2x5DguJ15CWy_45DzlxGK_0HgMeta || {},\n    component: () => import(\"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/dashboard/support/[id].vue\")\n  },\n  {\n    name: \"dashboard-process\",\n    path: \"/dashboard/process\",\n    meta: indexVW_45GYxrC3v84hGTbQjC3ZIV3MweciKJX1mE1_45G_zl9YMeta || {},\n    component: () => import(\"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/dashboard/process/index.vue\")\n  },\n  {\n    name: \"dashboard-support\",\n    path: \"/dashboard/support\",\n    meta: index5WQXvbk7xEnPImnJoyTXJU88U7aDmdVqm5p9SzTp464Meta || {},\n    component: () => import(\"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/dashboard/support/index.vue\")\n  }\n];\n",
+      "start": 1746483920460,
+      "end": 1746483920497,
+      "order": "normal-normal",
+      "sourcemaps": "{\n  \"version\": 3,\n  \"sources\": [\"virtual:nuxt:%2FUsers%2Fmohammadrassoulzadeh%2FDocuments%2Fproject%2Fmarktify%2Ffront%2F.nuxt%2Froutes.mjs\"],\n  \"sourcesContent\": [\"\\nif (import.meta.hot) {\\n  import.meta.hot.accept((mod) => {\\n    const router = import.meta.hot.data.router\\n    const generateRoutes = import.meta.hot.data.generateRoutes\\n    if (!router || !generateRoutes) {\\n      import.meta.hot.invalidate('[nuxt] Cannot replace routes because there is no active router. Reloading.')\\n      return\\n    }\\n    router.clearRoutes()\\n    const routes = generateRoutes(mod.default || mod)\\n    function addRoutes (routes) {\\n      for (const route of routes) {\\n        router.addRoute(route)\\n      }\\n      router.replace(router.currentRoute.value.fullPath)\\n    }\\n    if (routes && 'then' in routes) {\\n      routes.then(addRoutes)\\n    } else {\\n      addRoutes(routes)\\n    }\\n  })\\n}\\n\\nexport function handleHotUpdate(_router, _generateRoutes) {\\n  if (import.meta.hot) {\\n    import.meta.hot.data ||= {}\\n    import.meta.hot.data.router = _router\\n    import.meta.hot.data.generateRoutes = _generateRoutes\\n  }\\n}\\nimport { default as indexHx8uxkNBvoBhk1YYZBizRxvFfIZrB1Evb13srELwSMsMeta } from \\\"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/index.vue?macro=true\\\";\\nimport { default as processytIHEWM_45hFBe_45AaBf0pLXYrnJjY6yOyQ7J2xiAnqTBoMeta } from \\\"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/process.vue?macro=true\\\";\\nimport { default as about_45usg4LuVtE2NzHDA63HIIxgV9S5MSvFZCXiy_chzdkNMwkMeta } from \\\"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/about-us.vue?macro=true\\\";\\nimport { default as our_45workGbkMT46a87U5LnQFfXTH7UkKV69yar7oSHivEO7u5scMeta } from \\\"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/our-work.vue?macro=true\\\";\\nimport { default as loginrbunpRQRrN1xTZ3CL5LVjg38UPVQo3C1PeJoqZUngWEMeta } from \\\"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/auth/login.vue?macro=true\\\";\\nimport { default as index1v94_s_TACWPRVefLZc1xiuxkJPkXCfh8CIVzZQ9xFkMeta } from \\\"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/blog/index.vue?macro=true\\\";\\nimport { default as contact_45uswaCJU_ms109Y1DNtrTCQzK6hIdvqp_VwyGXFPyQ0JNkMeta } from \\\"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/contact-us.vue?macro=true\\\";\\nimport { default as verifyFXyyDn0mdeY_454VwTTyyfyKmvV64kQlpnQWlnQUot4NAMeta } from \\\"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/auth/verify.vue?macro=true\\\";\\nimport { default as _91slug_93gYTZqA3TMzA2evaNiEOG0T51prw3QTqiPvlw9hmE98gMeta } from \\\"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/blog/[slug].vue?macro=true\\\";\\nimport { default as our_45service07EV4Rz_BFcoNrMqvQ58lhi0TpcLxJ2xYaID689Css8Meta } from \\\"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/our-service.vue?macro=true\\\";\\nimport { default as registerPYPU41XBHJGuwLjowzVTOtetHxLOej7TNg_45fh17XZO4Meta } from \\\"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/auth/register.vue?macro=true\\\";\\nimport { default as _91slug_93_45service2hvSJDNWVzus1T3xgYKh002Pjs1SgAoID3FQMX_NkIAMeta } from \\\"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/[slug]-service.vue?macro=true\\\";\\nimport { default as indexTPSa9CQsnEMZfhAcPKHlnYcGXug8hwoDcegzTDDN_MMMeta } from \\\"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/dashboard/index.vue?macro=true\\\";\\nimport { default as walletSsIuoj6wJOk6RJoy_45gtwENL_UyYCRFK6xiEOzpNklnYMeta } from \\\"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/dashboard/wallet.vue?macro=true\\\";\\nimport { default as _91slug_93BXwfuKinPPLGsmNjnxqFjuPGFjIW3zS7RqmLQ3c_lWwMeta } from \\\"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/portfolio/[slug].vue?macro=true\\\";\\nimport { default as profile2C5eCjqs259oEUBrlhFRblTxcGV4CifheBCk_45GngAB4Meta } from \\\"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/dashboard/profile.vue?macro=true\\\";\\nimport { default as indexTT5LbS5oh2ffiLMnH5UxB_45Gygz_bL3ola_45ptIk08q4UMeta } from \\\"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/dashboard/cart/index.vue?macro=true\\\";\\nimport { default as _91id_93fTCGAlmMDHPzcCoP5WgAZeYghgjfG_LwDHa2zSzosIYMeta } from \\\"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/dashboard/orders/[id].vue?macro=true\\\";\\nimport { default as newgWL7eDsHVbF4pWRv9dFC8Th4eiQyWPuj_DlYg34z__EMeta } from \\\"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/dashboard/support/new.vue?macro=true\\\";\\nimport { default as index0FLhDQvf_O0GAkgj91Wl9pmcQWazlHpYF0C8Cyz4y_gMeta } from \\\"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/dashboard/orders/index.vue?macro=true\\\";\\nimport { default as _91id_93_45AEWV_zVMQ_45PJBzMBzniukwRn8Y6i1AzROOIUBrwtF4Meta } from \\\"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/dashboard/process/[id].vue?macro=true\\\";\\nimport { default as _91id_93GhL_45dnG9fyYglUFP1qKe2x5DguJ15CWy_45DzlxGK_0HgMeta } from \\\"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/dashboard/support/[id].vue?macro=true\\\";\\nimport { default as indexVW_45GYxrC3v84hGTbQjC3ZIV3MweciKJX1mE1_45G_zl9YMeta } from \\\"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/dashboard/process/index.vue?macro=true\\\";\\nimport { default as index5WQXvbk7xEnPImnJoyTXJU88U7aDmdVqm5p9SzTp464Meta } from \\\"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/dashboard/support/index.vue?macro=true\\\";\\nexport default [\\n  {\\n    name: \\\"index\\\",\\n    path: \\\"/\\\",\\n    component: () => import(\\\"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/index.vue\\\")\\n  },\\n  {\\n    name: \\\"process\\\",\\n    path: \\\"/process\\\",\\n    component: () => import(\\\"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/process.vue\\\")\\n  },\\n  {\\n    name: \\\"about-us\\\",\\n    path: \\\"/about-us\\\",\\n    component: () => import(\\\"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/about-us.vue\\\")\\n  },\\n  {\\n    name: \\\"our-work\\\",\\n    path: \\\"/our-work\\\",\\n    component: () => import(\\\"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/our-work.vue\\\")\\n  },\\n  {\\n    name: \\\"auth-login\\\",\\n    path: \\\"/auth/login\\\",\\n    component: () => import(\\\"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/auth/login.vue\\\")\\n  },\\n  {\\n    name: \\\"blog\\\",\\n    path: \\\"/blog\\\",\\n    component: () => import(\\\"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/blog/index.vue\\\")\\n  },\\n  {\\n    name: \\\"contact-us\\\",\\n    path: \\\"/contact-us\\\",\\n    component: () => import(\\\"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/contact-us.vue\\\")\\n  },\\n  {\\n    name: \\\"auth-verify\\\",\\n    path: \\\"/auth/verify\\\",\\n    component: () => import(\\\"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/auth/verify.vue\\\")\\n  },\\n  {\\n    name: \\\"blog-slug\\\",\\n    path: \\\"/blog/:slug()\\\",\\n    component: () => import(\\\"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/blog/[slug].vue\\\")\\n  },\\n  {\\n    name: \\\"our-service\\\",\\n    path: \\\"/our-service\\\",\\n    component: () => import(\\\"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/our-service.vue\\\")\\n  },\\n  {\\n    name: \\\"auth-register\\\",\\n    path: \\\"/auth/register\\\",\\n    component: () => import(\\\"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/auth/register.vue\\\")\\n  },\\n  {\\n    name: \\\"slug-service\\\",\\n    path: \\\"/:slug()-service\\\",\\n    component: () => import(\\\"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/[slug]-service.vue\\\")\\n  },\\n  {\\n    name: \\\"dashboard\\\",\\n    path: \\\"/dashboard\\\",\\n    meta: indexTPSa9CQsnEMZfhAcPKHlnYcGXug8hwoDcegzTDDN_MMMeta || {},\\n    component: () => import(\\\"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/dashboard/index.vue\\\")\\n  },\\n  {\\n    name: \\\"dashboard-wallet\\\",\\n    path: \\\"/dashboard/wallet\\\",\\n    meta: walletSsIuoj6wJOk6RJoy_45gtwENL_UyYCRFK6xiEOzpNklnYMeta || {},\\n    component: () => import(\\\"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/dashboard/wallet.vue\\\")\\n  },\\n  {\\n    name: \\\"portfolio-slug\\\",\\n    path: \\\"/portfolio/:slug()\\\",\\n    component: () => import(\\\"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/portfolio/[slug].vue\\\")\\n  },\\n  {\\n    name: \\\"dashboard-profile\\\",\\n    path: \\\"/dashboard/profile\\\",\\n    meta: profile2C5eCjqs259oEUBrlhFRblTxcGV4CifheBCk_45GngAB4Meta || {},\\n    component: () => import(\\\"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/dashboard/profile.vue\\\")\\n  },\\n  {\\n    name: \\\"dashboard-cart\\\",\\n    path: \\\"/dashboard/cart\\\",\\n    meta: indexTT5LbS5oh2ffiLMnH5UxB_45Gygz_bL3ola_45ptIk08q4UMeta || {},\\n    component: () => import(\\\"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/dashboard/cart/index.vue\\\")\\n  },\\n  {\\n    name: \\\"dashboard-orders-id\\\",\\n    path: \\\"/dashboard/orders/:id()\\\",\\n    meta: _91id_93fTCGAlmMDHPzcCoP5WgAZeYghgjfG_LwDHa2zSzosIYMeta || {},\\n    component: () => import(\\\"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/dashboard/orders/[id].vue\\\")\\n  },\\n  {\\n    name: \\\"dashboard-support-new\\\",\\n    path: \\\"/dashboard/support/new\\\",\\n    meta: newgWL7eDsHVbF4pWRv9dFC8Th4eiQyWPuj_DlYg34z__EMeta || {},\\n    component: () => import(\\\"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/dashboard/support/new.vue\\\")\\n  },\\n  {\\n    name: \\\"dashboard-orders\\\",\\n    path: \\\"/dashboard/orders\\\",\\n    meta: index0FLhDQvf_O0GAkgj91Wl9pmcQWazlHpYF0C8Cyz4y_gMeta || {},\\n    component: () => import(\\\"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/dashboard/orders/index.vue\\\")\\n  },\\n  {\\n    name: \\\"dashboard-process-id\\\",\\n    path: \\\"/dashboard/process/:id()\\\",\\n    meta: _91id_93_45AEWV_zVMQ_45PJBzMBzniukwRn8Y6i1AzROOIUBrwtF4Meta || {},\\n    component: () => import(\\\"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/dashboard/process/[id].vue\\\")\\n  },\\n  {\\n    name: \\\"dashboard-support-id\\\",\\n    path: \\\"/dashboard/support/:id()\\\",\\n    meta: _91id_93GhL_45dnG9fyYglUFP1qKe2x5DguJ15CWy_45DzlxGK_0HgMeta || {},\\n    component: () => import(\\\"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/dashboard/support/[id].vue\\\")\\n  },\\n  {\\n    name: \\\"dashboard-process\\\",\\n    path: \\\"/dashboard/process\\\",\\n    meta: indexVW_45GYxrC3v84hGTbQjC3ZIV3MweciKJX1mE1_45G_zl9YMeta || {},\\n    component: () => import(\\\"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/dashboard/process/index.vue\\\")\\n  },\\n  {\\n    name: \\\"dashboard-support\\\",\\n    path: \\\"/dashboard/support\\\",\\n    meta: index5WQXvbk7xEnPImnJoyTXJU88U7aDmdVqm5p9SzTp464Meta || {},\\n    component: () => import(\\\"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/dashboard/support/index.vue\\\")\\n  }\\n]\"],\n  \"mappings\": \"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\",\n  \"names\": [\"routes\"]\n}\n"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1746483920498,
+      "end": 1746483920498,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1746483920498,
+      "end": 1746483920498,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1746483920498,
+      "end": 1746483920498,
+      "order": "normal-normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1746483920498,
+      "end": 1746483920498,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1746483920498,
+      "end": 1746483920498,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:head:unhead-imports",
+      "start": 1746483920498,
+      "end": 1746483920498,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:head:unhead-imports",
+      "start": 1746483920498,
+      "end": 1746483920498,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1746483920498,
+      "end": 1746483920499,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1746483920498,
+      "end": 1746483920499,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1746483920499,
+      "end": 1746483920499,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1746483920499,
+      "end": 1746483920499,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1746483920499,
+      "end": 1746483920499,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1746483920499,
+      "end": 1746483920499,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1746483920499,
+      "end": 1746483920499,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1746483920499,
+      "end": 1746483920499,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1746483920499,
+      "end": 1746483920499,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1746483920499,
+      "end": 1746483920499,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1746483920499,
+      "end": 1746483920499,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1746483920499,
+      "end": 1746483920499,
+      "order": "normal"
+    }
+  ]
+}

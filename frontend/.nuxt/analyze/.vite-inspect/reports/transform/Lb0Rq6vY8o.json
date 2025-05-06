@@ -1,0 +1,203 @@
+{
+  "resolvedId": "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/components/main/AnimationToolkit.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <div v-observe=\"{ callback: onVisible }\">\n    <div class=\"grid lg:grid-cols-5 sm:grid-cols-3 grid-cols-2 sm:gap-6 gap-3\">\n      <nuxt-link\n          v-for=\"(item, index) in items\"\n          :key=\"index\" :data-tip=\"item?.sub_heading\"\n          class=\"bg-white tooltip backdrop-blur-xs p-9 rounded-xl lg:w-[14rem] lg:h-[14rem] w-[12rem] h-[12rem] transition transform ease-in-out duration-700 hover:scale-110\"\n          :class=\"[\n            index % 2 === 0 ? 'bg-opacity-10' : 'bg-opacity-5',\n            isVisible ? 'fade-shake-enter-active' : ''\n          ]\"\n          :style=\"{ '--index': index }\"\n      >\n        <nuxt-img\n            :src=\"item?.image || '/system/Logo.png'\"\n            class=\"h-full  w-full objet-contain\"\n            :alt=\"item?.heading || 'Item image'\"\n            loading=\"lazy\"\n        />\n      </nuxt-link>\n    </div>\n  </div>\n</template>\n\n<script setup>\nimport { ref } from 'vue';\n\ndefineProps({\n  items:Object\n})\n\n// Intersection Observer Directive\nconst isVisible = ref(false);\nconst onVisible = (entries, observer) => {\n  if (entries[0].isIntersecting) {\n    isVisible.value = true;\n    observer.disconnect();\n  }\n};\n\nconst vObserve = {\n  mounted(el, binding) {\n    const observer = new IntersectionObserver(binding.value.callback, {\n      threshold: 0.1,\n    });\n    observer.observe(el);\n  },\n};\n</script>\n\n<style scoped>\n/* Animation for fade-shake */\n.fade-shake-enter-active {\n  animation: fadeIn 0.5s ease-out, shake 0.2s ease-in-out 0.5s;\n  animation-delay: calc(var(--index) * 0.2s);\n  opacity: 1;\n}\n\n.fade-shake-enter-active:not(.fade-shake-enter-active) {\n  opacity: 0;\n}\n\n/* Keyframes for fade-in */\n@keyframes fadeIn {\n  0% {\n    opacity: 0;\n  }\n  100% {\n    opacity: 1;\n  }\n}\n\n/* Keyframes for shake */\n@keyframes shake {\n  0%, 100% {\n    transform: translateX(0);\n  }\n  20%, 60% {\n    transform: translateX(-4px);\n  }\n  40%, 80% {\n    transform: translateX(4px);\n  }\n}\n\n/* Respect reduced motion preference */\n@media (prefers-reduced-motion: reduce) {\n  .fade-shake-enter-active {\n    animation: none;\n    opacity: 1;\n    transform: none;\n  }\n}\n</style>",
+      "start": 1746483915403,
+      "end": 1746483915416,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:components-loader-pre",
+      "start": 1746483915416,
+      "end": 1746483915416,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1746483915416,
+      "end": 1746483915416,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1746483915416,
+      "end": 1746483915416,
+      "order": "pre"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1746483915416,
+      "end": 1746483915416,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1746483915416,
+      "end": 1746483915416,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createElementBlock as _createElementBlock, resolveComponent as _resolveComponent, createVNode as _createVNode, normalizeClass as _normalizeClass, normalizeStyle as _normalizeStyle, withCtx as _withCtx, createBlock as _createBlock, createElementVNode as _createElementVNode, withDirectives as _withDirectives } from \"vue\"\n\nconst _hoisted_1 = { class: \"grid lg:grid-cols-5 sm:grid-cols-3 grid-cols-2 sm:gap-6 gap-3\" }\n\nimport { ref } from 'vue';\n\n\nconst _sfc_main = {\n  __name: 'AnimationToolkit',\n  props: {\n  items:Object\n},\n  setup(__props) {\n\n\n\n// Intersection Observer Directive\nconst isVisible = ref(false);\nconst onVisible = (entries, observer) => {\n  if (entries[0].isIntersecting) {\n    isVisible.value = true;\n    observer.disconnect();\n  }\n};\n\nconst vObserve = {\n  mounted(el, binding) {\n    const observer = new IntersectionObserver(binding.value.callback, {\n      threshold: 0.1,\n    });\n    observer.observe(el);\n  },\n};\n\nreturn (_ctx, _cache) => {\n  const _component_nuxt_img = _resolveComponent(\"nuxt-img\")\n  const _component_nuxt_link = _resolveComponent(\"nuxt-link\")\n\n  return _withDirectives((_openBlock(), _createElementBlock(\"div\", null, [\n    _createElementVNode(\"div\", _hoisted_1, [\n      (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(__props.items, (item, index) => {\n        return (_openBlock(), _createBlock(_component_nuxt_link, {\n          key: index,\n          \"data-tip\": item?.sub_heading,\n          class: _normalizeClass([\"bg-white tooltip backdrop-blur-xs p-9 rounded-xl lg:w-[14rem] lg:h-[14rem] w-[12rem] h-[12rem] transition transform ease-in-out duration-700 hover:scale-110\", [\n            index % 2 === 0 ? 'bg-opacity-10' : 'bg-opacity-5',\n            isVisible.value ? 'fade-shake-enter-active' : ''\n          ]]),\n          style: _normalizeStyle({ '--index': index })\n        }, {\n          default: _withCtx(() => [\n            _createVNode(_component_nuxt_img, {\n              src: item?.image || '/system/Logo.png',\n              class: \"h-full w-full objet-contain\",\n              alt: item?.heading || 'Item image',\n              loading: \"lazy\"\n            }, null, 8, [\"src\", \"alt\"])\n          ]),\n          _: 2\n        }, 1032, [\"data-tip\", \"class\", \"style\"]))\n      }), 128))\n    ])\n  ])), [\n    [vObserve, { callback: onVisible }]\n  ])\n}\n}\n\n}\n\n\nimport \"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/components/main/AnimationToolkit.vue?vue&type=style&index=0&scoped=7f2a08f7&lang.css\"\n\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['__scopeId',\"data-v-7f2a08f7\"]])",
+      "start": 1746483915416,
+      "end": 1746483915417,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1746483915417,
+      "end": 1746483915417,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483915417,
+      "end": 1746483915417,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1746483915417,
+      "end": 1746483915417,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:prehydrate-transform",
+      "start": 1746483915417,
+      "end": 1746483915417,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:module-preload-polyfill",
+      "start": 1746483915417,
+      "end": 1746483915417,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483915417,
+      "end": 1746483915417,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1746483915417,
+      "end": 1746483915417,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1746483915417,
+      "end": 1746483915417,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1746483915417,
+      "end": 1746483915417,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1746483915417,
+      "end": 1746483915417,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1746483915417,
+      "end": 1746483915417,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1746483915417,
+      "end": 1746483915417,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1746483915417,
+      "end": 1746483915417,
+      "order": "normal-normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1746483915417,
+      "end": 1746483915417,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:head:unhead-imports",
+      "start": 1746483915417,
+      "end": 1746483915417,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1746483915417,
+      "end": 1746483915417,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1746483915417,
+      "end": 1746483915417,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1746483915417,
+      "end": 1746483915417,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1746483915417,
+      "end": 1746483915417,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1746483915417,
+      "end": 1746483915417,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1746483915417,
+      "end": 1746483915417,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "result": "import { default as __nuxt_component_0 } from \"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/node_modules/@nuxt/image/dist/runtime/components/NuxtImg.vue\";\nimport { default as __nuxt_component_1 } from \"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/node_modules/nuxt/dist/app/components/nuxt-link.js\";\nimport { renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createElementBlock as _createElementBlock, resolveComponent as _resolveComponent, createVNode as _createVNode, normalizeClass as _normalizeClass, normalizeStyle as _normalizeStyle, withCtx as _withCtx, createBlock as _createBlock, createElementVNode as _createElementVNode, withDirectives as _withDirectives } from \"vue\"\n\nconst _hoisted_1 = { class: \"grid lg:grid-cols-5 sm:grid-cols-3 grid-cols-2 sm:gap-6 gap-3\" }\n\nimport { ref } from 'vue';\n\n\nconst _sfc_main = {\n  __name: 'AnimationToolkit',\n  props: {\n  items:Object\n},\n  setup(__props) {\n\n\n\n// Intersection Observer Directive\nconst isVisible = ref(false);\nconst onVisible = (entries, observer) => {\n  if (entries[0].isIntersecting) {\n    isVisible.value = true;\n    observer.disconnect();\n  }\n};\n\nconst vObserve = {\n  mounted(el, binding) {\n    const observer = new IntersectionObserver(binding.value.callback, {\n      threshold: 0.1,\n    });\n    observer.observe(el);\n  },\n};\n\nreturn (_ctx, _cache) => {\n  const _component_nuxt_img = __nuxt_component_0\n  const _component_nuxt_link = __nuxt_component_1\n\n  return _withDirectives((_openBlock(), _createElementBlock(\"div\", null, [\n    _createElementVNode(\"div\", _hoisted_1, [\n      (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(__props.items, (item, index) => {\n        return (_openBlock(), _createBlock(_component_nuxt_link, {\n          key: index,\n          \"data-tip\": item?.sub_heading,\n          class: _normalizeClass([\"bg-white tooltip backdrop-blur-xs p-9 rounded-xl lg:w-[14rem] lg:h-[14rem] w-[12rem] h-[12rem] transition transform ease-in-out duration-700 hover:scale-110\", [\n            index % 2 === 0 ? 'bg-opacity-10' : 'bg-opacity-5',\n            isVisible.value ? 'fade-shake-enter-active' : ''\n          ]]),\n          style: _normalizeStyle({ '--index': index })\n        }, {\n          default: _withCtx(() => [\n            _createVNode(_component_nuxt_img, {\n              src: item?.image || '/system/Logo.png',\n              class: \"h-full w-full objet-contain\",\n              alt: item?.heading || 'Item image',\n              loading: \"lazy\"\n            }, null, 8, [\"src\", \"alt\"])\n          ]),\n          _: 2\n        }, 1032, [\"data-tip\", \"class\", \"style\"]))\n      }), 128))\n    ])\n  ])), [\n    [vObserve, { callback: onVisible }]\n  ])\n}\n}\n\n}\n\n\nimport \"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/components/main/AnimationToolkit.vue?vue&type=style&index=0&scoped=7f2a08f7&lang.css\"\n\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['__scopeId',\"data-v-7f2a08f7\"]])",
+      "start": 1746483915417,
+      "end": 1746483915417,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1746483915417,
+      "end": 1746483915417,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1746483915417,
+      "end": 1746483915418,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1746483915418,
+      "end": 1746483915418,
+      "order": "normal"
+    }
+  ]
+}

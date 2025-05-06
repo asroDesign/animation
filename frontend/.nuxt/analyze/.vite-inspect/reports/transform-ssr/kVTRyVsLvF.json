@@ -1,0 +1,271 @@
+{
+  "resolvedId": "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/node_modules/nuxt-icons/dist/runtime/components/nuxt-icon.vue?vue&type=style&index=0&lang.css?inline&used",
+  "transforms": [
+    {
+      "name": "vite:vue",
+      "result": "\r\n.nuxt-icon svg {\r\n  width: 1em;\r\n  height: 1em;\r\n  margin-bottom: 0.125em;\r\n  vertical-align: middle;\r\n}\r\n.nuxt-icon.nuxt-icon--fill,\r\n.nuxt-icon.nuxt-icon--fill * {\r\n  fill: currentColor !important;\r\n}\r\n\r\n.nuxt-icon.nuxt-icon--stroke,\r\n.nuxt-icon.nuxt-icon--stroke *{\r\n  stroke: currentColor !important;\r\n}\r\n",
+      "start": 1746483920918,
+      "end": 1746483920918,
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/node_modules/nuxt-icons/dist/runtime/components/nuxt-icon.vue"
+        ],
+        "names": [],
+        "mappings": ";AA0CA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,EAAE;EACb,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC;EACV,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC;EACX,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;EACtB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACxB;AACA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC1B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,EAAE;EAC3B,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC/B;;AAEA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC5B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC;EAC5B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACjC",
+        "file": "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/node_modules/nuxt-icons/dist/runtime/components/nuxt-icon.vue",
+        "sourceRoot": "",
+        "sourcesContent": [
+          "<template>\r\n  <span\r\n    class=\"nuxt-icon\"\r\n    :class=\"{ 'nuxt-icon--fill': !filled, 'nuxt-icon--stroke': hasStroke && !filled }\"\r\n    v-html=\"icon\"\r\n  />\r\n</template>\r\n\r\n<script setup lang=\"ts\">\r\nimport { ref, watchEffect } from '#imports'\r\n\r\nconst props = withDefaults(defineProps<{\r\n  name: string;\r\n  filled?: boolean\r\n}>(), { filled: false })\r\n\r\n\r\nconst icon = ref<string | Record<string, any>>('')\r\nlet hasStroke = false\r\n\r\nasync function getIcon () {\r\n  try {\r\n    const iconsImport = import.meta.glob('assets/icons/**/**.svg', {\r\n      as: 'raw',\r\n      eager: false\r\n    })\r\n    const rawIcon = await iconsImport[`/assets/icons/${props.name}.svg`]()\r\n    if (rawIcon.includes('stroke')) { hasStroke = true }\r\n    icon.value = rawIcon\r\n  } catch {\r\n    console.error(\r\n      `[nuxt-icons] Icon '${props.name}' doesn't exist in 'assets/icons'`\r\n    )\r\n  }\r\n}\r\n\r\nawait getIcon()\r\n\r\nwatchEffect(getIcon)\r\n</script>\r\n\r\n<style>\r\n.nuxt-icon svg {\r\n  width: 1em;\r\n  height: 1em;\r\n  margin-bottom: 0.125em;\r\n  vertical-align: middle;\r\n}\r\n.nuxt-icon.nuxt-icon--fill,\r\n.nuxt-icon.nuxt-icon--fill * {\r\n  fill: currentColor !important;\r\n}\r\n\r\n.nuxt-icon.nuxt-icon--stroke,\r\n.nuxt-icon.nuxt-icon--stroke *{\r\n  stroke: currentColor !important;\r\n}\r\n</style>\r\n"
+        ]
+      }
+    },
+    {
+      "name": "nuxt:components-loader-pre",
+      "start": 1746483920918,
+      "end": 1746483920918,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:components-loader-pre",
+      "start": 1746483920918,
+      "end": 1746483920918,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1746483920918,
+      "end": 1746483920918,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1746483920918,
+      "end": 1746483920918,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1746483920918,
+      "end": 1746483920918,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1746483920918,
+      "end": 1746483920918,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-only-component-transform",
+      "start": 1746483920918,
+      "end": 1746483920918,
+      "order": "pre"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1746483920920,
+      "end": 1746483920920,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1746483920920,
+      "end": 1746483920920,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": ".nuxt-icon svg{height:1em;margin-bottom:.125em;vertical-align:middle;width:1em}.nuxt-icon.nuxt-icon--fill,.nuxt-icon.nuxt-icon--fill *{fill:currentColor!important}.nuxt-icon.nuxt-icon--stroke,.nuxt-icon.nuxt-icon--stroke *{stroke:currentColor!important}",
+      "start": 1746483920920,
+      "end": 1746483920920,
+      "order": "normal",
+      "sourcemaps": {
+        "file": "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/node_modules/nuxt-icons/dist/runtime/components/nuxt-icon.vue",
+        "mappings": "AAAA,eAAe,UAAU,CAAC,oBAAoB,CAAC,qBAAqB,CAAC,SAAS,CAAC,wDAAwD,2BAA2B,CAAC,4DAA4D,6BAA6B",
+        "names": [],
+        "sources": [
+          "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/node_modules/nuxt-icons/dist/runtime/components/nuxt-icon.vue"
+        ],
+        "sourcesContent": [
+          null
+        ],
+        "version": 3
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1746483920920,
+      "end": 1746483920920,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483920920,
+      "end": 1746483920920,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483920920,
+      "end": 1746483920920,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1746483920920,
+      "end": 1746483920920,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1746483920920,
+      "end": 1746483920920,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:prehydrate-transform",
+      "start": 1746483920920,
+      "end": 1746483920920,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:prehydrate-transform",
+      "start": 1746483920920,
+      "end": 1746483920920,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483920920,
+      "end": 1746483920920,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1746483920920,
+      "end": 1746483920920,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1746483920920,
+      "end": 1746483920920,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1746483921015,
+      "end": 1746483921015,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1746483921015,
+      "end": 1746483921015,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1746483921015,
+      "end": 1746483921015,
+      "order": "normal-normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1746483921015,
+      "end": 1746483921015,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1746483921015,
+      "end": 1746483921015,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:head:unhead-imports",
+      "start": 1746483921015,
+      "end": 1746483921015,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:head:unhead-imports",
+      "start": 1746483921015,
+      "end": 1746483921015,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1746483921015,
+      "end": 1746483921015,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1746483921015,
+      "end": 1746483921015,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1746483921015,
+      "end": 1746483921015,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1746483921015,
+      "end": 1746483921015,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1746483921015,
+      "end": 1746483921016,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1746483921015,
+      "end": 1746483921016,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1746483921016,
+      "end": 1746483921016,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1746483921016,
+      "end": 1746483921016,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1746483921016,
+      "end": 1746483921016,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1746483921016,
+      "end": 1746483921016,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1746483921016,
+      "end": 1746483921016,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1746483921016,
+      "end": 1746483921016,
+      "order": "normal"
+    }
+  ]
+}

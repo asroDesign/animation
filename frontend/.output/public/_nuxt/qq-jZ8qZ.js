@@ -1,0 +1,1 @@
+import{V as a,W as t,q as o}from"./BeuPNDKa.js";import{u as s}from"./DJCvy_yv.js";const u=()=>{var e;return!!(o("userData").value||(e=s("CSRF_ASRO_TOKEN"))!=null&&e.value)},n=a((e,r)=>{if(u()===!1)return t("/auth/login")});export{n as default};

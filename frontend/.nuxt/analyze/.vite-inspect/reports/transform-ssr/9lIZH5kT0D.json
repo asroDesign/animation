@@ -1,0 +1,271 @@
+{
+  "resolvedId": "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/components/main/AnimationToolkit.vue?vue&type=style&index=0&scoped=7f2a08f7&lang.css",
+  "transforms": [
+    {
+      "name": "vite:vue",
+      "result": "\n/* Animation for fade-shake */\n.fade-shake-enter-active {\n  animation: fadeIn 0.5s ease-out, shake 0.2s ease-in-out 0.5s;\n  animation-delay: calc(var(--index) * 0.2s);\n  opacity: 1;\n}\n\n.fade-shake-enter-active:not(.fade-shake-enter-active) {\n  opacity: 0;\n}\n\n/* Keyframes for fade-in */\n@keyframes fadeIn {\n  0% {\n    opacity: 0;\n  }\n  100% {\n    opacity: 1;\n  }\n}\n\n/* Keyframes for shake */\n@keyframes shake {\n  0%, 100% {\n    transform: translateX(0);\n  }\n  20%, 60% {\n    transform: translateX(-4px);\n  }\n  40%, 80% {\n    transform: translateX(4px);\n  }\n}\n\n/* Respect reduced motion preference */\n@media (prefers-reduced-motion: reduce) {\n  .fade-shake-enter-active {\n    animation: none;\n    opacity: 1;\n    transform: none;\n  }\n}\n",
+      "start": 1746483922104,
+      "end": 1746483922104,
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/components/main/AnimationToolkit.vue"
+        ],
+        "names": [],
+        "mappings": "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",
+        "file": "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/components/main/AnimationToolkit.vue",
+        "sourceRoot": "",
+        "sourcesContent": [
+          "<template>\n  <div v-observe=\"{ callback: onVisible }\">\n    <div class=\"grid lg:grid-cols-5 sm:grid-cols-3 grid-cols-2 sm:gap-6 gap-3\">\n      <nuxt-link\n          v-for=\"(item, index) in items\"\n          :key=\"index\" :data-tip=\"item?.sub_heading\"\n          class=\"bg-white tooltip backdrop-blur-xs p-9 rounded-xl lg:w-[14rem] lg:h-[14rem] w-[12rem] h-[12rem] transition transform ease-in-out duration-700 hover:scale-110\"\n          :class=\"[\n            index % 2 === 0 ? 'bg-opacity-10' : 'bg-opacity-5',\n            isVisible ? 'fade-shake-enter-active' : ''\n          ]\"\n          :style=\"{ '--index': index }\"\n      >\n        <nuxt-img\n            :src=\"item?.image || '/system/Logo.png'\"\n            class=\"h-full  w-full objet-contain\"\n            :alt=\"item?.heading || 'Item image'\"\n            loading=\"lazy\"\n        />\n      </nuxt-link>\n    </div>\n  </div>\n</template>\n\n<script setup>\nimport { ref } from 'vue';\n\ndefineProps({\n  items:Object\n})\n\n// Intersection Observer Directive\nconst isVisible = ref(false);\nconst onVisible = (entries, observer) => {\n  if (entries[0].isIntersecting) {\n    isVisible.value = true;\n    observer.disconnect();\n  }\n};\n\nconst vObserve = {\n  mounted(el, binding) {\n    const observer = new IntersectionObserver(binding.value.callback, {\n      threshold: 0.1,\n    });\n    observer.observe(el);\n  },\n};\n</script>\n\n<style scoped>\n/* Animation for fade-shake */\n.fade-shake-enter-active {\n  animation: fadeIn 0.5s ease-out, shake 0.2s ease-in-out 0.5s;\n  animation-delay: calc(var(--index) * 0.2s);\n  opacity: 1;\n}\n\n.fade-shake-enter-active:not(.fade-shake-enter-active) {\n  opacity: 0;\n}\n\n/* Keyframes for fade-in */\n@keyframes fadeIn {\n  0% {\n    opacity: 0;\n  }\n  100% {\n    opacity: 1;\n  }\n}\n\n/* Keyframes for shake */\n@keyframes shake {\n  0%, 100% {\n    transform: translateX(0);\n  }\n  20%, 60% {\n    transform: translateX(-4px);\n  }\n  40%, 80% {\n    transform: translateX(4px);\n  }\n}\n\n/* Respect reduced motion preference */\n@media (prefers-reduced-motion: reduce) {\n  .fade-shake-enter-active {\n    animation: none;\n    opacity: 1;\n    transform: none;\n  }\n}\n</style>"
+        ]
+      }
+    },
+    {
+      "name": "nuxt:components-loader-pre",
+      "start": 1746483922104,
+      "end": 1746483922104,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:components-loader-pre",
+      "start": 1746483922104,
+      "end": 1746483922104,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1746483922104,
+      "end": 1746483922104,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1746483922104,
+      "end": 1746483922104,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1746483922104,
+      "end": 1746483922104,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1746483922104,
+      "end": 1746483922104,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-only-component-transform",
+      "start": 1746483922104,
+      "end": 1746483922104,
+      "order": "pre"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1746483922106,
+      "end": 1746483922106,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1746483922106,
+      "end": 1746483922106,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": ".fade-shake-enter-active[data-v-7f2a08f7]{animation:fadeIn-7f2a08f7 .5s ease-out,shake-7f2a08f7 .2s ease-in-out .5s;animation-delay:calc(var(--index)*.2s);opacity:1}.fade-shake-enter-active[data-v-7f2a08f7]:not(.fade-shake-enter-active){opacity:0}@keyframes fadeIn-7f2a08f7{0%{opacity:0}to{opacity:1}}@keyframes shake-7f2a08f7{0%,to{transform:translateX(0)}20%,60%{transform:translateX(-4px)}40%,80%{transform:translateX(4px)}}@media (prefers-reduced-motion:reduce){.fade-shake-enter-active[data-v-7f2a08f7]{animation:none;opacity:1;transform:none}}",
+      "start": 1746483922106,
+      "end": 1746483922106,
+      "order": "normal",
+      "sourcemaps": {
+        "file": "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/components/main/AnimationToolkit.vue",
+        "mappings": "AAAA,0CAAyB,yEAAuD,CAAC,sCAAsC,CAAC,SAAS,CAAC,wEAAuD,SAAS,CAAC,2BAAkB,GAAG,SAAS,CAAC,GAAG,SAAS,CAAC,CAAC,0BAAiB,MAAM,uBAAuB,CAAC,QAAQ,0BAA0B,CAAC,QAAQ,yBAAyB,CAAC,CAAC,uCAAuC,0CAAyB,cAAc,CAAC,SAAS,CAAC,cAAc,CAAC",
+        "names": [],
+        "sources": [
+          "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/components/main/AnimationToolkit.vue"
+        ],
+        "sourcesContent": [
+          null
+        ],
+        "version": 3
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1746483922106,
+      "end": 1746483922106,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483922106,
+      "end": 1746483922106,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483922106,
+      "end": 1746483922106,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1746483922106,
+      "end": 1746483922106,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1746483922106,
+      "end": 1746483922106,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:prehydrate-transform",
+      "start": 1746483922106,
+      "end": 1746483922106,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:prehydrate-transform",
+      "start": 1746483922106,
+      "end": 1746483922106,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483922106,
+      "end": 1746483922106,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1746483922106,
+      "end": 1746483922106,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1746483922106,
+      "end": 1746483922106,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1746483922106,
+      "end": 1746483922106,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1746483922106,
+      "end": 1746483922106,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1746483922106,
+      "end": 1746483922106,
+      "order": "normal-normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1746483922106,
+      "end": 1746483922106,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1746483922106,
+      "end": 1746483922106,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:head:unhead-imports",
+      "start": 1746483922106,
+      "end": 1746483922106,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:head:unhead-imports",
+      "start": 1746483922106,
+      "end": 1746483922106,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1746483922106,
+      "end": 1746483922106,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1746483922106,
+      "end": 1746483922106,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1746483922106,
+      "end": 1746483922106,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1746483922106,
+      "end": 1746483922106,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1746483922106,
+      "end": 1746483922106,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1746483922106,
+      "end": 1746483922106,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1746483922106,
+      "end": 1746483922106,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1746483922106,
+      "end": 1746483922106,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1746483922106,
+      "end": 1746483922106,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1746483922106,
+      "end": 1746483922106,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1746483922106,
+      "end": 1746483922106,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1746483922106,
+      "end": 1746483922106,
+      "order": "normal"
+    }
+  ]
+}

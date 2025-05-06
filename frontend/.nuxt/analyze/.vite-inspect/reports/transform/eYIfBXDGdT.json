@@ -1,0 +1,202 @@
+{
+  "resolvedId": "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/index.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<script setup lang=\"ts\">\n\nimport LiveChat from \"~/components/LiveChat.vue\";\nimport SecondaryButton from \"~/components/tools/SecondaryButton.vue\";\nimport ServicesStepDesign from \"~/components/main/ServicesStepDesign.vue\";\nimport {useMyFetch} from \"~/composables/apiFetch\";\nimport VideoPlayer from \"~/components/tools/VideoPlayer.vue\";\n\nconst service_active = ref(0)\nconst configs = computed(()=>useState('config')?.value)\nconst { data,status} = await useMyFetch('/')\nconst response = computed(()=>data?.value)\nuseState('animation_category').value = response?.animation_category\nuseState('featured_category').value = response?.featured_category\nuseSeoMeta({\n  title: configs.value?.site_title,\n  ogTitle: configs.value?.meta_title,\n  description: configs.value?.site_meta_desc,\n  ogDescription: configs.value?.site_meta_desc,\n  keywords:configs.value?.site_meta_keywords,\n  ogType:'article',\n  ogLocale:configs.value?.current_lang,\n  ogUrl:useRoute().fullPath,\n  ogImage:`${useRuntimeConfig().public.baseURL}/${configs.value?.my_logo}`\n})\n\n\n</script>\n\n<template>\n  <div>\n    <nuxt-img src=\"/system/main_mask.png\" class=\"w-full relative hover:scale-105 transition transform duration-700\"  />\n    <div class=\"sm:absolute grid grid-cols-2 gap-3 container mx-auto sm:px-0 px-2\" style=\"align-self: anchor-center;justify-self: anchor-center;\">\n      <div class=\"grid text-start sm:col-span-1 col-span-2\">\n        <div class=\"flex items-center text-xs justify-start\">\n          <div class=\"bg-secondary-shade h-1 w-9 mx-1\"></div>\n          Welcome to Animation Studio\n        </div>\n        <h2 class=\"sm:text-4xl font-bold text-xl leading-8 my-6\">\n          REDEFINING ANIMATION IN\n          <br>\n          THE DIGITAL AGE\n        </h2>\n\n        <p>\n          Through captivating animated content and cutting-edge technologies,\n          <br>\n          showcase what sets your brand apart, bring your story to life, and foster\n          <br>\n          lasting connections. Embrace the dynamic potential of animation to\n          <br>\n          elevate your brand and drive growth.\n        </p>\n        <div class=\"flex items-center justify-start mx-auto my-4 space-x-2\">\n          <live-chat/>\n          <LazyRequestQuote />\n        </div>\n      </div>\n      <div class=\"sm:col-span-1 col-span-2\">\n        <ServicesStepDesign :data=\"response?.animation_category\" />\n      </div>\n    </div>\n  </div>\n  <div class=\"container mx-auto px-2\">\n    <div class=\"lg:-mt-[16rem] mt-[2rem] px-3 z-50 relative\">\n      <div class=\"flex items-center text-xs text-start justify-items-start\">\n        <div class=\"bg-secondary-shade h-1 w-9 mx-1\"></div>\n        Why choose\n      </div>\n      <div class=\"my-6 font-[Impact]\">\n        <h2 class=\"sm:text-4xl text-xl font-bold \">\n          Animation Studios  \n          <br>\n          for Animation?\n        </h2>\n      </div>\n      <div>\n        <div\n            v-for=\"(item, key) in response?.why_choose_us\"\n            :key=\"key\"\n            class=\"collapse collapse-plus text-white\"\n        >\n          <input\n              type=\"radio\"\n              name=\"my-accordion-3\"\n              class=\"peer\"\n              :checked=\"key === 0\"\n          />\n          <div\n              class=\"collapse-title font-['Impact'] sm:text-3xl text-gray-400 peer-checked:text-secondary-shade\"\n          >\n            {{ item.heading }}\n          </div>\n          <div class=\"collapse-content text-sm\">\n            {{ item.sub_heading }}\n          </div>\n        </div>\n\n      </div>\n    </div>\n  </div>\n  <div class=\"container mx-auto grid gap-9 px-2\">\n\n    <div class=\"text-center grid gap-9 w-full my-9\">\n      <div class=\"contact-title flex items-center justify-center gap-2 sm:gap-4 w-full\">\n        <div class=\"separator hidden sm:block flex-1 max-w-[100px] md:max-w-[200px] lg:max-w-[400px] h-1 bg-gray-300 rounded relative\">\n          <div class=\"absolute top-0 right-0 w-16 sm:w-24 h-1 bg-primary rounded\"></div>\n        </div>\n        <h2 class=\"title text-white text-xl sm:text-2xl md:text-3xl lg:text-5xl font-normal font-['Impact'] text-center font-display whitespace-nowrap\">\n          OUR ANIMATION TOOLKIT\n        </h2>\n        <div class=\"separator hidden sm:block flex-1 max-w-[100px] md:max-w-[200px] lg:max-w-[400px] h-1 bg-gray-300 rounded relative\">\n          <div class=\"absolute top-0 left-0 w-16 sm:w-24 h-1 bg-primary rounded\"></div>\n        </div>\n      </div>\n      <LazyMainAnimationToolkit :items=\"response?.start_section\" />\n    </div>\n\n    <div class=\"text-center justify-center grid space-y-4\">\n\n      <div class=\"contact-title flex items-center justify-center gap-2 sm:gap-4 w-full\">\n        <div class=\"separator hidden sm:block flex-1 max-w-[100px] md:max-w-[200px] lg:max-w-[400px] h-1 bg-gray-300 rounded relative\">\n          <div class=\"absolute top-0 right-0 w-16 sm:w-24 h-1 bg-primary rounded\"></div>\n        </div>\n        <div class=\"grid gap-0.5\">\n          <small>Animation Services</small>\n          <h2 class=\"sm:text-5xl text-xl font-normal font-['Impact']\">\n            Animation for the digital age\n          </h2>\n        </div>\n        <div class=\"separator hidden sm:block flex-1 max-w-[100px] md:max-w-[200px] lg:max-w-[400px] h-1 bg-gray-300 rounded relative\">\n          <div class=\"absolute top-0 left-0 w-16 sm:w-24 h-1 bg-primary rounded\"></div>\n        </div>\n      </div>\n      <div class=\"w-[90vw] overflow-scroll flex space-x-2\" >\n        <div v-for=\"(service,key) in response?.animation_category\"\n             class=\"border border-secondary-shade rounded-full hover:bg-secondary-shade px-5 py-1 text-nowrap cursor-pointer\"\n             :class=\"{'bg-secondary-shade':service_active==key}\" @click=\"service_active = key\">\n          {{service?.name}}\n        </div>\n      </div>\n      <div class=\"grid grid-cols-1 sm:grid-cols-3 sm:px-8 sm:py-12 sm:gap-x-8 md:py-16\">\n        <div class=\"relative z-10 sm:col-span-2 col-start-1 sm:col-start-2 row-start-1 px-4 pt-40 pb-3 bg-gradient-to-t from-black sm:bg-none\">\n          <h2 class=\"text-xl font-bold text-white sm:text-4xl sm:leading-7 md:text-3xl sm:text-start\">{{response?.animation_category[service_active]?.name}}</h2>\n        </div>\n        <div class=\"col-start-1 sm:col-span-2 row-start-2 sm:col-start-2 px-4 sm:pb-16\">\n          <p class=\"text-start\" v-html=\"response?.animation_category[service_active]?.short_desc\">\n\n          </p>\n        </div>\n        <div class=\"col-start-1 sm:col-span-2 sm:col-start-2 row-start-3 space-y-3 px-4 text-start my-4\">\n          <nuxt-link :to=\"`/${response?.animation_category[service_active]?.slug}-service`\">\n            <secondary-button class=\"!sm:w-fit\">\n              Learn More\n              <nuxt-icon name=\"iconsax/linear/arrow-right\" class=\"text-xl\" />\n            </secondary-button>\n          </nuxt-link>\n        </div>\n        <div class=\"col-start-1 row-start-1 flex sm:row-span-3\">\n          <div class=\"w-full grid grid-cols-3 grid-rows-2 gap-2\">\n            <div class=\"relative col-span-3 row-span-2\">\n              <nuxt-img :src=\"`${useRuntimeConfig().public.fileURL}/${response?.animation_category[service_active].file}`\" alt=\"\" class=\"sm:absolute inset-0 w-full h-full object-cover bg-gray-100 sm:rounded-lg\" />\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n\n\n    <div class=\"py-5 md:py-10 flex flex-col md:flex-row justify-center items-center gap-4 md:gap-3 lg:gap-20 max-w-7xl mx-auto px-4\">\n\n      <div class=\"w-full md:w-1/2 max-w-[791px] relative\">\n        <div class=\"flex flex-col justify-start items-start gap-4\">\n          <h1 class=\" text-4xl sm:text-5xl grid gap-1 md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight\">\n            <span class=\"text-white line-1 anim-typewriter\">There is no limit for </span>\n            <span class=\"text-pink-700\">creativity</span>\n          </h1>\n          <p class=\"text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl font-normal font-['Impact']\">\n            We create brand and experience\n          </p>\n          <div class=\"w-16 md:w-24 h-1 bg-primary rounded-[3px] transform rotate-180\" />\n        </div>\n      </div>\n      <div class=\"w-full md:w-1/2 max-w-[806px] h-auto mix-blend-lighten object-contain\">\n        <VideoPlayer video_url=\"/system/vecteezy_energy_blue_glowing_cosmic_magic_sphere_futuristic_round.webm\" />\n      </div>\n\n    </div>\n\n    <div class=\"text-center justify-center grid space-y-4\">\n\n      <div class=\"contact-title flex items-center justify-center gap-2 sm:gap-4 w-full\">\n        <div class=\"separator hidden sm:block flex-1 max-w-[100px] md:max-w-[200px] lg:max-w-[600px] h-1 bg-gray-300 rounded relative\">\n          <div class=\"absolute top-0 right-0 w-16 sm:w-24 h-1 bg-primary rounded\"></div>\n        </div>\n        <h2 class=\"sm:text-5xl text-xl font-normal font-['Impact']\">\n          Portfolio\n        </h2>\n        <div class=\"separator hidden sm:block flex-1 max-w-[100px] md:max-w-[200px] lg:max-w-[600px] h-1 bg-gray-300 rounded relative\">\n          <div class=\"absolute top-0 left-0 w-16 sm:w-24 h-1 bg-primary rounded\"></div>\n        </div>\n      </div>\n      <Portfolio :services=\"response?.featured_category\" />\n    </div>\n\n\n    <div class=\"text-center justify-center grid space-y-4 mt-9 justify-items-center\">\n      <div class=\"contact-title flex items-center justify-center gap-2 sm:gap-4 w-full\">\n        <div class=\"separator hidden sm:block flex-1 max-w-[100px] md:max-w-[200px] lg:max-w-[300px] h-1 bg-gray-300 rounded relative\">\n          <div class=\"absolute top-0 right-0 w-16 sm:w-24 h-1 bg-primary rounded\"></div>\n        </div>\n        <div class=\"grid gap-0\">\n          <small>Process</small>\n          <h2 class=\"sm:text-5xl text-xl font-normal font-['Impact']\">\n            Matching Your Business Needs Effectively\n          </h2>\n          <span class=\"text-xs text-wrap\">We’re determined to explore more than what may be just a quick fix for your business. Together, we can tailor our proven processes for continual growth.</span>\n        </div>\n        <div class=\"separator hidden sm:block flex-1 max-w-[100px] md:max-w-[200px] lg:max-w-[300px] h-1 bg-gray-300 rounded relative\">\n          <div class=\"absolute top-0 left-0 w-16 sm:w-24 h-1 bg-primary rounded\"></div>\n        </div>\n      </div>\n      <LazyMainProcessStep  :process_step=\"response?.process_step_section\"/>\n    </div>\n  </div>\n</template>\n\n<style scoped>\n.line-1{\n  position: relative;\n  top: 50%;\n  width: 24em;\n  margin: 0 auto;\n  border-right: 2px solid rgba(255,255,255,.75);\n  white-space: nowrap;\n  overflow: hidden;\n  transform: translateY(-50%);\n}\n\n/* Animation */\n.anim-typewriter{\n  animation: typewriter 4s steps(44) 1s 1 normal both,\n  blinkTextCursor 500ms steps(44) infinite normal;\n}\n@keyframes typewriter{\n  from{width: 0;}\n  to{width: 24em;}\n}\n@keyframes blinkTextCursor{\n  from{border-right-color: rgba(255,255,255,.75);}\n  to{border-right-color: transparent;}\n}\n</style>",
+      "start": 1746483913574,
+      "end": 1746483913797,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:components-loader-pre",
+      "start": 1746483913797,
+      "end": 1746483913797,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1746483913797,
+      "end": 1746483913797,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1746483913797,
+      "end": 1746483913797,
+      "order": "pre"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1746483913797,
+      "end": 1746483913797,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1746483913798,
+      "end": 1746483913798,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import _sfc_main from \"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/index.vue?vue&type=script&setup=true&lang.ts\";\nexport * from \"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/index.vue?vue&type=script&setup=true&lang.ts\";\nimport \"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/index.vue?vue&type=style&index=0&scoped=79878a33&lang.css\";\nimport _export_sfc from \"\\0plugin-vue:export-helper\";\nexport default /* @__PURE__ */ _export_sfc(_sfc_main, [[\"__scopeId\", \"data-v-79878a33\"]]);\n",
+      "start": 1746483913798,
+      "end": 1746483914287,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1746483914287,
+      "end": 1746483914288,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483914288,
+      "end": 1746483914288,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1746483914288,
+      "end": 1746483914288,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:prehydrate-transform",
+      "start": 1746483914288,
+      "end": 1746483914288,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:module-preload-polyfill",
+      "start": 1746483914291,
+      "end": 1746483914291,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483914291,
+      "end": 1746483914291,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1746483914291,
+      "end": 1746483914291,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1746483914291,
+      "end": 1746483914291,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1746483914291,
+      "end": 1746483914291,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1746483914291,
+      "end": 1746483914291,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1746483914291,
+      "end": 1746483914291,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1746483914291,
+      "end": 1746483914291,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1746483914291,
+      "end": 1746483914292,
+      "order": "normal-normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1746483914292,
+      "end": 1746483914292,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:head:unhead-imports",
+      "start": 1746483914292,
+      "end": 1746483914292,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1746483914292,
+      "end": 1746483914292,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1746483914293,
+      "end": 1746483914293,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1746483914293,
+      "end": 1746483914293,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1746483914293,
+      "end": 1746483914293,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1746483914293,
+      "end": 1746483914293,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1746483914293,
+      "end": 1746483914293,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1746483914293,
+      "end": 1746483914293,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1746483914293,
+      "end": 1746483914293,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1746483914293,
+      "end": 1746483914293,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1746483914293,
+      "end": 1746483914293,
+      "order": "normal"
+    }
+  ]
+}

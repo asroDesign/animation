@@ -1,0 +1,1 @@
+import{_ as a}from"./Bsrf37Yq.js";import{_ as s}from"./DBEUCIjR.js";import{p as o,f as n,o as r,w as _,b as m,d as c}from"./BeuPNDKa.js";const d=o({__name:"LiveChat",setup(i){return(p,e)=>{const t=a;return r(),n(s,{class:"text-nowrap !w-fit"},{default:_(()=>[m(t,{name:"iconsax/linear/messages",class:"text-xl mx-1"}),e[0]||(e[0]=c(" Live Chat "))]),_:1})}}});export{d as _};

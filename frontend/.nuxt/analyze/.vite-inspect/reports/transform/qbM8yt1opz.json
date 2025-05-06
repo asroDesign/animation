@@ -1,0 +1,198 @@
+{
+  "resolvedId": "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/assets/icons/iconsax/linear/routing.svg?raw",
+  "transforms": [
+    {
+      "name": "vite:asset",
+      "result": "export default \"<svg width=\\\"24\\\" height=\\\"24\\\" viewBox=\\\"0 0 24 24\\\" fill=\\\"none\\\" xmlns=\\\"http://www.w3.org/2000/svg\\\">\\n<path d=\\\"M2.06999 4.59988C2.86999 1.13988 8.07999 1.13988 8.86999 4.59988C9.33999 6.62988 8.04999 8.34988 6.92999 9.41988C6.10999 10.1999 4.81999 10.1899 3.99999 9.41988C2.88999 8.34988 1.59999 6.62988 2.06999 4.59988Z\\\" stroke=\\\"#292D32\\\" stroke-width=\\\"1.5\\\"/>\\n<path d=\\\"M15.07 16.5999C15.87 13.1399 21.11 13.1399 21.91 16.5999C22.38 18.6299 21.09 20.3499 19.96 21.4199C19.14 22.1999 17.84 22.1899 17.02 21.4199C15.89 20.3499 14.6 18.6299 15.07 16.5999Z\\\" stroke=\\\"#292D32\\\" stroke-width=\\\"1.5\\\"/>\\n<path d=\\\"M12 5H14.68C16.53 5 17.39 7.29 16 8.51L8.01001 15.5C6.62001 16.71 7.48001 19 9.32001 19H12\\\" stroke=\\\"#292D32\\\" stroke-width=\\\"1.5\\\" stroke-linecap=\\\"round\\\" stroke-linejoin=\\\"round\\\"/>\\n<path d=\\\"M5.48622 5.5H5.49777\\\" stroke=\\\"#292D32\\\" stroke-width=\\\"2\\\" stroke-linecap=\\\"round\\\" stroke-linejoin=\\\"round\\\"/>\\n<path d=\\\"M18.4862 17.5H18.4978\\\" stroke=\\\"#292D32\\\" stroke-width=\\\"2\\\" stroke-linecap=\\\"round\\\" stroke-linejoin=\\\"round\\\"/>\\n</svg>\\n\"",
+      "start": 1746483915262,
+      "end": 1746483915268,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:components-loader-pre",
+      "start": 1746483915268,
+      "end": 1746483915268,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1746483915268,
+      "end": 1746483915268,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1746483915268,
+      "end": 1746483915268,
+      "order": "pre"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1746483915268,
+      "end": 1746483915268,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1746483915268,
+      "end": 1746483915268,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1746483915268,
+      "end": 1746483915268,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1746483915268,
+      "end": 1746483915268,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483915268,
+      "end": 1746483915268,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1746483915268,
+      "end": 1746483915268,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:prehydrate-transform",
+      "start": 1746483915268,
+      "end": 1746483915268,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:module-preload-polyfill",
+      "start": 1746483915268,
+      "end": 1746483915268,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483915268,
+      "end": 1746483915268,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1746483915268,
+      "end": 1746483915268,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1746483915268,
+      "end": 1746483915268,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1746483915268,
+      "end": 1746483915268,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1746483915268,
+      "end": 1746483915268,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1746483915268,
+      "end": 1746483915268,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1746483915268,
+      "end": 1746483915268,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1746483915268,
+      "end": 1746483915268,
+      "order": "normal-normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1746483915268,
+      "end": 1746483915268,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:head:unhead-imports",
+      "start": 1746483915268,
+      "end": 1746483915268,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1746483915268,
+      "end": 1746483915268,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1746483915268,
+      "end": 1746483915268,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1746483915268,
+      "end": 1746483915268,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1746483915268,
+      "end": 1746483915268,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1746483915268,
+      "end": 1746483915268,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1746483915268,
+      "end": 1746483915268,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1746483915268,
+      "end": 1746483915268,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1746483915268,
+      "end": 1746483915268,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1746483915268,
+      "end": 1746483915268,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1746483915268,
+      "end": 1746483915268,
+      "order": "normal"
+    }
+  ]
+}

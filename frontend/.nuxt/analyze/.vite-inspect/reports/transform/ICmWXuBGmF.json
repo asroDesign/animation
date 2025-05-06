@@ -1,0 +1,218 @@
+{
+  "resolvedId": "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/our-work.vue?macro=true&vue&type=script&setup=true&lang.ts",
+  "transforms": [
+    {
+      "name": "vite:vue",
+      "result": "import { defineComponent as _defineComponent } from 'vue'\nimport { resolveComponent as _resolveComponent, createVNode as _createVNode, createElementVNode as _createElementVNode, createStaticVNode as _createStaticVNode, Fragment as _Fragment, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\nconst _hoisted_1 = { class: \"relative\" }\nconst _hoisted_2 = { class: \"absolute inset-0 flex items-center justify-center top-[16rem]\" }\nconst _hoisted_3 = { class: \"container mx-auto px-4 sm:px-6 lg:px-8\" }\nconst _hoisted_4 = { class: \"max-w-6xl mx-auto text-center sm:text-left\" }\nconst _hoisted_5 = { class: \"flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-4\" }\nconst _hoisted_6 = { class: \"container mx-auto lg:-mt-[8rem] mt-[14rem] sm:mt-[2rem] px-3\" }\nconst _hoisted_7 = { class: \"text-center justify-center grid space-y-4\" }\n\nimport LiveChat from \"~/components/LiveChat.vue\";\nimport SecondaryButton from \"~/components/tools/SecondaryButton.vue\";\n\nexport default /*@__PURE__*/_defineComponent({\n  __name: 'our-work',\n  setup(__props) {\n\n\n\nreturn (_ctx: any,_cache: any) => {\n  const _component_nuxt_img = _resolveComponent(\"nuxt-img\")!\n  const _component_LazyRequestQuote = _resolveComponent(\"LazyRequestQuote\")!\n  const _component_Portfolio = _resolveComponent(\"Portfolio\")!\n\n  return (_openBlock(), _createElementBlock(_Fragment, null, [\n    _createElementVNode(\"div\", null, [\n      _createElementVNode(\"div\", _hoisted_1, [\n        _createVNode(_component_nuxt_img, {\n          src: \"/system/our_work_mask.png\",\n          class: \"w-full object-cover\",\n          sizes: \"sm:100vw md:100vw lg:100vw\",\n          loading: \"lazy\"\n        }),\n        _createElementVNode(\"div\", _hoisted_2, [\n          _createElementVNode(\"div\", _hoisted_3, [\n            _createElementVNode(\"div\", _hoisted_4, [\n              _cache[0] || (_cache[0] = _createStaticVNode(\"<div class=\\\"flex items-center justify-center sm:justify-start mb-4\\\"><div class=\\\"bg-pink-500 h-1 w-12 mr-2\\\"></div><span class=\\\"text-sm uppercase\\\">A Glimpse Of</span></div><h2 class=\\\"text-2xl sm:text-4xl font-bold mb-6\\\">Our Work</h2><p class=\\\"text-base sm:text-lg mb-8 max-w-4xl mr-auto\\\"> Over the years, we’ve perfected our skills in various domains of animation, logo design, web design, mobile app development, and digital marketing. Now, we’re ready to support your plans for digital expansion. </p>\", 3)),\n              _createElementVNode(\"div\", _hoisted_5, [\n                _createVNode(LiveChat),\n                _createVNode(_component_LazyRequestQuote)\n              ])\n            ])\n          ])\n        ])\n      ])\n    ]),\n    _createElementVNode(\"div\", _hoisted_6, [\n      _createElementVNode(\"div\", _hoisted_7, [\n        _cache[1] || (_cache[1] = _createStaticVNode(\"<div class=\\\"contact-title flex items-center justify-center gap-2 sm:gap-4 w-full\\\"><div class=\\\"separator hidden sm:block flex-1 max-w-[100px] md:max-w-[200px] lg:max-w-[500px] h-1 bg-gray-300 rounded relative\\\"><div class=\\\"absolute top-0 right-0 w-16 sm:w-24 h-1 bg-primary rounded\\\"></div></div><h2 class=\\\"sm:text-4xl text-2xl\\\"> Portfolio </h2><div class=\\\"separator hidden sm:block flex-1 max-w-[100px] md:max-w-[200px] lg:max-w-[500px] h-1 bg-gray-300 rounded relative\\\"><div class=\\\"absolute top-0 left-0 w-16 sm:w-24 h-1 bg-primary rounded\\\"></div></div></div>\", 1)),\n        _createVNode(_component_Portfolio)\n      ])\n    ])\n  ], 64))\n}\n}\n\n})",
+      "start": 1746483914077,
+      "end": 1746483914077
+    },
+    {
+      "name": "nuxt:components-loader-pre",
+      "start": 1746483914077,
+      "end": 1746483914077,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1746483914077,
+      "end": 1746483914077,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1746483914077,
+      "end": 1746483914077,
+      "order": "pre"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { defineComponent as _defineComponent } from \"vue\";\nimport { resolveComponent as _resolveComponent, createVNode as _createVNode, createElementVNode as _createElementVNode, createStaticVNode as _createStaticVNode, Fragment as _Fragment, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\";\nconst _hoisted_1 = { class: \"relative\" };\nconst _hoisted_2 = { class: \"absolute inset-0 flex items-center justify-center top-[16rem]\" };\nconst _hoisted_3 = { class: \"container mx-auto px-4 sm:px-6 lg:px-8\" };\nconst _hoisted_4 = { class: \"max-w-6xl mx-auto text-center sm:text-left\" };\nconst _hoisted_5 = { class: \"flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-4\" };\nconst _hoisted_6 = { class: \"container mx-auto lg:-mt-[8rem] mt-[14rem] sm:mt-[2rem] px-3\" };\nconst _hoisted_7 = { class: \"text-center justify-center grid space-y-4\" };\nimport LiveChat from \"~/components/LiveChat.vue\";\nimport SecondaryButton from \"~/components/tools/SecondaryButton.vue\";\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"our-work\",\n  setup(__props) {\n    return (_ctx, _cache) => {\n      const _component_nuxt_img = _resolveComponent(\"nuxt-img\");\n      const _component_LazyRequestQuote = _resolveComponent(\"LazyRequestQuote\");\n      const _component_Portfolio = _resolveComponent(\"Portfolio\");\n      return _openBlock(), _createElementBlock(_Fragment, null, [\n        _createElementVNode(\"div\", null, [\n          _createElementVNode(\"div\", _hoisted_1, [\n            _createVNode(_component_nuxt_img, {\n              src: \"/system/our_work_mask.png\",\n              class: \"w-full object-cover\",\n              sizes: \"sm:100vw md:100vw lg:100vw\",\n              loading: \"lazy\"\n            }),\n            _createElementVNode(\"div\", _hoisted_2, [\n              _createElementVNode(\"div\", _hoisted_3, [\n                _createElementVNode(\"div\", _hoisted_4, [\n                  _cache[0] || (_cache[0] = _createStaticVNode('<div class=\"flex items-center justify-center sm:justify-start mb-4\"><div class=\"bg-pink-500 h-1 w-12 mr-2\"></div><span class=\"text-sm uppercase\">A Glimpse Of</span></div><h2 class=\"text-2xl sm:text-4xl font-bold mb-6\">Our Work</h2><p class=\"text-base sm:text-lg mb-8 max-w-4xl mr-auto\"> Over the years, we’ve perfected our skills in various domains of animation, logo design, web design, mobile app development, and digital marketing. Now, we’re ready to support your plans for digital expansion. </p>', 3)),\n                  _createElementVNode(\"div\", _hoisted_5, [\n                    _createVNode(LiveChat),\n                    _createVNode(_component_LazyRequestQuote)\n                  ])\n                ])\n              ])\n            ])\n          ])\n        ]),\n        _createElementVNode(\"div\", _hoisted_6, [\n          _createElementVNode(\"div\", _hoisted_7, [\n            _cache[1] || (_cache[1] = _createStaticVNode('<div class=\"contact-title flex items-center justify-center gap-2 sm:gap-4 w-full\"><div class=\"separator hidden sm:block flex-1 max-w-[100px] md:max-w-[200px] lg:max-w-[500px] h-1 bg-gray-300 rounded relative\"><div class=\"absolute top-0 right-0 w-16 sm:w-24 h-1 bg-primary rounded\"></div></div><h2 class=\"sm:text-4xl text-2xl\"> Portfolio </h2><div class=\"separator hidden sm:block flex-1 max-w-[100px] md:max-w-[200px] lg:max-w-[500px] h-1 bg-gray-300 rounded relative\"><div class=\"absolute top-0 left-0 w-16 sm:w-24 h-1 bg-primary rounded\"></div></div></div>', 1)),\n            _createVNode(_component_Portfolio)\n          ])\n        ])\n      ], 64);\n    };\n  }\n});\n",
+      "start": 1746483914077,
+      "end": 1746483914627,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/our-work.vue?macro=true&vue&type=script&setup=true&lang.ts"
+        ],
+        "sourcesContent": [
+          "import { defineComponent as _defineComponent } from 'vue'\nimport { resolveComponent as _resolveComponent, createVNode as _createVNode, createElementVNode as _createElementVNode, createStaticVNode as _createStaticVNode, Fragment as _Fragment, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\nconst _hoisted_1 = { class: \"relative\" }\nconst _hoisted_2 = { class: \"absolute inset-0 flex items-center justify-center top-[16rem]\" }\nconst _hoisted_3 = { class: \"container mx-auto px-4 sm:px-6 lg:px-8\" }\nconst _hoisted_4 = { class: \"max-w-6xl mx-auto text-center sm:text-left\" }\nconst _hoisted_5 = { class: \"flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-4\" }\nconst _hoisted_6 = { class: \"container mx-auto lg:-mt-[8rem] mt-[14rem] sm:mt-[2rem] px-3\" }\nconst _hoisted_7 = { class: \"text-center justify-center grid space-y-4\" }\n\nimport LiveChat from \"~/components/LiveChat.vue\";\nimport SecondaryButton from \"~/components/tools/SecondaryButton.vue\";\n\nexport default /*@__PURE__*/_defineComponent({\n  __name: 'our-work',\n  setup(__props) {\n\n\n\nreturn (_ctx: any,_cache: any) => {\n  const _component_nuxt_img = _resolveComponent(\"nuxt-img\")!\n  const _component_LazyRequestQuote = _resolveComponent(\"LazyRequestQuote\")!\n  const _component_Portfolio = _resolveComponent(\"Portfolio\")!\n\n  return (_openBlock(), _createElementBlock(_Fragment, null, [\n    _createElementVNode(\"div\", null, [\n      _createElementVNode(\"div\", _hoisted_1, [\n        _createVNode(_component_nuxt_img, {\n          src: \"/system/our_work_mask.png\",\n          class: \"w-full object-cover\",\n          sizes: \"sm:100vw md:100vw lg:100vw\",\n          loading: \"lazy\"\n        }),\n        _createElementVNode(\"div\", _hoisted_2, [\n          _createElementVNode(\"div\", _hoisted_3, [\n            _createElementVNode(\"div\", _hoisted_4, [\n              _cache[0] || (_cache[0] = _createStaticVNode(\"<div class=\\\"flex items-center justify-center sm:justify-start mb-4\\\"><div class=\\\"bg-pink-500 h-1 w-12 mr-2\\\"></div><span class=\\\"text-sm uppercase\\\">A Glimpse Of</span></div><h2 class=\\\"text-2xl sm:text-4xl font-bold mb-6\\\">Our Work</h2><p class=\\\"text-base sm:text-lg mb-8 max-w-4xl mr-auto\\\"> Over the years, we’ve perfected our skills in various domains of animation, logo design, web design, mobile app development, and digital marketing. Now, we’re ready to support your plans for digital expansion. </p>\", 3)),\n              _createElementVNode(\"div\", _hoisted_5, [\n                _createVNode(LiveChat),\n                _createVNode(_component_LazyRequestQuote)\n              ])\n            ])\n          ])\n        ])\n      ])\n    ]),\n    _createElementVNode(\"div\", _hoisted_6, [\n      _createElementVNode(\"div\", _hoisted_7, [\n        _cache[1] || (_cache[1] = _createStaticVNode(\"<div class=\\\"contact-title flex items-center justify-center gap-2 sm:gap-4 w-full\\\"><div class=\\\"separator hidden sm:block flex-1 max-w-[100px] md:max-w-[200px] lg:max-w-[500px] h-1 bg-gray-300 rounded relative\\\"><div class=\\\"absolute top-0 right-0 w-16 sm:w-24 h-1 bg-primary rounded\\\"></div></div><h2 class=\\\"sm:text-4xl text-2xl\\\"> Portfolio </h2><div class=\\\"separator hidden sm:block flex-1 max-w-[100px] md:max-w-[200px] lg:max-w-[500px] h-1 bg-gray-300 rounded relative\\\"><div class=\\\"absolute top-0 left-0 w-16 sm:w-24 h-1 bg-primary rounded\\\"></div></div></div>\", 1)),\n        _createVNode(_component_Portfolio)\n      ])\n    ])\n  ], 64))\n}\n}\n\n})"
+        ],
+        "mappings": "AAAA,SAAS,mBAAmB,wBAAwB;AACpD,SAAS,oBAAoB,mBAAmB,eAAe,cAAc,sBAAsB,qBAAqB,qBAAqB,oBAAoB,YAAY,WAAW,aAAa,YAAY,sBAAsB,2BAA2B;AAElQ,MAAM,aAAa,EAAE,OAAO,WAAW;AACvC,MAAM,aAAa,EAAE,OAAO,gEAAgE;AAC5F,MAAM,aAAa,EAAE,OAAO,yCAAyC;AACrE,MAAM,aAAa,EAAE,OAAO,6CAA6C;AACzE,MAAM,aAAa,EAAE,OAAO,+EAA+E;AAC3G,MAAM,aAAa,EAAE,OAAO,+DAA+D;AAC3F,MAAM,aAAa,EAAE,OAAO,4CAA4C;AAExE,OAAO,cAAc;AACrB,OAAO,qBAAqB;AAE5B,eAA4B,iCAAiB;AAAA,EAC3C,QAAQ;AAAA,EACR,MAAM,SAAS;AAIjB,WAAO,CAAC,MAAU,WAAgB;AAChC,YAAM,sBAAsB,kBAAkB,UAAU;AACxD,YAAM,8BAA8B,kBAAkB,kBAAkB;AACxE,YAAM,uBAAuB,kBAAkB,WAAW;AAE1D,aAAQ,WAAW,GAAG,oBAAoB,WAAW,MAAM;AAAA,QACzD,oBAAoB,OAAO,MAAM;AAAA,UAC/B,oBAAoB,OAAO,YAAY;AAAA,YACrC,aAAa,qBAAqB;AAAA,cAChC,KAAK;AAAA,cACL,OAAO;AAAA,cACP,OAAO;AAAA,cACP,SAAS;AAAA,YACX,CAAC;AAAA,YACD,oBAAoB,OAAO,YAAY;AAAA,cACrC,oBAAoB,OAAO,YAAY;AAAA,gBACrC,oBAAoB,OAAO,YAAY;AAAA,kBACrC,OAAO,CAAC,MAAM,OAAO,CAAC,IAAI,mBAAmB,yfAAmgB,CAAC;AAAA,kBACjjB,oBAAoB,OAAO,YAAY;AAAA,oBACrC,aAAa,QAAQ;AAAA,oBACrB,aAAa,2BAA2B;AAAA,kBAC1C,CAAC;AAAA,gBACH,CAAC;AAAA,cACH,CAAC;AAAA,YACH,CAAC;AAAA,UACH,CAAC;AAAA,QACH,CAAC;AAAA,QACD,oBAAoB,OAAO,YAAY;AAAA,UACrC,oBAAoB,OAAO,YAAY;AAAA,YACrC,OAAO,CAAC,MAAM,OAAO,CAAC,IAAI,mBAAmB,kjBAA8jB,CAAC;AAAA,YAC5mB,aAAa,oBAAoB;AAAA,UACnC,CAAC;AAAA,QACH,CAAC;AAAA,MACH,GAAG,EAAE;AAAA,IACP;AAAA,EACA;AAEA,CAAC;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:worker",
+      "start": 1746483914627,
+      "end": 1746483914627,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1746483914627,
+      "end": 1746483914627,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1746483914627,
+      "end": 1746483914627,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483914627,
+      "end": 1746483914627,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1746483914627,
+      "end": 1746483914627,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:prehydrate-transform",
+      "start": 1746483914627,
+      "end": 1746483914627,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:module-preload-polyfill",
+      "start": 1746483914627,
+      "end": 1746483914627,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483914627,
+      "end": 1746483914627,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1746483914627,
+      "end": 1746483914627,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1746483914627,
+      "end": 1746483914627,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1746483914627,
+      "end": 1746483914627,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1746483914627,
+      "end": 1746483914627,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1746483914627,
+      "end": 1746483914627,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1746483914627,
+      "end": 1746483914627,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1746483914627,
+      "end": 1746483914627,
+      "order": "normal-normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1746483914627,
+      "end": 1746483914627,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:head:unhead-imports",
+      "start": 1746483914627,
+      "end": 1746483914627,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1746483914627,
+      "end": 1746483914628,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1746483914628,
+      "end": 1746483914628,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "result": "\nconst __nuxt_page_meta = null\nexport default __nuxt_page_meta\n",
+      "start": 1746483914628,
+      "end": 1746483914628,
+      "order": "post",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": "AAAA;AAAA;AAAA;"
+      }
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1746483914628,
+      "end": 1746483914628,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1746483914628,
+      "end": 1746483914628,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1746483914628,
+      "end": 1746483914628,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1746483914628,
+      "end": 1746483914628,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1746483914628,
+      "end": 1746483914628,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1746483914628,
+      "end": 1746483914628,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1746483914628,
+      "end": 1746483914628,
+      "order": "normal"
+    }
+  ]
+}

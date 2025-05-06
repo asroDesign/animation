@@ -1,0 +1,202 @@
+{
+  "resolvedId": "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/components/tools/VideoPlayer.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<script setup>\nimport { ref } from 'vue';\nimport { useIntersectionObserver } from '@vueuse/core';\n\ndefineProps({\n  video_url:String\n})\nconst videoRef = ref(null);\nconst isVisible = ref(false);\n\nuseIntersectionObserver(\n    videoRef,\n    ([{ isIntersecting }]) => {\n      if (isIntersecting) {\n        isVisible.value = true;\n      }\n    },\n    { threshold: 0.1 }\n);\n</script>\n\n<template>\n  <div>\n    <video\n        ref=\"videoRef\"\n        :src=\"isVisible ? video_url : null\"\n        autoplay\n        loop\n        muted\n        playsinline\n        class=\"w-full h-auto\"\n        aria-label=\"Sample video\"\n    >\n      <source type=\"video/webm\" />\n      Your browser does not support the video tag.\n    </video>\n  </div>\n</template>",
+      "start": 1746483915403,
+      "end": 1746483915420,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:components-loader-pre",
+      "start": 1746483915420,
+      "end": 1746483915420,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1746483915420,
+      "end": 1746483915420,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1746483915420,
+      "end": 1746483915420,
+      "order": "pre"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1746483915420,
+      "end": 1746483915420,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1746483915420,
+      "end": 1746483915420,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { createElementVNode as _createElementVNode, createTextVNode as _createTextVNode, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\nconst _hoisted_1 = [\"src\"]\n\nimport { ref } from 'vue';\nimport { useIntersectionObserver } from '@vueuse/core';\n\n\nconst _sfc_main = {\n  __name: 'VideoPlayer',\n  props: {\n  video_url:String\n},\n  setup(__props) {\n\n\nconst videoRef = ref(null);\nconst isVisible = ref(false);\n\nuseIntersectionObserver(\n    videoRef,\n    ([{ isIntersecting }]) => {\n      if (isIntersecting) {\n        isVisible.value = true;\n      }\n    },\n    { threshold: 0.1 }\n);\n\nreturn (_ctx, _cache) => {\n  return (_openBlock(), _createElementBlock(\"div\", null, [\n    _createElementVNode(\"video\", {\n      ref_key: \"videoRef\",\n      ref: videoRef,\n      src: isVisible.value ? __props.video_url : null,\n      autoplay: \"\",\n      loop: \"\",\n      muted: \"\",\n      playsinline: \"\",\n      class: \"w-full h-auto\",\n      \"aria-label\": \"Sample video\"\n    }, _cache[0] || (_cache[0] = [\n      _createElementVNode(\"source\", { type: \"video/webm\" }, null, -1),\n      _createTextVNode(\" Your browser does not support the video tag. \")\n    ]), 8, _hoisted_1)\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1746483915420,
+      "end": 1746483915421,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1746483915421,
+      "end": 1746483915421,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483915421,
+      "end": 1746483915421,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1746483915421,
+      "end": 1746483915421,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:prehydrate-transform",
+      "start": 1746483915421,
+      "end": 1746483915421,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:module-preload-polyfill",
+      "start": 1746483915421,
+      "end": 1746483915421,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483915421,
+      "end": 1746483915421,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1746483915421,
+      "end": 1746483915421,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1746483915421,
+      "end": 1746483915421,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1746483915421,
+      "end": 1746483915421,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1746483915421,
+      "end": 1746483915421,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1746483915421,
+      "end": 1746483915421,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1746483915421,
+      "end": 1746483915421,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1746483915421,
+      "end": 1746483915421,
+      "order": "normal-normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1746483915421,
+      "end": 1746483915421,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:head:unhead-imports",
+      "start": 1746483915421,
+      "end": 1746483915421,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1746483915421,
+      "end": 1746483915421,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1746483915421,
+      "end": 1746483915421,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1746483915421,
+      "end": 1746483915421,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1746483915421,
+      "end": 1746483915421,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1746483915421,
+      "end": 1746483915421,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1746483915421,
+      "end": 1746483915421,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1746483915421,
+      "end": 1746483915421,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1746483915421,
+      "end": 1746483915421,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1746483915421,
+      "end": 1746483915421,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1746483915421,
+      "end": 1746483915421,
+      "order": "normal"
+    }
+  ]
+}

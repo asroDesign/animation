@@ -1,0 +1,271 @@
+{
+  "resolvedId": "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/components/tools/D2AnimationPlayer.vue?vue&type=style&index=0&scoped=2382189f&lang.css?inline&used",
+  "transforms": [
+    {
+      "name": "vite:vue",
+      "result": "\nvideo {\n  animation: fadeInScale 1s ease-out;\n}\n\n@keyframes fadeInScale {\n  from {\n    opacity: 0;\n    transform: scale(0.8);\n  }\n  to {\n    opacity: 1;\n    transform: scale(1);\n  }\n}\n",
+      "start": 1746483920890,
+      "end": 1746483920890,
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/components/tools/D2AnimationPlayer.vue"
+        ],
+        "names": [],
+        "mappings": ";AAiCA,CAAC,CAAC,CAAC,CAAC,EAAE;EACJ,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACpC;;AAEA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE;EACrB,CAAC,CAAC,CAAC,EAAE;IACH,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC;IACV,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;EACvB;EACA,CAAC,EAAE;IACD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC;IACV,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;EACrB;AACF",
+        "file": "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/components/tools/D2AnimationPlayer.vue",
+        "sourceRoot": "",
+        "sourcesContent": [
+          "<script setup>\nimport { gsap } from 'gsap';\nimport { ref, onMounted } from 'vue';\ndefineProps({\n  video_ur:String\n})\nconst videoRef = ref(null);\n\nonMounted(() => {\n  gsap.fromTo(\n      videoRef.value,\n      { opacity: 0, scale: 0.8 },\n      { opacity: 1, scale: 1, duration: 1, ease: 'power2.out' }\n  );\n});\n</script>\n\n<template>\n  <div>\n    <video\n        ref=\"videoRef\"\n        autoplay\n        loop\n        muted\n        playsinline\n        class=\"w-full h-auto\"\n    >\n      <source :src=\"video_ur\" type=\"video/webm\" />\n    </video>\n  </div>\n</template>\n\n<style scoped>\nvideo {\n  animation: fadeInScale 1s ease-out;\n}\n\n@keyframes fadeInScale {\n  from {\n    opacity: 0;\n    transform: scale(0.8);\n  }\n  to {\n    opacity: 1;\n    transform: scale(1);\n  }\n}\n</style>"
+        ]
+      }
+    },
+    {
+      "name": "nuxt:components-loader-pre",
+      "start": 1746483920890,
+      "end": 1746483920890,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:components-loader-pre",
+      "start": 1746483920890,
+      "end": 1746483920890,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1746483920890,
+      "end": 1746483920890,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1746483920890,
+      "end": 1746483920890,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1746483920890,
+      "end": 1746483920890,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1746483920890,
+      "end": 1746483920890,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-only-component-transform",
+      "start": 1746483920891,
+      "end": 1746483920891,
+      "order": "pre"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1746483920892,
+      "end": 1746483920892,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1746483920892,
+      "end": 1746483920892,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "video[data-v-2382189f]{animation:fadeInScale-2382189f 1s ease-out}@keyframes fadeInScale-2382189f{0%{opacity:0;transform:scale(.8)}to{opacity:1;transform:scale(1)}}",
+      "start": 1746483920892,
+      "end": 1746483920893,
+      "order": "normal",
+      "sourcemaps": {
+        "file": "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/components/tools/D2AnimationPlayer.vue",
+        "mappings": "AAAA,uBAAM,0CAAiC,CAAC,gCAAuB,GAAG,SAAS,CAAC,mBAAmB,CAAC,GAAG,SAAS,CAAC,kBAAkB,CAAC",
+        "names": [],
+        "sources": [
+          "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/components/tools/D2AnimationPlayer.vue"
+        ],
+        "sourcesContent": [
+          null
+        ],
+        "version": 3
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1746483920893,
+      "end": 1746483920893,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483920893,
+      "end": 1746483920893,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483920893,
+      "end": 1746483920893,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1746483920893,
+      "end": 1746483920893,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1746483920893,
+      "end": 1746483920893,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:prehydrate-transform",
+      "start": 1746483920893,
+      "end": 1746483920893,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:prehydrate-transform",
+      "start": 1746483920893,
+      "end": 1746483920893,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483920893,
+      "end": 1746483920893,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1746483920893,
+      "end": 1746483920893,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1746483920893,
+      "end": 1746483920893,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1746483921009,
+      "end": 1746483921009,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1746483921009,
+      "end": 1746483921009,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1746483921010,
+      "end": 1746483921010,
+      "order": "normal-normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1746483921010,
+      "end": 1746483921010,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1746483921010,
+      "end": 1746483921010,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:head:unhead-imports",
+      "start": 1746483921010,
+      "end": 1746483921010,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:head:unhead-imports",
+      "start": 1746483921010,
+      "end": 1746483921010,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1746483921011,
+      "end": 1746483921011,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1746483921011,
+      "end": 1746483921011,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1746483921011,
+      "end": 1746483921011,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1746483921011,
+      "end": 1746483921011,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1746483921011,
+      "end": 1746483921011,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1746483921011,
+      "end": 1746483921011,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1746483921011,
+      "end": 1746483921011,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1746483921011,
+      "end": 1746483921011,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1746483921011,
+      "end": 1746483921011,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1746483921011,
+      "end": 1746483921011,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1746483921013,
+      "end": 1746483921013,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1746483921013,
+      "end": 1746483921013,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,266 @@
+{
+  "resolvedId": "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/components/tools/DepositModal.vue?vue&type=style&index=0&scoped=42c075a6&lang.css?inline&used",
+  "transforms": [
+    {
+      "name": "vite:vue",
+      "result": "\n/* Tailwind handles all styling */\n",
+      "start": 1746483920884,
+      "end": 1746483920884,
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/components/tools/DepositModal.vue"
+        ],
+        "names": [],
+        "mappings": ";AA8IA,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC",
+        "file": "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/components/tools/DepositModal.vue",
+        "sourceRoot": "",
+        "sourcesContent": [
+          "\n<template>\n  <primary-button class=\"btn\" onclick=\"deposit_modal_3.showModal()\">Deposit</primary-button>\n\n  <dialog id=\"deposit_modal_3\" class=\"modal\">\n    <div class=\"modal-box bg-transparent\">\n\n      <div\n          class=\"w-full max-w-md sm:max-w-[567px] bg-[#020617] rounded-[42px] flex flex-col items-center gap-7 p-7 sm:p-10 relative overflow-hidden\"\n      >\n        <!-- Gradient Background -->\n        <div class=\"absolute inset-0 bg-gradient-to-b from-pink-600/0 to-violet-700/30 rounded-full blur-[350px]\"></div>\n\n        <!-- Close Button -->\n        <form method=\"dialog\">\n          <button class=\"btn btn-sm btn-circle btn-ghost absolute right-2 top-2\">\n            <svg class=\"w-8 h-8\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\">\n              <path d=\"M6 18L18 6M6 6l12 12\" />\n            </svg>\n          </button>\n        </form>\n\n        <!-- Header -->\n        <h1 class=\"text-white text-4xl sm:text-7xl font-normal font-['Impact']\">Deposit</h1>\n        <p class=\"text-white text-xl sm:text-3xl font-normal font-['Impact']\">Select method to deposit.</p>\n\n        <!-- Form -->\n        <form @submit.prevent=\"submitDeposit\" class=\"w-full max-w-[507px] bg-[#14082A] rounded-[32px] p-7 flex flex-col gap-7\">\n          <!-- Payment Method -->\n          <div class=\"flex gap-6 sm:gap-12\">\n            <label\n                v-for=\"method in paymentMethods\"\n                :key=\"method\"\n                class=\"flex items-center gap-2 cursor-pointer\"\n            >\n              <div class=\"relative\">\n                <input\n                    type=\"radio\"\n                    :value=\"method\"\n                    v-model=\"formData.paymentMethod\"\n                    class=\"hidden\"\n                />\n                <div\n                    class=\"w-6 h-6 rounded-full border\"\n                    :class=\"formData.paymentMethod === method ? 'bg-primary border-primary-shade' : 'bg-[#14082A] border-gray-400'\"\n                ></div>\n                <div\n                    v-if=\"formData.paymentMethod === method\"\n                    class=\"absolute top-1.5 left-1.5 w-3 h-3 bg-white rounded-full\"\n                ></div>\n              </div>\n              <span class=\"text-white text-sm sm:text-base font-normal font-['Shabnam']\">{{ method }}</span>\n            </label>\n          </div>\n          <p v-if=\"errors.paymentMethod\" class=\"text-red-500 text-sm\">{{ errors.paymentMethod }}</p>\n\n          <!-- Amount -->\n          <div class=\"relative\">\n            <input\n                v-model.number=\"formData.amount\"\n                type=\"number\"\n                placeholder=\"Amount\"\n                min=\"0\"\n                step=\"0.01\"\n                class=\"w-full h-12 px-4 bg-[#14082A] border border-[#514078] rounded-2xl text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-primary\"\n                :class=\"{ 'border-red-500': errors.amount }\"\n            />\n            <p v-if=\"errors.amount\" class=\"text-red-500 text-sm mt-1\">{{ errors.amount }}</p>\n          </div>\n\n          <!-- Summary -->\n          <div class=\"flex flex-col gap-2 text-gray-400 text-sm sm:text-base font-normal font-['Shabnam']\">\n            <p>Tax: 0</p>\n            <p>Fee: 0</p>\n            <p>\n              You will receive:\n              <span class=\"text-2xl font-normal font-['Impact']\">{{ formData.amount || 0 }} $</span>\n            </p>\n          </div>\n\n          <!-- Submit Button -->\n          <button\n              type=\"submit\"\n              class=\"w-full h-12 bg-primary rounded-3xl shadow-[0_0_6px_rgba(202,23,92,1)] border border-primary text-white text-base font-medium font-['Shabnam'] hover:bg-primary/90 transition-colors\"\n          >\n            Pay and Deposit\n          </button>\n        </form>\n      </div>\n    </div>\n  </dialog>\n\n</template>\n\n<script setup>\nimport { ref, computed } from 'vue';\nimport SecondaryButton from \"~/components/tools/SecondaryButton.vue\";\nimport PrimaryButton from \"~/components/tools/PrimaryButton.vue\";\n\ndefineProps(['balance']);\ndefineEmits(['close', 'update-balance']);\n\n// Form Data\nconst formData = ref({\n  paymentMethod: 'Credit Card',\n  amount: null,\n});\n\nconst paymentMethods = ['Credit Card', 'Cryptocurrency'];\nconst errors = ref({});\n\n// Computed Final Amount (Placeholder for real calculation)\nconst finalAmount = computed(() => formData.value.amount || 0);\n\n// Submit Deposit\nconst submitDeposit = async () => {\n  errors.value = {};\n\n  if (!formData.value.paymentMethod) {\n    errors.value.paymentMethod = 'Please select a payment method.';\n  }\n  if (!formData.value.amount || formData.value.amount <= 0) {\n    errors.value.amount = 'Please enter a valid amount.';\n  }\n  if (Object.keys(errors.value).length > 0) return;\n\n  try {\n    // Simulate API call\n    console.log('Deposit Data:', formData.value);\n    // Example: await fetch('/api/wallet/deposit', { method: 'POST', body: JSON.stringify(formData.value) });\n    const newBalance = (props.balance || 0) + formData.value.amount;\n    $emit('update-balance', newBalance);\n    $emit('close');\n    alert('Deposit successful!');\n  } catch (error) {\n    errors.value.general = 'Failed to process deposit. Please try again.';\n    console.error(error);\n  }\n};\n</script>\n\n<style scoped>\n/* Tailwind handles all styling */\n</style>\n"
+        ]
+      }
+    },
+    {
+      "name": "nuxt:components-loader-pre",
+      "start": 1746483920884,
+      "end": 1746483920884,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:components-loader-pre",
+      "start": 1746483920884,
+      "end": 1746483920884,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1746483920884,
+      "end": 1746483920884,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1746483920884,
+      "end": 1746483920884,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1746483920884,
+      "end": 1746483920884,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1746483920884,
+      "end": 1746483920884,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-only-component-transform",
+      "start": 1746483920884,
+      "end": 1746483920884,
+      "order": "pre"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1746483920888,
+      "end": 1746483920888,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1746483920888,
+      "end": 1746483920888,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "",
+      "start": 1746483920888,
+      "end": 1746483920889,
+      "order": "normal",
+      "sourcemaps": {
+        "file": "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/components/tools/DepositModal.vue",
+        "mappings": "",
+        "names": [],
+        "sources": [],
+        "version": 3
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1746483920889,
+      "end": 1746483920889,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483920889,
+      "end": 1746483920889,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483920889,
+      "end": 1746483920889,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1746483920889,
+      "end": 1746483920889,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1746483920889,
+      "end": 1746483920889,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:prehydrate-transform",
+      "start": 1746483920889,
+      "end": 1746483920889,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:prehydrate-transform",
+      "start": 1746483920889,
+      "end": 1746483920889,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483920889,
+      "end": 1746483920889,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1746483920889,
+      "end": 1746483920889,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1746483920889,
+      "end": 1746483920889,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1746483921009,
+      "end": 1746483921009,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1746483921009,
+      "end": 1746483921009,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1746483921010,
+      "end": 1746483921010,
+      "order": "normal-normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1746483921010,
+      "end": 1746483921010,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1746483921010,
+      "end": 1746483921010,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:head:unhead-imports",
+      "start": 1746483921010,
+      "end": 1746483921010,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:head:unhead-imports",
+      "start": 1746483921010,
+      "end": 1746483921010,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1746483921011,
+      "end": 1746483921011,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1746483921011,
+      "end": 1746483921011,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1746483921011,
+      "end": 1746483921011,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1746483921011,
+      "end": 1746483921011,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1746483921011,
+      "end": 1746483921011,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1746483921011,
+      "end": 1746483921011,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1746483921011,
+      "end": 1746483921011,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1746483921011,
+      "end": 1746483921011,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1746483921011,
+      "end": 1746483921011,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1746483921011,
+      "end": 1746483921011,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1746483921013,
+      "end": 1746483921013,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1746483921013,
+      "end": 1746483921013,
+      "order": "normal"
+    }
+  ]
+}

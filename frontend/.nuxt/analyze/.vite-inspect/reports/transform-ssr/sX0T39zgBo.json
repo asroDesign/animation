@@ -1,0 +1,268 @@
+{
+  "resolvedId": "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/components/tools/Toast.vue?vue&type=script&setup=true&lang.ts",
+  "transforms": [
+    {
+      "name": "vite:vue",
+      "result": "import { defineComponent as _defineComponent } from 'vue'\nimport { unref as _unref, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderClass as _ssrRenderClass, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate, ssrRenderList as _ssrRenderList } from \"vue/server-renderer\"\n\nimport { useToast } from '~/composables/useToast';\n\n// Get toasts from composable\n\nexport default /*@__PURE__*/_defineComponent({\n  __name: 'Toast',\n  __ssrInlineRender: true,\n  setup(__props) {\n\nconst { toasts, removeToast } = useToast();\n\nreturn (_ctx: any,_push: any,_parent: any,_attrs: any) => {\n  _push(`<div${\n    _ssrRenderAttrs(_mergeProps({ class: \"fixed top-4 right-4 z-50 space-y-2\" }, _attrs))\n  } data-v-4fab7e28><div${\n    _ssrRenderAttrs({ name: \"toast\" })\n  } data-v-4fab7e28>`)\n  _ssrRenderList(_unref(toasts), (toast) => {\n    _push(`<div class=\"${\n      _ssrRenderClass([{\n          'bg-green-500': toast.type === 'success',\n          'bg-red-500': toast.type === 'error',\n          'bg-blue-500': toast.type === 'info',\n        }, \"p-4 rounded-lg shadow-lg text-white flex items-center gap-2 max-w-sm\"])\n    }\" data-v-4fab7e28><span data-v-4fab7e28>${\n      _ssrInterpolate(toast.message)\n    }</span><button class=\"ml-auto text-white hover:text-gray-200\" data-v-4fab7e28><svg class=\"w-4 h-4\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\" data-v-4fab7e28><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M6 18L18 6M6 6l12 12\" data-v-4fab7e28></path></svg></button></div>`)\n  })\n  _push(`</div></div>`)\n}\n}\n\n})",
+      "start": 1746483922011,
+      "end": 1746483922011,
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/components/tools/Toast.vue"
+        ],
+        "sourcesContent": [
+          "<script setup lang=\"ts\">\nimport { useToast } from '~/composables/useToast';\n\n// Get toasts from composable\nconst { toasts, removeToast } = useToast();\n</script>\n\n<template>\n  <div class=\"fixed top-4 right-4 z-50 space-y-2\">\n    <transition-group name=\"toast\" tag=\"div\">\n      <div\n          v-for=\"toast in toasts\"\n          :key=\"toast.id\"\n          class=\"p-4 rounded-lg shadow-lg text-white flex items-center gap-2 max-w-sm\"\n          :class=\"{\n          'bg-green-500': toast.type === 'success',\n          'bg-red-500': toast.type === 'error',\n          'bg-blue-500': toast.type === 'info',\n        }\"\n      >\n        <span>{{ toast.message }}</span>\n        <button\n            class=\"ml-auto text-white hover:text-gray-200\"\n            @click=\"removeToast(toast.id)\"\n        >\n          <svg class=\"w-4 h-4\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\">\n            <path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M6 18L18 6M6 6l12 12\" />\n          </svg>\n        </button>\n      </div>\n    </transition-group>\n  </div>\n</template>\n\n<style scoped>\n/* Toast animation */\n.toast-enter-active,\n.toast-leave-active {\n  transition: all 0.3s ease;\n}\n.toast-enter-from,\n.toast-leave-to {\n  opacity: 0;\n  transform: translateY(-20px);\n}\n</style>"
+        ],
+        "names": [],
+        "mappings": ";;;;AACA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;;AAEjD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;;;;;;;AAC5B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;;;;;;;;;;;;;;;;;;;;;;;"
+      }
+    },
+    {
+      "name": "nuxt:components-loader-pre",
+      "start": 1746483922011,
+      "end": 1746483922011,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:components-loader-pre",
+      "start": 1746483922011,
+      "end": 1746483922011,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1746483922011,
+      "end": 1746483922011,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1746483922011,
+      "end": 1746483922011,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1746483922011,
+      "end": 1746483922011,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1746483922011,
+      "end": 1746483922011,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-only-component-transform",
+      "start": 1746483922011,
+      "end": 1746483922011,
+      "order": "pre"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, mergeProps as _mergeProps } from \"vue\";\nimport { ssrRenderClass as _ssrRenderClass, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate, ssrRenderList as _ssrRenderList } from \"vue/server-renderer\";\nimport { useToast } from \"~/composables/useToast\";\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"Toast\",\n  __ssrInlineRender: true,\n  setup(__props) {\n    const { toasts, removeToast } = useToast();\n    return (_ctx, _push, _parent, _attrs) => {\n      _push(`<div${_ssrRenderAttrs(_mergeProps({ class: \"fixed top-4 right-4 z-50 space-y-2\" }, _attrs))} data-v-4fab7e28><div${_ssrRenderAttrs({ name: \"toast\" })} data-v-4fab7e28>`);\n      _ssrRenderList(_unref(toasts), (toast) => {\n        _push(`<div class=\"${_ssrRenderClass([{\n          \"bg-green-500\": toast.type === \"success\",\n          \"bg-red-500\": toast.type === \"error\",\n          \"bg-blue-500\": toast.type === \"info\"\n        }, \"p-4 rounded-lg shadow-lg text-white flex items-center gap-2 max-w-sm\"])}\" data-v-4fab7e28><span data-v-4fab7e28>${_ssrInterpolate(toast.message)}</span><button class=\"ml-auto text-white hover:text-gray-200\" data-v-4fab7e28><svg class=\"w-4 h-4\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\" data-v-4fab7e28><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M6 18L18 6M6 6l12 12\" data-v-4fab7e28></path></svg></button></div>`);\n      });\n      _push(`</div></div>`);\n    };\n  }\n});\n",
+      "start": 1746483922011,
+      "end": 1746483922017,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/components/tools/Toast.vue?vue&type=script&setup=true&lang.ts"
+        ],
+        "sourcesContent": [
+          "import { defineComponent as _defineComponent } from 'vue'\nimport { unref as _unref, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderClass as _ssrRenderClass, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate, ssrRenderList as _ssrRenderList } from \"vue/server-renderer\"\n\nimport { useToast } from '~/composables/useToast';\n\n// Get toasts from composable\n\nexport default /*@__PURE__*/_defineComponent({\n  __name: 'Toast',\n  __ssrInlineRender: true,\n  setup(__props) {\n\nconst { toasts, removeToast } = useToast();\n\nreturn (_ctx: any,_push: any,_parent: any,_attrs: any) => {\n  _push(`<div${\n    _ssrRenderAttrs(_mergeProps({ class: \"fixed top-4 right-4 z-50 space-y-2\" }, _attrs))\n  } data-v-4fab7e28><div${\n    _ssrRenderAttrs({ name: \"toast\" })\n  } data-v-4fab7e28>`)\n  _ssrRenderList(_unref(toasts), (toast) => {\n    _push(`<div class=\"${\n      _ssrRenderClass([{\n          'bg-green-500': toast.type === 'success',\n          'bg-red-500': toast.type === 'error',\n          'bg-blue-500': toast.type === 'info',\n        }, \"p-4 rounded-lg shadow-lg text-white flex items-center gap-2 max-w-sm\"])\n    }\" data-v-4fab7e28><span data-v-4fab7e28>${\n      _ssrInterpolate(toast.message)\n    }</span><button class=\"ml-auto text-white hover:text-gray-200\" data-v-4fab7e28><svg class=\"w-4 h-4\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\" data-v-4fab7e28><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M6 18L18 6M6 6l12 12\" data-v-4fab7e28></path></svg></button></div>`)\n  })\n  _push(`</div></div>`)\n}\n}\n\n})"
+        ],
+        "mappings": "AAAA,SAAS,mBAAmB,wBAAwB;AACpD,SAAS,SAAS,QAAQ,cAAc,mBAAmB;AAC3D,SAAS,kBAAkB,iBAAiB,kBAAkB,iBAAiB,kBAAkB,iBAAiB,iBAAiB,sBAAsB;AAEzJ,SAAS,gBAAgB;AAIzB,eAA4B,iCAAiB;AAAA,EAC3C,QAAQ;AAAA,EACR,mBAAmB;AAAA,EACnB,MAAM,SAAS;AAEjB,UAAM,EAAE,QAAQ,YAAY,IAAI,SAAS;AAEzC,WAAO,CAAC,MAAU,OAAW,SAAa,WAAgB;AACxD,YAAM,OACJ,gBAAgB,YAAY,EAAE,OAAO,qCAAqC,GAAG,MAAM,CAAC,CACtF,wBACE,gBAAgB,EAAE,MAAM,QAAQ,CAAC,CACnC,mBAAmB;AACnB,qBAAe,OAAO,MAAM,GAAG,CAAC,UAAU;AACxC,cAAM,eACJ,gBAAgB,CAAC;AAAA,UACb,gBAAgB,MAAM,SAAS;AAAA,UAC/B,cAAc,MAAM,SAAS;AAAA,UAC7B,eAAe,MAAM,SAAS;AAAA,QAChC,GAAG,sEAAsE,CAAC,CAC9E,2CACE,gBAAgB,MAAM,OAAO,CAC/B,sTAAsT;AAAA,MACxT,CAAC;AACD,YAAM,cAAc;AAAA,IACtB;AAAA,EACA;AAEA,CAAC;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:worker",
+      "start": 1746483922017,
+      "end": 1746483922017,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1746483922017,
+      "end": 1746483922017,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1746483922017,
+      "end": 1746483922017,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483922018,
+      "end": 1746483922018,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483922018,
+      "end": 1746483922018,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1746483922018,
+      "end": 1746483922018,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1746483922018,
+      "end": 1746483922018,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:prehydrate-transform",
+      "start": 1746483922018,
+      "end": 1746483922018,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:prehydrate-transform",
+      "start": 1746483922018,
+      "end": 1746483922018,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483922018,
+      "end": 1746483922018,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1746483922018,
+      "end": 1746483922018,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1746483922018,
+      "end": 1746483922018,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1746483922018,
+      "end": 1746483922018,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1746483922018,
+      "end": 1746483922018,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1746483922018,
+      "end": 1746483922018,
+      "order": "normal-normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1746483922018,
+      "end": 1746483922018,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1746483922018,
+      "end": 1746483922018,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:head:unhead-imports",
+      "start": 1746483922018,
+      "end": 1746483922018,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:head:unhead-imports",
+      "start": 1746483922018,
+      "end": 1746483922018,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1746483922018,
+      "end": 1746483922018,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1746483922018,
+      "end": 1746483922018,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1746483922018,
+      "end": 1746483922018,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1746483922018,
+      "end": 1746483922018,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1746483922018,
+      "end": 1746483922018,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1746483922018,
+      "end": 1746483922018,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1746483922018,
+      "end": 1746483922018,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1746483922018,
+      "end": 1746483922018,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1746483922018,
+      "end": 1746483922018,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1746483922018,
+      "end": 1746483922018,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1746483922018,
+      "end": 1746483922018,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1746483922018,
+      "end": 1746483922018,
+      "order": "normal"
+    }
+  ]
+}

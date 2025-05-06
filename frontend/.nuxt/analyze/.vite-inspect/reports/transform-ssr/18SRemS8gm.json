@@ -1,0 +1,271 @@
+{
+  "resolvedId": "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/components/tools/Toast.vue?vue&type=style&index=0&scoped=4fab7e28&lang.css",
+  "transforms": [
+    {
+      "name": "vite:vue",
+      "result": "\n/* Toast animation */\n.toast-enter-active,\n.toast-leave-active {\n  transition: all 0.3s ease;\n}\n.toast-enter-from,\n.toast-leave-to {\n  opacity: 0;\n  transform: translateY(-20px);\n}\n",
+      "start": 1746483922011,
+      "end": 1746483922011,
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/components/tools/Toast.vue"
+        ],
+        "names": [],
+        "mappings": ";AAmCA,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC;AACpB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACnB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE;EAClB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC;AAC3B;AACA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACjB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE;EACd,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC;EACV,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC9B",
+        "file": "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/components/tools/Toast.vue",
+        "sourceRoot": "",
+        "sourcesContent": [
+          "<script setup lang=\"ts\">\nimport { useToast } from '~/composables/useToast';\n\n// Get toasts from composable\nconst { toasts, removeToast } = useToast();\n</script>\n\n<template>\n  <div class=\"fixed top-4 right-4 z-50 space-y-2\">\n    <transition-group name=\"toast\" tag=\"div\">\n      <div\n          v-for=\"toast in toasts\"\n          :key=\"toast.id\"\n          class=\"p-4 rounded-lg shadow-lg text-white flex items-center gap-2 max-w-sm\"\n          :class=\"{\n          'bg-green-500': toast.type === 'success',\n          'bg-red-500': toast.type === 'error',\n          'bg-blue-500': toast.type === 'info',\n        }\"\n      >\n        <span>{{ toast.message }}</span>\n        <button\n            class=\"ml-auto text-white hover:text-gray-200\"\n            @click=\"removeToast(toast.id)\"\n        >\n          <svg class=\"w-4 h-4\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\">\n            <path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M6 18L18 6M6 6l12 12\" />\n          </svg>\n        </button>\n      </div>\n    </transition-group>\n  </div>\n</template>\n\n<style scoped>\n/* Toast animation */\n.toast-enter-active,\n.toast-leave-active {\n  transition: all 0.3s ease;\n}\n.toast-enter-from,\n.toast-leave-to {\n  opacity: 0;\n  transform: translateY(-20px);\n}\n</style>"
+        ]
+      }
+    },
+    {
+      "name": "nuxt:components-loader-pre",
+      "start": 1746483922011,
+      "end": 1746483922011,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:components-loader-pre",
+      "start": 1746483922011,
+      "end": 1746483922011,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1746483922011,
+      "end": 1746483922011,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1746483922011,
+      "end": 1746483922011,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1746483922011,
+      "end": 1746483922011,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1746483922011,
+      "end": 1746483922011,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-only-component-transform",
+      "start": 1746483922011,
+      "end": 1746483922011,
+      "order": "pre"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1746483922013,
+      "end": 1746483922013,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1746483922013,
+      "end": 1746483922013,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": ".toast-enter-active[data-v-4fab7e28],.toast-leave-active[data-v-4fab7e28]{transition:all .3s ease}.toast-enter-from[data-v-4fab7e28],.toast-leave-to[data-v-4fab7e28]{opacity:0;transform:translateY(-20px)}",
+      "start": 1746483922013,
+      "end": 1746483922013,
+      "order": "normal",
+      "sourcemaps": {
+        "file": "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/components/tools/Toast.vue",
+        "mappings": "AAAA,0EAAwC,uBAAuB,CAAC,oEAAkC,SAAS,CAAC,2BAA2B",
+        "names": [],
+        "sources": [
+          "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/components/tools/Toast.vue"
+        ],
+        "sourcesContent": [
+          null
+        ],
+        "version": 3
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1746483922013,
+      "end": 1746483922013,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483922013,
+      "end": 1746483922013,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483922013,
+      "end": 1746483922013,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1746483922013,
+      "end": 1746483922013,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1746483922013,
+      "end": 1746483922013,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:prehydrate-transform",
+      "start": 1746483922013,
+      "end": 1746483922013,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:prehydrate-transform",
+      "start": 1746483922013,
+      "end": 1746483922013,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483922013,
+      "end": 1746483922013,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1746483922013,
+      "end": 1746483922014,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1746483922014,
+      "end": 1746483922014,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1746483922014,
+      "end": 1746483922014,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1746483922014,
+      "end": 1746483922014,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1746483922014,
+      "end": 1746483922014,
+      "order": "normal-normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1746483922014,
+      "end": 1746483922014,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1746483922014,
+      "end": 1746483922014,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:head:unhead-imports",
+      "start": 1746483922014,
+      "end": 1746483922014,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:head:unhead-imports",
+      "start": 1746483922014,
+      "end": 1746483922014,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1746483922014,
+      "end": 1746483922014,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1746483922014,
+      "end": 1746483922014,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1746483922014,
+      "end": 1746483922014,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1746483922014,
+      "end": 1746483922014,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1746483922014,
+      "end": 1746483922014,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1746483922014,
+      "end": 1746483922014,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1746483922014,
+      "end": 1746483922014,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1746483922014,
+      "end": 1746483922014,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1746483922014,
+      "end": 1746483922014,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1746483922014,
+      "end": 1746483922014,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1746483922014,
+      "end": 1746483922014,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1746483922014,
+      "end": 1746483922014,
+      "order": "normal"
+    }
+  ]
+}

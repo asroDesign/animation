@@ -1,0 +1,271 @@
+{
+  "resolvedId": "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/dashboard/cart/index.vue?vue&type=style&index=0&scoped=f37a1543&lang.css?inline&used",
+  "transforms": [
+    {
+      "name": "vite:vue",
+      "result": "\n/* Tailwind handles most styling, but we can add custom styles if needed */\n.prose :where(ul, ol):not(:where([class~=\"not-prose\"], [class~=\"not-prose\"] *)) {\n  margin-bottom: 0;\n}\n",
+      "start": 1746483920822,
+      "end": 1746483920822,
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/dashboard/cart/index.vue"
+        ],
+        "names": [],
+        "mappings": ";AAwRA,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,EAAE,CAAC,EAAE,CAAC,CAAC,EAAE,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC;AAC1E,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,EAAE;EAC9E,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC;AAClB",
+        "file": "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/dashboard/cart/index.vue",
+        "sourceRoot": "",
+        "sourcesContent": [
+          "<script setup>\nimport { ref } from 'vue'\nimport SecondaryButton from \"~/components/tools/SecondaryButton.vue\";\nimport PrimaryButton from \"~/components/tools/PrimaryButton.vue\";\nimport { useToast } from '~/composables/useToast';\n// Initialize toast composable\nconst { addToast } = useToast();\n\nconst session = ref({})\n\nconst {data:order,error:checkout_error} = await useMyFetch(`checkout`,{\n  headers:{\n    Authorization: `Bearer ${useCookie('CSRF_ASRO_TOKEN')?.value}`\n  }\n})\n\nif (checkout_error.value){\n  addToast(checkout_error.value?.data?.msg,'error',5000)\n}\n// Reactive state\nconst gateway = ref('')\nconst reference_number = ref('')\nconst coupon_code = ref('')\nconst showManualTransfer = ref(false)\n\n// Form submission\nconst checkoutForm = async () => {\n  if (!gateway.value && order.value.total > 0) {\n    alert('Please select a payment gateway')\n    return\n  }\n  if (gateway.value === 'manual' && !reference_number.value) {\n    alert('Please enter a reference number')\n    return\n  }\n  // Simulate form submission\n  console.log('Checkout submitted')\n  const {data,status,error} = await useMyFetch(`checkout`,{\n    body:{ gateway: gateway.value, reference_number: reference_number.value },\n    method:'POST',\n    headers:{\n      Authorization: `Bearer ${useCookie('CSRF_ASRO_TOKEN')?.value}`\n    }\n  })\n  if (error.value){\n    addToast(error.value?.data?.message,'error',5000)\n  }\n  // In a real app, use $fetch or an API call to submit to route('frontend.checkout.store')\n}\n\nconst get_data = async()=>{\n  const {data} = await useMyFetch(`checkout`,{\n\n    headers:{\n      Authorization: `Bearer ${useCookie('CSRF_ASRO_TOKEN')?.value}`\n    }\n  })\n  order.value = data.value\n}\nconst applyCoupon = async () => {\n  if (!coupon_code.value) {\n    session.value['coupon_error'] = 'Please enter a coupon code'\n    return\n  }\n  session['coupon_error'] = ''\n  const {data,status,error} = await useMyFetch('post-coupon-code',{\n    method:'POST',\n    body:{\n      coupon_code:coupon_code.value\n    },\n    headers:{\n      Authorization: `Bearer ${useCookie('CSRF_ASRO_TOKEN')?.value}`\n    }\n  })\n  if (status.value=='success'){\n    console.log(data?.value)\n    addToast(data.value?.msg,'success',5000)\n    get_data()\n  }\n  session.value['coupon_error'] = error.value?.data?.msg\n}\n\nconst removeCoupon = async () => {\n  // Simulate coupon removal\n  session['coupon_error'] = ''\n  const {data,status,error} = await useMyFetch('coupon-code',{\n    method:'DELETE',\n    body:{\n      coupon_code:coupon_code.value\n    },\n    headers:{\n      Authorization: `Bearer ${useCookie('CSRF_ASRO_TOKEN')?.value}`\n    }\n  })\n  if (status.value=='success'){\n    get_data()\n    addToast('Coupon removed','success',5000)\n  }\n\n  session.value['coupon_error'] = error.value?.data?.msg\n  // In a real app, use $fetch to submit to route('frontend.coupon.destroy')\n}\n\n// Watch gateway to show/hide manual transfer details\nwatch(gateway, (newVal) => {\n  showManualTransfer.value = newVal === 'manual'\n})\ndefinePageMeta({\n  layout:'dashboard',\n  middleware:'auth'\n})\n</script>\n\n<template>\n  <div class=\" py-12\">\n    <div class=\"container mx-auto px-4\">\n      <!-- Secure Checkout Header -->\n      <div class=\"mb-8\">\n        <div class=\" p-6 rounded-lg shadow-md\">\n          <h2 class=\"text-2xl font-bold mb-4\">Secure Checkout</h2>\n          <!-- Optimized Staging Section -->\n          <div class=\"relative flex justify-between items-center\">\n            <!-- Connecting Line -->\n            <div class=\"absolute top-[37%] w-[90%] mx-auto left-0 right-0 h-0 border-t-4 border-primary transform -translate-y-1/2\"></div>\n            <!-- Steps -->\n\n            <div class=\"relative z-10 flex flex-col items-center gap-2\">\n              <div class=\"w-16 h-16 bg-primary rounded-full flex items-center justify-center\">\n                <nuxt-icon name=\"iconsax/bulk/bag\" class=\"text-4xl \"/>\n\n              </div>\n              <a  class=\"text-primary text-lg font-bold\">Cart Items</a>\n            </div>\n            <div class=\"relative z-10 flex flex-col items-center gap-2\">\n              <div class=\"w-16 h-16 bg-primary rounded-full flex items-center justify-center\">\n                <nuxt-icon name=\"iconsax/bulk/card-pos\" class=\"text-4xl \"/>\n\n              </div>\n              <span class=\"text-primary text-lg font-bold\">Payment</span>\n            </div>\n            <div class=\"relative z-10 flex flex-col items-center gap-2\">\n              <div class=\"w-16 h-16 bg-gray-300 rounded-full flex items-center justify-center\">\n                <nuxt-icon name=\"iconsax/bulk/receive-square\" class=\"text-4xl text-gray-500\"/>\n              </div>\n              <span class=\"text-gray-400 text-lg font-bold\">Download</span>\n            </div>\n          </div>\n        </div>\n      </div>\n\n      <!-- Payment Details and Order Summary -->\n      <div v-if=\"order\" class=\"grid grid-cols-1 lg:grid-cols-12 gap-6\">\n        <!-- Payment Details -->\n        <div class=\"lg:col-span-7\">\n          <div class=\"bg-white/5 p-6 rounded-lg shadow-md\">\n            <h2 class=\"text-2xl font-bold  mb-4\">Payment Details</h2>\n            <!-- Error Message -->\n            <div v-if=\"session?.error\" class=\"bg-red-100 border-l-4 border-red-500 text-red-700 p-4 mb-4 flex justify-between items-center\">\n              <span>{{ session.error }}</span>\n              <button @click=\"session.error = null\" class=\"text-red-700 hover:text-red-900\">×</button>\n            </div>\n\n            <!-- Payment Form -->\n            <form @submit.prevent=\"checkoutForm\" id=\"checkoutform\">\n              <div class=\"grid grid-cols-1 md:grid-cols-2 gap-4 mb-4\">\n                <div v-if=\"order?.total > 0\" class=\"space-y-2\">\n                  <!-- Payment Gateways -->\n                  <label v-if=\"order?.setting?.is_checked_paypal\" class=\"block bg-white p-2 rounded-lg shadow-md flex items-center justify-between cursor-pointer transition-all duration-200 border\"\n                         :class=\"{ '!bg-red-200 !border-red-500': gateway == 'paypal' }\">\n                    <div class=\"flex items-center space-x-4\">\n                      <img src=\"/images/paypal.png\" alt=\"PayPal\" class=\"h-4\">\n                      <p class=\"text-lg font-medium text-gray-800\">PayPal</p>\n                    </div>\n                    <input v-model=\"gateway\" type=\"radio\" name=\"gateway\" value=\"paypal\" class=\"hidden\">\n                  </label>\n                  <label v-if=\"order?.setting?.is_checked_stripe\" class=\"block bg-white p-2 rounded-lg shadow-md flex items-center justify-between cursor-pointer transition-all duration-200 border\"\n                         :class=\"{ '!bg-red-200 !border-red-500': gateway == 'stripe' }\">\n                    <div class=\"flex items-center space-x-4\">\n                      <img src=\"/images/stripe.png\" alt=\"Stripe\" class=\"h-4\">\n                      <p class=\"text-lg font-medium text-gray-800\">Stripe</p>\n                    </div>\n                    <input v-model=\"gateway\" type=\"radio\" name=\"gateway\" value=\"stripe\" class=\"hidden\">\n                  </label>\n                  <label v-if=\"order?.setting?.is_checked_razorpay\" class=\"block bg-white p-2 rounded-lg shadow-md flex items-center justify-between cursor-pointer transition-all duration-200 border\"\n                         :class=\"{ '!bg-red-200 !border-red-500': gateway == 'razorpay' }\">\n                    <div class=\"flex items-center space-x-4\">\n                      <img src=\"/images/razorpay.png\" alt=\"Razorpay\" class=\"h-4\">\n                      <p class=\"text-lg font-medium text-gray-800\">Razorpay</p>\n                    </div>\n                    <input v-model=\"gateway\" type=\"radio\" name=\"gateway\" value=\"razorpay\" class=\"hidden\">\n                  </label>\n                  <label v-if=\"order?.setting?.is_checked_manual_transfer\" class=\"block bg-white p-2 rounded-lg shadow-md flex items-center justify-between cursor-pointer transition-all duration-200 border\"\n                         :class=\"{ '!bg-red-200 !border-red-500': gateway == 'manual' }\">\n                    <div class=\"flex items-center space-x-4\">\n                      <img src=\"/images/manual_transfer.png\" alt=\"Manual Transfer\" class=\"h-10\">\n                      <p class=\"text-lg font-medium text-gray-800\">Manual Transfer</p>\n                    </div>\n                    <input v-model=\"gateway\" type=\"radio\" name=\"gateway\" value=\"manual\" class=\"hidden\">\n                  </label>\n                </div>\n                <div v-else class=\"text-center py-4\">\n                  <p class=\"text-gray-600 text-lg\">No Payment Required</p>\n                  <input type=\"hidden\" name=\"gateway\" value=\"free\">\n                </div>\n              </div>\n\n              <!-- Manual Transfer Details -->\n              <div v-if=\"showManualTransfer\" class=\"mb-4\">\n                <div v-html=\"order?.setting?.manual_transfer_details\" class=\"prose text-gray-700\"></div>\n                <div class=\"mt-4\">\n                  <input v-model=\"reference_number\" type=\"text\" placeholder=\"Enter Reference no.\" class=\"w-full p-2 border rounded-md focus:ring-blue-500 focus:border-blue-500\">\n                  <label class=\"text-sm text-gray-600 mt-1\">Enter Reference no.</label>\n                </div>\n              </div>\n\n              <!-- Submit Button -->\n              <secondary-button type=\"submit\" class=\"w-full !p-4 transition\">\n                {{ order?.total > 0 ? 'Pay and Continue' : 'Continue' }}\n              </secondary-button>\n            </form>\n          </div>\n        </div>\n\n        <!-- Order Details -->\n        <div class=\"lg:col-span-5\">\n          <div class=\"bg-white/5 p-6 rounded-lg shadow-md mb-6\">\n            <h2 class=\"text-2xl font-bold  mb-4\">Order Details</h2>\n            <div class=\"flex justify-between mb-2\">\n              <p class=\"\">Total Products</p>\n              <p class=\"\">{{ order?.total_product ?? 0 }}</p>\n            </div>\n            <div class=\"flex justify-between mb-2\">\n              <p class=\"\">Subtotal</p>\n              <p class=\"\">{{ order?.price_symbol }}{{ order?.subtotal ?? 0 }}</p>\n            </div>\n            <div class=\"flex justify-between mb-2\">\n              <p class=\"\">Tax</p>\n              <p class=\"\">{{ order?.price_symbol }}{{ order?.tax ?? 0 }}</p>\n            </div>\n            <div class=\"flex justify-between mb-2\">\n              <p class=\"\">Discount</p>\n              <div v-if=\"order?.discount\" class=\"flex items-center space-x-2\">\n                <p>{{ order?.discount_code }} - {{ order?.price_symbol }}{{ order?.discount ?? 0 }}</p>\n                <button type=\"submit\" @click=\"removeCoupon\" class=\"text-red-600 hover:text-red-800\">\n                  <nuxt-icon name=\"iconsax/bulk/trash\" />\n                </button>\n              </div>\n              <p v-else>- {{ order?.price_symbol }}{{ order?.discount ?? 0 }}</p>\n            </div>\n            <div class=\"border-t pt-4 mt-4 flex justify-between\">\n              <p class=\"text-gray-200 font-semibold\">Total</p>\n              <p class=\"text-gray-200 font-semibold\">{{ order?.price_symbol }}{{ order?.total }}</p>\n            </div>\n          </div>\n\n          <!-- Coupon Form -->\n          <div v-if=\"order?.total > 0\" class=\"bg-white/5 p-6 rounded-lg shadow-md\">\n            <h2 class=\"text-xl font-bold mb-4\">Discount Code</h2>\n            <form @submit.prevent=\"applyCoupon\" class=\"flex space-x-2\">\n              <div>\n                <input v-model=\"coupon_code\" type=\"text\" placeholder=\"Enter Discount Code\"\n                       class=\"w-full py-2 px-4 bg-[#14082A] border border-[#514078] rounded-2xl text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-primary\"\n                >\n              </div>\n              <PrimaryButton type=\"submit\" class=\"text-white px-4 py-2\">\n                Apply\n              </PrimaryButton>\n            </form>\n            <span v-if=\"session['coupon_error']\" class=\"text-red-400 my-2\">{{session?.coupon_error}}</span>\n          </div>\n        </div>\n      </div>\n      <div else class=\"bg-red-500/5 p-4 text-center rounded-lg text-red-500\">\n        {{checkout_error?.data?.msg}}\n      </div>\n    </div>\n  </div>\n</template>\n\n<style scoped>\n/* Tailwind handles most styling, but we can add custom styles if needed */\n.prose :where(ul, ol):not(:where([class~=\"not-prose\"], [class~=\"not-prose\"] *)) {\n  margin-bottom: 0;\n}\n</style>"
+        ]
+      }
+    },
+    {
+      "name": "nuxt:components-loader-pre",
+      "start": 1746483920822,
+      "end": 1746483920822,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:components-loader-pre",
+      "start": 1746483920822,
+      "end": 1746483920822,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1746483920823,
+      "end": 1746483920823,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1746483920823,
+      "end": 1746483920823,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1746483920823,
+      "end": 1746483920823,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1746483920823,
+      "end": 1746483920823,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-only-component-transform",
+      "start": 1746483920824,
+      "end": 1746483920824,
+      "order": "pre"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1746483920826,
+      "end": 1746483920826,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1746483920827,
+      "end": 1746483920827,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": ".prose[data-v-f37a1543] :where(ul,ol):not(:where([class~=not-prose],[class~=not-prose] *)){margin-bottom:0}",
+      "start": 1746483920827,
+      "end": 1746483920827,
+      "order": "normal",
+      "sourcemaps": {
+        "file": "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/dashboard/cart/index.vue",
+        "mappings": "AAAA,2FAA0E,eAAe",
+        "names": [],
+        "sources": [
+          "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/dashboard/cart/index.vue"
+        ],
+        "sourcesContent": [
+          null
+        ],
+        "version": 3
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1746483920827,
+      "end": 1746483920827,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483920827,
+      "end": 1746483920827,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483920827,
+      "end": 1746483920827,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1746483920827,
+      "end": 1746483920827,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1746483920827,
+      "end": 1746483920827,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:prehydrate-transform",
+      "start": 1746483920827,
+      "end": 1746483920827,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:prehydrate-transform",
+      "start": 1746483920827,
+      "end": 1746483920827,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483920828,
+      "end": 1746483920828,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1746483920828,
+      "end": 1746483920828,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1746483920828,
+      "end": 1746483920828,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1746483920979,
+      "end": 1746483920979,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1746483920979,
+      "end": 1746483920979,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1746483920979,
+      "end": 1746483920979,
+      "order": "normal-normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1746483920979,
+      "end": 1746483920979,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1746483920979,
+      "end": 1746483920979,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:head:unhead-imports",
+      "start": 1746483920979,
+      "end": 1746483920980,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:head:unhead-imports",
+      "start": 1746483920979,
+      "end": 1746483920980,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1746483920980,
+      "end": 1746483920980,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1746483920980,
+      "end": 1746483920980,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1746483920980,
+      "end": 1746483920980,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1746483920980,
+      "end": 1746483920980,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1746483920980,
+      "end": 1746483920981,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1746483920980,
+      "end": 1746483920981,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1746483920981,
+      "end": 1746483920981,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1746483920981,
+      "end": 1746483920981,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1746483920981,
+      "end": 1746483920981,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1746483920981,
+      "end": 1746483920981,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1746483920981,
+      "end": 1746483920981,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1746483920981,
+      "end": 1746483920981,
+      "order": "normal"
+    }
+  ]
+}

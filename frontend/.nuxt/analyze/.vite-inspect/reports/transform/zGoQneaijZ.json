@@ -1,0 +1,198 @@
+{
+  "resolvedId": "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/node_modules/unhead/dist/shared/unhead.CApf5sj3.mjs",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { u as unpackMeta } from './unhead.DQc16pHI.mjs';\n\nfunction defineHeadPlugin(plugin) {\n  return plugin;\n}\n\nconst FlatMetaPlugin = /* @__PURE__ */ defineHeadPlugin({\n  key: \"flatMeta\",\n  hooks: {\n    \"entries:normalize\": (ctx) => {\n      const tagsToAdd = [];\n      ctx.tags = ctx.tags.map((t) => {\n        if (t.tag !== \"_flatMeta\") {\n          return t;\n        }\n        tagsToAdd.push(unpackMeta(t.props).map((p) => ({\n          ...t,\n          tag: \"meta\",\n          props: p\n        })));\n        return false;\n      }).filter(Boolean).concat(...tagsToAdd);\n    }\n  }\n});\n\nconst WhitelistAttributes = {\n  htmlAttrs: /* @__PURE__ */ new Set([\"class\", \"style\", \"lang\", \"dir\"]),\n  bodyAttrs: /* @__PURE__ */ new Set([\"class\", \"style\"]),\n  meta: /* @__PURE__ */ new Set([\"name\", \"property\", \"charset\", \"content\", \"media\"]),\n  noscript: /* @__PURE__ */ new Set([\"textContent\"]),\n  style: /* @__PURE__ */ new Set([\"media\", \"textContent\", \"nonce\", \"title\", \"blocking\"]),\n  script: /* @__PURE__ */ new Set([\"type\", \"textContent\", \"nonce\", \"blocking\"]),\n  link: /* @__PURE__ */ new Set([\"color\", \"crossorigin\", \"fetchpriority\", \"href\", \"hreflang\", \"imagesrcset\", \"imagesizes\", \"integrity\", \"media\", \"referrerpolicy\", \"rel\", \"sizes\", \"type\"])\n};\nfunction acceptDataAttrs(value) {\n  return Object.fromEntries(\n    Object.entries(value || {}).filter(([key]) => key === \"id\" || key.startsWith(\"data-\"))\n  );\n}\nfunction makeTagSafe(tag) {\n  let next = {};\n  const { tag: type, props: prev } = tag;\n  switch (type) {\n    // always safe\n    case \"title\":\n    case \"titleTemplate\":\n    case \"templateParams\":\n      next = prev;\n      break;\n    case \"htmlAttrs\":\n    case \"bodyAttrs\":\n      WhitelistAttributes[type].forEach((attr) => {\n        if (prev[attr]) {\n          next[attr] = prev[attr];\n        }\n      });\n      break;\n    case \"style\":\n      next = acceptDataAttrs(prev);\n      WhitelistAttributes.style.forEach((key) => {\n        if (prev[key]) {\n          next[key] = prev[key];\n        }\n      });\n      break;\n    // meta is safe, except for http-equiv\n    case \"meta\":\n      WhitelistAttributes.meta.forEach((key) => {\n        if (prev[key]) {\n          next[key] = prev[key];\n        }\n      });\n      break;\n    // link tags we don't allow stylesheets, scripts, preloading, prerendering, prefetching, etc\n    case \"link\":\n      WhitelistAttributes.link.forEach((key) => {\n        const val = prev[key];\n        if (!val) {\n          return;\n        }\n        if (key === \"rel\" && (val === \"canonical\" || val === \"modulepreload\" || val === \"prerender\" || val === \"preload\" || val === \"prefetch\")) {\n          return;\n        }\n        if (key === \"href\") {\n          if (val.includes(\"javascript:\") || val.includes(\"data:\")) {\n            return;\n          }\n          next[key] = val;\n        } else if (val) {\n          next[key] = val;\n        }\n      });\n      if (!next.href && !next.imagesrcset || !next.rel) {\n        return false;\n      }\n      break;\n    case \"noscript\":\n      WhitelistAttributes.noscript.forEach((key) => {\n        if (prev[key]) {\n          next[key] = prev[key];\n        }\n      });\n      break;\n    // we only allow JSON in scripts\n    case \"script\":\n      if (!tag.textContent || !prev.type?.endsWith(\"json\")) {\n        return false;\n      }\n      WhitelistAttributes.script.forEach((s) => {\n        if (prev[s] === \"textContent\") {\n          try {\n            const jsonVal = typeof prev[s] === \"string\" ? JSON.parse(prev[s]) : prev[s];\n            next[s] = JSON.stringify(jsonVal, null, 0);\n          } catch {\n          }\n        } else if (prev[s]) {\n          next[s] = prev[s];\n        }\n      });\n      break;\n  }\n  if (!Object.keys(next).length && !tag.tag.endsWith(\"Attrs\")) {\n    return false;\n  }\n  tag.props = { ...acceptDataAttrs(prev), ...next };\n  return tag;\n}\nconst SafeInputPlugin = (\n  /* @PURE */\n  defineHeadPlugin({\n    key: \"safe\",\n    hooks: {\n      \"entries:normalize\": (ctx) => {\n        if (ctx.entry.options?._safe) {\n          ctx.tags = ctx.tags.reduce((acc, tag) => {\n            const safeTag = makeTagSafe(tag);\n            if (safeTag)\n              acc.push(safeTag);\n            return acc;\n          }, []);\n        }\n      }\n    }\n  })\n);\n\nexport { FlatMetaPlugin as F, SafeInputPlugin as S, defineHeadPlugin as d };\n",
+      "start": 1746483912771,
+      "end": 1746483912890,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:components-loader-pre",
+      "start": 1746483912890,
+      "end": 1746483912890,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1746483912890,
+      "end": 1746483912890,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1746483912890,
+      "end": 1746483912890,
+      "order": "pre"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1746483912890,
+      "end": 1746483912890,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1746483912890,
+      "end": 1746483912890,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1746483912890,
+      "end": 1746483912890,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1746483912890,
+      "end": 1746483912890,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483912890,
+      "end": 1746483912890,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1746483912890,
+      "end": 1746483912890,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:prehydrate-transform",
+      "start": 1746483912890,
+      "end": 1746483912890,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:module-preload-polyfill",
+      "start": 1746483912890,
+      "end": 1746483912890,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483912890,
+      "end": 1746483912890,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1746483912890,
+      "end": 1746483912890,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1746483912890,
+      "end": 1746483912890,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1746483912890,
+      "end": 1746483912890,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1746483912890,
+      "end": 1746483912890,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1746483912890,
+      "end": 1746483912890,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1746483912890,
+      "end": 1746483912890,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1746483912890,
+      "end": 1746483912890,
+      "order": "normal-normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1746483912890,
+      "end": 1746483912890,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:head:unhead-imports",
+      "start": 1746483912891,
+      "end": 1746483912891,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1746483912891,
+      "end": 1746483912891,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1746483912891,
+      "end": 1746483912891,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1746483912891,
+      "end": 1746483912891,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1746483912891,
+      "end": 1746483912891,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1746483912891,
+      "end": 1746483912891,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1746483912891,
+      "end": 1746483912891,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1746483912891,
+      "end": 1746483912891,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1746483912891,
+      "end": 1746483912891,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1746483912891,
+      "end": 1746483912891,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1746483912891,
+      "end": 1746483912891,
+      "order": "normal"
+    }
+  ]
+}

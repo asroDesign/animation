@@ -1,0 +1,260 @@
+{
+  "resolvedId": "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/composables/useModal.ts",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "// composables/useModal.js\nimport { ref } from 'vue';\n\nexport function useModal() {\n  const isOpen = ref(false);\n\n  const openModal = () => {\n    isOpen.value = true;\n    // Prevent body scroll\n    document.body.style.overflow = 'hidden';\n  };\n\n  const closeModal = () => {\n    isOpen.value = false;\n    // Restore body scroll\n    document.body.style.overflow = '';\n  };\n\n  return { isOpen, openModal, closeModal };\n}\n",
+      "start": 1746483922079,
+      "end": 1746483922146,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:components-loader-pre",
+      "start": 1746483922146,
+      "end": 1746483922146,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:components-loader-pre",
+      "start": 1746483922146,
+      "end": 1746483922146,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1746483922146,
+      "end": 1746483922146,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1746483922146,
+      "end": 1746483922146,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1746483922146,
+      "end": 1746483922146,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1746483922146,
+      "end": 1746483922146,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-only-component-transform",
+      "start": 1746483922146,
+      "end": 1746483922146,
+      "order": "pre"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { ref } from \"vue\";\nexport function useModal() {\n  const isOpen = ref(false);\n  const openModal = () => {\n    isOpen.value = true;\n    document.body.style.overflow = \"hidden\";\n  };\n  const closeModal = () => {\n    isOpen.value = false;\n    document.body.style.overflow = \"\";\n  };\n  return { isOpen, openModal, closeModal };\n}\n",
+      "start": 1746483922146,
+      "end": 1746483922161,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/composables/useModal.ts"
+        ],
+        "sourcesContent": [
+          "// composables/useModal.js\nimport { ref } from 'vue';\n\nexport function useModal() {\n  const isOpen = ref(false);\n\n  const openModal = () => {\n    isOpen.value = true;\n    // Prevent body scroll\n    document.body.style.overflow = 'hidden';\n  };\n\n  const closeModal = () => {\n    isOpen.value = false;\n    // Restore body scroll\n    document.body.style.overflow = '';\n  };\n\n  return { isOpen, openModal, closeModal };\n}\n"
+        ],
+        "mappings": "AACA,SAAS,WAAW;AAEb,gBAAS,WAAW;AACzB,QAAM,SAAS,IAAI,KAAK;AAExB,QAAM,YAAY,MAAM;AACtB,WAAO,QAAQ;AAEf,aAAS,KAAK,MAAM,WAAW;AAAA,EACjC;AAEA,QAAM,aAAa,MAAM;AACvB,WAAO,QAAQ;AAEf,aAAS,KAAK,MAAM,WAAW;AAAA,EACjC;AAEA,SAAO,EAAE,QAAQ,WAAW,WAAW;AACzC;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:worker",
+      "start": 1746483922161,
+      "end": 1746483922161,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1746483922161,
+      "end": 1746483922161,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1746483922161,
+      "end": 1746483922161,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483922161,
+      "end": 1746483922161,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483922161,
+      "end": 1746483922161,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1746483922161,
+      "end": 1746483922161,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1746483922161,
+      "end": 1746483922161,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:prehydrate-transform",
+      "start": 1746483922161,
+      "end": 1746483922161,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:prehydrate-transform",
+      "start": 1746483922161,
+      "end": 1746483922161,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483922161,
+      "end": 1746483922161,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1746483922161,
+      "end": 1746483922161,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "result": "import { ref } from \"vue\";\nexport function useModal() {\n  const isOpen = ref(false);\n  const openModal = () => {\n    isOpen.value = true;\n    (void 0).body.style.overflow = \"hidden\";\n  };\n  const closeModal = () => {\n    isOpen.value = false;\n    (void 0).body.style.overflow = \"\";\n  };\n  return { isOpen, openModal, closeModal };\n}\n",
+      "start": 1746483922161,
+      "end": 1746483922168,
+      "order": "normal-normal",
+      "sourcemaps": "{\n  \"version\": 3,\n  \"sources\": [\"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/composables/useModal.ts\"],\n  \"sourcesContent\": [\"import { ref } from \\\"vue\\\";\\nexport function useModal() {\\n  const isOpen = ref(false);\\n  const openModal = () => {\\n    isOpen.value = true;\\n    document.body.style.overflow = \\\"hidden\\\";\\n  };\\n  const closeModal = () => {\\n    isOpen.value = false;\\n    document.body.style.overflow = \\\"\\\";\\n  };\\n  return { isOpen, openModal, closeModal };\\n}\\n\"],\n  \"mappings\": \"AAAA,SAAS,WAAW;AACb,gBAAS,WAAW;AACzB,QAAM,SAAS,IAAI,KAAK;AACxB,QAAM,YAAY,MAAM;AACtB,WAAO,QAAQ;AACf,aAAS,KAAK,MAAM,WAAW;AAAA,EACjC;AACA,QAAM,aAAa,MAAM;AACvB,WAAO,QAAQ;AACf,aAAS,KAAK,MAAM,WAAW;AAAA,EACjC;AACA,SAAO,EAAE,QAAQ,WAAW,WAAW;AACzC;\",\n  \"names\": []\n}\n"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1746483922168,
+      "end": 1746483922168,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1746483922168,
+      "end": 1746483922168,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1746483922168,
+      "end": 1746483922168,
+      "order": "normal-normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1746483922168,
+      "end": 1746483922168,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1746483922168,
+      "end": 1746483922168,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:head:unhead-imports",
+      "start": 1746483922168,
+      "end": 1746483922168,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:head:unhead-imports",
+      "start": 1746483922168,
+      "end": 1746483922168,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1746483922168,
+      "end": 1746483922169,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1746483922168,
+      "end": 1746483922169,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1746483922169,
+      "end": 1746483922169,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1746483922169,
+      "end": 1746483922169,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1746483922169,
+      "end": 1746483922169,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1746483922169,
+      "end": 1746483922169,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1746483922169,
+      "end": 1746483922169,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1746483922169,
+      "end": 1746483922169,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1746483922169,
+      "end": 1746483922169,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1746483922169,
+      "end": 1746483922169,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1746483922169,
+      "end": 1746483922169,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1746483922169,
+      "end": 1746483922169,
+      "order": "normal"
+    }
+  ]
+}

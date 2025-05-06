@@ -1,0 +1,291 @@
+:root {
+    --el-color-primary: #00C5CE !important;
+}
+@import "font";
+body {
+    // font-family: IRANSans-web !important;
+    font-family: bakh  !important;
+    // font-weight: 300 !important;
+    // font-size: 13px !important;
+    direction: rtl !important;
+    margin: 0 !important;
+    scroll-behavior: smooth;
+}
+p{
+    background-color: unset !important;
+    text-align: justify;
+}
+
+.el-dialog{
+    position: relative;
+    border-radius: 15px !important;
+}
+.el-dialog__headerbtn{
+    position: absolute !important;
+    top: -7px !important;
+    right: -7px !important;
+    background-color: #f1eeee !important;
+    width: 30px !important;
+    height: 30px !important;
+    border-radius: 10px !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    
+}
+.el-dialog__headerbtn:hover{
+    transition: ease-in;
+    transition-duration: 300ms;
+    top: -4px !important;
+    right: -4px !important;
+    
+}
+#dsahboard_side_menu{
+    background-color: white;
+    border-right: none !important;
+    .el-menu-item:hover{
+        color: white !important;
+        background-color: #00C5CE;
+    }
+    .el-menu-item.is-active{
+        border-right: 3px #00C5CE solid !important;
+        color: #00C5CE ;
+    }
+    .el-menu-item{
+        color: #414141;
+    }
+}
+.el-menu-item{
+    color: #383838;
+}
+.color_tab .el-menu-item {
+    height: 55px !important;
+}
+.el-menu--horizontal > .el-menu-item{
+    color: #0a0a0a !important;
+    height: 33px ;
+    a{
+        height: 100% !important;
+    }
+    &:hover{
+        color: rgba(0, 197, 206, 0.87) !important;
+        background-color: unset !important;
+    }
+}
+.el-main{
+    padding-top: unset !important;
+    padding-bottom: unset !important;
+    padding-right: 25px !important;
+}
+
+.header_menu{
+    background-color: white !important;
+    border-radius: 10px;
+}
+.el-input__wrapper{
+    .el-input__inner::placeholder{
+        color: #757575 !important;
+    }
+}
+
+// @media (prefers-color-scheme: dark){
+.dark{
+
+    .el-input__inner::placeholder{
+        color: #bebcbc ;
+    }
+    #dsahboard_side_menu{
+        background-color: #313131;
+        .is-active{
+            color: #00C5CE ;
+        }
+        .el-menu-item{
+            color: #e3e3e3;
+        }
+    }
+    .el-input__inner::placeholder{
+        color: #fefefe !important;
+    }
+    .el-menu--horizontal > .el-menu-item {
+        color: #e3e3e3 !important;
+    }
+    .asro_logo{
+        filter: unset;
+    }
+    .el-menu--horizontal > .el-menu-item{
+        color: #e3e3e3;
+    }
+    .header_menu{
+        background-color: rgb(31 41 55 / var(--tw-bg-opacity)) !important;
+    }
+    #description {
+        p,p>span{
+            color: #e3e3e3 !important;
+        }
+        h1,h2,h3,h4{
+            color: #e3e3e3 !important;
+            background-color: unset !important;
+        }
+    }
+    .inner_box{
+ 
+        box-shadow: inset -2px -2px 6px rgba(41, 41, 41, 0.6), inset 2px 2px 8px rgba(16, 16, 16, 0.95) !important;
+    }
+    .outer_btn{
+        background: #575757;
+        box-shadow: -6px -6px 20px rgba(41, 41, 41, 0.6), 4px 4px 20px rgba(16, 16, 16, 0.95) !important;
+    }
+    .outer_box{
+        border:1px solid #575757 ;
+        background: #4f5055;
+        /* Shadow-White-bottons */
+        box-shadow: -6px -6px 20px #242424, 4px 4px 20px #000000 ;
+    }
+    .el-table tr{
+        background-color: unset;
+    }
+    .vs-card-content.type-6 .vs-card__more_info{
+        background-color: #4f5055;
+    }
+    .pdp .pdp-picker{
+        background: #1e1f24;
+        color:white;
+    }
+    .location{
+        background-color:rgb(75 85 99 / var(--tw-bg-opacity));
+        border: none;
+    }
+
+}
+.asro_logo{
+    filter: brightness(0.5);
+}
+
+.content-visibility-auto{
+    content-visibility:auto;
+}
+.vs-card__text {
+    span , div , h3 , h2 , h1, h4 , p{
+        text-shadow: 1px 0px 2px #606266;
+    }
+}
+.el-divider__text{
+    background-color:linear-gradient(#fffbeb,#ecfeff) !important;
+}
+
+.poeple_choose .el-input-number{
+    .el-input-number__decrease{
+        background-color: rgb(255, 203, 203) !important;
+        color: white;
+    }
+    .el-input-number__increase{
+        background-color: rgb(188, 233, 196) !important;
+        color: white;
+    }
+}
+.el-message{
+    width: max-content !important;
+}
+.el-form-item__content .location{
+    width:100% !important;
+    .el-input__wrapper{
+        background-color: transparent !important;
+    }
+  }
+.pool .el-input__wrapper {
+    background-color: transparent;
+}
+
+@media (max-width:760px) {
+    .el-menu--horizontal > .el-menu-item{
+        padding: 0px 10px !important
+    }
+}
+.text-white{
+    color: white;
+}
+
+.outer_btn:hover{
+    box-sizing: border-box !important;
+    /*background: #F2F3F6 !important;*/
+    /* Label-Shadow */
+    box-shadow: inset -2px -2px 6px rgba(255, 255, 255, 0.6), inset 2px 2px 8px rgba(211, 213, 223, 0.95) ;
+    background: linear-gradient(90deg, #FD7684 0%, #F39C4A 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    .v-icon::before{
+        color: white;
+    }
+}
+.outer_box{
+    /* Rectangle 89 */
+    border:1px solid white ;
+    box-sizing: border-box ;
+    border-radius: 15px;
+    background: #ffff;
+    /* Shadow-White-bottons */
+    box-shadow: -6px -6px 20px #FFFFFF, 4px 4px 20px #C6C9D6 ;
+
+    .theme--light.v-tabs-items , .v-card , .v-tabs-bar{
+        background-color: transparent !important;
+    }
+    .theme--light.v-sheet{
+        border:none !important;
+    }
+}
+.outer_btn{
+    box-sizing: border-box;
+    background: #F2F3F6;
+    box-shadow: -6px -6px 20px #FFFFFF, 4px 4px 20px #C6C9D6;
+    border-radius: 10px;
+    /*border-width: 1px;*/
+    /*border-style: solid;*/
+    border: 1px solid transparent;
+}
+
+.inner_box{
+    /* Rectangle 32 */
+
+    box-sizing: border-box;
+
+
+    background: #ffff ;
+    /* Label-Shadow */
+    box-shadow: inset -2px -2px 6px rgba(255, 255, 255, 0.6), inset 2px 2px 8px rgba(211, 213, 223, 0.95) !important;
+    border-radius: 15px;
+}
+.country_select .el-select__wrapper {
+    box-shadow: none !important;
+    height: inherit;
+  } 
+
+  .tabs-lifted > .tab:is(input:checked){
+    color:white;
+  }
+
+  .el-button--primary{
+    padding: 20px !important;
+  }
+
+  .fc-timegrid-event-harness-inset .fc-timegrid-event, .fc-timegrid-event.fc-event-mirror, .fc-timegrid-more-link{
+    box-shadow:none !important;
+ 
+  }
+  .fc-v-event{
+    border:none !important;
+}
+
+.location{
+    padding: 0.25rem;
+    background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+    border-radius: 0.75rem;
+
+}
+input[type=text]{
+    padding:10px !important;
+}
+
+.tabs:not(.sanses) {
+    display:unset !important;
+}

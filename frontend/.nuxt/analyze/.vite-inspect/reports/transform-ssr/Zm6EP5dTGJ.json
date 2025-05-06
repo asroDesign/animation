@@ -1,0 +1,266 @@
+{
+  "resolvedId": "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/components/StarRating.vue?vue&type=style&index=0&scoped=1525717f&lang.css",
+  "transforms": [
+    {
+      "name": "vite:vue",
+      "result": "\n/* Font Awesome is included globally in the project */\n",
+      "start": 1746483920903,
+      "end": 1746483920903,
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/components/StarRating.vue"
+        ],
+        "names": [],
+        "mappings": ";AAgCA,CAAC,EAAE,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,EAAE,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC",
+        "file": "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/components/StarRating.vue",
+        "sourceRoot": "",
+        "sourcesContent": [
+          "<template>\n  <div class=\"star-rating flex items-center\">\n    <span v-for=\"i in 5\" :key=\"i\" class=\"text-yellow-400\">\n      <i\n          :class=\"{\n          'fas fa-star': i <= Math.floor(rating),\n          'fas fa-star-half-alt': i === Math.ceil(rating) && rating % 1 !== 0,\n          'far fa-star': i > Math.ceil(rating),\n        }\"\n      ></i>\n    </span>\n    <span v-if=\"showRating\" class=\"ml-2 text-sm text-gray-600\">{{ rating.toFixed(1) }}</span>\n  </div>\n</template>\n\n<script setup>\nimport { defineProps } from 'vue';\n\nconst props = defineProps({\n  rating: {\n    type: Number,\n    required: true,\n    default: 0,\n  },\n  showRating: {\n    type: Boolean,\n    default: false,\n  },\n});\n</script>\n\n<style scoped>\n/* Font Awesome is included globally in the project */\n</style>"
+        ]
+      }
+    },
+    {
+      "name": "nuxt:components-loader-pre",
+      "start": 1746483920903,
+      "end": 1746483920903,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:components-loader-pre",
+      "start": 1746483920903,
+      "end": 1746483920903,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1746483920903,
+      "end": 1746483920903,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1746483920903,
+      "end": 1746483920903,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1746483920903,
+      "end": 1746483920903,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1746483920903,
+      "end": 1746483920903,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-only-component-transform",
+      "start": 1746483920903,
+      "end": 1746483920903,
+      "order": "pre"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1746483920904,
+      "end": 1746483920904,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1746483920904,
+      "end": 1746483920904,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "",
+      "start": 1746483920904,
+      "end": 1746483920904,
+      "order": "normal",
+      "sourcemaps": {
+        "file": "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/components/StarRating.vue",
+        "mappings": "",
+        "names": [],
+        "sources": [],
+        "version": 3
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1746483920904,
+      "end": 1746483920904,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483920904,
+      "end": 1746483920904,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483920904,
+      "end": 1746483920904,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1746483920904,
+      "end": 1746483920904,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1746483920904,
+      "end": 1746483920904,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:prehydrate-transform",
+      "start": 1746483920904,
+      "end": 1746483920904,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:prehydrate-transform",
+      "start": 1746483920904,
+      "end": 1746483920904,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483920904,
+      "end": 1746483920904,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1746483920904,
+      "end": 1746483920904,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1746483920904,
+      "end": 1746483920904,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1746483920904,
+      "end": 1746483920904,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1746483920904,
+      "end": 1746483920904,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1746483920904,
+      "end": 1746483920904,
+      "order": "normal-normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1746483920904,
+      "end": 1746483920904,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1746483920904,
+      "end": 1746483920904,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:head:unhead-imports",
+      "start": 1746483920904,
+      "end": 1746483920904,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:head:unhead-imports",
+      "start": 1746483920904,
+      "end": 1746483920904,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1746483920904,
+      "end": 1746483920904,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1746483920904,
+      "end": 1746483920904,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1746483920904,
+      "end": 1746483920904,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1746483920904,
+      "end": 1746483920904,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1746483920904,
+      "end": 1746483920904,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1746483920904,
+      "end": 1746483920904,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1746483920904,
+      "end": 1746483920904,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1746483920904,
+      "end": 1746483920905,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1746483920905,
+      "end": 1746483920905,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1746483920905,
+      "end": 1746483920905,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1746483920905,
+      "end": 1746483920905,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1746483920905,
+      "end": 1746483920905,
+      "order": "normal"
+    }
+  ]
+}

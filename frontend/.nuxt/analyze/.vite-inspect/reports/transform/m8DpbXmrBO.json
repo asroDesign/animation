@@ -1,0 +1,210 @@
+{
+  "resolvedId": "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/composables/useToast.ts",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { ref } from 'vue';\n\n// Define Toast type\ninterface Toast {\n    id: number;\n    message: string;\n    type: 'success' | 'error' | 'info';\n    duration?: number;\n}\n\n// Store toasts\nconst toasts = ref<Toast[]>([]);\nlet toastId = 0;\n\n// Composable for managing toasts\nexport function useToast() {\n    // Add a new toast\n    function addToast(message: string, type: Toast['type'] = 'info', duration = 3000) {\n        const id = toastId++;\n        toasts.value.push({ id, message, type, duration });\n\n        // Auto-remove toast after duration\n        setTimeout(() => {\n            removeToast(id);\n        }, duration);\n    }\n\n    // Remove a toast by ID\n    function removeToast(id: number) {\n        toasts.value = toasts.value.filter(toast => toast.id !== id);\n    }\n\n    return {\n        toasts,\n        addToast,\n        removeToast,\n    };\n}",
+      "start": 1746483913937,
+      "end": 1746483914049,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:components-loader-pre",
+      "start": 1746483914049,
+      "end": 1746483914050,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1746483914050,
+      "end": 1746483914050,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1746483914050,
+      "end": 1746483914050,
+      "order": "pre"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { ref } from \"vue\";\nconst toasts = ref([]);\nlet toastId = 0;\nexport function useToast() {\n  function addToast(message, type = \"info\", duration = 3e3) {\n    const id = toastId++;\n    toasts.value.push({ id, message, type, duration });\n    setTimeout(() => {\n      removeToast(id);\n    }, duration);\n  }\n  function removeToast(id) {\n    toasts.value = toasts.value.filter((toast) => toast.id !== id);\n  }\n  return {\n    toasts,\n    addToast,\n    removeToast\n  };\n}\n",
+      "start": 1746483914050,
+      "end": 1746483914595,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/composables/useToast.ts"
+        ],
+        "sourcesContent": [
+          "import { ref } from 'vue';\n\n// Define Toast type\ninterface Toast {\n    id: number;\n    message: string;\n    type: 'success' | 'error' | 'info';\n    duration?: number;\n}\n\n// Store toasts\nconst toasts = ref<Toast[]>([]);\nlet toastId = 0;\n\n// Composable for managing toasts\nexport function useToast() {\n    // Add a new toast\n    function addToast(message: string, type: Toast['type'] = 'info', duration = 3000) {\n        const id = toastId++;\n        toasts.value.push({ id, message, type, duration });\n\n        // Auto-remove toast after duration\n        setTimeout(() => {\n            removeToast(id);\n        }, duration);\n    }\n\n    // Remove a toast by ID\n    function removeToast(id: number) {\n        toasts.value = toasts.value.filter(toast => toast.id !== id);\n    }\n\n    return {\n        toasts,\n        addToast,\n        removeToast,\n    };\n}"
+        ],
+        "mappings": "AAAA,SAAS,WAAW;AAWpB,MAAM,SAAS,IAAa,CAAC,CAAC;AAC9B,IAAI,UAAU;AAGP,gBAAS,WAAW;AAEvB,WAAS,SAAS,SAAiB,OAAsB,QAAQ,WAAW,KAAM;AAC9E,UAAM,KAAK;AACX,WAAO,MAAM,KAAK,EAAE,IAAI,SAAS,MAAM,SAAS,CAAC;AAGjD,eAAW,MAAM;AACb,kBAAY,EAAE;AAAA,IAClB,GAAG,QAAQ;AAAA,EACf;AAGA,WAAS,YAAY,IAAY;AAC7B,WAAO,QAAQ,OAAO,MAAM,OAAO,WAAS,MAAM,OAAO,EAAE;AAAA,EAC/D;AAEA,SAAO;AAAA,IACH;AAAA,IACA;AAAA,IACA;AAAA,EACJ;AACJ;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:worker",
+      "start": 1746483914595,
+      "end": 1746483914595,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1746483914596,
+      "end": 1746483914596,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1746483914596,
+      "end": 1746483914596,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483914596,
+      "end": 1746483914596,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1746483914596,
+      "end": 1746483914596,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:prehydrate-transform",
+      "start": 1746483914596,
+      "end": 1746483914596,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:module-preload-polyfill",
+      "start": 1746483914596,
+      "end": 1746483914596,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483914596,
+      "end": 1746483914596,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1746483914596,
+      "end": 1746483914596,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1746483914596,
+      "end": 1746483914596,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1746483914596,
+      "end": 1746483914596,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1746483914596,
+      "end": 1746483914596,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1746483914596,
+      "end": 1746483914596,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1746483914596,
+      "end": 1746483914596,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1746483914596,
+      "end": 1746483914596,
+      "order": "normal-normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1746483914596,
+      "end": 1746483914597,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:head:unhead-imports",
+      "start": 1746483914597,
+      "end": 1746483914597,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1746483914597,
+      "end": 1746483914598,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1746483914598,
+      "end": 1746483914598,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1746483914598,
+      "end": 1746483914598,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1746483914598,
+      "end": 1746483914598,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1746483914598,
+      "end": 1746483914598,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1746483914598,
+      "end": 1746483914598,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1746483914598,
+      "end": 1746483914598,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1746483914598,
+      "end": 1746483914598,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1746483914598,
+      "end": 1746483914598,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1746483914598,
+      "end": 1746483914598,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,271 @@
+{
+  "resolvedId": "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/components/tools/ContactForm.vue?vue&type=style&index=0&scoped=eb8ff9d1&lang.css?inline&used",
+  "transforms": [
+    {
+      "name": "vite:vue",
+      "result": "\n.contact-form-container {\n  @apply max-w-5xl mx-auto p-4 sm:p-6 lg:p-8;\n}\n\n.contact-form {\n  @apply grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 p-6 sm:p-8 rounded-3xl shadow-lg;\n  background-color: #14082A;\n}\n\n.form-group {\n  @apply flex flex-col;\n}\n\n.form-label {\n  @apply text-sm font-medium mb-2 text-gray-400;\n}\n\n.form-input {\n  @apply w-full py-2 px-3 sm:py-3 sm:px-4 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition bg-transparent;\n  border-color: #514078;\n  color: #A39CB1;\n}\n\n.form-input::placeholder {\n  @apply text-gray-500;\n}\n\ntextarea.form-input {\n  @apply resize-y min-h-[100px] sm:min-h-[120px];\n}\n\n/* Responsive adjustments */\n@media (max-width: 640px) {\n  .contact-form {\n    @apply p-4;\n  }\n\n  .form-input {\n    @apply py-2 px-3;\n  }\n}\n",
+      "start": 1746483922083,
+      "end": 1746483922083,
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/components/tools/ContactForm.vue"
+        ],
+        "names": [],
+        "mappings": ";AA2GA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE;EACtB,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC5C;;AAEA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE;EACZ,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;EACtF,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC3B;;AAEA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE;EACV,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACtB;;AAEA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE;EACV,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC/C;;AAEA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE;EACV,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;EACvI,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;EACrB,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAChB;;AAEA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE;EACvB,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACtB;;AAEA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE;EAClB,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAChD;;AAEA,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC;AAC3B,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE;EACxB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE;IACZ,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC;EACZ;;EAEA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE;IACV,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC;EAClB;AACF",
+        "file": "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/components/tools/ContactForm.vue",
+        "sourceRoot": "",
+        "sourcesContent": [
+          "<template>\n  <div class=\"contact-form-container\">\n    <form @submit.prevent=\"handleSubmit\" class=\"contact-form\">\n      <div class=\"form-group\">\n        <label for=\"fullName\" class=\"form-label\">Full Name *</label>\n        <input\n            id=\"fullName\"\n            v-model=\"form.name\"\n            type=\"text\"\n            placeholder=\"Enter your full name\"\n            class=\"form-input\"\n            required\n        />\n      </div>\n      <div class=\"form-group\">\n        <label for=\"email\" class=\"form-label\">Email Address *</label>\n        <input\n            id=\"email\"\n            v-model=\"form.email\"\n            type=\"email\"\n            placeholder=\"Enter your email\"\n            class=\"form-input\"\n            required\n        />\n      </div>\n      <div class=\"form-group\">\n        <label for=\"phone\" class=\"form-label\">Phone Number *</label>\n        <input\n            id=\"phone\"\n            v-model=\"form.phone\"\n            type=\"tel\"\n            placeholder=\"Enter your phone number\"\n            class=\"form-input\"\n            required\n        />\n      </div>\n      <div class=\"form-group\">\n        <label for=\"company\" class=\"form-label\">Company</label>\n        <input\n            id=\"company\"\n            v-model=\"form.company\"\n            type=\"text\"\n            placeholder=\"Enter your company name\"\n            class=\"form-input\"\n        />\n      </div>\n      <div class=\"form-group col-span-1 md:col-span-2\">\n        <label for=\"message\" class=\"form-label\">Message *</label>\n        <textarea\n            id=\"message\"\n            v-model=\"form.message\"\n            placeholder=\"Write your message...\"\n            class=\"form-input\"\n            rows=\"4\"\n            required\n        ></textarea>\n      </div>\n      <div class=\"col-span-1 md:col-span-2\">\n        <PrimaryButton type=\"submit\" class=\"!w-full !justify-center\">Submit Now</PrimaryButton>\n      </div>\n    </form>\n  </div>\n</template>\n\n<script setup>\nimport { ref } from 'vue';\nimport PrimaryButton from '~/components/tools/PrimaryButton.vue';\nimport { useToast } from '~/composables/useToast';\n\n\n// Initialize toast composable\nconst { addToast } = useToast();\n// Form data\nconst form = ref({\n  name: '',\n  email: '',\n  phone: '',\n  company: '',\n  message: '',\n});\n\n// Handle form submission\nconst handleSubmit = async() => {\n  const {data,status} = await useMyFetch('post-contact-us',{method:'POST',body:form})\n  console.log(status,data,'oooooo')\n  if (status.value == 'success'){\n    addToast(data.value.msg,'success',5000)\n    resetForm();\n  }else{\n    addToast(data.value?.error?.msg,'error',5000)\n  }\n\n};\n\n// Reset form\nconst resetForm = () => {\n  form.value = {\n    name: '',\n    email: '',\n    phone: '',\n    company: '',\n    message: '',\n  };\n};\n</script>\n\n<style scoped>\n.contact-form-container {\n  @apply max-w-5xl mx-auto p-4 sm:p-6 lg:p-8;\n}\n\n.contact-form {\n  @apply grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 p-6 sm:p-8 rounded-3xl shadow-lg;\n  background-color: #14082A;\n}\n\n.form-group {\n  @apply flex flex-col;\n}\n\n.form-label {\n  @apply text-sm font-medium mb-2 text-gray-400;\n}\n\n.form-input {\n  @apply w-full py-2 px-3 sm:py-3 sm:px-4 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition bg-transparent;\n  border-color: #514078;\n  color: #A39CB1;\n}\n\n.form-input::placeholder {\n  @apply text-gray-500;\n}\n\ntextarea.form-input {\n  @apply resize-y min-h-[100px] sm:min-h-[120px];\n}\n\n/* Responsive adjustments */\n@media (max-width: 640px) {\n  .contact-form {\n    @apply p-4;\n  }\n\n  .form-input {\n    @apply py-2 px-3;\n  }\n}\n</style>"
+        ]
+      }
+    },
+    {
+      "name": "nuxt:components-loader-pre",
+      "start": 1746483922083,
+      "end": 1746483922083,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:components-loader-pre",
+      "start": 1746483922083,
+      "end": 1746483922083,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1746483922083,
+      "end": 1746483922083,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1746483922083,
+      "end": 1746483922083,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1746483922083,
+      "end": 1746483922083,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1746483922083,
+      "end": 1746483922083,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-only-component-transform",
+      "start": 1746483922083,
+      "end": 1746483922083,
+      "order": "pre"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1746483922092,
+      "end": 1746483922092,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1746483922092,
+      "end": 1746483922092,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": ".contact-form-container[data-v-eb8ff9d1]{margin-left:auto;margin-right:auto;max-width:64rem;padding:1rem}@media (min-width:640px){.contact-form-container[data-v-eb8ff9d1]{padding:1.5rem}}@media (min-width:1024px){.contact-form-container[data-v-eb8ff9d1]{padding:2rem}}.contact-form[data-v-eb8ff9d1]{border-radius:1.5rem;display:grid;gap:1rem;grid-template-columns:repeat(1,minmax(0,1fr));padding:1.5rem;--tw-shadow:0 10px 15px -3px rgba(0,0,0,.1),0 4px 6px -4px rgba(0,0,0,.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color),0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow)}@media (min-width:640px){.contact-form[data-v-eb8ff9d1]{gap:1.5rem;padding:2rem}}@media (min-width:768px){.contact-form[data-v-eb8ff9d1]{grid-template-columns:repeat(2,minmax(0,1fr))}}.contact-form[data-v-eb8ff9d1]{background-color:#14082a}.form-group[data-v-eb8ff9d1]{display:flex;flex-direction:column}.form-label[data-v-eb8ff9d1]{font-size:.875rem;font-weight:500;line-height:1.25rem;margin-bottom:.5rem;--tw-text-opacity:1;color:rgb(156 163 175/var(--tw-text-opacity,1))}.form-input[data-v-eb8ff9d1]{background-color:transparent;border-radius:.5rem;border-width:1px;padding:.5rem .75rem;transition-duration:.15s;transition-property:color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,-webkit-backdrop-filter;transition-property:color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;transition-property:color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter,-webkit-backdrop-filter;transition-timing-function:cubic-bezier(.4,0,.2,1);width:100%}.form-input[data-v-eb8ff9d1]:focus{outline:2px solid transparent;outline-offset:2px;--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow),var(--tw-ring-shadow),var(--tw-shadow,0 0 #0000);--tw-ring-opacity:1;--tw-ring-color:rgb(59 130 246/var(--tw-ring-opacity,1))}@media (min-width:640px){.form-input[data-v-eb8ff9d1]{padding:.75rem 1rem}}.form-input[data-v-eb8ff9d1]{border-color:#514078;color:#a39cb1}.form-input[data-v-eb8ff9d1]::-moz-placeholder{--tw-text-opacity:1;color:rgb(107 114 128/var(--tw-text-opacity,1))}.form-input[data-v-eb8ff9d1]::placeholder{--tw-text-opacity:1;color:rgb(107 114 128/var(--tw-text-opacity,1))}textarea.form-input[data-v-eb8ff9d1]{min-height:100px;resize:vertical}@media (min-width:640px){textarea.form-input[data-v-eb8ff9d1]{min-height:120px}}@media (max-width:640px){.contact-form[data-v-eb8ff9d1]{padding:1rem}.form-input[data-v-eb8ff9d1]{padding:.5rem .75rem}}",
+      "start": 1746483922092,
+      "end": 1746483922093,
+      "order": "normal",
+      "sourcemaps": {
+        "file": "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/components/tools/ContactForm.vue",
+        "mappings": "AAAA,yCAAwB,gBAAgB,CAAC,iBAAiB,CAAC,eAAe,CAAC,YAAY,CAAC,yBAAyB,yCAAwB,cAAc,CAAC,CAAC,0BAA0B,yCAAwB,YAAY,CAAC,CAAC,+BAAc,oBAAoB,CAAC,YAAY,CAAC,QAAQ,CAAC,6CAA6C,CAAC,cAAc,CAAC,yEAAyE,CAAC,iGAAiG,CAAC,kGAAkG,CAAC,yBAAyB,+BAAc,UAAU,CAAC,YAAY,CAAC,CAAC,yBAAyB,+BAAc,6CAA6C,CAAC,CAAC,+BAAc,wBAAwB,CAAC,6BAAY,YAAY,CAAC,qBAAqB,CAAC,6BAAY,iBAAiB,CAAC,eAAe,CAAC,mBAAmB,CAAC,mBAAmB,CAAC,mBAAmB,CAAC,+CAA+C,CAAC,6BAAY,4BAA4B,CAAC,mBAAmB,CAAC,gBAAgB,CAAC,oBAAoB,CAAC,wBAAwB,CAAC,qJAAqJ,CAAC,6IAA6I,CAAC,qKAAqK,CAAC,kDAAkD,CAAC,UAAU,CAAC,mCAAkB,6BAA6B,CAAC,kBAAkB,CAAC,0GAA0G,CAAC,wGAAwG,CAAC,wFAAwF,CAAC,mBAAmB,CAAC,wDAAwD,CAAC,yBAAyB,6BAAY,mBAAmB,CAAC,CAAC,6BAAY,oBAAoB,CAAC,aAAa,CAAC,+CAA8B,mBAAmB,CAAC,+CAA+C,CAAC,0CAAyB,mBAAmB,CAAC,+CAA+C,CAAC,qCAAoB,gBAAgB,CAAC,eAAe,CAAC,yBAAyB,qCAAoB,gBAAgB,CAAC,CAAC,yBAAyB,+BAAc,YAAY,CAAC,6BAAY,oBAAoB,CAAC",
+        "names": [],
+        "sources": [
+          "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/components/tools/ContactForm.vue"
+        ],
+        "sourcesContent": [
+          null
+        ],
+        "version": 3
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1746483922093,
+      "end": 1746483922093,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483922093,
+      "end": 1746483922093,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483922093,
+      "end": 1746483922093,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1746483922093,
+      "end": 1746483922093,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1746483922093,
+      "end": 1746483922093,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:prehydrate-transform",
+      "start": 1746483922093,
+      "end": 1746483922094,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:prehydrate-transform",
+      "start": 1746483922093,
+      "end": 1746483922094,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483922094,
+      "end": 1746483922094,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1746483922094,
+      "end": 1746483922094,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1746483922094,
+      "end": 1746483922094,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1746483922144,
+      "end": 1746483922144,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1746483922144,
+      "end": 1746483922144,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1746483922144,
+      "end": 1746483922144,
+      "order": "normal-normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1746483922144,
+      "end": 1746483922144,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1746483922144,
+      "end": 1746483922144,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:head:unhead-imports",
+      "start": 1746483922144,
+      "end": 1746483922144,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:head:unhead-imports",
+      "start": 1746483922144,
+      "end": 1746483922144,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1746483922144,
+      "end": 1746483922144,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1746483922144,
+      "end": 1746483922144,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1746483922144,
+      "end": 1746483922144,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1746483922144,
+      "end": 1746483922144,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1746483922144,
+      "end": 1746483922144,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1746483922144,
+      "end": 1746483922144,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1746483922144,
+      "end": 1746483922144,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1746483922144,
+      "end": 1746483922144,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1746483922144,
+      "end": 1746483922144,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1746483922144,
+      "end": 1746483922144,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1746483922144,
+      "end": 1746483922144,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1746483922144,
+      "end": 1746483922144,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,266 @@
+{
+  "resolvedId": "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/dashboard/support/index.vue?vue&type=style&index=0&scoped=2516c93f&lang.css",
+  "transforms": [
+    {
+      "name": "vite:vue",
+      "result": "\n/* Tailwind handles all styling */\n",
+      "start": 1746483920861,
+      "end": 1746483920861,
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/dashboard/support/index.vue"
+        ],
+        "names": [],
+        "mappings": ";AAqIA,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC",
+        "file": "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/dashboard/support/index.vue",
+        "sourceRoot": "",
+        "sourcesContent": [
+          "<template>\n  <div class=\"w-full  rounded-3xl flex flex-col gap-7 overflow-hidden\">\n    <!-- Tabs and New Conversation Button -->\n    <div class=\"flex flex-col justify-between sm:flex-row gap-4 items-center\">\n      <div role=\"tablist\" class=\"tabs tabs-border\">\n        <a v-for=\"tab in tabs\"\n           :key=\"tab\"\n           @click=\"activeTab = tab\"\n           :aria-current=\"activeTab === tab ? 'true' : 'false'\" role=\"tab\" class=\"tab\" :class=\"{'tab-active':activeTab === tab}\">{{ tab }}</a>\n\n      </div>\n      <nuxt-link to=\"/dashboard/support/new\">\n        <PrimaryButton>\n          New Conversation\n        </PrimaryButton>\n      </nuxt-link>\n    </div>\n\n    <!-- Conversation List -->\n    <div class=\"flex flex-col gap-4 w-full\">\n      <nuxt-link\n          v-for=\"conversation in filteredConversations\"\n          :key=\"conversation.id\"\n          class=\"p-4 rounded-2xl border\"\n          :to=\"`/dashboard/support/${conversation.id}`\"\n          :class=\"{\n          'border-amber-300': conversation.status === 'Pending',\n          'border-emerald-500': conversation.status === 'Responded',\n          'border-gray-400': conversation.status === 'Closed',\n        }\"\n      >\n        <div class=\"flex flex-col gap-2\">\n          <div class=\"flex items-center gap-2 flex-wrap\">\n            <nuxt-icon name=\"iconsax/bulk/message\" />\n            <h3 class=\"text-white text-xl sm:text-2xl font-normal font-[\\'Impact\\'] flex-1\">\n              {{ conversation.title }}\n            </h3>\n            <span\n                class=\"px-4 py-1 rounded-3xl border text-white text-sm sm:text-base font-medium font-[\\'Shabnam\\'] text-center\"\n                :class=\"{\n                'border-amber-300': conversation.status === 'Pending',\n                'border-emerald-500': conversation.status === 'Responded',\n                'border-gray-400': conversation.status === 'Closed',\n              }\"\n            >\n              {{ conversation.status }}\n            </span>\n          </div>\n          <p class=\"text-gray-400 text-sm sm:text-base font-medium font-[\\'Shabnam\\']\">\n            {{ conversation.lastMessage?.message || conversation.description }}\n          </p>\n          <div class=\"flex items-center gap-2 text-gray-400 text-sm sm:text-base font-medium font-[\\'Shabnam\\']\">\n            <nuxt-icon name=\"iconsax/bulk/calendar\" />\n            {{ new Date(conversation.lastMessage?.created_at || conversation.created_at).toDateString() }}\n          </div>\n        </div>\n      </nuxt-link>\n    </div>\n  </div>\n</template>\n\n<script setup>\nimport { ref, computed } from 'vue';\nimport PrimaryButton from \"~/components/tools/PrimaryButton.vue\";\n\n// Tabs\nconst tabs = ['All', 'Ongoing', 'Closed'];\nconst activeTab = ref('All');\n\nconst {data:conversations} = useMyFetch('tickets',{\n  headers: {\n    Authorization: `Bearer ${localStorage.getItem('token')}`,\n  },\n})\n// Conversations Data\n// const conversations = ref([\n//   {\n//     id: 1,\n//     title: 'Title of Conversation',\n//     lastMessage: 'The message, It could be anything the user asked, this text field presents the last message in the conversation.',\n//     status: 'Pending',\n//     date: '13 Apr 2025',\n//     time: '13:54',\n//   },\n//   {\n//     id: 2,\n//     title: 'Title of Conversation',\n//     lastMessage: 'The message, It could be anything the user asked, this text field presents the last message in the conversation.',\n//     status: 'Responded',\n//     date: '13 Apr 2025',\n//     time: '13:54',\n//   },\n//   {\n//     id: 3,\n//     title: 'Title of Conversation',\n//     lastMessage: 'The message, It could be anything the user asked, this text field presents the last message in the conversation.',\n//     status: 'Closed',\n//     date: '13 Apr 2025',\n//     time: '13:54',\n//   },\n//   {\n//     id: 4,\n//     title: 'Title of Conversation',\n//     lastMessage: 'The message, It could be anything the user asked, this text field presents the last message in the conversation.',\n//     status: 'Pending',\n//     date: '13 Apr 2025',\n//     time: '13:54',\n//   },\n// ]);\n\n// Filtered Conversations\nconst filteredConversations = computed(() => {\n  if (activeTab.value === 'All') return conversations.value;\n  if (activeTab.value === 'Ongoing') {\n    return conversations.value.filter(\n        (c) => c.status === 'Pending' || c.status === 'Responded'\n    );\n  }\n  return conversations.value.filter((c) => c.status === 'Closed');\n});\n\n// New Conversation\nconst startNewConversation = () => {\n  console.log('Starting new conversation...');\n  // Add logic to open a new conversation form or redirect\n};\ndefinePageMeta({\n  layout:'dashboard',\n  middleware:'auth'\n})\n</script>\n\n<style scoped>\n/* Tailwind handles all styling */\n</style>"
+        ]
+      }
+    },
+    {
+      "name": "nuxt:components-loader-pre",
+      "start": 1746483920861,
+      "end": 1746483920861,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:components-loader-pre",
+      "start": 1746483920861,
+      "end": 1746483920861,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1746483920861,
+      "end": 1746483920861,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1746483920861,
+      "end": 1746483920861,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1746483920861,
+      "end": 1746483920861,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1746483920861,
+      "end": 1746483920861,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-only-component-transform",
+      "start": 1746483920861,
+      "end": 1746483920862,
+      "order": "pre"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1746483920864,
+      "end": 1746483920864,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1746483920864,
+      "end": 1746483920864,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "",
+      "start": 1746483920864,
+      "end": 1746483920864,
+      "order": "normal",
+      "sourcemaps": {
+        "file": "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/dashboard/support/index.vue",
+        "mappings": "",
+        "names": [],
+        "sources": [],
+        "version": 3
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1746483920864,
+      "end": 1746483920864,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483920864,
+      "end": 1746483920864,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483920864,
+      "end": 1746483920864,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1746483920864,
+      "end": 1746483920864,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1746483920864,
+      "end": 1746483920864,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:prehydrate-transform",
+      "start": 1746483920864,
+      "end": 1746483920864,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:prehydrate-transform",
+      "start": 1746483920864,
+      "end": 1746483920864,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483920864,
+      "end": 1746483920864,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1746483920864,
+      "end": 1746483920864,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1746483920864,
+      "end": 1746483920864,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1746483920864,
+      "end": 1746483920864,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1746483920864,
+      "end": 1746483920864,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1746483920864,
+      "end": 1746483920864,
+      "order": "normal-normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1746483920864,
+      "end": 1746483920864,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1746483920864,
+      "end": 1746483920864,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:head:unhead-imports",
+      "start": 1746483920864,
+      "end": 1746483920864,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:head:unhead-imports",
+      "start": 1746483920864,
+      "end": 1746483920864,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1746483920865,
+      "end": 1746483920865,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1746483920865,
+      "end": 1746483920865,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1746483920865,
+      "end": 1746483920865,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1746483920865,
+      "end": 1746483920865,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1746483920865,
+      "end": 1746483920865,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1746483920865,
+      "end": 1746483920865,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1746483920865,
+      "end": 1746483920865,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1746483920865,
+      "end": 1746483920865,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1746483920865,
+      "end": 1746483920865,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1746483920865,
+      "end": 1746483920865,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1746483920865,
+      "end": 1746483920865,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1746483920865,
+      "end": 1746483920865,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,289 @@
+{
+  "resolvedId": "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/contact-us.vue?macro=true&vue&type=script&setup=true&lang.ts",
+  "transforms": [
+    {
+      "name": "vite:vue",
+      "result": "import { defineComponent as _defineComponent } from 'vue'\nimport { resolveComponent as _resolveComponent, withCtx as _withCtx, createVNode as _createVNode, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs } from \"vue/server-renderer\"\n\nimport LiveChat from \"~/components/LiveChat.vue\";\nimport SecondaryButton from \"~/components/tools/SecondaryButton.vue\";\nimport ContactForm from \"~/components/tools/ContactForm.vue\";\nimport FaqSection from \"~/components/tools/FaqSection.vue\";\n\nexport default /*@__PURE__*/_defineComponent({\n  __name: 'contact-us',\n  __ssrInlineRender: true,\n  setup(__props) {\n\n\n\nreturn (_ctx: any,_push: any,_parent: any,_attrs: any) => {\n  const _component_nuxt_img = _resolveComponent(\"nuxt-img\")!\n  const _component_LazyRequestQuote = _resolveComponent(\"LazyRequestQuote\")!\n\n  _push(`<section${_ssrRenderAttrs(_mergeProps({ class: \"relative text-white\" }, _attrs))}><div class=\"relative\">`)\n  _push(_ssrRenderComponent(_component_nuxt_img, {\n    src: \"/system/contact_us_mask.png\",\n    class: \"w-full object-cover\",\n    sizes: \"sm:100vw md:100vw lg:100vw\",\n    loading: \"lazy\"\n  }, null, _parent))\n  _push(`<div class=\"absolute inset-0 flex items-center justify-center top-[16rem]\"><div class=\"container mx-auto px-4 sm:px-6 lg:px-8\"><div class=\"max-w-6xl mx-auto text-center sm:text-left\"><div class=\"flex items-center justify-center sm:justify-start mb-4\"><div class=\"bg-pink-500 h-1 w-12 mr-2\"></div><span class=\"text-sm uppercase\">Get In Touch Now</span></div><h2 class=\"text-2xl sm:text-4xl font-bold mb-6\">Contact Us</h2><p class=\"text-base sm:text-lg mb-8 max-w-4xl mr-auto\"> Whether you’re curious about features, pricing, or free trials, you can consult an advisor to create a customized marketing plan that guarantees results. Here’s how to reach out to us. </p><div class=\"flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-4\">`)\n  _push(_ssrRenderComponent(LiveChat, null, null, _parent))\n  _push(_ssrRenderComponent(_component_LazyRequestQuote, null, null, _parent))\n  _push(`</div></div></div></div></div><div class=\"container mx-auto lg:-mt-[2rem] mt-[14rem] sm:mt-[2rem] px-3\"><div class=\"text-center justify-center grid space-y-4\"><div class=\"divider\"><h2 class=\"sm:text-4xl text-xl\"> We’d Love to Hear from You! </h2></div></div><div class=\"grid sm:grid-cols-2 gap-3\"><div class=\"col-span-1\"><div class=\"sm:w-[617px] h-96 inline-flex flex-col justify-start items-start gap-5 overflow-hidden\"><div class=\"w-10 h-[5px] bg-Primary rounded-[3px]\"></div><div class=\"flex items-center justify-center sm:justify-start mb-4\"><div class=\"bg-pink-500 h-1 w-12 mr-2\"></div><span class=\"text-sm uppercase\">Get in touch with us</span></div><div class=\"self-stretch justify-start text-White text-7xl font-normal font-[&#39;Impact&#39;]\">Our Teams<br>Are Here To Help.</div><div class=\"self-stretch flex flex-col justify-start items-start\"><div class=\"self-stretch justify-start text-White text-3xl font-normal font-[&#39;Impact&#39;]\">Call +98 21 0000 0000 or drop us a line for further inquiries.</div><div class=\"self-stretch text-justify justify-start text-light-shade text-2xl font-normal font-[&#39;Shabnam&#39;]\">You’ve got tens of questions, and we’ve tons of answers, so let’s get this conversation started!</div></div></div></div><div class=\"col-span-1\">`)\n  _push(_ssrRenderComponent(ContactForm, null, null, _parent))\n  _push(`</div></div>`)\n  _push(_ssrRenderComponent(FaqSection, null, {\n    title: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(`<div class=\"contact-title flex items-center justify-center gap-2 sm:gap-4 w-full\"${\n          _scopeId\n        }><div class=\"separator hidden sm:block flex-1 max-w-[100px] md:max-w-[200px] lg:max-w-[500px] h-1 bg-gray-300 rounded relative\"${\n          _scopeId\n        }><div class=\"absolute top-0 right-0 w-16 sm:w-24 h-1 bg-primary rounded\"${\n          _scopeId\n        }></div></div><h2 class=\"title text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-center font-display whitespace-nowrap\"${\n          _scopeId\n        }> FAQs About Animation Studio </h2><div class=\"separator hidden sm:block flex-1 max-w-[100px] md:max-w-[200px] lg:max-w-[500px] h-1 bg-gray-300 rounded relative\"${\n          _scopeId\n        }><div class=\"absolute top-0 left-0 w-16 sm:w-24 h-1 bg-primary rounded\"${\n          _scopeId\n        }></div></div></div>`)\n      } else {\n        return [\n          _createVNode(\"div\", { class: \"contact-title flex items-center justify-center gap-2 sm:gap-4 w-full\" }, [\n            _createVNode(\"div\", { class: \"separator hidden sm:block flex-1 max-w-[100px] md:max-w-[200px] lg:max-w-[500px] h-1 bg-gray-300 rounded relative\" }, [\n              _createVNode(\"div\", { class: \"absolute top-0 right-0 w-16 sm:w-24 h-1 bg-primary rounded\" })\n            ]),\n            _createVNode(\"h2\", { class: \"title text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-center font-display whitespace-nowrap\" }, \" FAQs About Animation Studio \"),\n            _createVNode(\"div\", { class: \"separator hidden sm:block flex-1 max-w-[100px] md:max-w-[200px] lg:max-w-[500px] h-1 bg-gray-300 rounded relative\" }, [\n              _createVNode(\"div\", { class: \"absolute top-0 left-0 w-16 sm:w-24 h-1 bg-primary rounded\" })\n            ])\n          ])\n        ]\n      }\n    }),\n    _: 1\n  }, _parent))\n  _push(`</div></section>`)\n}\n}\n\n})",
+      "start": 1746483920937,
+      "end": 1746483920937,
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/contact-us.vue"
+        ],
+        "sourcesContent": [
+          "<script setup lang=\"ts\">\n\nimport LiveChat from \"~/components/LiveChat.vue\";\nimport SecondaryButton from \"~/components/tools/SecondaryButton.vue\";\nimport ContactForm from \"~/components/tools/ContactForm.vue\";\nimport FaqSection from \"~/components/tools/FaqSection.vue\";\n</script>\n\n<template>\n  <section class=\"relative text-white\">\n    <!-- Hero Section -->\n    <div class=\"relative\">\n      <nuxt-img\n          src=\"/system/contact_us_mask.png\"\n          class=\"w-full  object-cover\"\n          sizes=\"sm:100vw md:100vw lg:100vw\"\n          loading=\"lazy\"\n      />\n      <div class=\"absolute inset-0 flex items-center justify-center top-[16rem]\">\n        <div class=\"container mx-auto px-4 sm:px-6 lg:px-8\">\n          <div class=\"max-w-6xl mx-auto text-center sm:text-left\">\n            <div class=\"flex items-center justify-center sm:justify-start mb-4\">\n              <div class=\"bg-pink-500 h-1 w-12 mr-2\"></div>\n              <span class=\"text-sm uppercase\">Get In Touch Now</span>\n            </div>\n            <h2 class=\"text-2xl sm:text-4xl font-bold mb-6\">Contact Us</h2>\n            <p class=\"text-base sm:text-lg mb-8 max-w-4xl mr-auto\">\n              Whether you’re curious about features, pricing, or free trials, you can consult an advisor to create a customized marketing plan that guarantees results. Here’s how to reach out to us.\n            </p>\n            <div class=\"flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-4\">\n              <live-chat />\n              <LazyRequestQuote />\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n\n    <div class=\"container mx-auto lg:-mt-[2rem] mt-[14rem] sm:mt-[2rem] px-3\">\n      <div class=\"text-center justify-center grid space-y-4\">\n        <div class=\"divider\">\n          <h2 class=\"sm:text-4xl text-xl\">\n            We’d Love to Hear from You!\n          </h2>\n        </div>\n      </div>\n      <div class=\"grid sm:grid-cols-2 gap-3\">\n        <div class=\"col-span-1\">\n          <div class=\"sm:w-[617px] h-96 inline-flex flex-col justify-start items-start gap-5 overflow-hidden\">\n            <div class=\"w-10 h-[5px] bg-Primary rounded-[3px]\"></div>\n            <div class=\"flex items-center justify-center sm:justify-start mb-4\">\n              <div class=\"bg-pink-500 h-1 w-12 mr-2\"></div>\n              <span class=\"text-sm uppercase\">Get in touch with us</span>\n            </div>\n            <div class=\"self-stretch justify-start text-White text-7xl font-normal font-['Impact']\">Our Teams<br/>Are Here To Help.</div>\n            <div class=\"self-stretch flex flex-col justify-start items-start\">\n              <div class=\"self-stretch justify-start text-White text-3xl font-normal font-['Impact']\">Call +98 21 0000 0000 or drop us a line for further inquiries.</div>\n              <div class=\"self-stretch text-justify justify-start text-light-shade text-2xl font-normal font-['Shabnam']\">You’ve got tens of questions, and we’ve tons of answers, so let’s get this conversation started!</div>\n            </div>\n          </div>\n        </div>\n        <div class=\"col-span-1\">\n          <ContactForm />\n        </div>\n      </div>\n      <FaqSection >\n        <template #title>\n          <div class=\"contact-title flex items-center justify-center gap-2 sm:gap-4 w-full\">\n            <div class=\"separator hidden sm:block flex-1 max-w-[100px] md:max-w-[200px] lg:max-w-[500px] h-1 bg-gray-300 rounded relative\">\n              <div class=\"absolute top-0 right-0 w-16 sm:w-24 h-1 bg-primary rounded\"></div>\n            </div>\n            <h2 class=\"title text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-center font-display whitespace-nowrap\">\n              FAQs About Animation Studio\n            </h2>\n            <div class=\"separator hidden sm:block flex-1 max-w-[100px] md:max-w-[200px] lg:max-w-[500px] h-1 bg-gray-300 rounded relative\">\n              <div class=\"absolute top-0 left-0 w-16 sm:w-24 h-1 bg-primary rounded\"></div>\n            </div>\n          </div>\n        </template>\n      </FaqSection>\n    </div>\n  </section>\n</template>\n\n<style scoped>\n\n</style>"
+        ],
+        "names": [],
+        "mappings": ";;;;AAEA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAChD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACpE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC5D,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;"
+      }
+    },
+    {
+      "name": "nuxt:components-loader-pre",
+      "start": 1746483920937,
+      "end": 1746483920937,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:components-loader-pre",
+      "start": 1746483920937,
+      "end": 1746483920937,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1746483920937,
+      "end": 1746483920937,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1746483920937,
+      "end": 1746483920937,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1746483920937,
+      "end": 1746483920937,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1746483920937,
+      "end": 1746483920937,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-only-component-transform",
+      "start": 1746483920937,
+      "end": 1746483920937,
+      "order": "pre"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { defineComponent as _defineComponent } from \"vue\";\nimport { resolveComponent as _resolveComponent, withCtx as _withCtx, createVNode as _createVNode, mergeProps as _mergeProps } from \"vue\";\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs } from \"vue/server-renderer\";\nimport LiveChat from \"~/components/LiveChat.vue\";\nimport SecondaryButton from \"~/components/tools/SecondaryButton.vue\";\nimport ContactForm from \"~/components/tools/ContactForm.vue\";\nimport FaqSection from \"~/components/tools/FaqSection.vue\";\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"contact-us\",\n  __ssrInlineRender: true,\n  setup(__props) {\n    return (_ctx, _push, _parent, _attrs) => {\n      const _component_nuxt_img = _resolveComponent(\"nuxt-img\");\n      const _component_LazyRequestQuote = _resolveComponent(\"LazyRequestQuote\");\n      _push(`<section${_ssrRenderAttrs(_mergeProps({ class: \"relative text-white\" }, _attrs))}><div class=\"relative\">`);\n      _push(_ssrRenderComponent(_component_nuxt_img, {\n        src: \"/system/contact_us_mask.png\",\n        class: \"w-full object-cover\",\n        sizes: \"sm:100vw md:100vw lg:100vw\",\n        loading: \"lazy\"\n      }, null, _parent));\n      _push(`<div class=\"absolute inset-0 flex items-center justify-center top-[16rem]\"><div class=\"container mx-auto px-4 sm:px-6 lg:px-8\"><div class=\"max-w-6xl mx-auto text-center sm:text-left\"><div class=\"flex items-center justify-center sm:justify-start mb-4\"><div class=\"bg-pink-500 h-1 w-12 mr-2\"></div><span class=\"text-sm uppercase\">Get In Touch Now</span></div><h2 class=\"text-2xl sm:text-4xl font-bold mb-6\">Contact Us</h2><p class=\"text-base sm:text-lg mb-8 max-w-4xl mr-auto\"> Whether you’re curious about features, pricing, or free trials, you can consult an advisor to create a customized marketing plan that guarantees results. Here’s how to reach out to us. </p><div class=\"flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-4\">`);\n      _push(_ssrRenderComponent(LiveChat, null, null, _parent));\n      _push(_ssrRenderComponent(_component_LazyRequestQuote, null, null, _parent));\n      _push(`</div></div></div></div></div><div class=\"container mx-auto lg:-mt-[2rem] mt-[14rem] sm:mt-[2rem] px-3\"><div class=\"text-center justify-center grid space-y-4\"><div class=\"divider\"><h2 class=\"sm:text-4xl text-xl\"> We’d Love to Hear from You! </h2></div></div><div class=\"grid sm:grid-cols-2 gap-3\"><div class=\"col-span-1\"><div class=\"sm:w-[617px] h-96 inline-flex flex-col justify-start items-start gap-5 overflow-hidden\"><div class=\"w-10 h-[5px] bg-Primary rounded-[3px]\"></div><div class=\"flex items-center justify-center sm:justify-start mb-4\"><div class=\"bg-pink-500 h-1 w-12 mr-2\"></div><span class=\"text-sm uppercase\">Get in touch with us</span></div><div class=\"self-stretch justify-start text-White text-7xl font-normal font-[&#39;Impact&#39;]\">Our Teams<br>Are Here To Help.</div><div class=\"self-stretch flex flex-col justify-start items-start\"><div class=\"self-stretch justify-start text-White text-3xl font-normal font-[&#39;Impact&#39;]\">Call +98 21 0000 0000 or drop us a line for further inquiries.</div><div class=\"self-stretch text-justify justify-start text-light-shade text-2xl font-normal font-[&#39;Shabnam&#39;]\">You’ve got tens of questions, and we’ve tons of answers, so let’s get this conversation started!</div></div></div></div><div class=\"col-span-1\">`);\n      _push(_ssrRenderComponent(ContactForm, null, null, _parent));\n      _push(`</div></div>`);\n      _push(_ssrRenderComponent(FaqSection, null, {\n        title: _withCtx((_, _push2, _parent2, _scopeId) => {\n          if (_push2) {\n            _push2(`<div class=\"contact-title flex items-center justify-center gap-2 sm:gap-4 w-full\"${_scopeId}><div class=\"separator hidden sm:block flex-1 max-w-[100px] md:max-w-[200px] lg:max-w-[500px] h-1 bg-gray-300 rounded relative\"${_scopeId}><div class=\"absolute top-0 right-0 w-16 sm:w-24 h-1 bg-primary rounded\"${_scopeId}></div></div><h2 class=\"title text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-center font-display whitespace-nowrap\"${_scopeId}> FAQs About Animation Studio </h2><div class=\"separator hidden sm:block flex-1 max-w-[100px] md:max-w-[200px] lg:max-w-[500px] h-1 bg-gray-300 rounded relative\"${_scopeId}><div class=\"absolute top-0 left-0 w-16 sm:w-24 h-1 bg-primary rounded\"${_scopeId}></div></div></div>`);\n          } else {\n            return [\n              _createVNode(\"div\", { class: \"contact-title flex items-center justify-center gap-2 sm:gap-4 w-full\" }, [\n                _createVNode(\"div\", { class: \"separator hidden sm:block flex-1 max-w-[100px] md:max-w-[200px] lg:max-w-[500px] h-1 bg-gray-300 rounded relative\" }, [\n                  _createVNode(\"div\", { class: \"absolute top-0 right-0 w-16 sm:w-24 h-1 bg-primary rounded\" })\n                ]),\n                _createVNode(\"h2\", { class: \"title text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-center font-display whitespace-nowrap\" }, \" FAQs About Animation Studio \"),\n                _createVNode(\"div\", { class: \"separator hidden sm:block flex-1 max-w-[100px] md:max-w-[200px] lg:max-w-[500px] h-1 bg-gray-300 rounded relative\" }, [\n                  _createVNode(\"div\", { class: \"absolute top-0 left-0 w-16 sm:w-24 h-1 bg-primary rounded\" })\n                ])\n              ])\n            ];\n          }\n        }),\n        _: 1\n      }, _parent));\n      _push(`</div></section>`);\n    };\n  }\n});\n",
+      "start": 1746483920937,
+      "end": 1746483921069,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/contact-us.vue?macro=true&vue&type=script&setup=true&lang.ts"
+        ],
+        "sourcesContent": [
+          "import { defineComponent as _defineComponent } from 'vue'\nimport { resolveComponent as _resolveComponent, withCtx as _withCtx, createVNode as _createVNode, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs } from \"vue/server-renderer\"\n\nimport LiveChat from \"~/components/LiveChat.vue\";\nimport SecondaryButton from \"~/components/tools/SecondaryButton.vue\";\nimport ContactForm from \"~/components/tools/ContactForm.vue\";\nimport FaqSection from \"~/components/tools/FaqSection.vue\";\n\nexport default /*@__PURE__*/_defineComponent({\n  __name: 'contact-us',\n  __ssrInlineRender: true,\n  setup(__props) {\n\n\n\nreturn (_ctx: any,_push: any,_parent: any,_attrs: any) => {\n  const _component_nuxt_img = _resolveComponent(\"nuxt-img\")!\n  const _component_LazyRequestQuote = _resolveComponent(\"LazyRequestQuote\")!\n\n  _push(`<section${_ssrRenderAttrs(_mergeProps({ class: \"relative text-white\" }, _attrs))}><div class=\"relative\">`)\n  _push(_ssrRenderComponent(_component_nuxt_img, {\n    src: \"/system/contact_us_mask.png\",\n    class: \"w-full object-cover\",\n    sizes: \"sm:100vw md:100vw lg:100vw\",\n    loading: \"lazy\"\n  }, null, _parent))\n  _push(`<div class=\"absolute inset-0 flex items-center justify-center top-[16rem]\"><div class=\"container mx-auto px-4 sm:px-6 lg:px-8\"><div class=\"max-w-6xl mx-auto text-center sm:text-left\"><div class=\"flex items-center justify-center sm:justify-start mb-4\"><div class=\"bg-pink-500 h-1 w-12 mr-2\"></div><span class=\"text-sm uppercase\">Get In Touch Now</span></div><h2 class=\"text-2xl sm:text-4xl font-bold mb-6\">Contact Us</h2><p class=\"text-base sm:text-lg mb-8 max-w-4xl mr-auto\"> Whether you’re curious about features, pricing, or free trials, you can consult an advisor to create a customized marketing plan that guarantees results. Here’s how to reach out to us. </p><div class=\"flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-4\">`)\n  _push(_ssrRenderComponent(LiveChat, null, null, _parent))\n  _push(_ssrRenderComponent(_component_LazyRequestQuote, null, null, _parent))\n  _push(`</div></div></div></div></div><div class=\"container mx-auto lg:-mt-[2rem] mt-[14rem] sm:mt-[2rem] px-3\"><div class=\"text-center justify-center grid space-y-4\"><div class=\"divider\"><h2 class=\"sm:text-4xl text-xl\"> We’d Love to Hear from You! </h2></div></div><div class=\"grid sm:grid-cols-2 gap-3\"><div class=\"col-span-1\"><div class=\"sm:w-[617px] h-96 inline-flex flex-col justify-start items-start gap-5 overflow-hidden\"><div class=\"w-10 h-[5px] bg-Primary rounded-[3px]\"></div><div class=\"flex items-center justify-center sm:justify-start mb-4\"><div class=\"bg-pink-500 h-1 w-12 mr-2\"></div><span class=\"text-sm uppercase\">Get in touch with us</span></div><div class=\"self-stretch justify-start text-White text-7xl font-normal font-[&#39;Impact&#39;]\">Our Teams<br>Are Here To Help.</div><div class=\"self-stretch flex flex-col justify-start items-start\"><div class=\"self-stretch justify-start text-White text-3xl font-normal font-[&#39;Impact&#39;]\">Call +98 21 0000 0000 or drop us a line for further inquiries.</div><div class=\"self-stretch text-justify justify-start text-light-shade text-2xl font-normal font-[&#39;Shabnam&#39;]\">You’ve got tens of questions, and we’ve tons of answers, so let’s get this conversation started!</div></div></div></div><div class=\"col-span-1\">`)\n  _push(_ssrRenderComponent(ContactForm, null, null, _parent))\n  _push(`</div></div>`)\n  _push(_ssrRenderComponent(FaqSection, null, {\n    title: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(`<div class=\"contact-title flex items-center justify-center gap-2 sm:gap-4 w-full\"${\n          _scopeId\n        }><div class=\"separator hidden sm:block flex-1 max-w-[100px] md:max-w-[200px] lg:max-w-[500px] h-1 bg-gray-300 rounded relative\"${\n          _scopeId\n        }><div class=\"absolute top-0 right-0 w-16 sm:w-24 h-1 bg-primary rounded\"${\n          _scopeId\n        }></div></div><h2 class=\"title text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-center font-display whitespace-nowrap\"${\n          _scopeId\n        }> FAQs About Animation Studio </h2><div class=\"separator hidden sm:block flex-1 max-w-[100px] md:max-w-[200px] lg:max-w-[500px] h-1 bg-gray-300 rounded relative\"${\n          _scopeId\n        }><div class=\"absolute top-0 left-0 w-16 sm:w-24 h-1 bg-primary rounded\"${\n          _scopeId\n        }></div></div></div>`)\n      } else {\n        return [\n          _createVNode(\"div\", { class: \"contact-title flex items-center justify-center gap-2 sm:gap-4 w-full\" }, [\n            _createVNode(\"div\", { class: \"separator hidden sm:block flex-1 max-w-[100px] md:max-w-[200px] lg:max-w-[500px] h-1 bg-gray-300 rounded relative\" }, [\n              _createVNode(\"div\", { class: \"absolute top-0 right-0 w-16 sm:w-24 h-1 bg-primary rounded\" })\n            ]),\n            _createVNode(\"h2\", { class: \"title text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-center font-display whitespace-nowrap\" }, \" FAQs About Animation Studio \"),\n            _createVNode(\"div\", { class: \"separator hidden sm:block flex-1 max-w-[100px] md:max-w-[200px] lg:max-w-[500px] h-1 bg-gray-300 rounded relative\" }, [\n              _createVNode(\"div\", { class: \"absolute top-0 left-0 w-16 sm:w-24 h-1 bg-primary rounded\" })\n            ])\n          ])\n        ]\n      }\n    }),\n    _: 1\n  }, _parent))\n  _push(`</div></section>`)\n}\n}\n\n})"
+        ],
+        "mappings": "AAAA,SAAS,mBAAmB,wBAAwB;AACpD,SAAS,oBAAoB,mBAAmB,WAAW,UAAU,eAAe,cAAc,cAAc,mBAAmB;AACnI,SAAS,sBAAsB,qBAAqB,kBAAkB,uBAAuB;AAE7F,OAAO,cAAc;AACrB,OAAO,qBAAqB;AAC5B,OAAO,iBAAiB;AACxB,OAAO,gBAAgB;AAEvB,eAA4B,iCAAiB;AAAA,EAC3C,QAAQ;AAAA,EACR,mBAAmB;AAAA,EACnB,MAAM,SAAS;AAIjB,WAAO,CAAC,MAAU,OAAW,SAAa,WAAgB;AACxD,YAAM,sBAAsB,kBAAkB,UAAU;AACxD,YAAM,8BAA8B,kBAAkB,kBAAkB;AAExE,YAAM,WAAW,gBAAgB,YAAY,EAAE,OAAO,sBAAsB,GAAG,MAAM,CAAC,CAAC,yBAAyB;AAChH,YAAM,oBAAoB,qBAAqB;AAAA,QAC7C,KAAK;AAAA,QACL,OAAO;AAAA,QACP,OAAO;AAAA,QACP,SAAS;AAAA,MACX,GAAG,MAAM,OAAO,CAAC;AACjB,YAAM,qvBAAqvB;AAC3vB,YAAM,oBAAoB,UAAU,MAAM,MAAM,OAAO,CAAC;AACxD,YAAM,oBAAoB,6BAA6B,MAAM,MAAM,OAAO,CAAC;AAC3E,YAAM,gwCAAgwC;AACtwC,YAAM,oBAAoB,aAAa,MAAM,MAAM,OAAO,CAAC;AAC3D,YAAM,cAAc;AACpB,YAAM,oBAAoB,YAAY,MAAM;AAAA,QAC1C,OAAO,SAAS,CAAC,GAAGA,QAAOC,UAAS,aAAa;AAC/C,cAAID,QAAO;AACT,YAAAA,OAAM,oFACJ,QACF,kIACE,QACF,2EACE,QACF,iJACE,QACF,oKACE,QACF,0EACE,QACF,qBAAqB;AAAA,UACvB,OAAO;AACL,mBAAO;AAAA,cACL,aAAa,OAAO,EAAE,OAAO,uEAAuE,GAAG;AAAA,gBACrG,aAAa,OAAO,EAAE,OAAO,oHAAoH,GAAG;AAAA,kBAClJ,aAAa,OAAO,EAAE,OAAO,6DAA6D,CAAC;AAAA,gBAC7F,CAAC;AAAA,gBACD,aAAa,MAAM,EAAE,OAAO,wHAAwH,GAAG,+BAA+B;AAAA,gBACtL,aAAa,OAAO,EAAE,OAAO,oHAAoH,GAAG;AAAA,kBAClJ,aAAa,OAAO,EAAE,OAAO,4DAA4D,CAAC;AAAA,gBAC5F,CAAC;AAAA,cACH,CAAC;AAAA,YACH;AAAA,UACF;AAAA,QACF,CAAC;AAAA,QACD,GAAG;AAAA,MACL,GAAG,OAAO,CAAC;AACX,YAAM,kBAAkB;AAAA,IAC1B;AAAA,EACA;AAEA,CAAC;",
+        "names": [
+          "_push",
+          "_parent"
+        ]
+      }
+    },
+    {
+      "name": "vite:worker",
+      "start": 1746483921069,
+      "end": 1746483921069,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1746483921069,
+      "end": 1746483921069,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1746483921069,
+      "end": 1746483921069,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483921069,
+      "end": 1746483921069,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483921069,
+      "end": 1746483921069,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1746483921069,
+      "end": 1746483921069,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1746483921069,
+      "end": 1746483921069,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:prehydrate-transform",
+      "start": 1746483921069,
+      "end": 1746483921069,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:prehydrate-transform",
+      "start": 1746483921069,
+      "end": 1746483921069,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483921069,
+      "end": 1746483921069,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1746483921069,
+      "end": 1746483921069,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1746483921069,
+      "end": 1746483921069,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1746483921069,
+      "end": 1746483921069,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1746483921069,
+      "end": 1746483921069,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1746483921069,
+      "end": 1746483921069,
+      "order": "normal-normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1746483921069,
+      "end": 1746483921069,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1746483921069,
+      "end": 1746483921069,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:head:unhead-imports",
+      "start": 1746483921069,
+      "end": 1746483921069,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:head:unhead-imports",
+      "start": 1746483921069,
+      "end": 1746483921069,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1746483921069,
+      "end": 1746483921070,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1746483921069,
+      "end": 1746483921070,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1746483921070,
+      "end": 1746483921070,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1746483921070,
+      "end": 1746483921070,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "result": "\nconst __nuxt_page_meta = null\nexport default __nuxt_page_meta\n",
+      "start": 1746483921070,
+      "end": 1746483921070,
+      "order": "post",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": "AAAA;AAAA;AAAA;"
+      }
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "result": "\nconst __nuxt_page_meta = null\nexport default __nuxt_page_meta\n",
+      "start": 1746483921070,
+      "end": 1746483921070,
+      "order": "post",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": "AAAA;AAAA;AAAA;"
+      }
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1746483921070,
+      "end": 1746483921070,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1746483921070,
+      "end": 1746483921070,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1746483921070,
+      "end": 1746483921070,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1746483921070,
+      "end": 1746483921070,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1746483921070,
+      "end": 1746483921070,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1746483921070,
+      "end": 1746483921070,
+      "order": "normal"
+    }
+  ]
+}

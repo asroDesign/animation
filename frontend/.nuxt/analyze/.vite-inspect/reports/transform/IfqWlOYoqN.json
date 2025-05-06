@@ -1,0 +1,211 @@
+{
+  "resolvedId": "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/[slug]-service.vue?macro=true",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<script setup lang=\"ts\">\n\n\nconst {data,status} = await useMyFetch(`service-view/${useRoute().params.slug}`)\nconst service = computed(()=>data.value)\n// const animations = ref([\n//   {\n//     title: '2D Animation',\n//     description: 'Our 2D animation services showcase artistry and mechanics that communicate your brand purpose to your target audience and create awareness regarding products and services. These are cost-effective, faster to produce, and easy to update, making them perfect for including in marketing campaigns.'\n//   },\n//   {\n//     title: '3D Animation',\n//     description: '3D animated videos greatly stir curiosity and create dynamic influence in the marketplace. The audio-visual representation of information makes it easier for the audience to grasp and retain the brand, product, or service ideology, leading to more conversions and better sales.'\n//   },\n//   {\n//     title: 'Motion Graphics',\n//     description: 'Do you feel your content is dry, dull, and boring? Our motion graphics videos are engaging, digestible, easily shareable, and memorable. Here you’ve got the freedom to be creative, generate higher retention rates, and increase brand recall while guaranteeing more significant ROI.'\n//   },\n//   {\n//     title: 'Whiteboard',\n//     description: 'The foundation of animated explainer videos resides in storytelling. Our whiteboard services make dry topics more entertaining and complex ideas easier to understand. Each video reduces the website’s bounce rate and drives organic traffic from search engines.'\n//   },\n//   {\n//     title: 'Logo Animation',\n//     description: 'Creating an animated logo uplifts brand personality, accents the brand story, increases brand awareness, and creates an original image for the brand. Our animators capture the true essence of storytelling in the logo to get the audience’s attention and evoke emotions.'\n//   }\n// ]);\n</script>\n\n<template>\n  <!-- Hero Section -->\n  <div class=\"relative\">\n    <nuxt-img\n        src=\"/system/my_service.png\"\n        class=\"w-full object-cover\"\n        sizes=\"sm:100vw md:100vw lg:100vw\"\n        loading=\"lazy\"\n    />\n    <div class=\"absolute inset-0 flex items-center justify-center  top-[20rem]\">\n      <div class=\"container mx-auto px-4 sm:px-6 lg:px-8\">\n        <div class=\"max-w-6xl mx-auto text-start\">\n          <div class=\"flex items-center justify-start mb-4\">\n            <div class=\"bg-pink-500 h-1 w-12 mr-2\"></div>\n            <span class=\"text-sm uppercase\">Welcome To {{ service?.name }}</span>\n          </div>\n          <h2 class=\"text-2xl sm:text-3xl md:text-4xl font-bold mb-6\">{{ service?.name }} Services</h2>\n          <p class=\"text-base sm:text-lg mb-8 max-w-4xl mr-auto\">\n            {{service?.desc || service?.short_desc}}\n          </p>\n          <div class=\"flex flex-col sm:flex-row items-center justify-start gap-4\">\n            <LazyLiveChat />\n            <LazyRequestQuote />\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n  <div class=\"container mx-auto px-3 mt-[16rem] lg:-mt-[4rem] sm:mt-[2rem]\">\n    <div v-if=\"service\" class=\"text-center justify-center grid space-y-4\">\n      <div class=\"contact-title flex items-center justify-center gap-2 sm:gap-4 w-full\">\n        <div class=\"separator hidden sm:block flex-1 max-w-[100px] md:max-w-[200px] lg:max-w-[600px] h-1 bg-gray-300 rounded relative\">\n          <div class=\"absolute top-0 right-0 w-16 sm:w-24 h-1 bg-primary rounded\"></div>\n        </div>\n        <h2 class=\"sm:text-5xl text-xl font-normal font-['Impact']\">\n          Portfolio\n        </h2>\n        <div class=\"separator hidden sm:block flex-1 max-w-[100px] md:max-w-[200px] lg:max-w-[600px] h-1 bg-gray-300 rounded relative\">\n          <div class=\"absolute top-0 left-0 w-16 sm:w-24 h-1 bg-primary rounded\"></div>\n        </div>\n      </div>\n      <LazyPortfolio :service_id=\"service?.id\" />\n    </div>\n\n    <div class=\"w-full max-w-screen-xl mx-auto flex flex-col items-center gap-6 px-4 py-8 overflow-hidden mt-9\">\n      <!-- Title -->\n      <h1 class=\"text-center text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-normal font-['Impact']\">\n        {{service?.name}} tips\n      </h1>\n\n      <!-- Description -->\n      <p class=\"text-center text-white text-sm sm:text-base md:text-lg font-normal font-['Shabnam'] max-w-3xl\">\n        {{service?.short_desc}}\n      </p>\n\n      <!-- Animation Types -->\n      <div v-if=\"service?.features\" class=\"grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 w-full\">\n        <div v-for=\"animation in JSON.parse(service?.features)\"\n             v-show=\"animation?.title\"\n             :key=\"animation.title\" class=\"flex flex-col items-center p-5 bg-white/5 rounded-3xl border border-white/40\">\n          <h2 class=\"text-center text-white text-xl sm:text-2xl md:text-3xl font-normal font-['Impact']\">\n            {{ animation.title }}\n          </h2>\n          <div class=\"w-10 h-1 bg-primary rounded-full my-2\"></div>\n          <p class=\"text-center text-white text-sm sm:text-base font-normal font-['Shabnam']\">\n            {{ animation.caption }}\n          </p>\n        </div>\n      </div>\n\n      <!-- Studio Section -->\n      <h2 class=\"text-center text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-normal font-['Impact'] mt-8\">\n        What Makes Animation Studio A Professional Animation Company\n      </h2>\n      <p class=\"text-center text-white text-lg sm:text-xl md:text-2xl font-normal font-['Impact'] max-w-3xl\">\n        Explore your options now!\n      </p>\n\n      <!-- Buttons -->\n      <div class=\"flex flex-col sm:flex-row items-center justify-start sm:justify-center gap-4\">\n        <LazyLiveChat />\n        <LazyRequestQuote />\n      </div>\n    </div>\n  </div>\n</template>\n\n<style scoped>\n\n</style>",
+      "start": 1746483913532,
+      "end": 1746483913589,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:components-loader-pre",
+      "start": 1746483913589,
+      "end": 1746483913589,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1746483913589,
+      "end": 1746483913589,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1746483913589,
+      "end": 1746483913589,
+      "order": "pre"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1746483913589,
+      "end": 1746483913589,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1746483913589,
+      "end": 1746483913589,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import _sfc_main from \"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/[slug]-service.vue?vue&type=script&setup=true&lang.ts\";\nexport * from \"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/[slug]-service.vue?vue&type=script&setup=true&lang.ts\";\nexport default _sfc_main;\n",
+      "start": 1746483913589,
+      "end": 1746483914054,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1746483914054,
+      "end": 1746483914054,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483914054,
+      "end": 1746483914054,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1746483914054,
+      "end": 1746483914054,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:prehydrate-transform",
+      "start": 1746483914054,
+      "end": 1746483914054,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:module-preload-polyfill",
+      "start": 1746483914054,
+      "end": 1746483914054,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483914054,
+      "end": 1746483914054,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1746483914054,
+      "end": 1746483914054,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1746483914054,
+      "end": 1746483914054,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1746483914054,
+      "end": 1746483914054,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1746483914054,
+      "end": 1746483914054,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1746483914054,
+      "end": 1746483914054,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1746483914054,
+      "end": 1746483914054,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1746483914055,
+      "end": 1746483914055,
+      "order": "normal-normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1746483914055,
+      "end": 1746483914055,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:head:unhead-imports",
+      "start": 1746483914055,
+      "end": 1746483914055,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1746483914055,
+      "end": 1746483914061,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1746483914061,
+      "end": 1746483914061,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "result": "export { default } from \"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/[slug]-service.vue?macro=true&vue&type=script&setup=true&lang.ts\"",
+      "start": 1746483914062,
+      "end": 1746483914063,
+      "order": "post",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": "AAAA"
+      }
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1746483914065,
+      "end": 1746483914065,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1746483914065,
+      "end": 1746483914065,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1746483914065,
+      "end": 1746483914066,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1746483914066,
+      "end": 1746483914066,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1746483914066,
+      "end": 1746483914066,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1746483914066,
+      "end": 1746483914067,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1746483914067,
+      "end": 1746483914067,
+      "order": "normal"
+    }
+  ]
+}

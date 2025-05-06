@@ -1,0 +1,271 @@
+{
+  "resolvedId": "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/components/tools/Testimonials.vue?vue&type=style&index=0&scoped=be3bf411&lang.css?inline&used",
+  "transforms": [
+    {
+      "name": "vite:vue",
+      "result": "\n/* استایل‌های Tailwind برای رنگ‌های سفارشی */\n.text-light-shade {\n  color: #d1d5db; /* جایگزین با رنگ دلخواه */\n}\n\n.bg-light-shade {\n  background-color: #d1d5db; /* جایگزین با رنگ دلخواه */\n}\n\n/* استایل‌های Swiper */\n:deep(.swiper-pagination-bullet) {\n  background: #ffffff;\n  opacity: 0.5;\n}\n\n:deep(.swiper-pagination-bullet-active) {\n  background: #ffffff;\n  opacity: 1;\n}\n\n:deep(.swiper-button-next),\n:deep(.swiper-button-prev) {\n  color: #ffffff;\n}\n",
+      "start": 1746483922173,
+      "end": 1746483922173,
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/components/tools/Testimonials.vue"
+        ],
+        "names": [],
+        "mappings": ";AA6FA,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC;AAC5C,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE;EAChB,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,EAAE,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC;AAC5C;;AAEA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE;EACd,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,EAAE,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC;AACvD;;AAEA,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC;AACtB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE;EAC/B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;EACnB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC;AACd;;AAEA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE;EACtC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;EACnB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC;AACZ;;AAEA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC1B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE;EACzB,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAChB",
+        "file": "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/components/tools/Testimonials.vue",
+        "sourceRoot": "",
+        "sourcesContent": [
+          "\n<template>\n  <div class=\"my-12\">\n    <div class=\"contact-title flex items-center justify-center gap-2 sm:gap-4 w-full\">\n      <div class=\"separator hidden sm:block flex-1 max-w-[100px] md:max-w-[200px] lg:max-w-[500px] h-1 bg-gray-300 rounded relative\">\n        <div class=\"absolute top-0 right-0 w-16 sm:w-24 h-1 bg-primary rounded\"></div>\n      </div>\n      <h2 class=\"sm:text-5xl text-2xl font-normal font-['Impact']\">\n        Our valuable success clients story\n      </h2>\n      <div class=\"separator hidden sm:block flex-1 max-w-[100px] md:max-w-[200px] lg:max-w-[500px] h-1 bg-gray-300 rounded relative\">\n        <div class=\"absolute top-0 left-0 w-16 sm:w-24 h-1 bg-primary rounded\"></div>\n      </div>\n    </div>\n    <div class=\"w-full p-4 overflow-hidden\">\n      <client-only>\n        <Swiper\n            :slides-per-view=\"1\"\n            :space-between=\"16\"\n            :breakpoints=\"{\n        640: { slidesPerView: 2.1, spaceBetween: 20 },\n        1024: { slidesPerView: 2.5, spaceBetween: 24 },\n        1280: { slidesPerView: 3.1, spaceBetween: 24 }\n      }\"\n            :pagination=\"{ clickable: true }\"\n            :navigation=\"true\"\n            :autoplay=\"true\"\n            class=\"w-full\"\n        >\n          <SwiperSlide v-for=\"(item, index) in testimonials\" :key=\"index\">\n            <div\n                class=\"w-full max-w-md h-auto px-5 py-4 hover:border-teal-400 hover:shadow-teal-400 hover:shadow-lg my-5 mx-2 bg-white/5 rounded-3xl border border-white/40 flex flex-col justify-start items-start gap-2\"\n            >\n              <!-- نام شرکت -->\n              <div class=\"w-full text-white text-3xl font-normal font-['Impact']\">\n                {{ item.company }}\n              </div>\n\n              <!-- امتیاز (ستاره‌ها) -->\n              <div class=\"flex items-center gap-1\">\n            <span v-for=\"n in 5\" :key=\"n\" class=\"text-yellow-500\">\n              <svg\n                  class=\"w-5 h-5\"\n                  :class=\"{ 'opacity-40': n > Math.round(item.rating) }\"\n                  fill=\"currentColor\"\n                  viewBox=\"0 0 20 20\"\n              >\n                <path\n                    d=\"M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.97a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.367 2.448a1 1 0 00-.364 1.118l1.287 3.97c.3.921-.755 1.688-1.54 1.118l-3.367-2.448a1 1 0 00-1.175 0l-3.367 2.448c-.784.57-1.838-.197-1.54-1.118l1.287-3.97a1 1 0 00-.364-1.118L2.81 9.397c-.784-.57-.382-1.81.588-1.81h4.162a1 1 0 00.95-.69l1.286-3.97z\"\n                />\n              </svg>\n            </span>\n              </div>\n\n              <!-- امتیاز متنی -->\n              <div class=\"text-light-shade text-sm font-bold font-['Shabnam']\">\n                {{ item.rating }} from 5\n              </div>\n\n              <!-- نظر -->\n              <div class=\"w-full text-white text-base font-normal font-['Shabnam']\">\n                {{ item.message }}\n              </div>\n\n              <!-- نام شخص -->\n              <div class=\"w-full text-light-shade text-2xl font-normal font-['Impact']\">\n                {{ item.name }}\n              </div>\n\n              <!-- عنوان شغلی -->\n              <div class=\"w-full text-light-shade text-base font-normal font-['Shabnam']\">\n                {{ item.title }}\n              </div>\n            </div>\n          </SwiperSlide>\n        </Swiper>\n      </client-only>\n    </div>\n  </div>\n</template>\n\n<script setup>\nimport { Swiper, SwiperSlide } from 'swiper/vue';\nimport 'swiper/css';\nimport 'swiper/css/pagination';\n\nimport {useMyFetch} from \"~/composables/apiFetch\";\n\nconst {data:testimonials} = await useMyFetch('testimonials')\n\n</script>\n\n<style scoped>\n/* استایل‌های Tailwind برای رنگ‌های سفارشی */\n.text-light-shade {\n  color: #d1d5db; /* جایگزین با رنگ دلخواه */\n}\n\n.bg-light-shade {\n  background-color: #d1d5db; /* جایگزین با رنگ دلخواه */\n}\n\n/* استایل‌های Swiper */\n:deep(.swiper-pagination-bullet) {\n  background: #ffffff;\n  opacity: 0.5;\n}\n\n:deep(.swiper-pagination-bullet-active) {\n  background: #ffffff;\n  opacity: 1;\n}\n\n:deep(.swiper-button-next),\n:deep(.swiper-button-prev) {\n  color: #ffffff;\n}\n</style>"
+        ]
+      }
+    },
+    {
+      "name": "nuxt:components-loader-pre",
+      "start": 1746483922173,
+      "end": 1746483922173,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:components-loader-pre",
+      "start": 1746483922173,
+      "end": 1746483922173,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1746483922173,
+      "end": 1746483922173,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1746483922173,
+      "end": 1746483922173,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1746483922173,
+      "end": 1746483922173,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1746483922173,
+      "end": 1746483922173,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-only-component-transform",
+      "start": 1746483922173,
+      "end": 1746483922173,
+      "order": "pre"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1746483922179,
+      "end": 1746483922179,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1746483922186,
+      "end": 1746483922186,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": ".text-light-shade[data-v-be3bf411]{color:#d1d5db}.bg-light-shade[data-v-be3bf411]{background-color:#d1d5db}[data-v-be3bf411] .swiper-pagination-bullet{background:#fff;opacity:.5}[data-v-be3bf411] .swiper-pagination-bullet-active{background:#fff;opacity:1}[data-v-be3bf411] .swiper-button-next,[data-v-be3bf411] .swiper-button-prev{color:#fff}",
+      "start": 1746483922186,
+      "end": 1746483922186,
+      "order": "normal",
+      "sourcemaps": {
+        "file": "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/components/tools/Testimonials.vue",
+        "mappings": "AAAA,mCAAkB,aAAa,CAAC,iCAAgB,wBAAwB,CAAC,4CAAiC,eAAe,CAAC,UAAU,CAAC,mDAAwC,eAAe,CAAC,SAAS,CAAC,4EAAsD,UAAU",
+        "names": [],
+        "sources": [
+          "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/components/tools/Testimonials.vue"
+        ],
+        "sourcesContent": [
+          null
+        ],
+        "version": 3
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1746483922186,
+      "end": 1746483922186,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483922187,
+      "end": 1746483922187,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483922187,
+      "end": 1746483922187,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1746483922187,
+      "end": 1746483922187,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1746483922187,
+      "end": 1746483922187,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:prehydrate-transform",
+      "start": 1746483922187,
+      "end": 1746483922187,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:prehydrate-transform",
+      "start": 1746483922187,
+      "end": 1746483922187,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483922187,
+      "end": 1746483922187,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1746483922187,
+      "end": 1746483922187,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1746483922187,
+      "end": 1746483922187,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1746483922192,
+      "end": 1746483922192,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1746483922192,
+      "end": 1746483922192,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1746483922192,
+      "end": 1746483922192,
+      "order": "normal-normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1746483922192,
+      "end": 1746483922192,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1746483922192,
+      "end": 1746483922192,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:head:unhead-imports",
+      "start": 1746483922192,
+      "end": 1746483922192,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:head:unhead-imports",
+      "start": 1746483922192,
+      "end": 1746483922192,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1746483922192,
+      "end": 1746483922192,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1746483922192,
+      "end": 1746483922192,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1746483922192,
+      "end": 1746483922192,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1746483922192,
+      "end": 1746483922192,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1746483922192,
+      "end": 1746483922192,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1746483922192,
+      "end": 1746483922192,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1746483922192,
+      "end": 1746483922192,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1746483922192,
+      "end": 1746483922192,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1746483922192,
+      "end": 1746483922192,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1746483922192,
+      "end": 1746483922192,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1746483922192,
+      "end": 1746483922192,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1746483922192,
+      "end": 1746483922192,
+      "order": "normal"
+    }
+  ]
+}

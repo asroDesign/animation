@@ -1,0 +1,266 @@
+{
+  "resolvedId": "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/dashboard/profile.vue?vue&type=style&index=0&scoped=f175f69a&lang.css?inline&used",
+  "transforms": [
+    {
+      "name": "vite:vue",
+      "result": "\n/* Tailwind handles all styling */\n",
+      "start": 1746483920736,
+      "end": 1746483920736,
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/dashboard/profile.vue"
+        ],
+        "names": [],
+        "mappings": ";AAqUA,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC",
+        "file": "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/dashboard/profile.vue",
+        "sourceRoot": "",
+        "sourcesContent": [
+          "\n<template>\n  <div class=\"max-w-4xl mx-auto rounded-3xl flex flex-col gap-7\">\n    <div  class=\"flex flex-col items-center gap-7 w-full\">\n      <!-- Profile Photo -->\n      <div class=\"flex flex-col items-center gap-3.5\">\n        <img\n            :src=\"formData.avatar || 'https://placehold.co/200x200'\"\n            alt=\"Profile Photo\"\n            class=\"w-48 h-48 rounded-full object-cover\"\n        />\n        <label class=\"relative w-56 h-12\">\n          <input\n              type=\"file\"\n              accept=\"image/*\"\n              class=\"hidden\"\n              @change=\"handlePhotoUpload\"\n          />\n          <span class=\"absolute inset-0 flex items-center justify-center bg-transparent rounded-3xl border border-primary shadow-[0_0_6px_rgba(202,23,92,1)] text-white text-base font-medium font-['Shabnam'] cursor-pointer hover:bg-primary/10 transition-colors\">\n            Upload Photo\n          </span>\n        </label>\n      </div>\n\n      <!-- Personal Information -->\n      <div class=\"w-full\">\n        <h2 class=\"text-white sm:text-2xl text-xl font-normal font-['Impact'] mb-4 text-center sm:text-left\">\n          Personal Information\n        </h2>\n        <div class=\"grid grid-cols-1 sm:grid-cols-2 gap-4\">\n          <div class=\"relative\">\n            <input\n                v-model=\"formData.full_name\"\n                type=\"text\"\n                placeholder=\"Full Name\"\n                class=\"w-full py-2 px-4 bg-[#14082A] border border-[#514078] rounded-2xl text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-primary\"\n                :class=\"{ 'border-red-500': errors?.full_name }\"\n            />\n            <p v-if=\"errors.full_name\" class=\"text-red-500 text-sm mt-1\">{{ errors.full_name }}</p>\n          </div>\n          <div class=\"relative\">\n            <input\n                v-model=\"formData.email\"\n                type=\"email\"\n                placeholder=\"Email\"\n                class=\"w-full py-2 px-4 bg-[#14082A] border border-[#514078] rounded-2xl text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-primary\"\n                :class=\"{ 'border-red-500': errors?.email }\"\n            />\n            <p v-if=\"errors?.email\" class=\"text-red-500 text-sm mt-1\">{{ errors.email }}</p>\n          </div>\n          <div class=\"relative\">\n            <input\n                v-model=\"formData.mobile\"\n                type=\"tel\"\n                placeholder=\"Phone Number\"\n                class=\"w-full py-2 px-4 bg-[#14082A] border border-[#514078] rounded-2xl text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-primary\"\n                :class=\"{ 'border-red-500': errors?.mobile }\"\n            />\n            <p v-if=\"errors?.mobile\" class=\"text-red-500 text-sm mt-1\">{{ errors.mobile }}</p>\n          </div>\n          <div class=\"relative\">\n            <input\n                v-model=\"formData.secondaryEmail\"\n                type=\"email\"\n                placeholder=\"Secondary Email\"\n                class=\"w-full py-2 px-4 bg-[#14082A] border border-[#514078] rounded-2xl text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-primary\"\n                :class=\"{ 'border-red-500': errors?.secondaryEmail }\"\n            />\n            <p v-if=\"errors?.secondaryEmail\" class=\"text-red-500 text-sm mt-1\">{{ errors.secondaryEmail }}</p>\n          </div>\n        </div>\n        <div class=\"my-3\">\n          <primary-button\n              @click=\"handleSubmit\"\n              type=\"submit\"\n              class=\"relative w-56 h-12 flex items-center justify-center bg-primary rounded-3xl shadow-[0_0_6px_rgba(202,23,92,1)] border border-primary text-white text-base font-medium font-['Shabnam'] hover:bg-primary/90 transition-colors\"\n          >\n          <span class=\"flex items-center gap-2\">\n            Save Changes\n            <svg class=\"w-6 h-6\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\">\n              <path d=\"M5 13L9 17L19 7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" />\n            </svg>\n          </span>\n          </primary-button>\n        </div>\n      </div>\n\n      <!-- Password -->\n      <div class=\"w-full\">\n        <h2 class=\"text-white text-2xl font-normal font-['Impact'] mb-4 text-center sm:text-left\">\n          Password\n        </h2>\n        <div class=\"grid grid-cols-1 sm:grid-cols-2 gap-4\">\n          <div class=\"relative\">\n            <input\n                v-model=\"passwordForm.old_password\"\n                type=\"password\"\n                placeholder=\"Current Password\"\n                class=\"w-full py-2 px-4 bg-[#14082A] border border-[#514078] rounded-2xl text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-primary\"\n                :class=\"{ 'border-red-500': errors?.old_password }\"\n            />\n            <p v-if=\"errors?.old_password\" class=\"text-red-500 text-sm mt-1\">{{ errors.old_password }}</p>\n          </div>\n          <div class=\"hidden sm:block\"></div>\n          <div class=\"relative\">\n            <input\n                v-model=\"passwordForm.newPassword\"\n                type=\"password\"\n                placeholder=\"New Password\"\n                class=\"w-full py-2 px-4 bg-[#14082A] border border-[#514078] rounded-2xl text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-primary\"\n                :class=\"{ 'border-red-500': errors?.newPassword }\"\n            />\n            <p v-if=\"errors?.newPassword\" class=\"text-red-500 text-sm mt-1\">{{ errors.newPassword }}</p>\n          </div>\n          <div class=\"relative\">\n            <input\n                v-model=\"passwordForm.confirmPassword\"\n                type=\"password\"\n                placeholder=\"Confirm Password\"\n                class=\"w-full py-2 px-4 bg-[#14082A] border border-[#514078] rounded-2xl text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-primary\"\n                :class=\"{ 'border-red-500': errors?.confirmPassword }\"\n            />\n            <p v-if=\"errors?.confirmPassword\" class=\"text-red-500 text-sm mt-1\">{{ errors.confirmPassword }}</p>\n          </div>\n        </div>\n      </div>\n\n      <!-- Buttons -->\n      <div class=\"sm:flex grid lg:justify-start gap-4 w-full justify-center sm:justify-end\">\n        <div class=\"row-start-2\">\n          <nuxt-link\n              to=\"/dashboard\"\n              class=\"relative w-52 h-12 flex items-center justify-center bg-transparent rounded-3xl border border-primary shadow-[0_0_6px_rgba(202,23,92,1)] text-white text-base font-medium font-['Shabnam'] hover:bg-primary/10 transition-colors\"\n          >\n          <span class=\"flex items-center gap-2\">\n            <svg class=\"w-6 h-6\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\">\n              <path d=\"M9 15L3 9L9 3\" stroke-linecap=\"round\" stroke-linejoin=\"round\" />\n              <path d=\"M3 9H21\" stroke-linecap=\"round\" stroke-linejoin=\"round\" />\n            </svg>\n            Back to Dashboard\n          </span>\n          </nuxt-link>\n        </div>\n        <div class=\"row-start-1\">\n          <button @click=\"change_passwordHandle\"\n              type=\"submit\"\n              class=\"relative w-56 h-12 flex items-center justify-center bg-primary rounded-3xl shadow-[0_0_6px_rgba(202,23,92,1)] border border-primary text-white text-base font-medium font-['Shabnam'] hover:bg-primary/90 transition-colors\"\n          >\n          <span class=\"flex items-center gap-2\">\n            Save Changes\n            <svg class=\"w-6 h-6\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\">\n              <path d=\"M5 13L9 17L19 7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" />\n            </svg>\n          </span>\n          </button>\n        </div>\n      </div>\n    </div>\n  </div>\n</template>\n\n<script setup>\nimport { ref } from 'vue';\nimport { useRouter } from 'vue-router';\nimport {useMyFetch} from \"~/composables/apiFetch.js\";\n\nimport SecondaryButton from \"~/components/tools/SecondaryButton.vue\";\nimport PrimaryButton from \"~/components/tools/PrimaryButton.vue\";\nimport { useToast } from '~/composables/useToast';\n// Initialize toast composable\nconst { addToast } = useToast();\n\n// Form Data\nconst formData = reactive({\n  avatar: '',\n  full_name: '',\n  email: '',\n  mobile: '',\n  secondaryEmail: '',\n\n});\n\nconst passwordForm = reactive({\n  old_password: '',\n  newPassword: '',\n  confirmPassword: '',\n})\nconst {data:user} = await useMyFetch('user',{\n  headers: {\n    Authorization: `Bearer ${localStorage.getItem('token')}`,\n  },\n})\nif (user){\n  Object.assign(formData,user.value)\n}\n// Form Errors\nconst errors = ref({});\n\nconst router = useRouter();\n\n// Handle Photo Upload\nconst handlePhotoUpload = async(event) => {\n  const file = event.target.files[0];\n  if (file) {\n    if (!file.type.startsWith('image/')) {\n      errors.value.photo = 'Please upload an image file.';\n      return;\n    }\n\n    const reader = new FileReader();\n    reader.onload = async(e) => {\n      // formData.value.photo = ;\n      const form = new FormData()\n      form.append('image',file)\n      const {status,error} = await useMyFetch('update_user_image',{\n        body:form,\n        headers: {\n          Authorization: `Bearer ${localStorage.getItem('token')}`,\n        },\n        method:'POST'\n      })\n      if (status.value != 'success'){\n        errors.value.photo = error.value;\n      }else{\n        errors.value.photo = '';\n      }\n    };\n    reader.readAsDataURL(file);\n  }\n};\n\n// Form Validation\nconst validateForm = () => {\n  errors.value = {};\n\n  if (!formData.full_name.trim()) {\n    errors.value.fullName = 'Full Name is required.';\n  }\n  if (!formData.email.trim()) {\n    errors.value.email = 'Email is required.';\n  } else if (!/\\S+@\\S+\\.\\S+/.test(formData.email)) {\n    errors.value.email = 'Invalid email format.';\n  }\n  if (formData.mobile && !/^\\+?\\d{10,15}$/.test(formData.mobile)) {\n    errors.value.mobile = 'Invalid phone number.';\n  }\n  if (formData.secondaryEmail && !/\\S+@\\S+\\.\\S+/.test(formData.secondaryEmail)) {\n    errors.value.secondaryEmail = 'Invalid secondary email format.';\n  }\n\n\n  return Object.keys(errors.value).length === 0;\n};\n\n// Handle Form Submission\nconst handleSubmit = async () => {\n  if (!validateForm()) return;\n\n  try {\n    // Simulate API call\n    console.log('Form Data:', formData);\n    // Example: await api.updateUser(formData.value);\n    const {status,error} = await useMyFetch('update_profile',{\n      body:formData,\n      method:'POST',\n      headers: {\n        Authorization: `Bearer ${localStorage.getItem('token')}`,\n      },\n    })\n    if (status.value=='success'){\n      addToast('Changes saved successfully!','success',5000)\n    }else{\n      errors.value = error.value.data?.errors\n    }\n\n  } catch (error) {\n    errors.value.general = 'Failed to save changes. Please try again.';\n    console.error(error);\n  }\n};\n\nconst validatePasswordForm = () => {\n  errors.value = {};\n  if (passwordForm.old_password && !passwordForm.old_password) {\n    errors.value.old_password = 'New Password is required.';\n  }\n  if (passwordForm.newPassword && passwordForm.newPassword.length < 8) {\n    errors.value.newPassword = 'New Password must be at least 8 characters.';\n  }\n  if (passwordForm.newPassword !== passwordForm.confirmPassword) {\n    errors.value.confirmPassword = 'Passwords do not match.';\n  }\n  return Object.keys(errors.value).length === 0;\n}\nconst change_passwordHandle = async()=>{\n  if (!validatePasswordForm()) return;\n  try {\n    // Simulate API call\n    console.log('Form Data:', passwordForm);\n    // Example: await api.updateUser(formData.value);\n    const {status,error} = await useMyFetch('change_password',{\n      body:passwordForm,\n      method:'POST',\n      headers: {\n        Authorization: `Bearer ${localStorage.getItem('token')}`,\n      },\n    })\n    if (status.value=='success'){\n      addToast('Changes saved successfully!','success',5000)\n    }else{\n      errors.value = error.value.data?.errors || {newPassword:error.value.data.msg}\n    }\n\n  } catch (error) {\n    errors.value.general = 'Failed to save changes. Please try again.';\n    console.error(error);\n  }\n}\ndefinePageMeta({\n  layout:'dashboard',\n  middleware:'auth'\n})\n</script>\n\n<style scoped>\n/* Tailwind handles all styling */\n</style>\n"
+        ]
+      }
+    },
+    {
+      "name": "nuxt:components-loader-pre",
+      "start": 1746483920736,
+      "end": 1746483920736,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:components-loader-pre",
+      "start": 1746483920736,
+      "end": 1746483920736,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1746483920736,
+      "end": 1746483920736,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1746483920736,
+      "end": 1746483920736,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1746483920736,
+      "end": 1746483920736,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1746483920736,
+      "end": 1746483920736,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-only-component-transform",
+      "start": 1746483920736,
+      "end": 1746483920736,
+      "order": "pre"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1746483920743,
+      "end": 1746483920743,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1746483920743,
+      "end": 1746483920743,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "",
+      "start": 1746483920743,
+      "end": 1746483920743,
+      "order": "normal",
+      "sourcemaps": {
+        "file": "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/dashboard/profile.vue",
+        "mappings": "",
+        "names": [],
+        "sources": [],
+        "version": 3
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1746483920745,
+      "end": 1746483920745,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483920745,
+      "end": 1746483920745,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483920745,
+      "end": 1746483920745,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1746483920745,
+      "end": 1746483920745,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1746483920745,
+      "end": 1746483920745,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:prehydrate-transform",
+      "start": 1746483920748,
+      "end": 1746483920748,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:prehydrate-transform",
+      "start": 1746483920748,
+      "end": 1746483920748,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483920748,
+      "end": 1746483920748,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1746483920748,
+      "end": 1746483920748,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1746483920748,
+      "end": 1746483920748,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1746483920962,
+      "end": 1746483920962,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1746483920962,
+      "end": 1746483920962,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1746483920962,
+      "end": 1746483920962,
+      "order": "normal-normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1746483920962,
+      "end": 1746483920962,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1746483920962,
+      "end": 1746483920962,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:head:unhead-imports",
+      "start": 1746483920962,
+      "end": 1746483920962,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:head:unhead-imports",
+      "start": 1746483920962,
+      "end": 1746483920962,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1746483920963,
+      "end": 1746483920963,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1746483920963,
+      "end": 1746483920963,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1746483920963,
+      "end": 1746483920963,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1746483920963,
+      "end": 1746483920963,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1746483920963,
+      "end": 1746483920963,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1746483920963,
+      "end": 1746483920963,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1746483920963,
+      "end": 1746483920963,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1746483920963,
+      "end": 1746483920963,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1746483920963,
+      "end": 1746483920963,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1746483920963,
+      "end": 1746483920963,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1746483920963,
+      "end": 1746483920963,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1746483920963,
+      "end": 1746483920963,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,271 @@
+{
+  "resolvedId": "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/components/main/ProcessStep.vue?vue&type=style&index=0&scoped=2ea9953c&lang.css",
+  "transforms": [
+    {
+      "name": "vite:vue",
+      "result": "\n.process-wrap {\n  @apply flex justify-center;\n}\n\n.mob-sliderxs {\n  @apply flex-shrink-0;\n}\n\n.proces-box-wrap {\n  @apply bg-white rounded-lg shadow-md p-6 m-2 w-64 sm:w-80 flex-none  transform transition-all duration-300;\n}\n\n.proces-box-wrap.active {\n  @apply shadow-lg;\n}\n\n.proces-box-wrap img {\n  @apply mx-auto;\n}\n\n@media (max-width: 640px) {\n  .proces-box-wrap {\n    @apply w-56;\n  }\n}\n",
+      "start": 1746483922107,
+      "end": 1746483922107,
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/components/main/ProcessStep.vue"
+        ],
+        "names": [],
+        "mappings": ";AAqFA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE;EACZ,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC5B;;AAEA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE;EACZ,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACtB;;AAEA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE;EACf,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,EAAE,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,GAAG,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC5G;;AAEA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE;EACtB,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAClB;;AAEA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,EAAE;EACnB,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAChB;;AAEA,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE;EACxB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE;IACf,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC;EACb;AACF",
+        "file": "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/components/main/ProcessStep.vue",
+        "sourceRoot": "",
+        "sourcesContent": [
+          "<template>\n  <div\n      class=\"flex overflow-auto w-[calc(100vw-20%)] space-x-4 !mt-12 my-3 \"\n      v-observe=\"{ callback: onVisible }\"\n  >\n    <div\n        v-for=\"(item, index) in process_step\"\n        :key=\"item.title\"\n        class=\"grid gap-2 items-center place-items-center group\"\n        :class=\"{\n          'active opacity-100 scale-100': index === activeIndex,\n          'opacity-50 scale-95': index !== activeIndex,\n        }\"\n        :aria-hidden=\"index !== activeIndex\"\n        :tabindex=\"index === activeIndex ? 0 : -1\"\n        @click=\"setActiveIndex(index)\"\n    >\n      <div\n          class=\"rounded-full sm:w-[9rem] sm:h-[9rem] transform transition origin-center group-hover:rotate-180 duration-700 w-[11rem] h-[11rem] p-3  bg-gradient-to-r from-secondary-shade to-[#ed56ab] flex items-center justify-center text-center\"\n      >\n        <nuxt-img :src=\"item.image\" class=\"text-6xl h-[60%]\" :aria-label=\"item.heading\" />\n      </div>\n      <div class=\"text-xl sm:text-2xl font-bold font-['Shabnam']\">\n        {{ item.heading }}\n      </div>\n      <p class=\"sm:text-md text-xs font-['Shabnam']\">\n        {{ item.sub_heading }}\n      </p>\n    </div>\n  </div>\n</template>\n\n<script setup>\nimport { ref } from 'vue';\n\nconst props =defineProps({\n  process_step:Object\n})\n// Sample data (replace with your actual data)\n// const process_step = [\n//   {title:'Workshops',desc:'To understand the unique demands of your business, we run multiple workshops for running an extensive business analysis, comprehending campaign objectives, preparing proposals, and deciding animation deliverables.',icon:'iconsax/bulk/scan'},\n//   {title:'Planning',desc:'To understand the unique demands of your business, we run multiple workshops for running an extensive business analysis, comprehending campaign objectives, preparing proposals, and deciding animation deliverables.',icon:'iconsax/bulk/pen-tool-2'},\n//   {title:'A/B Testing',desc:'To understand the unique demands of your business, we run multiple workshops for running an extensive business analysis, comprehending campaign objectives, preparing proposals, and deciding animation deliverables.',icon:'iconsax/bulk/programming-arrows'},\n//   {title:'Execution',desc:'To understand the unique demands of your business, we run multiple workshops for running an extensive business analysis, comprehending campaign objectives, preparing proposals, and deciding animation deliverables.',icon:'iconsax/bulk/magicpen'},\n//   {title:'Implementation',desc:'To understand the unique demands of your business, we run multiple workshops for running an extensive business analysis, comprehending campaign objectives, preparing proposals, and deciding animation deliverables.',icon:'iconsax/bulk/share'},\n// ]\n\n// Intersection Observer for visibility\nconst isVisible = ref(false);\nconst onVisible = (entries, observer) => {\n  if (entries[0].isIntersecting) {\n    isVisible.value = true;\n    observer.disconnect(); // Stop observing once visible\n  }\n};\n\nconst vObserve = {\n  mounted(el, binding) {\n    const observer = new IntersectionObserver(binding.value.callback, {\n      threshold: 0.1, // Trigger when 10% of the element is visible\n    });\n    observer.observe(el);\n  },\n};\nconst activeIndex = ref(0);\nlet intervalId = null;\n\nconst setActiveIndex = (index) => {\n  activeIndex.value = index;\n};\n\nconst nextSlide = () => {\n  activeIndex.value = (activeIndex.value + 1) % props.process_step.length;\n};\n\nonMounted(() => {\n  intervalId = setInterval(nextSlide, 3000); // هر ۳ ثانیه اسلاید بعدی\n});\n\nonUnmounted(() => {\n  if (intervalId) clearInterval(intervalId);\n});\n</script>\n\n<style scoped>\n.process-wrap {\n  @apply flex justify-center;\n}\n\n.mob-sliderxs {\n  @apply flex-shrink-0;\n}\n\n.proces-box-wrap {\n  @apply bg-white rounded-lg shadow-md p-6 m-2 w-64 sm:w-80 flex-none  transform transition-all duration-300;\n}\n\n.proces-box-wrap.active {\n  @apply shadow-lg;\n}\n\n.proces-box-wrap img {\n  @apply mx-auto;\n}\n\n@media (max-width: 640px) {\n  .proces-box-wrap {\n    @apply w-56;\n  }\n}\n</style>\n"
+        ]
+      }
+    },
+    {
+      "name": "nuxt:components-loader-pre",
+      "start": 1746483922107,
+      "end": 1746483922107,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:components-loader-pre",
+      "start": 1746483922107,
+      "end": 1746483922107,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1746483922107,
+      "end": 1746483922107,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1746483922107,
+      "end": 1746483922107,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1746483922107,
+      "end": 1746483922107,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1746483922107,
+      "end": 1746483922107,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-only-component-transform",
+      "start": 1746483922107,
+      "end": 1746483922107,
+      "order": "pre"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1746483922111,
+      "end": 1746483922111,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1746483922111,
+      "end": 1746483922111,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": ".process-wrap[data-v-2ea9953c]{display:flex;justify-content:center}.mob-sliderxs[data-v-2ea9953c]{flex-shrink:0}.proces-box-wrap[data-v-2ea9953c]{border-radius:.5rem;flex:none;margin:.5rem;transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));width:16rem;--tw-bg-opacity:1;background-color:rgb(255 255 255/var(--tw-bg-opacity,1));padding:1.5rem;--tw-shadow:0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -2px rgba(0,0,0,.1);--tw-shadow-colored:0 4px 6px -1px var(--tw-shadow-color),0 2px 4px -2px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow);transition-duration:.3s;transition-property:all;transition-timing-function:cubic-bezier(.4,0,.2,1)}@media (min-width:640px){.proces-box-wrap[data-v-2ea9953c]{width:20rem}}.proces-box-wrap.active[data-v-2ea9953c]{--tw-shadow:0 10px 15px -3px rgba(0,0,0,.1),0 4px 6px -4px rgba(0,0,0,.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color),0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow)}.proces-box-wrap img[data-v-2ea9953c]{margin-left:auto;margin-right:auto}@media (max-width:640px){.proces-box-wrap[data-v-2ea9953c]{width:14rem}}",
+      "start": 1746483922111,
+      "end": 1746483922111,
+      "order": "normal",
+      "sourcemaps": {
+        "file": "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/components/main/ProcessStep.vue",
+        "mappings": "AAAA,+BAAc,YAAY,CAAC,sBAAsB,CAAC,+BAAc,aAAa,CAAC,kCAAiB,mBAAmB,CAAC,SAAS,CAAC,YAAY,CAAC,6LAA6L,CAAC,WAAW,CAAC,iBAAiB,CAAC,wDAAwD,CAAC,cAAc,CAAC,uEAAuE,CAAC,+FAA+F,CAAC,kGAAkG,CAAC,uBAAuB,CAAC,uBAAuB,CAAC,kDAAkD,CAAC,yBAAyB,kCAAiB,WAAW,CAAC,CAAC,yCAAwB,yEAAyE,CAAC,iGAAiG,CAAC,kGAAkG,CAAC,sCAAqB,gBAAgB,CAAC,iBAAiB,CAAC,yBAAyB,kCAAiB,WAAW,CAAC",
+        "names": [],
+        "sources": [
+          "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/components/main/ProcessStep.vue"
+        ],
+        "sourcesContent": [
+          null
+        ],
+        "version": 3
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1746483922111,
+      "end": 1746483922111,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483922111,
+      "end": 1746483922111,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483922111,
+      "end": 1746483922111,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1746483922111,
+      "end": 1746483922111,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1746483922111,
+      "end": 1746483922111,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:prehydrate-transform",
+      "start": 1746483922111,
+      "end": 1746483922111,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:prehydrate-transform",
+      "start": 1746483922111,
+      "end": 1746483922111,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483922111,
+      "end": 1746483922111,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1746483922111,
+      "end": 1746483922112,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1746483922112,
+      "end": 1746483922112,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1746483922112,
+      "end": 1746483922112,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1746483922112,
+      "end": 1746483922112,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1746483922112,
+      "end": 1746483922112,
+      "order": "normal-normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1746483922112,
+      "end": 1746483922112,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1746483922112,
+      "end": 1746483922112,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:head:unhead-imports",
+      "start": 1746483922112,
+      "end": 1746483922112,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:head:unhead-imports",
+      "start": 1746483922112,
+      "end": 1746483922112,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1746483922112,
+      "end": 1746483922112,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1746483922112,
+      "end": 1746483922112,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1746483922112,
+      "end": 1746483922112,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1746483922112,
+      "end": 1746483922112,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1746483922112,
+      "end": 1746483922112,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1746483922112,
+      "end": 1746483922112,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1746483922112,
+      "end": 1746483922112,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1746483922112,
+      "end": 1746483922112,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1746483922112,
+      "end": 1746483922112,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1746483922112,
+      "end": 1746483922112,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1746483922112,
+      "end": 1746483922112,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1746483922112,
+      "end": 1746483922112,
+      "order": "normal"
+    }
+  ]
+}

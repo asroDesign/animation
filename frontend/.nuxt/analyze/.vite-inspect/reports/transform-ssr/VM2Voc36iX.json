@@ -1,0 +1,258 @@
+{
+  "resolvedId": "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/components/tools/VideoPlayer.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<script setup>\nimport { ref } from 'vue';\nimport { useIntersectionObserver } from '@vueuse/core';\n\ndefineProps({\n  video_url:String\n})\nconst videoRef = ref(null);\nconst isVisible = ref(false);\n\nuseIntersectionObserver(\n    videoRef,\n    ([{ isIntersecting }]) => {\n      if (isIntersecting) {\n        isVisible.value = true;\n      }\n    },\n    { threshold: 0.1 }\n);\n</script>\n\n<template>\n  <div>\n    <video\n        ref=\"videoRef\"\n        :src=\"isVisible ? video_url : null\"\n        autoplay\n        loop\n        muted\n        playsinline\n        class=\"w-full h-auto\"\n        aria-label=\"Sample video\"\n    >\n      <source type=\"video/webm\" />\n      Your browser does not support the video tag.\n    </video>\n  </div>\n</template>",
+      "start": 1746483922005,
+      "end": 1746483922080,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:components-loader-pre",
+      "start": 1746483922080,
+      "end": 1746483922080,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:components-loader-pre",
+      "start": 1746483922080,
+      "end": 1746483922080,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1746483922080,
+      "end": 1746483922080,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1746483922080,
+      "end": 1746483922080,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1746483922080,
+      "end": 1746483922080,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1746483922080,
+      "end": 1746483922080,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-only-component-transform",
+      "start": 1746483922080,
+      "end": 1746483922080,
+      "order": "pre"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1746483922080,
+      "end": 1746483922080,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1746483922080,
+      "end": 1746483922080,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { ssrRenderAttr as _ssrRenderAttr, ssrRenderAttrs as _ssrRenderAttrs } from \"vue/server-renderer\"\n\nimport { ref } from 'vue';\nimport { useIntersectionObserver } from '@vueuse/core';\n\n\nconst _sfc_main = {\n  __name: 'VideoPlayer',\n  __ssrInlineRender: true,\n  props: {\n  video_url:String\n},\n  setup(__props) {\n\n\nconst videoRef = ref(null);\nconst isVisible = ref(false);\n\nuseIntersectionObserver(\n    videoRef,\n    ([{ isIntersecting }]) => {\n      if (isIntersecting) {\n        isVisible.value = true;\n      }\n    },\n    { threshold: 0.1 }\n);\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  _push(`<div${\n    _ssrRenderAttrs(_attrs)\n  }><video${\n    _ssrRenderAttr(\"src\", isVisible.value ? __props.video_url : null)\n  } autoplay loop muted playsinline class=\"w-full h-auto\" aria-label=\"Sample video\"><source type=\"video/webm\"> Your browser does not support the video tag. </video></div>`)\n}\n}\n\n}\n\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/tools/VideoPlayer.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nexport default _sfc_main",
+      "start": 1746483922080,
+      "end": 1746483922081,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/components/tools/VideoPlayer.vue"
+        ],
+        "sourcesContent": [
+          "<script setup>\nimport { ref } from 'vue';\nimport { useIntersectionObserver } from '@vueuse/core';\n\ndefineProps({\n  video_url:String\n})\nconst videoRef = ref(null);\nconst isVisible = ref(false);\n\nuseIntersectionObserver(\n    videoRef,\n    ([{ isIntersecting }]) => {\n      if (isIntersecting) {\n        isVisible.value = true;\n      }\n    },\n    { threshold: 0.1 }\n);\n</script>\n\n<template>\n  <div>\n    <video\n        ref=\"videoRef\"\n        :src=\"isVisible ? video_url : null\"\n        autoplay\n        loop\n        muted\n        playsinline\n        class=\"w-full h-auto\"\n        aria-label=\"Sample video\"\n    >\n      <source type=\"video/webm\" />\n      Your browser does not support the video tag.\n    </video>\n  </div>\n</template>"
+        ],
+        "names": [],
+        "mappings": ";;AACA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACzB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;;;;;;;;;;;;AAKtD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC1B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;;AAE5B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACvB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACZ,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC9B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC1B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC9B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACN,CAAC,CAAC,CAAC,CAAC,CAAC;AACL,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACrB,CAAC;;;;;;;;;;;"
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1746483922081,
+      "end": 1746483922081,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483922081,
+      "end": 1746483922081,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483922081,
+      "end": 1746483922081,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1746483922081,
+      "end": 1746483922081,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1746483922081,
+      "end": 1746483922081,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:prehydrate-transform",
+      "start": 1746483922081,
+      "end": 1746483922081,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:prehydrate-transform",
+      "start": 1746483922081,
+      "end": 1746483922081,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483922081,
+      "end": 1746483922081,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1746483922081,
+      "end": 1746483922081,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1746483922081,
+      "end": 1746483922081,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1746483922081,
+      "end": 1746483922081,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1746483922081,
+      "end": 1746483922081,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1746483922081,
+      "end": 1746483922081,
+      "order": "normal-normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1746483922081,
+      "end": 1746483922081,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1746483922081,
+      "end": 1746483922081,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:head:unhead-imports",
+      "start": 1746483922081,
+      "end": 1746483922081,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:head:unhead-imports",
+      "start": 1746483922081,
+      "end": 1746483922081,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1746483922081,
+      "end": 1746483922081,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1746483922081,
+      "end": 1746483922081,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1746483922081,
+      "end": 1746483922081,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1746483922081,
+      "end": 1746483922081,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1746483922081,
+      "end": 1746483922081,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1746483922081,
+      "end": 1746483922081,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1746483922081,
+      "end": 1746483922081,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1746483922081,
+      "end": 1746483922081,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1746483922081,
+      "end": 1746483922081,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1746483922081,
+      "end": 1746483922081,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1746483922081,
+      "end": 1746483922081,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1746483922081,
+      "end": 1746483922081,
+      "order": "normal"
+    }
+  ]
+}

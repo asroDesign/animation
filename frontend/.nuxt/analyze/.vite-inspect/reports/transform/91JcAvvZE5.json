@@ -1,0 +1,202 @@
+{
+  "resolvedId": "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/components/tools/D2AnimationPlayer.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<script setup>\nimport { gsap } from 'gsap';\nimport { ref, onMounted } from 'vue';\ndefineProps({\n  video_ur:String\n})\nconst videoRef = ref(null);\n\nonMounted(() => {\n  gsap.fromTo(\n      videoRef.value,\n      { opacity: 0, scale: 0.8 },\n      { opacity: 1, scale: 1, duration: 1, ease: 'power2.out' }\n  );\n});\n</script>\n\n<template>\n  <div>\n    <video\n        ref=\"videoRef\"\n        autoplay\n        loop\n        muted\n        playsinline\n        class=\"w-full h-auto\"\n    >\n      <source :src=\"video_ur\" type=\"video/webm\" />\n    </video>\n  </div>\n</template>\n\n<style scoped>\nvideo {\n  animation: fadeInScale 1s ease-out;\n}\n\n@keyframes fadeInScale {\n  from {\n    opacity: 0;\n    transform: scale(0.8);\n  }\n  to {\n    opacity: 1;\n    transform: scale(1);\n  }\n}\n</style>",
+      "start": 1746483913854,
+      "end": 1746483914032,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:components-loader-pre",
+      "start": 1746483914032,
+      "end": 1746483914032,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1746483914032,
+      "end": 1746483914032,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1746483914032,
+      "end": 1746483914033,
+      "order": "pre"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1746483914033,
+      "end": 1746483914033,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1746483914033,
+      "end": 1746483914033,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { createElementVNode as _createElementVNode, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\nconst _hoisted_1 = [\"src\"]\n\nimport { gsap } from 'gsap';\nimport { ref, onMounted } from 'vue';\n\nconst _sfc_main = {\n  __name: 'D2AnimationPlayer',\n  props: {\n  video_ur:String\n},\n  setup(__props) {\n\n\nconst videoRef = ref(null);\n\nonMounted(() => {\n  gsap.fromTo(\n      videoRef.value,\n      { opacity: 0, scale: 0.8 },\n      { opacity: 1, scale: 1, duration: 1, ease: 'power2.out' }\n  );\n});\n\nreturn (_ctx, _cache) => {\n  return (_openBlock(), _createElementBlock(\"div\", null, [\n    _createElementVNode(\"video\", {\n      ref_key: \"videoRef\",\n      ref: videoRef,\n      autoplay: \"\",\n      loop: \"\",\n      muted: \"\",\n      playsinline: \"\",\n      class: \"w-full h-auto\"\n    }, [\n      _createElementVNode(\"source\", {\n        src: __props.video_ur,\n        type: \"video/webm\"\n      }, null, 8, _hoisted_1)\n    ], 512)\n  ]))\n}\n}\n\n}\n\n\nimport \"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/components/tools/D2AnimationPlayer.vue?vue&type=style&index=0&scoped=2382189f&lang.css\"\n\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['__scopeId',\"data-v-2382189f\"]])",
+      "start": 1746483914033,
+      "end": 1746483914035,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1746483914035,
+      "end": 1746483914035,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483914035,
+      "end": 1746483914035,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1746483914035,
+      "end": 1746483914035,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:prehydrate-transform",
+      "start": 1746483914035,
+      "end": 1746483914035,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:module-preload-polyfill",
+      "start": 1746483914035,
+      "end": 1746483914035,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483914035,
+      "end": 1746483914035,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1746483914035,
+      "end": 1746483914035,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1746483914035,
+      "end": 1746483914035,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1746483914035,
+      "end": 1746483914035,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1746483914035,
+      "end": 1746483914035,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1746483914035,
+      "end": 1746483914035,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1746483914035,
+      "end": 1746483914035,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1746483914035,
+      "end": 1746483914035,
+      "order": "normal-normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1746483914035,
+      "end": 1746483914035,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:head:unhead-imports",
+      "start": 1746483914035,
+      "end": 1746483914036,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1746483914036,
+      "end": 1746483914036,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1746483914036,
+      "end": 1746483914036,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1746483914036,
+      "end": 1746483914036,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1746483914036,
+      "end": 1746483914036,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1746483914036,
+      "end": 1746483914036,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1746483914036,
+      "end": 1746483914036,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1746483914036,
+      "end": 1746483914037,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1746483914037,
+      "end": 1746483914037,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1746483914037,
+      "end": 1746483914037,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1746483914037,
+      "end": 1746483914037,
+      "order": "normal"
+    }
+  ]
+}

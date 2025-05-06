@@ -1,0 +1,266 @@
+{
+  "resolvedId": "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/dashboard/support/[id].vue?vue&type=style&index=0&scoped=a0d43e4f&lang.css?inline&used",
+  "transforms": [
+    {
+      "name": "vite:vue",
+      "result": "\n/* Tailwind handles all styling */\n",
+      "start": 1746483920829,
+      "end": 1746483920829,
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/dashboard/support/[id].vue"
+        ],
+        "names": [],
+        "mappings": ";AA2NA,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC",
+        "file": "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/dashboard/support/[id].vue",
+        "sourceRoot": "",
+        "sourcesContent": [
+          "\n<template>\n  <div class=\"w-full  rounded-3xl flex flex-col gap-7 overflow-hidden\">\n    <!-- Back to Messages -->\n    <router-link\n        to=\"/dashboard/support\"\n        class=\"relative w-52 h-12 flex items-center justify-center bg-transparent rounded-3xl border border-primary shadow-[0_0_6px_rgba(202,23,92,1)] text-white text-base font-medium font-['Shabnam'] hover:bg-primary/10 transition-colors\"\n    >\n      <span class=\"flex items-center gap-2\">\n        <svg class=\"w-6 h-6\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\">\n          <path d=\"M9 15L3 9L9 3\" stroke-linecap=\"round\" stroke-linejoin=\"round\" />\n          <path d=\"M3 9H21\" stroke-linecap=\"round\" stroke-linejoin=\"round\" />\n        </svg>\n        Back to Messages\n      </span>\n    </router-link>\n\n    <div class=\"border-l-2 border-teal-300\">\n      <span class=\"p-2\">\n        {{data?.description}}\n      </span>\n    </div>\n    <!-- Messages -->\n    <div class=\"flex flex-col gap-4 w-full overflow-y-auto max-h-[600px] sm:max-h-[700px]\">\n      <div\n          v-for=\"message in data?.replies\"\n          :key=\"message.id\"\n          class=\"flex\"\n          :class=\"message.isSent ? 'justify-end' : 'justify-start'\"\n      >\n        <div\n            class=\"flex items-end gap-2 max-w-[90%] sm:max-w-[80%]\"\n            :class=\"message.isSent ? 'flex-row-reverse' : 'flex-row'\"\n        >\n          <img\n              :src=\"message.avatar || 'https://placehold.co/40x40'\"\n              alt=\"User Avatar\"\n              class=\"w-10 h-10 rounded-full\"\n          />\n          <div class=\"grid gap-0\">\n            <div\n                class=\"p-2.5 rounded-tl-[10px] rounded-br-[10px]\"\n                :class=\"message.isSent ? 'bg-primary rounded-tr-[10px]' : 'bg-[#514078] rounded-bl-[10px]'\"\n            >\n              <p class=\"text-white text-sm sm:text-base font-medium font-['Shabnam']\">\n                {{ message.message }}\n              </p>\n              <div v-if=\"message.files\" class=\"mt-2 flex flex-col gap-2\">\n                <a\n                    v-for=\"(file, index) in message.files\"\n                    :key=\"index\"\n                    :href=\"file.url\"\n                    target=\"_blank\"\n                    class=\"text-blue-300 text-sm hover:underline\"\n                >\n                  {{ file.name }}\n                </a>\n              </div>\n            </div>\n            <div class=\"flex items-center gap-1 text-gray-400 text-xs sm:text-sm font-medium font-['Shabnam'] text-nowrap\"\n                 :class=\"message.isSent ? 'justify-start' : 'justify-end'\">\n              <nuxt-icon name=\"iconsax/bulk/calendar\" />\n              {{ message?.human_date }}\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n\n    <!-- Message Input and Buttons -->\n    <div class=\"flex flex-col gap-4\">\n      <div class=\"relative w-full\">\n        <textarea\n            v-model=\"newMessage\"\n            placeholder=\"Write your message ...\"\n            class=\"w-full h-32 p-4 bg-[#14082A] border border-[#514078] rounded-2xl text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-primary resize-none\"\n            :class=\"{ 'border-red-500': errors.message }\"\n        ></textarea>\n        <p v-if=\"errors.message\" class=\"text-red-500 text-sm mt-1\">{{ errors.message }}</p>\n        <div v-if=\"uploadedFiles.length\" class=\"mt-2 flex flex-wrap gap-2\">\n          <div\n              v-for=\"(file, index) in uploadedFiles\"\n              :key=\"index\"\n              class=\"flex items-center gap-2 bg-gray-800 p-2 rounded-lg\"\n          >\n            <span class=\"text-white text-sm\">{{ file.name }}</span>\n            <secondary-button\n                @click=\"removeFile(index)\"\n            >\n              <svg class=\"w-4 h-4\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\">\n                <path d=\"M6 18L18 6M6 6l12 12\" />\n              </svg>\n            </secondary-button>\n          </div>\n        </div>\n      </div>\n      <div class=\"flex flex-col sm:flex-row gap-4 justify-end\">\n        <label class=\"relative w-44 h-12\">\n          <input\n              type=\"file\"\n              multiple\n              class=\"hidden\"\n              @change=\"handleFileUpload\"\n          />\n          <span class=\"absolute inset-0 flex items-center justify-center bg-transparent rounded-3xl border border-primary shadow-[0_0_6px_rgba(202,23,92,1)] text-white text-base font-medium font-['Shabnam'] cursor-pointer hover:bg-primary/10 transition-colors\">\n            <nuxt-icon name=\"iconsax/linear/paperclip-2\" />\n            Attachment\n          </span>\n        </label>\n        <primary-button\n            @click=\"sendMessage\"\n            class=\"justify-center\"\n        >\n          <span class=\"flex items-center gap-2\">\n            Send Message\n            <svg class=\"w-6 h-6\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\">\n              <path d=\"M5 13L9 17L19 7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" />\n            </svg>\n          </span>\n        </primary-button>\n      </div>\n    </div>\n  </div>\n</template>\n\n<script setup>\nimport { ref } from 'vue';\nimport { useRouter } from 'vue-router';\nimport PrimaryButton from \"~/components/tools/PrimaryButton.vue\";\nimport SecondaryButton from \"~/components/tools/SecondaryButton.vue\";\nimport { useToast } from '~/composables/useToast';\n\n\n// Initialize toast composable\nconst { addToast } = useToast();\n\n// Messages Data\nconst messages = ref();\nconst {data,status} = await useMyFetch(`tickets/${useRoute().params.id}`,{\n  headers: {\n    Authorization: `Bearer ${localStorage.getItem('token')}`,\n  },\n})\n\n// New Message\nconst newMessage = ref('');\nconst uploadedFiles = ref([]);\nconst errors = ref({});\n\nconst router = useRouter();\n\n// File Upload\nconst handleFileUpload = (event) => {\n  const files = Array.from(event.target.files);\n  const allowedTypes = ['image/jpeg', 'image/png', 'application/pdf'];\n  const maxSize = 5 * 1024 * 1024; // 5MB\n\n  files.forEach((file) => {\n    if (!allowedTypes.includes(file.type)) {\n      errors.value.files = 'Only JPEG, PNG, and PDF files are allowed.';\n      return;\n    }\n    if (file.size > maxSize) {\n      errors.value.files = 'File size must be less than 5MB.';\n      return;\n    }\n    const reader = new FileReader();\n    reader.onload = (e) => {\n      uploadedFiles.value.push({\n        name: file.name,\n        url: e.target.result,\n      });\n      errors.value.files = '';\n    };\n    reader.readAsDataURL(file);\n  });\n};\n\n// Remove File\nconst removeFile = (index) => {\n  uploadedFiles.value.splice(index, 1);\n};\n\n// Send Message\nconst sendMessage = async() => {\n  errors.value = {};\n\n  if (!newMessage.value.trim()) {\n    errors.value.message = 'Message is required.';\n    return;\n  }\n\n  const {data,status,error} = await useMyFetch(`tickets/${useRoute().params.id}`,{\n    headers: {\n      Authorization: `Bearer ${localStorage.getItem('token')}`,\n    },\n    method:'POST',\n    body:{\n      message:newMessage.value,\n      files: uploadedFiles.value\n    }\n  })\n  if (status.value=='success'){\n    // Clear inputs\n    newMessage.value = '';\n    uploadedFiles.value = [];\n    router.push('/dashboard/support')\n    addToast('Ticket replies successfully!','success',5000)\n  }else{\n    console.log(error.value)\n  }\n};\ndefinePageMeta({\n  layout:'dashboard',\n  middleware:'auth'\n})\n</script>\n\n<style scoped>\n/* Tailwind handles all styling */\n</style>\n"
+        ]
+      }
+    },
+    {
+      "name": "nuxt:components-loader-pre",
+      "start": 1746483920829,
+      "end": 1746483920829,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:components-loader-pre",
+      "start": 1746483920829,
+      "end": 1746483920829,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1746483920829,
+      "end": 1746483920829,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1746483920829,
+      "end": 1746483920829,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1746483920829,
+      "end": 1746483920829,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1746483920829,
+      "end": 1746483920829,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-only-component-transform",
+      "start": 1746483920829,
+      "end": 1746483920829,
+      "order": "pre"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1746483920830,
+      "end": 1746483920830,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1746483920830,
+      "end": 1746483920830,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "",
+      "start": 1746483920831,
+      "end": 1746483920831,
+      "order": "normal",
+      "sourcemaps": {
+        "file": "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/pages/dashboard/support/[id].vue",
+        "mappings": "",
+        "names": [],
+        "sources": [],
+        "version": 3
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1746483920831,
+      "end": 1746483920831,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483920831,
+      "end": 1746483920831,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483920831,
+      "end": 1746483920831,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1746483920831,
+      "end": 1746483920831,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1746483920831,
+      "end": 1746483920831,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:prehydrate-transform",
+      "start": 1746483920831,
+      "end": 1746483920831,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:prehydrate-transform",
+      "start": 1746483920831,
+      "end": 1746483920831,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483920832,
+      "end": 1746483920832,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1746483920833,
+      "end": 1746483920833,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1746483920834,
+      "end": 1746483920834,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1746483920979,
+      "end": 1746483920979,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1746483920979,
+      "end": 1746483920979,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1746483920979,
+      "end": 1746483920979,
+      "order": "normal-normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1746483920979,
+      "end": 1746483920979,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1746483920979,
+      "end": 1746483920979,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:head:unhead-imports",
+      "start": 1746483920980,
+      "end": 1746483920980,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:head:unhead-imports",
+      "start": 1746483920980,
+      "end": 1746483920980,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1746483920980,
+      "end": 1746483920980,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1746483920980,
+      "end": 1746483920980,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1746483920980,
+      "end": 1746483920980,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1746483920980,
+      "end": 1746483920980,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1746483920980,
+      "end": 1746483920981,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1746483920980,
+      "end": 1746483920981,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1746483920981,
+      "end": 1746483920981,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1746483920981,
+      "end": 1746483920981,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1746483920981,
+      "end": 1746483920981,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1746483920981,
+      "end": 1746483920981,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1746483920981,
+      "end": 1746483920981,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1746483920981,
+      "end": 1746483920981,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,250 @@
+{
+  "resolvedId": "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/node_modules/@nuxt/image/dist/runtime/components/NuxtImg.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <img\n    v-if=\"!custom\"\n    ref=\"imgEl\"\n    :class=\"placeholder && !placeholderLoaded ? placeholderClass : undefined\"\n    v-bind=\"{\n      ...isServer ? { onerror: 'this.setAttribute(\\'data-error\\', 1)' } : {},\n      ...imgAttrs,\n      ...attrs,\n    }\"\n    :src=\"src\"\n  >\n  <slot\n    v-else\n    v-bind=\"{\n      ...isServer ? { onerror: 'this.setAttribute(\\'data-error\\', 1)' } : {},\n      imgAttrs: {\n        ...imgAttrs,\n        ...attrs,\n      },\n      isLoaded: placeholderLoaded,\n      src,\n    }\"\n  />\n</template>\n\n<script setup lang=\"ts\">\nimport { computed, onMounted, ref, useAttrs } from 'vue'\n\nimport { useImage } from '../composables'\nimport { parseSize } from '../utils'\nimport { prerenderStaticImages } from '../utils/prerender'\nimport { markFeatureUsage } from '../utils/performance'\nimport { imgProps, useBaseImage } from './_base'\n\nimport { useHead } from '#imports'\nimport { useNuxtApp } from '#app/nuxt'\n\nconst props = defineProps(imgProps)\n\nconst attrs = useAttrs()\n\nconst emit = defineEmits<{\n  (event: 'load', payload: Event): unknown\n  (event: 'error', payload: string | Event): unknown\n}>()\n\nconst isServer = import.meta.server\n\nconst $img = useImage()\n\nconst _base = useBaseImage(props)\n\nconst placeholderLoaded = ref(false)\nconst imgEl = ref<HTMLImageElement>()\n\ntype AttrsT = typeof _base.attrs.value & {\n  'sizes'?: string\n  'srcset'?: string\n  'data-nuxt-img'?: string\n}\n\nconst sizes = computed(() => $img.getSizes(props.src!, {\n  ..._base.options.value,\n  sizes: props.sizes,\n  densities: props.densities,\n  modifiers: {\n    ..._base.modifiers.value,\n    width: parseSize(props.width),\n    height: parseSize(props.height),\n  },\n}))\n\nconst imgAttrs = computed(() => {\n  const attrs: AttrsT = { ..._base.attrs.value, 'data-nuxt-img': '' }\n\n  if (!props.placeholder || placeholderLoaded.value) {\n    attrs.sizes = sizes.value.sizes\n    attrs.srcset = sizes.value.srcset\n  }\n\n  return attrs\n})\n\nconst placeholder = computed(() => {\n  let placeholder = props.placeholder\n\n  if (placeholder === '') {\n    placeholder = true\n  }\n\n  if (!placeholder || placeholderLoaded.value) {\n    return false\n  }\n\n  if (typeof placeholder === 'string') {\n    return placeholder\n  }\n\n  const size = (Array.isArray(placeholder)\n    ? placeholder\n    : (typeof placeholder === 'number' ? [placeholder, placeholder] : [10, 10])) as [w: number, h: number, q: number, b: number]\n\n  return $img(props.src!, {\n    ..._base.modifiers.value,\n    width: size[0],\n    height: size[1],\n    quality: size[2] || 50,\n    blur: size[3] || 3,\n  }, _base.options.value)\n})\n\nconst mainSrc = computed(() =>\n  props.sizes\n    ? sizes.value.src\n    : $img(props.src!, _base.modifiers.value, _base.options.value),\n)\n\nconst src = computed(() => placeholder.value ? placeholder.value : mainSrc.value)\n\nif (import.meta.server && props.preload) {\n  const isResponsive = Object.values(sizes.value).every(v => v)\n\n  useHead({\n    link: [{\n      rel: 'preload',\n      as: 'image',\n      nonce: props.nonce,\n      ...(!isResponsive\n        ? { href: src.value }\n        : {\n            href: sizes.value.src,\n            imagesizes: sizes.value.sizes,\n            imagesrcset: sizes.value.srcset,\n          }),\n      ...(typeof props.preload !== 'boolean' && props.preload.fetchPriority\n        ? { fetchpriority: props.preload.fetchPriority }\n        : {}),\n    }],\n  })\n}\n\n// Prerender static images\nif (import.meta.server && import.meta.prerender) {\n  prerenderStaticImages(src.value, sizes.value.srcset)\n}\n\nconst nuxtApp = useNuxtApp()\n\nconst initialLoad = nuxtApp.isHydrating\n\nonMounted(() => {\n  if (placeholder.value || props.custom) {\n    const img = new Image()\n\n    if (mainSrc.value) {\n      img.src = mainSrc.value\n    }\n\n    if (props.sizes) {\n      img.sizes = sizes.value.sizes || ''\n      img.srcset = sizes.value.srcset\n    }\n\n    img.onload = (event) => {\n      placeholderLoaded.value = true\n      emit('load', event)\n    }\n\n    img.onerror = (event) => {\n      emit('error', event)\n    }\n\n    markFeatureUsage('nuxt-image')\n\n    return\n  }\n\n  if (!imgEl.value) {\n    return\n  }\n\n  if (imgEl.value.complete && initialLoad) {\n    if (imgEl.value.getAttribute('data-error')) {\n      emit('error', new Event('error'))\n    }\n    else {\n      emit('load', new Event('load'))\n    }\n  }\n\n  imgEl.value.onload = (event) => {\n    emit('load', event)\n  }\n\n  imgEl.value.onerror = (event) => {\n    emit('error', event)\n  }\n})\n</script>\n\n<script lang=\"ts\">\nexport { imgProps } from './_base'\n</script>\n",
+      "start": 1746483920755,
+      "end": 1746483920874,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:components-loader-pre",
+      "start": 1746483920874,
+      "end": 1746483920874,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:components-loader-pre",
+      "start": 1746483920874,
+      "end": 1746483920874,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1746483920874,
+      "end": 1746483920874,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1746483920874,
+      "end": 1746483920874,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1746483920874,
+      "end": 1746483920874,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1746483920874,
+      "end": 1746483920874,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-only-component-transform",
+      "start": 1746483920874,
+      "end": 1746483920874,
+      "order": "pre"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1746483920874,
+      "end": 1746483920874,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1746483920874,
+      "end": 1746483920874,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import _sfc_main from \"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/node_modules/@nuxt/image/dist/runtime/components/NuxtImg.vue?vue&type=script&setup=true&lang.ts\";\nexport * from \"/Users/mohammadrassoulzadeh/Documents/project/marktify/front/node_modules/@nuxt/image/dist/runtime/components/NuxtImg.vue?vue&type=script&setup=true&lang.ts\";\nimport { useSSRContext as __vite_useSSRContext } from \"vue\";\nconst _sfc_setup = _sfc_main.setup;\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext();\n  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add(\"node_modules/@nuxt/image/dist/runtime/components/NuxtImg.vue\");\n  return _sfc_setup ? _sfc_setup(props, ctx) : void 0;\n};\nexport default _sfc_main;\n",
+      "start": 1746483920874,
+      "end": 1746483921009,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1746483921009,
+      "end": 1746483921009,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483921009,
+      "end": 1746483921009,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483921009,
+      "end": 1746483921009,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1746483921010,
+      "end": 1746483921010,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1746483921010,
+      "end": 1746483921010,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:prehydrate-transform",
+      "start": 1746483921010,
+      "end": 1746483921010,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:prehydrate-transform",
+      "start": 1746483921010,
+      "end": 1746483921010,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483921010,
+      "end": 1746483921010,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1746483921010,
+      "end": 1746483921010,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1746483921011,
+      "end": 1746483921011,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1746483921011,
+      "end": 1746483921011,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1746483921011,
+      "end": 1746483921011,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1746483921011,
+      "end": 1746483921011,
+      "order": "normal-normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1746483921011,
+      "end": 1746483921011,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1746483921011,
+      "end": 1746483921011,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:head:unhead-imports",
+      "start": 1746483921011,
+      "end": 1746483921013,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:head:unhead-imports",
+      "start": 1746483921011,
+      "end": 1746483921013,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1746483921013,
+      "end": 1746483921013,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1746483921013,
+      "end": 1746483921013,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1746483921013,
+      "end": 1746483921013,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1746483921013,
+      "end": 1746483921013,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1746483921014,
+      "end": 1746483921014,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1746483921014,
+      "end": 1746483921014,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1746483921014,
+      "end": 1746483921015,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1746483921015,
+      "end": 1746483921015,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1746483921015,
+      "end": 1746483921015,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1746483921015,
+      "end": 1746483921015,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1746483921015,
+      "end": 1746483921015,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1746483921015,
+      "end": 1746483921015,
+      "order": "normal"
+    }
+  ]
+}

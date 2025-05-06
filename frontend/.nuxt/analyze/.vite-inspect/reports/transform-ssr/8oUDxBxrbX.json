@@ -1,0 +1,266 @@
+{
+  "resolvedId": "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/components/tools/BlogSidebar.vue?vue&type=style&index=0&scoped=7634e910&lang.css",
+  "transforms": [
+    {
+      "name": "vite:vue",
+      "result": "\n/* No additional styles needed as input styles are now inline */\n",
+      "start": 1746483922131,
+      "end": 1746483922131,
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/components/tools/BlogSidebar.vue"
+        ],
+        "names": [],
+        "mappings": ";AA6EA,CAAC,EAAE,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,EAAE,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC",
+        "file": "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/components/tools/BlogSidebar.vue",
+        "sourceRoot": "",
+        "sourcesContent": [
+          "<template>\n  <div class=\"form max-w-lg mx-auto p-4 sm:p-6\">\n    <div class=\"flex flex-col gap-6 pl-4 sm:pl-6 border-l border-[var(--variable-collection-stroke)]\">\n      <div class=\"relative flex items-center h-12\">\n        <input\n            v-model.trim=\"searchQuery\"\n            type=\"text\"\n            placeholder=\"Search ...\"\n            class=\"w-full h-full px-4 bg-[var(--variable-collection-background-shade-1)] border border-[var(--variable-collection-stroke)] rounded-2xl text-[var(--variable-collection-light-shade)] placeholder:opacity-70 focus:outline-none\"\n            @keyup.enter=\"handleSearch\"\n        />\n        <SearchNormal\n            class=\"absolute right-4 w-6 h-6 cursor-pointer\"\n            @click=\"handleSearch\"\n        />\n      </div>\n\n      <p v-if=\"isLoading\" class=\"text-white text-sm\">Searching...</p>\n      <p v-if=\"error\" class=\"text-red-500 text-sm\">{{ error }}</p>\n\n      <h2 class=\"text-white font-[var(--title-font-family)] text-lg sm:text-xl\">\n        Follow us\n      </h2>\n      <div class=\"flex justify-center gap-3 sm:gap-4 flex-wrap\">\n        <a\n            v-for=\"{ name, href } in socialLinks\"\n            :key=\"name\"\n            :href=\"href\"\n            class=\"text-3xl sm:text-4xl lg:text-5xl\"\n        >\n          <nuxt-icon :name=\"`iconsax/bulk/${name}`\" />\n        </a>\n      </div>\n    </div>\n  </div>\n</template>\n\n<script setup>\nimport { ref } from \"vue\";\n\n// Define SearchNormal as a component\nconst SearchNormal = {\n  emits: [\"click\"],\n  template: `\n    <svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\" @click=\"$emit('click')\">\n      <path d=\"M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z\" stroke=\"#fff\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\n      <path d=\"M21 21L16.65 16.65\" stroke=\"#fff\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\n    </svg>\n  `,\n};\n\n// State\nconst searchQuery = ref(\"\");\nconst isLoading = ref(false);\nconst error = ref(null);\n\nconst footerConfig = computed(()=>useState('footer').value)\n// Social media links\nconst socialLinks = [\n  { name: \"youtube\", href: footerConfig?.settings?.youtube_url },\n  { name: \"whatsapp\", href: footerConfig?.settings?.twitter_url },\n  { name: \"facebook\", href:footerConfig?.settings?.facebook_url },\n  { name: \"instagram\", href: footerConfig?.settings?.instagram_url },\n];\nconst emit = defineEmits(['search'])\n// Search handler\nconst handleSearch = async () => {\n  // if (!searchQuery.value) return;\n\n  isLoading.value = true;\n  error.value = null;\n\n  emit('search',searchQuery.value)\n};\n</script>\n\n<style scoped>\n/* No additional styles needed as input styles are now inline */\n</style>"
+        ]
+      }
+    },
+    {
+      "name": "nuxt:components-loader-pre",
+      "start": 1746483922131,
+      "end": 1746483922131,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:components-loader-pre",
+      "start": 1746483922131,
+      "end": 1746483922131,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1746483922131,
+      "end": 1746483922131,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1746483922131,
+      "end": 1746483922131,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1746483922131,
+      "end": 1746483922131,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1746483922131,
+      "end": 1746483922131,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-only-component-transform",
+      "start": 1746483922131,
+      "end": 1746483922131,
+      "order": "pre"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1746483922132,
+      "end": 1746483922132,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1746483922132,
+      "end": 1746483922132,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "",
+      "start": 1746483922132,
+      "end": 1746483922132,
+      "order": "normal",
+      "sourcemaps": {
+        "file": "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/components/tools/BlogSidebar.vue",
+        "mappings": "",
+        "names": [],
+        "sources": [],
+        "version": 3
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1746483922132,
+      "end": 1746483922132,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483922132,
+      "end": 1746483922132,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483922132,
+      "end": 1746483922132,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1746483922132,
+      "end": 1746483922132,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1746483922132,
+      "end": 1746483922132,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:prehydrate-transform",
+      "start": 1746483922132,
+      "end": 1746483922132,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:prehydrate-transform",
+      "start": 1746483922132,
+      "end": 1746483922132,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483922132,
+      "end": 1746483922132,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1746483922132,
+      "end": 1746483922132,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1746483922132,
+      "end": 1746483922132,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1746483922132,
+      "end": 1746483922132,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1746483922133,
+      "end": 1746483922133,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1746483922133,
+      "end": 1746483922133,
+      "order": "normal-normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1746483922133,
+      "end": 1746483922133,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1746483922133,
+      "end": 1746483922133,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:head:unhead-imports",
+      "start": 1746483922133,
+      "end": 1746483922133,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:head:unhead-imports",
+      "start": 1746483922133,
+      "end": 1746483922133,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1746483922133,
+      "end": 1746483922133,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1746483922133,
+      "end": 1746483922133,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1746483922133,
+      "end": 1746483922133,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1746483922133,
+      "end": 1746483922133,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1746483922133,
+      "end": 1746483922133,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1746483922133,
+      "end": 1746483922133,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1746483922133,
+      "end": 1746483922133,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1746483922133,
+      "end": 1746483922133,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1746483922133,
+      "end": 1746483922133,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1746483922133,
+      "end": 1746483922133,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1746483922133,
+      "end": 1746483922133,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1746483922133,
+      "end": 1746483922133,
+      "order": "normal"
+    }
+  ]
+}

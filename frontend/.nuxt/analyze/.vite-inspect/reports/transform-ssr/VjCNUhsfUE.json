@@ -1,0 +1,271 @@
+{
+  "resolvedId": "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/app.vue?vue&type=style&index=0&lang.css",
+  "transforms": [
+    {
+      "name": "vite:vue",
+      "result": "\nbody{\n  color: white;\n}\n.animate-fade-slide {\n  animation-delay: calc(var(--index) * 0.1s);\n}\n\n@media (prefers-reduced-motion: reduce) {\n  .animate-fade-slide {\n    animation: none;\n    opacity: 1;\n    transform: none;\n  }\n}\n",
+      "start": 1746483920928,
+      "end": 1746483920928,
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/app.vue"
+        ],
+        "names": [],
+        "mappings": ";AA8CA,CAAC,CAAC,CAAC,CAAC;EACF,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC;AACd;AACA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE;EAClB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC;AAC5C;;AAEA,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE;EACtC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE;IAClB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC;IACf,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC;IACV,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC;EACjB;AACF",
+        "file": "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/app.vue",
+        "sourceRoot": "",
+        "sourcesContent": [
+          "<template>\n  <div :key=\"$route.fullPath\" class=\" bg-gradient-to-r from-[#020617] via-[#1A0A37] to-[#14082A] min-h-screen\">\n    <NuxtLayout>\n      <Toast />\n      <NuxtPage />\n\n    </NuxtLayout>\n  </div>\n</template>\n\n\n<script setup lang=\"ts\">\nimport Toast from '~/components/tools/Toast.vue';\nconst websiteConfig = useState('config')\n\nawait callOnce(async () => {\n    $fetch('get-configs',{\n    baseURL:'http://pixelstudio.asrodev.ir/api'\n  }).then(res=>{\n      websiteConfig.value = res\n    }).catch((err)=>{\n      console.log(err)\n    })\n}, { mode: 'navigation' })\nuseHead({\n  link: [\n    {\n      rel: 'preconnect',\n      href: 'https://fonts.googleapis.com'\n    },\n    {\n      rel: 'stylesheet',\n      href: 'https://fonts.googleapis.com/css2?family=Roboto&display=swap',\n      crossorigin: ''\n    }\n  ],\n    titleTemplate: (titleChunk) => {\n        return titleChunk ? `${titleChunk} %separator %siteName` : '%siteName';\n    },\n    templateParams: {\n        siteName: websiteConfig.value?.site_name,\n        separator: '-'\n    }\n})\n</script>\n<style>\nbody{\n  color: white;\n}\n.animate-fade-slide {\n  animation-delay: calc(var(--index) * 0.1s);\n}\n\n@media (prefers-reduced-motion: reduce) {\n  .animate-fade-slide {\n    animation: none;\n    opacity: 1;\n    transform: none;\n  }\n}\n</style>"
+        ]
+      }
+    },
+    {
+      "name": "nuxt:components-loader-pre",
+      "start": 1746483920928,
+      "end": 1746483920928,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:components-loader-pre",
+      "start": 1746483920928,
+      "end": 1746483920928,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1746483920928,
+      "end": 1746483920928,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1746483920928,
+      "end": 1746483920928,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1746483920928,
+      "end": 1746483920928,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1746483920928,
+      "end": 1746483920928,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-only-component-transform",
+      "start": 1746483920928,
+      "end": 1746483920928,
+      "order": "pre"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1746483920929,
+      "end": 1746483920929,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1746483920929,
+      "end": 1746483920929,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "body{color:#fff}.animate-fade-slide{animation-delay:calc(var(--index)*.1s)}@media (prefers-reduced-motion:reduce){.animate-fade-slide{animation:none;opacity:1;transform:none}}",
+      "start": 1746483920929,
+      "end": 1746483920930,
+      "order": "normal",
+      "sourcemaps": {
+        "file": "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/app.vue",
+        "mappings": "AAAA,KAAK,UAAU,CAAC,oBAAoB,sCAAsC,CAAC,uCAAuC,oBAAoB,cAAc,CAAC,SAAS,CAAC,cAAc,CAAC",
+        "names": [],
+        "sources": [
+          "/Users/mohammadrassoulzadeh/Documents/project/marktify/front/app.vue"
+        ],
+        "sourcesContent": [
+          null
+        ],
+        "version": 3
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1746483920930,
+      "end": 1746483920930,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483920930,
+      "end": 1746483920930,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483920930,
+      "end": 1746483920930,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1746483920930,
+      "end": 1746483920930,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1746483920930,
+      "end": 1746483920930,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:prehydrate-transform",
+      "start": 1746483920930,
+      "end": 1746483920930,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:prehydrate-transform",
+      "start": 1746483920930,
+      "end": 1746483920930,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1746483920930,
+      "end": 1746483920930,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1746483920930,
+      "end": 1746483920930,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1746483920930,
+      "end": 1746483920930,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1746483920930,
+      "end": 1746483920930,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1746483920930,
+      "end": 1746483920930,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1746483920930,
+      "end": 1746483920930,
+      "order": "normal-normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1746483920930,
+      "end": 1746483920930,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1746483920930,
+      "end": 1746483920930,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:head:unhead-imports",
+      "start": 1746483920930,
+      "end": 1746483920930,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:head:unhead-imports",
+      "start": 1746483920930,
+      "end": 1746483920930,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1746483920930,
+      "end": 1746483920930,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1746483920930,
+      "end": 1746483920930,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1746483920930,
+      "end": 1746483920930,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1746483920930,
+      "end": 1746483920930,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1746483920930,
+      "end": 1746483920930,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1746483920930,
+      "end": 1746483920930,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1746483920930,
+      "end": 1746483920930,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1746483920930,
+      "end": 1746483920930,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1746483920930,
+      "end": 1746483920930,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1746483920930,
+      "end": 1746483920930,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1746483920930,
+      "end": 1746483920930,
+      "order": "normal-normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1746483920930,
+      "end": 1746483920930,
+      "order": "normal"
+    }
+  ]
+}
